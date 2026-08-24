@@ -32,12 +32,19 @@
 		<details id="focus-box" class="focus-box">
 			<summary>焦點模式──只看我關心的經文</summary>
 			<div class="focus-body">
-				<textarea id="focus-input" rows="2" placeholder="貼上這次追求的經節清單，例：彼前二4～5，亞三9，四10，約十11～16，結三四11～31"></textarea>
+				<div class="focus-picker">
+					<select id="focus-book" aria-label="書卷"></select>
+					<select id="focus-chapter" aria-label="章"></select>
+					<select id="focus-v1" aria-label="起節"></select>
+					<select id="focus-v2" aria-label="迄節（不選＝單節）"><option value="">單節</option></select>
+					<button id="btn-focus-add" class="btn">加入清單</button>
+				</div>
+				<div id="focus-list" class="focus-list" hidden></div>
 				<div class="focus-actions">
-					<button id="btn-focus-build" class="btn primary">建立焦點圖</button>
+					<button id="btn-focus-build" class="btn primary" disabled>建立焦點圖</button>
 					<button id="btn-focus-exit" class="btn" hidden>離開焦點模式</button>
 				</div>
-				<p class="fine-print">只畫出這些段落彼此之間的串珠，以及被兩處以上共同引用的橋接經節；點節點只看內容，圖形不會再擴張。</p>
+				<p class="fine-print">用選單把這次追求的段落一段段加入清單，要加幾段都可以；建好的圖只畫這些段落彼此之間的串珠，以及被兩處以上共同引用的橋接經節，點節點只看內容，圖形不會再擴張。</p>
 			</div>
 		</details>
 	</header>

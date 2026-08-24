@@ -15,7 +15,9 @@
   var btnRetry = $('btn-retry'), btnErrorClose = $('btn-error-close');
   var toastEl = $('toast'), toastTimer = null;
   var cwwlForm = $('cwwl-form');
-  var focusBox = $('focus-box'), focusInput = $('focus-input');
+  var focusBox = $('focus-box');
+  var fBook = $('focus-book'), fChapter = $('focus-chapter'), fV1 = $('focus-v1'), fV2 = $('focus-v2');
+  var btnFocusAdd = $('btn-focus-add'), focusListEl = $('focus-list');
   var btnFocusBuild = $('btn-focus-build'), btnFocusExit = $('btn-focus-exit');
 
   var nodes = new vis.DataSet();
@@ -30,6 +32,9 @@
   var focusPassages = null;   /* [{b,c,v1,v2}] */
   var focusStats = null;      /* {directs, bridges} */
   var focusData = null;       /* {directs:[{fromIdx,toIdx,conns}], bridges:[{id,b,c,v,conns}]} */
+  var focusList = [];         /* 待建圖的段落清單 [{b,c,v1,v2}] */
+  var focusPickerReady = false;
+  var focusVerseNums = [];    /* 焦點選單目前這章的節數清單 */
 
   /* ── helpers ── */
 
@@ -140,7 +145,7 @@
 
   /* ── selectors ── */
 
-  function populateBooks() {
+  function populateBookOptions(sel) {
     var ogOT = document.createElement('optgroup'); ogOT.label = '舊約';
     var ogNT = document.createElement('optgroup'); ogNT.label = '新約';
     BOOKS.forEach(function (bk) {
@@ -149,49 +154,52 @@
       opt.textContent = bk.name;
       (bk.ot ? ogOT : ogNT).appendChild(opt);
     });
-    selBook.appendChild(ogOT);
-    selBook.appendChild(ogNT);
+    sel.appendChild(ogOT);
+    sel.appendChild(ogNT);
   }
 
-  function fillChapters(b) {
+  function fillChapterOptions(sel, b) {
     var bk = BOOK_BY_CODE[b];
-    selChapter.innerHTML = '';
+    sel.innerHTML = '';
     for (var i = 1; i <= bk.chapters; i++) {
       var opt = document.createElement('option');
       opt.value = i;
       opt.textContent = i;
-      selChapter.appendChild(opt);
+      sel.appendChild(opt);
     }
   }
 
-  function fillVerses(b, c) {
-    selVerse.innerHTML = '<option value="">…</option>';
+  function setNumberOptions(sel, nums) {
+    sel.innerHTML = '';
+    nums.forEach(function (n) {
+      var opt = document.createElement('option');
+      opt.value = n;
+      opt.textContent = n;
+      sel.appendChild(opt);
+    });
+  }
+
+  /* 填入該章的節數選項；resolve 為節數陣列 */
+  function fillVerseOptions(sel, b, c) {
+    sel.innerHTML = '<option value="">…</option>';
     return RVApi.getChapterVerses(b, c).then(function (verses) {
       var nums = Object.keys(verses).map(Number).sort(function (x, y) { return x - y; });
-      selVerse.innerHTML = '';
-      nums.forEach(function (n) {
-        var opt = document.createElement('option');
-        opt.value = n;
-        opt.textContent = n;
-        selVerse.appendChild(opt);
-      });
+      setNumberOptions(sel, nums);
+      return nums;
     }).catch(function () {
       /* 章節數未知時退而求其次：給 1–80 讓使用者仍可查詢 */
-      selVerse.innerHTML = '';
-      for (var i = 1; i <= 80; i++) {
-        var opt = document.createElement('option');
-        opt.value = i;
-        opt.textContent = i;
-        selVerse.appendChild(opt);
-      }
+      var nums = [];
+      for (var i = 1; i <= 80; i++) nums.push(i);
+      setNumberOptions(sel, nums);
+      return nums;
     });
   }
 
   function setSelectors(b, c, v) {
     selBook.value = b;
-    fillChapters(b);
+    fillChapterOptions(selChapter, b);
     selChapter.value = c;
-    fillVerses(b, c).then(function () { selVerse.value = v; });
+    fillVerseOptions(selVerse, b, c).then(function () { selVerse.value = v; });
   }
 
   /* ── 一般模式主流程 ── */
@@ -251,7 +259,97 @@
 
   /* ── 焦點模式 ── */
 
-  /* 「彼前二4～5，亞三9，四10」→ [{b,c,v1,v2}] */
+  /* 焦點選單：第一次打開時才填充（避免載入頁面就打 API），並跟著主選單的位置 */
+  function initFocusPicker() {
+    if (focusPickerReady) return;
+    focusPickerReady = true;
+    populateBookOptions(fBook);
+    if (selBook.value) fBook.value = selBook.value;
+    fillChapterOptions(fChapter, Number(fBook.value));
+    if (selChapter.value) fChapter.value = selChapter.value;
+    if (!fChapter.value) fChapter.selectedIndex = 0;
+    refreshFocusVerses(selVerse.value);
+  }
+
+  function refreshFocusVerses(preferV1) {
+    fV2.innerHTML = '<option value="">單節</option>';
+    fillVerseOptions(fV1, Number(fBook.value), Number(fChapter.value)).then(function (nums) {
+      focusVerseNums = nums;
+      if (preferV1 && nums.indexOf(Number(preferV1)) !== -1) fV1.value = preferV1;
+      rebuildFocusV2();
+    });
+  }
+
+  /* 迄節選項只列出大於起節的節數 */
+  function rebuildFocusV2() {
+    var v1 = Number(fV1.value) || 0;
+    fV2.innerHTML = '<option value="">單節</option>';
+    focusVerseNums.forEach(function (n) {
+      if (n <= v1) return;
+      var opt = document.createElement('option');
+      opt.value = n;
+      opt.textContent = '～' + n;
+      fV2.appendChild(opt);
+    });
+  }
+
+  function addFocusPassage() {
+    var b = Number(fBook.value), c = Number(fChapter.value), v1 = Number(fV1.value);
+    if (!b || !c || !v1) { toast('請先選好書卷、章、節'); return; }
+    var v2 = Number(fV2.value) || v1;
+    if (v2 < v1) v2 = v1;
+    for (var i = 0; i < focusList.length; i++) {
+      var p = focusList[i];
+      if (p.b === b && p.c === c && p.v1 === v1 && p.v2 === v2) {
+        toast('這個段落已在清單中');
+        return;
+      }
+    }
+    focusList.push({ b: b, c: c, v1: v1, v2: v2 });
+    renderFocusList();
+  }
+
+  function renderFocusList() {
+    focusListEl.innerHTML = '';
+    focusListEl.hidden = !focusList.length;
+    focusList.forEach(function (p, i) {
+      var item = el('span', 'focus-item', passageLabel(p));
+      var x = el('button', 'focus-remove', '✕');
+      x.title = '移除';
+      x.setAttribute('aria-label', '移除 ' + passageLabel(p));
+      x.onclick = function () {
+        focusList.splice(i, 1);
+        renderFocusList();
+      };
+      item.appendChild(x);
+      focusListEl.appendChild(item);
+    });
+    btnFocusBuild.disabled = !focusList.length;
+    btnFocusBuild.textContent = focusList.length
+      ? '建立焦點圖（' + focusList.length + ' 段）'
+      : '建立焦點圖';
+  }
+
+  /* 分享連結：#f=60.2.4-5,38.3.9 */
+  function encodeFocusHash(ps) {
+    return ps.map(function (p) {
+      return p.b + '.' + p.c + '.' + p.v1 + (p.v2 > p.v1 ? '-' + p.v2 : '');
+    }).join(',');
+  }
+
+  function decodeFocusHash(str) {
+    var ps = [];
+    var parts = String(str || '').split(',');
+    for (var i = 0; i < parts.length; i++) {
+      var m = /^(\d+)\.(\d+)\.(\d+)(?:-(\d+))?$/.exec(parts[i].trim());
+      if (!m || !BOOK_BY_CODE[Number(m[1])]) return [];
+      var v1 = Number(m[3]), v2 = m[4] ? Number(m[4]) : v1;
+      ps.push({ b: Number(m[1]), c: Number(m[2]), v1: v1, v2: Math.max(v1, v2) });
+    }
+    return ps;
+  }
+
+  /* 舊版文字格式分享連結相容：「彼前二4～5，亞三9，四10」→ [{b,c,v1,v2}] */
   function parsePassageList(text) {
     var norm = String(text || '').replace(/[\r\n]+/g, '，');
     var out = RVParser.parseBeaded(norm, null, null);
@@ -277,13 +375,11 @@
   }
 
   function buildFocusGraph() {
-    var parsed = parsePassageList(focusInput.value);
-    if (!parsed.passages.length) {
-      toast('無法解析經節清單，請用如「彼前二4～5，約十11～16」的格式');
+    if (!focusList.length) {
+      toast('請先用上方選單把經節段落加入清單');
       return;
     }
-    if (parsed.unparsed.length) toast('略過無法解析的：' + parsed.unparsed.join('、'));
-    var ps = parsed.passages;
+    var ps = focusList.slice();
 
     var chapters = {};
     ps.forEach(function (p) { chapters[p.b + '.' + p.c] = p; });
@@ -302,7 +398,7 @@
       clearGraph();
       btnFocusExit.hidden = false;
       if (history.replaceState) {
-        history.replaceState(null, '', '#f=' + encodeURIComponent(focusInput.value.trim()));
+        history.replaceState(null, '', '#f=' + encodeFocusHash(ps));
       }
 
       ps.forEach(function (p, i) {
@@ -386,8 +482,7 @@
     }).catch(function () {
       showError(buildFocusGraph);
     }).finally(function () {
-      btnFocusBuild.disabled = false;
-      btnFocusBuild.textContent = '建立焦點圖';
+      renderFocusList(); /* 恢復按鈕文字與可按狀態 */
     });
   }
 
@@ -673,15 +768,15 @@
 
   function init() {
     introHTML = panel.innerHTML;
-    populateBooks();
+    populateBookOptions(selBook);
     initNetwork();
 
     selBook.addEventListener('change', function () {
-      fillChapters(Number(selBook.value));
-      fillVerses(Number(selBook.value), Number(selChapter.value));
+      fillChapterOptions(selChapter, Number(selBook.value));
+      fillVerseOptions(selVerse, Number(selBook.value), Number(selChapter.value));
     });
     selChapter.addEventListener('change', function () {
-      fillVerses(Number(selBook.value), Number(selChapter.value));
+      fillVerseOptions(selVerse, Number(selBook.value), Number(selChapter.value));
     });
 
     btnGo.addEventListener('click', function () {
@@ -696,6 +791,16 @@
       else clearGraph();
     });
 
+    focusBox.addEventListener('toggle', function () {
+      if (focusBox.open) initFocusPicker();
+    });
+    fBook.addEventListener('change', function () {
+      fillChapterOptions(fChapter, Number(fBook.value));
+      refreshFocusVerses();
+    });
+    fChapter.addEventListener('change', function () { refreshFocusVerses(); });
+    fV1.addEventListener('change', rebuildFocusV2);
+    btnFocusAdd.addEventListener('click', addFocusPassage);
     btnFocusBuild.addEventListener('click', buildFocusGraph);
     btnFocusExit.addEventListener('click', exitFocusMode);
     btnErrorClose.addEventListener('click', hideError);
@@ -705,10 +810,19 @@
     var mf = /^#f=(.+)$/.exec(location.hash);
     var m = /^#(\d+)\.(\d+)\.(\d+)$/.exec(location.hash);
     if (mf) {
-      try { focusInput.value = decodeURIComponent(mf[1]); } catch (e) {}
-      if (focusInput.value) {
+      var txt = mf[1];
+      try { txt = decodeURIComponent(mf[1]); } catch (e) {}
+      var ps = decodeFocusHash(txt);
+      /* 舊版文字格式的分享連結相容 */
+      if (!ps.length) ps = parsePassageList(txt).passages;
+      if (ps.length) {
+        focusList = ps;
         focusBox.open = true;
+        initFocusPicker();
+        renderFocusList();
         buildFocusGraph();
+      } else {
+        setSelectors(43, 3, 16);
       }
     } else if (m) {
       navigateTo(Number(m[1]), Number(m[2]), Number(m[3]));

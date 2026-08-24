@@ -116,18 +116,44 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 
 .focus-body { margin-top: 0.5rem; }
 
-.focus-body textarea {
-	width: 100%;
-	font-family: var(--font);
-	font-size: 0.95rem;
-	line-height: 1.7;
-	padding: 0.5rem 0.6rem;
-	border: 1px solid var(--line);
-	border-radius: 4px;
-	resize: vertical;
+.focus-picker {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	align-items: center;
 }
 
-.focus-body textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.focus-list {
+	display: flex;
+	gap: 0.35rem;
+	flex-wrap: wrap;
+	margin-top: 0.5rem;
+}
+
+.focus-item {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.3rem;
+	font-size: 0.88rem;
+	padding: 0.22rem 0.4rem 0.22rem 0.7rem;
+	border: 1px solid var(--accent);
+	border-radius: 999px;
+	background: rgba(71, 211, 229, 0.08);
+	color: var(--accent-dark);
+	line-height: 1.4;
+}
+
+.focus-remove {
+	border: none;
+	background: none;
+	padding: 0 0.15rem;
+	font-size: 0.8rem;
+	color: var(--muted);
+	cursor: pointer;
+	line-height: 1;
+}
+
+.focus-remove:hover { color: #a33; }
 
 .focus-actions {
 	display: flex;
