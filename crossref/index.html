@@ -29,6 +29,17 @@
 			<button id="btn-go" class="btn primary">查詢</button>
 			<button id="btn-clear" class="btn">清除圖形</button>
 		</div>
+		<details id="focus-box" class="focus-box">
+			<summary>焦點模式──只看我關心的經文</summary>
+			<div class="focus-body">
+				<textarea id="focus-input" rows="2" placeholder="貼上這次追求的經節清單，例：彼前二4～5，亞三9，四10，約十11～16，結三四11～31"></textarea>
+				<div class="focus-actions">
+					<button id="btn-focus-build" class="btn primary">建立焦點圖</button>
+					<button id="btn-focus-exit" class="btn" hidden>離開焦點模式</button>
+				</div>
+				<p class="fine-print">只畫出這些段落彼此之間的串珠，以及被兩處以上共同引用的橋接經節；點節點只看內容，圖形不會再擴張。</p>
+			</div>
+		</details>
 	</header>
 
 	<div id="error-banner" class="error-banner" hidden>

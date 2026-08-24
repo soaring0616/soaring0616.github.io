@@ -100,6 +100,55 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 .btn.small { padding: 0.2rem 0.6rem; font-size: 0.85rem; }
 .btn:disabled { opacity: 0.5; cursor: default; }
 
+/* ── 焦點模式 ── */
+
+.focus-box { margin-top: 0.6rem; }
+
+.focus-box summary {
+	cursor: pointer;
+	font-size: 0.9rem;
+	color: var(--accent);
+	letter-spacing: 0.1em;
+	user-select: none;
+}
+
+.focus-box summary:hover { color: var(--accent-dark); }
+
+.focus-body { margin-top: 0.5rem; }
+
+.focus-body textarea {
+	width: 100%;
+	font-family: var(--font);
+	font-size: 0.95rem;
+	line-height: 1.7;
+	padding: 0.5rem 0.6rem;
+	border: 1px solid var(--line);
+	border-radius: 4px;
+	resize: vertical;
+}
+
+.focus-body textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.focus-actions {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.4rem;
+	flex-wrap: wrap;
+}
+
+.passage-verse-head {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.9rem;
+}
+
+.passage-verse-num {
+	font-weight: 600;
+	color: var(--accent-dark);
+	letter-spacing: 0.05em;
+}
+
 /* ── Error banner / toast ── */
 
 .error-banner {
