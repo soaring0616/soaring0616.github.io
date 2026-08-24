@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>串珠探索｜經節關聯圖</title>
+	<meta name="description" content="以恢復本串珠為線索，把經節之間的關聯畫成互動節點圖，並可查閱職事文集中引用該節的信息。" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+	<script src="https://cdn.jsdelivr.net/npm/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="header-inner">
+			<div class="title-block">
+				<h1>串珠探索</h1>
+				<p class="subtitle">恢復本經節關聯圖</p>
+			</div>
+			<a class="home-link" href="../">← 回首頁</a>
+		</div>
+		<div class="controls">
+			<select id="sel-book" aria-label="書卷"></select>
+			<select id="sel-chapter" aria-label="章"></select>
+			<select id="sel-verse" aria-label="節"></select>
+			<button id="btn-go" class="btn primary">查詢</button>
+			<button id="btn-clear" class="btn">清除圖形</button>
+		</div>
+	</header>
+
+	<div id="error-banner" class="error-banner" hidden>
+		<span id="error-msg"></span>
+		<button id="btn-retry" class="btn small">重試</button>
+		<button id="btn-error-close" class="btn small" aria-label="關閉">✕</button>
+	</div>
+
+	<main class="layout">
+		<div id="graph" aria-label="經節關聯圖"></div>
+		<aside id="panel">
+			<div class="panel-intro">
+				<h2>怎麼使用？</h2>
+				<ol>
+					<li>在上方選擇書卷、章、節，按「查詢」。</li>
+					<li>該節經文會成為圖中的一個節點，它的串珠經節會展開成相連的節點。</li>
+					<li>點任何一個節點，繼續展開它的串珠，一節一節追下去。</li>
+					<li>側欄會顯示所選經節的經文、串珠與註解，並可一鍵查閱職事文集中引用該節的信息。</li>
+				</ol>
+				<p class="fine-print">經文、串珠與註解資料即時取自
+					<a href="https://www.recoveryversion.com.tw/" target="_blank" rel="noopener">網上聖經恢復本</a>；
+					文集搜尋由
+					<a href="https://cwwl.twgbr.org/" target="_blank" rel="noopener">李常受文集線上索引</a>
+					提供。</p>
+			</div>
+		</aside>
+	</main>
+
+	<div id="toast" class="toast" hidden></div>
+
+	<!-- cwwl 經文逆查：無 CORS，只能用跨站表單 POST 開新分頁 -->
+	<form id="cwwl-form" method="post" action="https://cwwl.twgbr.org/search.php" target="_blank" hidden>
+		<input type="hidden" name="f_BookNo" />
+		<input type="hidden" name="f_ChapterNo" />
+		<input type="hidden" name="f_VerseNo" />
+		<input type="hidden" name="input_text" value="" />
+	</form>
+
+	<script src="js/books.js"></script>
+	<script src="js/parser.js"></script>
+	<script src="js/api.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>
