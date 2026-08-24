@@ -29,6 +29,7 @@
   /* 焦點模式狀態：null = 一般模式 */
   var focusPassages = null;   /* [{b,c,v1,v2}] */
   var focusStats = null;      /* {directs, bridges} */
+  var focusData = null;       /* {directs:[{fromIdx,toIdx,conns}], bridges:[{id,b,c,v,conns}]} */
 
   /* ── helpers ── */
 
@@ -308,8 +309,9 @@
         nodes.add(Object.assign({ id: 'p:' + i, label: passageLabel(p) }, focusNodeStyle()));
       });
 
-      var directs = {};  /* "i>j" → [說明] */
-      var bridges = {};  /* "b.c.v" → {set:{passageIdx:1}, details:[]} */
+      /* conn = {f:[b,c,v], t:[b,c,v], pi:出處段落 index} */
+      var directs = {};  /* "i>j" → [conn] */
+      var bridges = {};  /* "b.c.v" → {set:{passageIdx:1}, conns:[conn]} */
       ps.forEach(function (p, i) {
         var foots = footsByCh[p.b + '.' + p.c];
         for (var v = p.v1; v <= p.v2; v++) {
@@ -317,30 +319,36 @@
             RVParser.parseBeaded(e.content, p.b, p.c).refs.forEach(function (r) {
               var j = findPassage(r.b, r.c, r.v, r.vEnd);
               if (j === i) return; /* 段落內部串珠不畫 */
-              var detail = refLabel(p.b, p.c, v) + ' → ' + refLabel(r.b, r.c, r.v);
+              var conn = { f: [p.b, p.c, v], t: [r.b, r.c, r.v], pi: i };
               if (j !== -1) {
-                (directs[i + '>' + j] = directs[i + '>' + j] || []).push(detail);
+                (directs[i + '>' + j] = directs[i + '>' + j] || []).push(conn);
               } else {
                 var bk = key(r.b, r.c, r.v);
-                var br = (bridges[bk] = bridges[bk] || { set: {}, details: [] });
+                var br = (bridges[bk] = bridges[bk] || { set: {}, conns: [] });
                 br.set[i] = 1;
-                br.details.push(detail);
+                br.conns.push(conn);
               }
             });
           });
         }
       });
 
+      function connText(cn) {
+        return refLabel(cn.f[0], cn.f[1], cn.f[2]) + ' → ' + refLabel(cn.t[0], cn.t[1], cn.t[2]);
+      }
+
+      focusData = { directs: [], bridges: [] };
       Object.keys(directs).forEach(function (ek) {
         var ij = ek.split('>');
         var d = directs[ek];
+        focusData.directs.push({ fromIdx: Number(ij[0]), toIdx: Number(ij[1]), conns: d });
         edges.add({
           id: 'e' + ek, from: 'p:' + ij[0], to: 'p:' + ij[1],
           width: Math.min(1 + d.length, 4),
           color: { color: ACCENT, highlight: ACCENT_DARK },
-          title: d.join('\n'),
-          label: d.length > 1 ? String(d.length) : undefined,
-          font: { size: 11, color: '#888' },
+          arrows: { to: { enabled: true, scaleFactor: 0.9 } },
+          title: d.map(connText).join('\n'),
+          conns: d,
         });
       });
 
@@ -357,13 +365,17 @@
       }
       bridgeKeys.forEach(function (k) {
         var parts = k.split('.').map(Number);
+        var br = bridges[k];
+        focusData.bridges.push({ id: k, b: parts[0], c: parts[1], v: parts[2], conns: br.conns });
         nodes.add(Object.assign({ id: k, label: refLabel(parts[0], parts[1], parts[2]) }, bridgeNodeStyle()));
-        Object.keys(bridges[k].set).forEach(function (i) {
+        Object.keys(br.set).forEach(function (i) {
+          var mine = br.conns.filter(function (cn) { return cn.pi === Number(i); });
           edges.add({
             id: 'b' + k + ':' + i, from: 'p:' + i, to: k,
             dashes: true,
             color: { color: '#ccc', highlight: ACCENT },
-            title: bridges[k].details.join('\n'),
+            title: mine.map(connText).join('\n'),
+            conns: mine,
           });
         });
       });
@@ -382,6 +394,7 @@
   function exitFocusMode() {
     focusPassages = null;
     focusStats = null;
+    focusData = null;
     btnFocusExit.hidden = true;
     clearGraph();
     panel.innerHTML = introHTML;
@@ -507,6 +520,19 @@
     }).finally(function () { setBusy(false); });
   }
 
+  /* 一行方向明細：出處 chip → 被引 chip */
+  function connLine(cn) {
+    var line = el('div', 'conn-line');
+    var from = el('button', 'ref-chip', refLabel(cn.f[0], cn.f[1], cn.f[2]));
+    from.onclick = function () { showVerseLite(cn.f[0], cn.f[1], cn.f[2]); };
+    var to = el('button', 'ref-chip', refLabel(cn.t[0], cn.t[1], cn.t[2]));
+    to.onclick = function () { showVerseLite(cn.t[0], cn.t[1], cn.t[2]); };
+    line.appendChild(from);
+    line.appendChild(el('span', 'conn-arrow', '→'));
+    line.appendChild(to);
+    return line;
+  }
+
   function renderFocusSummary() {
     if (!focusPassages) return;
     panel.innerHTML = '';
@@ -524,13 +550,43 @@
       panel.appendChild(chip);
     });
 
+    if (focusData && focusData.directs.length) {
+      panel.appendChild(el('div', 'section-label', '段落之間的串珠'));
+      panel.appendChild(el('p', 'fine-print', '「甲 → 乙」表示甲節旁的串珠引到乙節。'));
+      focusData.directs.forEach(function (d) {
+        d.conns.forEach(function (cn) { panel.appendChild(connLine(cn)); });
+      });
+    }
+
+    if (focusData && focusData.bridges.length) {
+      panel.appendChild(el('div', 'section-label', '橋接經節'));
+      panel.appendChild(el('p', 'fine-print', '被兩個以上焦點段落共同引用的經節。'));
+      focusData.bridges.forEach(function (br) {
+        var group = el('div', 'bridge-group');
+        group.appendChild(el('div', 'bridge-title', refLabel(br.b, br.c, br.v)));
+        br.conns.forEach(function (cn) { group.appendChild(connLine(cn)); });
+        panel.appendChild(group);
+      });
+    }
+
     var legend = el('div', null);
     legend.appendChild(el('div', 'section-label', '圖例'));
     legend.appendChild(el('p', 'fine-print',
-      '青色粗框＝焦點段落；實線＝段落之間的直接串珠（線上數字是次數，滑過可看明細）；' +
-      '灰色小節點＝被兩個以上段落共同引用的橋接經節（虛線相連）。' +
-      '點任何節點可在側欄看經文與串珠，圖形不會再擴張。'));
+      '青色粗框＝焦點段落；灰色小節點＝橋接經節。' +
+      '連線上的箭頭是串珠的方向：由「寫著串珠的經節」指向「被引的經節」。' +
+      '點連線或節點可在側欄看明細，圖形不會再擴張。'));
     panel.appendChild(legend);
+  }
+
+  /* 點連線：顯示這條線上的串珠方向明細 */
+  function renderEdgePanel(edge) {
+    panel.innerHTML = '';
+    var back = el('button', 'btn small', '← 回焦點總覽');
+    back.onclick = renderFocusSummary;
+    panel.appendChild(back);
+    panel.appendChild(el('div', 'verse-ref', '這條連線'));
+    panel.appendChild(el('p', 'fine-print', '「甲 → 乙」表示甲節旁的串珠引到乙節；點經節可看內容。'));
+    edge.conns.forEach(function (cn) { panel.appendChild(connLine(cn)); });
   }
 
   function renderPassagePanel(idx) {
@@ -593,7 +649,14 @@
     });
 
     network.on('click', function (params) {
-      if (!params.nodes.length) return;
+      if (!params.nodes.length) {
+        /* 焦點模式：點連線 → 側欄顯示這條線的串珠方向明細 */
+        if (focusPassages && params.edges.length) {
+          var edge = edges.get(params.edges[0]);
+          if (edge && edge.conns) renderEdgePanel(edge);
+        }
+        return;
+      }
       var id = String(params.nodes[0]);
       if (focusPassages) {
         if (id.indexOf('p:') === 0) renderPassagePanel(Number(id.slice(2)));

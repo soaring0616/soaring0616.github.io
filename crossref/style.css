@@ -136,6 +136,34 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 	flex-wrap: wrap;
 }
 
+.conn-line {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	margin: 0.3rem 0;
+	flex-wrap: wrap;
+}
+
+.conn-line .ref-chip { margin: 0; }
+
+.conn-arrow { color: var(--muted); font-size: 0.95rem; }
+
+.bridge-group {
+	margin: 0.6rem 0 0.9rem;
+	padding: 0.5rem 0.7rem;
+	border: 1px solid var(--line);
+	border-radius: 6px;
+	background: #fafafa;
+}
+
+.bridge-title {
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: #555;
+	margin-bottom: 0.25rem;
+	letter-spacing: 0.05em;
+}
+
 .passage-verse-head {
 	display: flex;
 	align-items: center;
