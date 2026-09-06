@@ -69,7 +69,7 @@ TypeScript **不會**檢查 JSON 內容（它是執行期 fetch 進來的），�
 ```
 hymn-picker/
 ├─ public/data/
-│  ├─ hymns.json            # 詩歌主資料（目前 6 首，已對照 hymnal.net 校正）
+│  ├─ hymns.json            # 詩歌主資料（目前 27 首，已對照 hymnal.net 校正）
 │  └─ meeting_types.json    # 12 種聚會的選詩規則
 ├─ src/
 │  ├─ types.ts              # 所有型別定義（資料的合約）
@@ -96,10 +96,15 @@ hymn-picker/
 
 ## 資料來源與校正狀態
 
-`hymns.json` 目前的 6 首，標題、第一句、調號、拍號、韻律、有無副歌、英文號與 `notes` 裡的
+`hymns.json` 目前的 27 首，標題、第一句、調號、拍號、韻律、有無副歌、英文號與 `notes` 裡的
 摘句、作者資料，都是 2026-09-06 直接從 <https://www.hymnal.net> 對應頁面抄下來的。
 **`categories` 是依歌詞內容與 hymnal.net 的分類初步對到本專案的類別詞彙**，帶詩歌的人請再校對。
 `urls.luke54` 目前都是空陣列，沒有查證過的連結就不放。
+
+`notes` 裡 `type: "tip"` 的帶詩歌提醒，以及部分作者背景，出自
+[1000首詩歌 1000個吉他手](https://1000hymns.blogspot.com/search/label/%E5%94%B1%E8%A9%A9%E4%BA%BA%EF%BC%86%E5%8F%B8%E7%90%B4%E8%80%85%E5%BF%85%E8%AE%80)
+「唱詩人＆司琴者必讀」標籤下的文章（擘餅點詩的 9 大禁忌、李常受弟兄談聚會中的 10 種詩歌與選詩原則等），
+每則都附了原文連結。第二批的 21 首就是這些文章點名的詩歌。
 
 新增詩歌時的兩個提醒：
 

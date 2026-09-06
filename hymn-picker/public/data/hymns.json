@@ -1,32 +1,42 @@
 [
   {
-    "id": "h-623",
+    "id": "h-36",
     "book": "hymnal",
-    "no": 623,
-    "title": "我們呼吸天上空氣",
-    "firstLine": "我們呼吸天上空氣，香味從天而來",
-    "categories": ["召會生活", "教會"],
-    "key": "G大調",
-    "time": "3/4",
-    "meter": "8.6.8.6",
-    "hasChorus": false,
-    "enNo": 8623,
+    "no": 36,
+    "title": "神的兒女有權利",
+    "firstLine": "我們不會疲倦不唱這首舊詩章",
+    "categories": [
+      "敬拜父",
+      "主的救贖",
+      "讚美主"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "13.8.13.8 副",
+    "hasChorus": true,
+    "enNo": 41,
     "urls": {
-      "hymnal": "https://www.hymnal.net/en/hymn/ch/623",
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/36",
       "luke54": []
     },
     "notes": [
       {
         "type": "excerpt",
-        "text": "主，使我們心心相聯，滿有聖潔情意，不至有日彼此改變，不愛你或你的。",
-        "source": "hymnal.net 歌詞（第二節）",
-        "url": "https://www.hymnal.net/en/hymn/ch/623"
+        "text": "神的兒女有權利，可以大喊並大唱，因為前途更光明，我們魂樂似飛翔。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/36"
       },
       {
         "type": "story",
-        "text": "曲調為美國傳統旋律；hymnal.net 分類為「召會／交通」，英文版為 E8623。",
+        "text": "詞 Fanny J. Crosby（1820–1915），曲 W. J. Kirkpatrick；hymnal.net 分類「敬拜父／祂的救贖」，英文版 E41。",
         "source": "hymnal.net 詩歌資料",
-        "url": "https://www.hymnal.net/en/hymn/ch/623"
+        "url": "https://www.hymnal.net/en/hymn/ch/36"
+      },
+      {
+        "type": "tip",
+        "text": "快詩，唱法和「驚人恩典」那類安靜的詩不同；已經連唱幾首快詩之後再點它，會讓人沒有喘息的機會。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
       }
     ]
   },
@@ -36,7 +46,11 @@
     "no": 82,
     "title": "哦滿了傷痕的頭",
     "firstLine": "哦，滿了傷痕的頭，滿了痛苦、誶詬",
-    "categories": ["讚美主", "記念主", "主的救贖"],
+    "categories": [
+      "讚美主",
+      "記念主",
+      "主的救贖"
+    ],
     "key": "降A大調",
     "time": "4/4",
     "meter": "7.6.7.6.D",
@@ -62,12 +76,181 @@
     ]
   },
   {
+    "id": "h-126",
+    "book": "hymnal",
+    "no": 126,
+    "title": "我的救主你愛為何",
+    "firstLine": "我的救主，你愛為何這摯！這寬！這博",
+    "categories": [
+      "讚美主",
+      "記念主",
+      "主的救贖"
+    ],
+    "key": "降A大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 153,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/126",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "人愛所誇，不過就是代友受死的事；但你卻為仇敵被殺！誰曾如此愛法？",
+        "source": "hymnal.net 歌詞（第三節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/126"
+      },
+      {
+        "type": "story",
+        "text": "詞 Joseph Stennett（1663–1713）；hymnal.net 分類「讚美主／祂的愛」，英文版 E153。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/126"
+      },
+      {
+        "type": "tip",
+        "text": "擘餅若以「主的愛」為主題，可依序點 134（主活潑的愛）→ 126（主愛的寬闊）→ 130（主愛的深廣），首首扣住同一個核心。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "h-128",
+    "book": "hymnal",
+    "no": 128,
+    "title": "我今俯伏主面前",
+    "firstLine": "我今俯伏主面前，我希奇主恩典",
+    "categories": [
+      "讚美主",
+      "記念主",
+      "感恩",
+      "主的救贖"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "7.6.7.6.D",
+    "hasChorus": false,
+    "enNo": 8128,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/128",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "無他，我今只能說：你是無故愛我！哦，你是無故愛我！哦，這恩真難說！",
+        "source": "hymnal.net 歌詞（第六節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/128"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「讚美主／祂的愛」，共 13 節，英文版 E8128。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/128"
+      },
+      {
+        "type": "tip",
+        "text": "這首的感覺是人已經被主的愛摸著；在還沒有味道的交通聚會一開頭就點，會太專特、不靈。",
+        "source": "1000hymns：聚會過程中的10種詩歌＆選詩的原則（李常受）",
+        "url": "https://1000hymns.blogspot.com/2012/11/blog-post_27.html"
+      }
+    ]
+  },
+  {
+    "id": "h-130",
+    "book": "hymnal",
+    "no": 130,
+    "title": "哦主你愛何等深廣",
+    "firstLine": "哦主，你愛何等深廣！過於我所能測度",
+    "categories": [
+      "讚美主",
+      "記念主",
+      "經歷神"
+    ],
+    "key": "F小調",
+    "time": "4/2",
+    "meter": "8.7.8.7.D",
+    "hasChorus": false,
+    "enNo": 152,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/130",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "你愛叫你捨了自己，為要叫我得著你，你愛叫你與我合一，叫我成為你肢體。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/130"
+      },
+      {
+        "type": "story",
+        "text": "詞李常受，曲 Thomas John Williams；hymnal.net 分類「讚美主／祂的愛」，英文版 E152。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/130"
+      },
+      {
+        "type": "tip",
+        "text": "擘餅若以「主的愛」為主題，可依序點 134（主活潑的愛）→ 126（主愛的寬闊）→ 130（主愛的深廣），首首扣住同一個核心。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "h-134",
+    "book": "hymnal",
+    "no": 134,
+    "title": "你的大愛，過於人所能度",
+    "firstLine": "你的大愛，過於人所能度，我救主耶穌！但不堪的我",
+    "categories": [
+      "讚美主",
+      "記念主"
+    ],
+    "key": "降B大調",
+    "time": "4/4",
+    "meter": "10.10.10.10.4",
+    "hasChorus": false,
+    "enNo": 154,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/134",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "你的大愛，過於人所能度，我救主耶穌！但不堪的我，真要知道祂的高、深、長、闊。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/134"
+      },
+      {
+        "type": "story",
+        "text": "詞 Mary Shekleton，曲 Ira D. Sankey；hymnal.net 分類「讚美主／祂的愛」，英文版 E154。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/134"
+      },
+      {
+        "type": "tip",
+        "text": "擘餅若以「主的愛」為主題，可依序點 134（主活潑的愛）→ 126（主愛的寬闊）→ 130（主愛的深廣），首首扣住同一個核心。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
     "id": "h-147",
     "book": "hymnal",
     "no": 147,
     "title": "榮耀歸於我主",
     "firstLine": "榮耀歸於我主，天地齊來歡呼",
-    "categories": ["讚美主", "記念主", "主的救贖", "感恩"],
+    "categories": [
+      "讚美主",
+      "記念主",
+      "主的救贖",
+      "感恩"
+    ],
     "key": "F大調",
     "time": "3/4",
     "meter": "6.6.4.6.6.6.4",
@@ -93,12 +276,514 @@
     ]
   },
   {
+    "id": "h-157",
+    "book": "hymnal",
+    "no": 157,
+    "title": "你之所是正合我需",
+    "firstLine": "主，當我們把你思念，因你所是我們敬拜",
+    "categories": [
+      "讚美主",
+      "基督的所是",
+      "記念主"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "8.8.8.8.D",
+    "hasChorus": true,
+    "enNo": 190,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/157",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "你之所是正合我需！我心對你讚美洋溢！我之所願你全滿足，綽綽有餘，應付不已！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/157"
+      },
+      {
+        "type": "story",
+        "text": "詞李常受，曲 Phoebe P. Knapp；hymnal.net 分類「讚美主／祂的萬有包羅性」，英文版 E190。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/157"
+      },
+      {
+        "type": "tip",
+        "text": "2～5 節依序讚美救主的四面：神救主、人救主、奴僕救主、君王救主，剛好和四福音（太王、可僕、路人、約神）的順序相反，帶詩時可以點出來。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "h-176",
+    "book": "hymnal",
+    "no": 176,
+    "title": "在你愛的筵席上",
+    "firstLine": "在你愛的筵席上，有杯陪餅同陳列",
+    "categories": [
+      "記念主",
+      "讚美主",
+      "主的救贖"
+    ],
+    "key": "F大調",
+    "time": "6/4",
+    "meter": "7.7.7.7.D",
+    "hasChorus": false,
+    "enNo": 223,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/176",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "在此因愛飲這杯，恩主，為著記念你；靈中如此的飲領，滿享加略的功績。",
+        "source": "hymnal.net 歌詞（第四節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/176"
+      },
+      {
+        "type": "story",
+        "text": "詞李常受，曲 Ira D. Sankey；hymnal.net 分類「讚美主／對祂的記念」，英文版 E223。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/176"
+      },
+      {
+        "type": "tip",
+        "text": "聚會一開始就點這首，聖徒還沒溫習主的愛就直奔高潮，容易措手不及；先點記念主在地上為人生活的詩，再一步步進到這裡。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "h-193",
+    "book": "hymnal",
+    "no": 193,
+    "title": "但願尊貴榮耀豐富",
+    "firstLine": "但願尊貴、榮耀、豐富，歸給羔羊直到永古",
+    "categories": [
+      "讚美主",
+      "記念主"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "8.8.8.8.8",
+    "hasChorus": false,
+    "enNo": 240,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/193",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "但願尊貴、榮耀、豐富，歸給羔羊直到永古！耶穌基督是我救主！阿利路亞！",
+        "source": "hymnal.net 歌詞（全首）",
+        "url": "https://www.hymnal.net/en/hymn/ch/193"
+      },
+      {
+        "type": "story",
+        "text": "詞 Theodulph of Orleans（750–821）；hymnal.net 分類「讚美主／一般」，英文版 E240。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/193"
+      },
+      {
+        "type": "tip",
+        "text": "「但願」需要眾人的靈已經起來；會眾還很被動時點它，大家就「但願」不來，也「榮耀、豐富」不起來。",
+        "source": "1000hymns：聚會過程中的10種詩歌＆選詩的原則（李常受）",
+        "url": "https://1000hymns.blogspot.com/2012/11/blog-post_27.html"
+      }
+    ]
+  },
+  {
+    "id": "h-209",
+    "book": "hymnal",
+    "no": 209,
+    "title": "耶穌你的全勝的愛",
+    "firstLine": "耶穌，你的全勝的愛，已經澆灌我心",
+    "categories": [
+      "聖靈",
+      "經歷神",
+      "渴慕"
+    ],
+    "key": "G大調",
+    "time": "6/8",
+    "meter": "8.6.8.6（末句重複）",
+    "hasChorus": false,
+    "enNo": 264,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/209",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "耶穌，你的全勝的愛，已經澆灌我心，我心就不再會搖擺，就能生根於神。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/209"
+      },
+      {
+        "type": "story",
+        "text": "詞出自查理・衛斯理（Charles Wesley, 1707–1788）；文章提到衛斯理兄弟帶來的復興如何影響 18 世紀的英國。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "h-247",
+    "book": "hymnal",
+    "no": 247,
+    "title": "驚人恩典何等甘甜",
+    "firstLine": "驚人恩典！何等甘甜，來救無賴如我",
+    "categories": [
+      "福音",
+      "得救的確據",
+      "感恩",
+      "主的救贖"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 313,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/247",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "驚人恩典！何等甘甜，來救無賴如我！前曾失落，今被尋見！前盲，今不摸索！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/247"
+      },
+      {
+        "type": "story",
+        "text": "詞 John Newton（1725–1807），曲為美國傳統旋律；hymnal.net 分類「得救的證實與快樂／藉恩得救」，英文版 E313。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/247"
+      },
+      {
+        "type": "tip",
+        "text": "每首詩都有自己的味道，不要把「驚人恩典」和「我們不會疲倦」（36）唱成同一個樣。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "h-286",
+    "book": "hymnal",
+    "no": 286,
+    "title": "我需你主我需你",
+    "firstLine": "我每時刻需你，可愛恩主",
+    "categories": [
+      "渴慕",
+      "禱告",
+      "經歷神"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "6.4.6.4 副",
+    "hasChorus": true,
+    "enNo": 371,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/286",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我需你，主，我需你，每時刻我需你；哦主，現在賜恩力，我來就你。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/286"
+      },
+      {
+        "type": "story",
+        "text": "詞 Annie S. Hawks（1836–1918），副歌與曲 Robert Lowry；hymnal.net 分類「羨慕／與主交通」，英文版 E371。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/286"
+      }
+    ]
+  },
+  {
+    "id": "h-288",
+    "book": "hymnal",
+    "no": 288,
+    "title": "與我同住夕陽西沉",
+    "firstLine": "與我同住，夕陽西沉迅速；黑暗漸深，求主與我同住",
+    "categories": [
+      "渴慕",
+      "安慰",
+      "禱告"
+    ],
+    "key": "E大調",
+    "time": "4/4",
+    "meter": "10.10.10.10",
+    "hasChorus": false,
+    "enNo": 370,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/288",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "與我同住，夕陽西沉迅速；黑暗漸深，求主與我同住；安慰消逝，且無何人能助；無助之助，求你與我同住。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/288"
+      },
+      {
+        "type": "story",
+        "text": "詞 Henry F. Lyte（1793–1847），曲 W. H. Monk；hymnal.net 分類「羨慕／與主交通」，英文版 E370。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/288"
+      }
+    ]
+  },
+  {
+    "id": "h-293",
+    "book": "hymnal",
+    "no": 293,
+    "title": "求你揀選我道路",
+    "firstLine": "求你揀選我道路，我主，為我揀選",
+    "categories": [
+      "祈求",
+      "禱告",
+      "獻上自己"
+    ],
+    "key": "D大調",
+    "time": "6/8",
+    "meter": "7.6.7.6.D 副",
+    "hasChorus": true,
+    "enNo": 8293,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/293",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "求你握住我的手，你知我的軟弱；否則我只能憂愁，不知如何生活。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/293"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「羨慕／主的引領」，英文版 E8293。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/293"
+      },
+      {
+        "type": "tip",
+        "text": "屬「要求主」的詩，在擘餅聚會會把注意力轉回自己身上、使聚會失焦；留給禱告聚會或個人追求。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "h-339",
+    "book": "hymnal",
+    "no": 339,
+    "title": "為我荊棘冠冕你肯",
+    "firstLine": "主，你得著我一生，使它歸你成為聖",
+    "categories": [
+      "獻上自己"
+    ],
+    "key": "C大調",
+    "time": "4/4",
+    "meter": "7.7.7.7 副",
+    "hasChorus": true,
+    "enNo": 1359,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/339",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主，你得著我一生，使它歸你成為聖；得著我日與我時，歸你使用永無止。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/339"
+      },
+      {
+        "type": "story",
+        "text": "海弗格爾（F. R. Havergal, 1836–1879）走出兒童班聖徒的困境後，把對主的畢生經歷寫成這首詩。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "h-394",
+    "book": "hymnal",
+    "no": 394,
+    "title": "前要的是祝福",
+    "firstLine": "前要的是祝福，今要主自己",
+    "categories": [
+      "經歷神",
+      "基督的所是",
+      "讚美主"
+    ],
+    "key": "降E大調",
+    "time": "6/8",
+    "meter": "6.5.6.5.D 副",
+    "hasChorus": true,
+    "enNo": 513,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/394",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "永遠舉起耶穌，讚美主不歇；一切在於基督，主是我一切。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/394"
+      },
+      {
+        "type": "story",
+        "text": "作者宣信（A. B. Simpson, 1843–1919）曾苦苦追求成聖，整夜不敢睡怕失去，卻還是失去了；經過這樣的痛苦才寫出這首詩。",
+        "source": "1000hymns：聚會過程中的10種詩歌＆選詩的原則（李常受）",
+        "url": "https://1000hymns.blogspot.com/2012/11/blog-post_27.html"
+      },
+      {
+        "type": "tip",
+        "text": "聚會結束、眾人都覺得主耶穌被高舉時，用副歌「永遠舉起耶穌」把感覺唱出來、送大家一程。",
+        "source": "1000hymns：讚美主與敬拜父－擘餅聚會中點詩的講究（李常受）",
+        "url": "https://1000hymns.blogspot.com/2012/04/blog-post.html"
+      }
+    ]
+  },
+  {
+    "id": "h-524",
+    "book": "hymnal",
+    "no": 524,
+    "title": "我是一隻籠中小鳥",
+    "firstLine": "我是一隻籠中小鳥，遠離天空、曠闊野地",
+    "categories": [
+      "安慰",
+      "經歷神"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "8.8.8.8.8.8",
+    "hasChorus": false,
+    "enNo": 724,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/524",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我的翅膀雖被捆住，我心我靈仍是自由；監牢牆垣，不能阻擋心靈所有釋放、翱翔。",
+        "source": "hymnal.net 歌詞（第四節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/524"
+      },
+      {
+        "type": "story",
+        "text": "詞出自蓋恩夫人（Madame Guyon, 1648–1717）；hymnal.net 分類「試煉中的安慰／苦難中的享受」，英文版 E724。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/524"
+      },
+      {
+        "type": "tip",
+        "text": "文章把它和 293 並列為擘餅聚會不合適的例子：焦點在自己的處境，而不在主身上。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "h-623",
+    "book": "hymnal",
+    "no": 623,
+    "title": "我們呼吸天上空氣",
+    "firstLine": "我們呼吸天上空氣，香味從天而來",
+    "categories": [
+      "召會生活",
+      "教會"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 8623,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/623",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主，使我們心心相聯，滿有聖潔情意，不至有日彼此改變，不愛你或你的。",
+        "source": "hymnal.net 歌詞（第二節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/623"
+      },
+      {
+        "type": "story",
+        "text": "曲調為美國傳統旋律；hymnal.net 分類為「召會／交通」，英文版為 E8623。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/623"
+      }
+    ]
+  },
+  {
+    "id": "h-638",
+    "book": "hymnal",
+    "no": 638,
+    "title": "我神是我大能堡壘",
+    "firstLine": "我神是我大能堡壘，堅固保障永不頹",
+    "categories": [
+      "爭戰",
+      "經歷神",
+      "聖經"
+    ],
+    "key": "C大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "enNo": 886,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/638",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "這位適當之人，乃是基督本身；祂是萬軍之主，萬世萬代無殊，勝利永遠惟祂屬。",
+        "source": "hymnal.net 歌詞（第二節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/638"
+      },
+      {
+        "type": "scripture",
+        "text": "馬丁路德依詩篇四十六篇（神是我們的避難所和力量）所寫。",
+        "source": "詩 46"
+      },
+      {
+        "type": "story",
+        "text": "詞曲馬丁路德（Martin Luther, 1483–1546）；hymnal.net 分類「屬靈的爭戰／以神為堡壘」，英文版 E886。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/638"
+      }
+    ]
+  },
+  {
     "id": "s-12",
     "book": "supplement",
     "no": 12,
     "title": "你們當稱頌耶和華",
     "firstLine": "看哪，耶和華僕人，夜間站在祂的殿中的",
-    "categories": ["讚美主", "敬拜父", "聖經"],
+    "categories": [
+      "讚美主",
+      "敬拜父",
+      "聖經"
+    ],
     "key": "C大調",
     "time": "4/4",
     "hasChorus": false,
@@ -126,7 +811,11 @@
     "no": 201,
     "title": "祂是天天更寶貝",
     "firstLine": "我們的心天天被吸引，更親近耶穌",
-    "categories": ["經歷神", "基督的所是", "召會生活"],
+    "categories": [
+      "經歷神",
+      "基督的所是",
+      "召會生活"
+    ],
     "key": "降B大調",
     "time": "4/4",
     "meter": "14.14.14.14 副",
@@ -152,12 +841,167 @@
     ]
   },
   {
+    "id": "s-214",
+    "book": "supplement",
+    "no": 214,
+    "title": "得勝藉著喫基督",
+    "firstLine": "主曾召你我得救，祂再召你我得勝",
+    "categories": [
+      "經歷神",
+      "爭戰"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "7.7.7.3 副",
+    "hasChorus": true,
+    "enNo": 1273,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/214",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主曾召你我得救，祂再召你我得勝。對主呼召說『阿們』─要得勝！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/214"
+      },
+      {
+        "type": "story",
+        "text": "曲 W. J. Kirkpatrick；hymnal.net 分類「享受基督」，英文版 E1273。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/214"
+      },
+      {
+        "type": "tip",
+        "text": "文章舉它為「委屈詩歌配合當週信息」的例子：擘餅聚會不該為了配合信息（如亞伯拉罕的呼召）硬點它，留到擘餅後的申言聚會再享受。",
+        "source": "1000hymns：主日擘餅聚會點詩的秘訣與9大禁忌",
+        "url": "https://1000hymns.blogspot.com/2014/01/9.html"
+      }
+    ]
+  },
+  {
+    "id": "s-328",
+    "book": "supplement",
+    "no": 328,
+    "title": "神聖羅曼史",
+    "firstLine": "怎能鄉村女子如我，成為你的新婦、配偶",
+    "categories": [
+      "渴慕",
+      "經歷神",
+      "基督的所是"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "enNo": 82,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/328",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "神聖羅曼史，神心計畫之；神成為卑微人子，追求鄉村女子！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/328"
+      },
+      {
+        "type": "scripture",
+        "text": "整首詩以雅歌為背景（hymnal.net 標註 Scriptures: Song of Songs）。",
+        "source": "雅歌"
+      },
+      {
+        "type": "story",
+        "text": "Howard Higashi（1937–1998）所作，曾在臺灣眾召會處處傳唱；文章借它談「新詩」與「經典」的差別。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "s-329",
+    "book": "supplement",
+    "no": 329,
+    "title": "惟見榮耀裡的基督",
+    "firstLine": "何等喜樂，何等喜樂，我們能彀一無所有",
+    "categories": [
+      "渴慕",
+      "經歷神",
+      "基督的所是"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "enNo": 27,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/329",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "何等喜樂，何等喜樂，我們能彀一無所有，一無所是，一無所見，惟見榮耀裡的基督。",
+        "source": "hymnal.net 歌詞（全首）",
+        "url": "https://www.hymnal.net/en/hymn/ts/329"
+      },
+      {
+        "type": "story",
+        "text": "達祕（J. N. Darby, 1800–1882）孤獨、顛簸一生所萃取出的經歷結晶。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
+    "id": "s-428",
+    "book": "supplement",
+    "no": 428,
+    "title": "讓我愛",
+    "firstLine": "讓我愛而不受感戴，讓我事而不受賞賜",
+    "categories": [
+      "獻上自己",
+      "經歷神"
+    ],
+    "key": "E小調",
+    "time": "4/4",
+    "hasChorus": false,
+    "enNo": 19,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/428",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "讓我愛而不受感戴，讓我事而不受賞賜；讓我盡力而不被人記，讓我受苦而不被人睹。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/428"
+      },
+      {
+        "type": "story",
+        "text": "詞倪柝聲（1903–1972）；hymnal.net 分類「追求與長進」，英文版 E19。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/428"
+      },
+      {
+        "type": "tip",
+        "text": "曲風安靜內斂，不要用唱「何等喜樂」（補充本 329）的方式去唱它。",
+        "source": "1000hymns：給現代唱詩人的9+1個提案",
+        "url": "https://1000hymns.blogspot.com/2015/02/91.html"
+      }
+    ]
+  },
+  {
     "id": "n-1158",
     "book": "new",
     "no": 1158,
     "title": "Abba, Our Father",
     "firstLine": "Abba, our Father, how we love to call Your name!",
-    "categories": ["敬拜父", "讚美主"],
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
     "key": "F大調",
     "time": "4/4",
     "hasChorus": false,
