@@ -14,37 +14,6 @@
   text-decoration: underline;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: center;
-  padding: 14px 18px;
-  border: 1px solid #dcd7cc;
-  border-radius: 10px;
-  background: #fffdf8;
-}
-
-.button {
-  font: inherit;
-  font-size: 0.85rem;
-  padding: 7px 14px;
-  border: 1px solid #cfc7b6;
-  border-radius: 7px;
-  background: #fff;
-  color: #4a4335;
-  cursor: pointer;
-}
-
-.button:hover {
-  background: #f5f1e7;
-}
-
-.sung {
-  font-size: 0.85rem;
-  color: #6b6255;
-}
-
 .links {
   display: flex;
   flex-direction: column;

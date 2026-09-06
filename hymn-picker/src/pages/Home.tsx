@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { Hymn, MeetingType, SungHistory } from '../types';
+import type { Hymn, MeetingType } from '../types';
 import { loadAll } from '../lib/data';
 import { selectBySections } from '../lib/select';
-import { clearHistory, loadHistory } from '../lib/history';
 import MeetingSelector from '../components/MeetingSelector';
 import HymnList from '../components/HymnList';
 import styles from './Home.module.css';
@@ -17,7 +16,7 @@ import styles from './Home.module.css';
  *     cancelled 旗標是為了避免「還沒回來使用者就離開這頁」時對已卸載的元件 setState。
  *
  *  2. useState 存「使用者的選擇」與「外面來的資料」
- *     meetingId / theme 是使用者的選擇；hymns / meetingTypes / history 是載進來的資料。
+ *     meetingId / theme 是使用者的選擇；hymns / meetingTypes 是載進來的資料。
  *     兩者都會變、都要重畫，所以都是 state。
  *
  *  3. useMemo 算「衍生資料」
@@ -36,9 +35,6 @@ export default function Home() {
   // ── 使用者的選擇（狀態抬升到這裡，MeetingSelector 只是顯示與回報）──
   const [meetingId, setMeetingId] = useState('table');
   const [theme, setTheme] = useState('');
-
-  // ── 唱過的紀錄（存在 localStorage，開頁時讀一次）──────────────
-  const [history, setHistory] = useState<SungHistory>(() => loadHistory());
 
   useEffect(() => {
     let cancelled = false;
@@ -68,11 +64,11 @@ export default function Home() {
     [meetingTypes, meetingId],
   );
 
-  // 衍生資料：由 hymns / meetingType / theme / history 算出來
+  // 衍生資料：由 hymns / meetingType / theme 算出來
   const sections = useMemo(() => {
     if (!meetingType) return [];
-    return selectBySections(hymns, meetingType, { theme, history });
-  }, [hymns, meetingType, theme, history]);
+    return selectBySections(hymns, meetingType, { theme });
+  }, [hymns, meetingType, theme]);
 
   if (loading) return <p className={styles.status}>載入詩歌資料中…</p>;
   if (error)
@@ -84,13 +80,11 @@ export default function Home() {
       </p>
     );
 
-  const sungCount = Object.keys(history).length;
-
   return (
     <div className={styles.page}>
       <p className={styles.intro}>
-        選一個聚會類型，下面會依「類別吻合、會眾熟悉度、有無副歌、最近唱過沒有」
-        排出候選，每首都附上推薦理由。點標題可以看詳細資料並標記「今天唱過」。
+        選一個聚會類型，下面會依「類別吻合、會眾熟悉度、有無副歌」排出候選，
+        每首都附上推薦理由。點標題可以看詳細資料與外部連結。
       </p>
 
       <MeetingSelector
@@ -111,18 +105,6 @@ export default function Home() {
           />
         ))}
       </div>
-
-      <p className={styles.footnote}>
-        已記錄 {sungCount} 首唱過的日期（存在這台裝置的瀏覽器裡）。
-        {sungCount > 0 && (
-          <button
-            className={styles.reset}
-            onClick={() => setHistory(clearHistory())}
-          >
-            清除紀錄
-          </button>
-        )}
-      </p>
     </div>
   );
 }

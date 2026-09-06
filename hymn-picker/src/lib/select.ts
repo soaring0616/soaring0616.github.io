@@ -10,13 +10,9 @@ import type {
  * 選詩歌的核心邏輯。
  *
  * 設計原則：**純函式、無副作用**。
- * 不 fetch、不讀 localStorage、不看 Date.now()（「現在」由 opts.now 傳進來），
- * 所以同樣的輸入永遠得到同樣的輸出 —— 這也是它好測試的原因。
+ * 不 fetch、不讀 localStorage，所以同樣的輸入永遠得到同樣的輸出 —— 這也是它好測試的原因。
  * React 元件只負責「拿資料 → 呼叫它 → 畫出來」。
  */
-
-const DEFAULT_RECENT_DAYS = 30;
-const DAY_MS = 24 * 60 * 60 * 1000;
 
 /** 書別對熟悉度的基礎值：大本流傳最廣，新歌通常最少人會唱 */
 const BOOK_FAMILIARITY: Record<Hymn['book'], number> = {
@@ -33,19 +29,6 @@ const BOOK_LABEL: Record<Hymn['book'], string> = {
 
 export function bookLabel(book: Hymn['book']): string {
   return BOOK_LABEL[book];
-}
-
-function toDate(value: Date | string | undefined): Date {
-  if (value instanceof Date) return value;
-  if (typeof value === 'string') return new Date(value);
-  return new Date();
-}
-
-/** 相差天數；日期無效時回傳 null（當成沒唱過處理） */
-function daysBetween(now: Date, iso: string): number | null {
-  const then = new Date(iso);
-  if (Number.isNaN(then.getTime()) || Number.isNaN(now.getTime())) return null;
-  return Math.floor((now.getTime() - then.getTime()) / DAY_MS);
 }
 
 function normalize(s: string): string {
@@ -116,36 +99,16 @@ export function scoreHymn(
     reasons.push(`主題相符：${opts.theme}`);
   }
 
-  // --- familiarity：大家會不會唱 ---
-  let familiarity = BOOK_FAMILIARITY[hymn.book];
-  const lastSung = opts.history?.[hymn.id];
-  if (lastSung) {
-    // 唱過代表會眾熟悉，熟悉度加分（跟下面的「最近唱過扣分」是兩件事）
-    familiarity = Math.min(1, familiarity + 0.4);
-  }
+  // --- familiarity：大家會不會唱，目前只看書別 ---
+  const familiarity = BOOK_FAMILIARITY[hymn.book];
   reasons.push(`${BOOK_LABEL[hymn.book]}第 ${hymn.no} 首`);
 
   // --- chorus：有副歌比較好帶 ---
   const chorus = hymn.hasChorus ? 1 : 0;
   if (hymn.hasChorus) reasons.push('有副歌，容易跟唱');
 
-  let score =
+  const score =
     w.themeMatch * themeMatch + w.familiarity * familiarity + w.chorus * chorus;
-
-  // --- 新鮮度：最近唱過的往後排（扣分而不是刪掉，主持人仍可自行選用）---
-  const recentDays = opts.recentDays ?? DEFAULT_RECENT_DAYS;
-  const now = toDate(opts.now);
-  const days = lastSung ? daysBetween(now, lastSung) : null;
-  if (days !== null && days >= 0 && days < recentDays) {
-    // 越接近今天扣越多，最多扣掉一半分數
-    const penalty = 0.5 * (1 - days / recentDays);
-    score = score * (1 - penalty);
-    reasons.push(`${days} 天前唱過（已降低優先）`);
-  } else if (days !== null && days >= recentDays) {
-    reasons.push(`${recentDays} 天內未唱過（上次 ${lastSung}）`);
-  } else {
-    reasons.push('沒有唱過的紀錄');
-  }
 
   return { hymn, score: round(score), reasons };
 }

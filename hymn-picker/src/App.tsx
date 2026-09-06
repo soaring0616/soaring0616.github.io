@@ -39,7 +39,7 @@ export default function App() {
         </main>
 
         <footer className={styles.footer}>
-          詩歌資料為範例，請以 hymnal.net 為準。唱過的紀錄只存在這台裝置的瀏覽器裡。
+          詩歌資料以 hymnal.net 為準；類別為初步分類，歡迎校正。
         </footer>
       </div>
     </HashRouter>

@@ -61,21 +61,9 @@ export interface MeetingType {
   suggestedCount: number;
 }
 
-/** history: { [hymnId]: 最後一次唱的 ISO 日期字串, 例如 '2026-08-01' } */
-export type SungHistory = Record<string, string>;
-
 export interface SelectOptions {
   /** 使用者輸入的主題關鍵字，會比對標題 / 首句 / 類別 */
   theme?: string;
-  /** 各首詩歌最後一次唱的日期 */
-  history?: SungHistory;
-  /**
-   * 「現在」是什麼時候。預設 new Date()。
-   * 之所以開這個參數，是為了讓 selectHymns 保持純函式、測試可重現。
-   */
-  now?: Date | string;
-  /** 幾天內唱過就算「最近唱過」，預設 30 */
-  recentDays?: number;
 }
 
 /** selectHymns 的輸出：詩歌 + 分數 + 可解釋的理由 */
@@ -83,7 +71,7 @@ export interface HymnCandidate {
   hymn: Hymn;
   /** 0..1 的加權總分（越高越前面） */
   score: number;
-  /** 給人看的理由，例如「類別：記念主」「30 天內未唱過」 */
+  /** 給人看的理由，例如「類別：記念主」「有副歌，容易跟唱」 */
   reasons: string[];
 }
 

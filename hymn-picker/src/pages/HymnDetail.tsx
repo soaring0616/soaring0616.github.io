@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import type { Hymn, SungHistory } from '../types';
+import type { Hymn } from '../types';
 import { loadHymns } from '../lib/data';
-import { loadHistory, markSung, todayISO, unmarkSung } from '../lib/history';
 import HymnCard from '../components/HymnCard';
 import styles from './HymnDetail.module.css';
 
@@ -20,7 +19,6 @@ export default function HymnDetail() {
 
   const [hymns, setHymns] = useState<Hymn[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [history, setHistory] = useState<SungHistory>(() => loadHistory());
 
   useEffect(() => {
     let cancelled = false;
@@ -50,8 +48,6 @@ export default function HymnDetail() {
       </div>
     );
 
-  const lastSung = history[hymn.id];
-
   const luke54 = hymn.urls.luke54 ?? [];
 
   return (
@@ -62,36 +58,6 @@ export default function HymnDetail() {
 
       {/* linkToDetail={false}：已經在詳細頁了，標題不用再連到自己 */}
       <HymnCard hymn={hymn} linkToDetail={false} />
-
-      <div className={styles.actions}>
-        {lastSung ? (
-          <>
-            <span className={styles.sung}>上次唱過：{lastSung}</span>
-            <button
-              className={styles.button}
-              onClick={() => setHistory(markSung(hymn.id, todayISO(), history))}
-            >
-              改成今天
-            </button>
-            <button
-              className={styles.button}
-              onClick={() => setHistory(unmarkSung(hymn.id, history))}
-            >
-              取消紀錄
-            </button>
-          </>
-        ) : (
-          <>
-            <span className={styles.sung}>還沒有唱過的紀錄</span>
-            <button
-              className={styles.button}
-              onClick={() => setHistory(markSung(hymn.id, todayISO(), history))}
-            >
-              標記今天唱過
-            </button>
-          </>
-        )}
-      </div>
 
       {(hymn.urls.hymnal || luke54.length > 0) && (
         <div className={styles.links}>

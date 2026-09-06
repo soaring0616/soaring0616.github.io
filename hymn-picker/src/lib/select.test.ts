@@ -48,27 +48,25 @@ const OPEN: MeetingType = {
   suggestedCount: 5,
 };
 
-const NOW = '2026-09-06T00:00:00Z';
-
 describe('selectHymns', () => {
   it('排除命中 exclude 類別的詩歌', () => {
-    const ids = selectHymns(HYMNS, TABLE, { now: NOW }).map((c) => c.hymn.id);
+    const ids = selectHymns(HYMNS, TABLE).map((c) => c.hymn.id);
     expect(ids).not.toContain('h-3');
   });
 
   it('include 非空時，只留下至少命中一個 include 類別的詩歌', () => {
-    const ids = selectHymns(HYMNS, TABLE, { now: NOW }).map((c) => c.hymn.id);
+    const ids = selectHymns(HYMNS, TABLE).map((c) => c.hymn.id);
     expect(ids.sort()).toEqual(['h-1', 'h-2', 's-4']);
     expect(ids).not.toContain('n-5'); // 福音類，不在 include 裡
   });
 
   it('include 為空時不限類別，全部都是候選', () => {
-    const ids = selectHymns(HYMNS, OPEN, { now: NOW }).map((c) => c.hymn.id);
+    const ids = selectHymns(HYMNS, OPEN).map((c) => c.hymn.id);
     expect(ids).toHaveLength(HYMNS.length);
   });
 
   it('依分數由高到低排序，且每首都附上可解釋的 reasons', () => {
-    const result = selectHymns(HYMNS, TABLE, { now: NOW });
+    const result = selectHymns(HYMNS, TABLE);
     const scores = result.map((c) => c.score);
     expect(scores).toEqual([...scores].sort((a, b) => b - a));
     result.forEach((c) => {
@@ -80,42 +78,23 @@ describe('selectHymns', () => {
     expect(result[0].reasons).toContain('有副歌，容易跟唱');
   });
 
-  it('30 天內唱過的會被降分並標註理由', () => {
-    const history = { 'h-1': '2026-09-01' }; // 5 天前
-    const before = selectHymns(HYMNS, TABLE, { now: NOW });
-    const after = selectHymns(HYMNS, TABLE, { now: NOW, history });
-
-    const h1Before = before.find((c) => c.hymn.id === 'h-1')!;
-    const h1After = after.find((c) => c.hymn.id === 'h-1')!;
-
-    expect(h1After.score).toBeLessThan(h1Before.score);
-    expect(h1After.reasons.some((r) => r.includes('天前唱過'))).toBe(true);
-  });
-
-  it('超過 30 天沒唱的，理由標成「30 天內未唱過」且不扣分', () => {
-    const history = { 'h-1': '2026-01-01' };
-    const c = selectHymns(HYMNS, TABLE, { now: NOW, history }).find(
-      (x) => x.hymn.id === 'h-1',
-    )!;
-    expect(c.reasons.some((r) => r.includes('30 天內未唱過'))).toBe(true);
-    // 唱過會提高熟悉度，所以分數應該不低於沒有紀錄時
-    const noHistory = selectHymns(HYMNS, TABLE, { now: NOW }).find(
-      (x) => x.hymn.id === 'h-1',
-    )!;
-    expect(c.score).toBeGreaterThanOrEqual(noHistory.score);
+  it('同分時依書別排序：大本在補充本前面', () => {
+    // h-2 與 s-4 各只命中一個類別、都沒有副歌，差別只在書別的熟悉度
+    const ids = selectHymns(HYMNS, TABLE).map((c) => c.hymn.id);
+    expect(ids.indexOf('h-2')).toBeLessThan(ids.indexOf('s-4'));
   });
 
   it('theme 關鍵字命中標題時加分並標註', () => {
-    const withTheme = scoreHymn(HYMNS[4], OPEN, { now: NOW, theme: '天上的家' });
-    const without = scoreHymn(HYMNS[4], OPEN, { now: NOW });
+    const withTheme = scoreHymn(HYMNS[4], OPEN, { theme: '天上的家' });
+    const without = scoreHymn(HYMNS[4], OPEN);
     expect(withTheme.score).toBeGreaterThan(without.score);
     expect(withTheme.reasons).toContain('主題相符：天上的家');
   });
 
   it('是純函式：不會改到傳進來的陣列，重複呼叫結果相同', () => {
     const input = [...HYMNS];
-    const a = selectHymns(input, TABLE, { now: NOW });
-    const b = selectHymns(input, TABLE, { now: NOW });
+    const a = selectHymns(input, TABLE);
+    const b = selectHymns(input, TABLE);
     expect(input).toEqual(HYMNS); // 原陣列順序沒被 sort 改掉
     expect(a).toEqual(b);
   });
@@ -123,7 +102,7 @@ describe('selectHymns', () => {
 
 describe('selectBySections', () => {
   it('依 sections 分段，各段套用自己的 include', () => {
-    const sections = selectBySections(HYMNS, TABLE, { now: NOW });
+    const sections = selectBySections(HYMNS, TABLE);
     expect(sections.map((s) => s.label)).toEqual(['記念主', '敬拜父']);
     expect(sections[0].candidates.map((c) => c.hymn.id).sort()).toEqual([
       'h-1',
@@ -133,7 +112,7 @@ describe('selectBySections', () => {
   });
 
   it('沒有 sections 時回傳單一段落，label 用聚會名稱', () => {
-    const sections = selectBySections(HYMNS, OPEN, { now: NOW });
+    const sections = selectBySections(HYMNS, OPEN);
     expect(sections).toHaveLength(1);
     expect(sections[0].label).toBe('出遊');
   });
