@@ -1,0 +1,82 @@
+name: Deploy site to GitHub Pages
+
+# 整個網站 (soaring0616.github.io) 都由這個 workflow 發布：
+#   1. 建置 hymn-picker/（Vite + React，需要 build）
+#   2. 把 repo 裡的靜態檔（首頁、articles/、crossref/ …）和 hymn-picker 的 dist/ 組成 _site/
+#   3. 上傳 _site/ 並部署到 GitHub Pages
+#
+# 前提：repo 的 Settings → Pages → Build and deployment → Source 要是「GitHub Actions」。
+# 第一次跑時 configure-pages 的 enablement: true 會嘗試自動切換；若 deploy 那一步失敗，
+# 就到上面那個設定頁手動改一次即可，之後不用再動。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GITHUB_TOKEN 需要這些權限才能部署 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時只跑一個部署；新的 push 進來就取消排隊中的舊的
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # pnpm 8 對應 hymn-picker/pnpm-lock.yaml 的 lockfileVersion 6.0；
+      # 升級 pnpm 到 9 以上要一併重跑 pnpm install 更新 lockfile，否則 --frozen-lockfile 會失敗。
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
+      # CI 用 Node 20 建置；vite 4 在 Node 16～20 都能跑，所以本機用 Node 16 也沒關係。
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: hymn-picker/pnpm-lock.yaml
+
+      # base 已在 hymn-picker/vite.config.ts 寫死為 /hymn-picker/，這裡不用再帶 VITE_BASE
+      - name: Build hymn-picker
+        working-directory: hymn-picker
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm test
+          pnpm build
+
+      # 組出要發布的完整網站：
+      #   repo 根目錄的所有東西（排除 .git、.github、hymn-picker 原始碼）→ _site/
+      #   hymn-picker/dist/ → _site/hymn-picker/   (對應網址 /hymn-picker/)
+      - name: Assemble site
+        run: |
+          mkdir _site
+          rsync -a --exclude=.git --exclude=.github --exclude=hymn-picker --exclude=_site ./ _site/
+          cp -r hymn-picker/dist _site/hymn-picker
+          echo "== _site top level ==" && ls _site
+          echo "== _site/hymn-picker ==" && find _site/hymn-picker -type f
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

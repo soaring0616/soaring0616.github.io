@@ -23,6 +23,10 @@ export default function App() {
             </Link>
           </h1>
           <span className={styles.tagline}>依聚會類型排出候選，附推薦理由</span>
+          {/* 回到 soaring0616.github.io 首頁。這是站內另一頁，不走 React Router，用一般 <a> */}
+          <a className={styles.homeLink} href="/">
+            ← 回首頁
+          </a>
         </header>
 
         <main>

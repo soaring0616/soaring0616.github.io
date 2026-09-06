@@ -1,9 +1,13 @@
 # 聚會選詩歌 hymn-picker
 
+<https://soaring0616.github.io/hymn-picker/>
+
 幫召會主持聚會的人預備詩歌：選一個聚會類型，依「類別吻合、會眾熟悉度、有沒有副歌、
 最近是不是才唱過」排出候選，每一首都附上**推薦理由**，可以直接拿去跟服事的弟兄姊妹討論。
 
 純前端靜態網站：Vite + React 18 + TypeScript，資料全放在 `public/data/*.json`，沒有後端。
+這是 [soaring0616.github.io](../README.md) 的一個分頁；原始碼放在這個資料夾，
+build 出來的 `dist/` 不進 git，由 repo 根目錄的 GitHub Actions 建置後部署到 `/hymn-picker/`。
 
 ---
 
@@ -36,48 +40,45 @@ Node 是用官方 tarball 解壓到 conda 環境底下的
 （`conda install nodejs` 在這台的舊版 solver 上會卡住數十分鐘，所以走這條路。
 缺點是 `conda list` 看不到它，要移除就直接刪 `opt/node16/` 與那幾個 symlink。）
 
-之後如果換到新機器（glibc ≥ 2.28），可以把 vite 升到 5、vitest 升到 2、pnpm 升到 9，
-程式碼本身不用改，但記得同步改 `.github/workflows/deploy.yml` 裡的版本。
+之後如果換到新機器（glibc ≥ 2.28，例如 Ubuntu 22.04），直接裝 Node 20 即可，
+也可以把 vite 升到 5、vitest 升到 2、pnpm 升到 9，程式碼本身不用改，
+但記得同步改 repo 根目錄 `.github/workflows/deploy.yml` 裡的版本。
 
 </details>
 
 | 指令 | 作用 |
 | --- | --- |
 | `pnpm install` | 安裝相依套件 |
-| `pnpm dev` | 開發伺服器（<http://localhost:5173>），存檔即時更新 |
+| `pnpm dev` | 開發伺服器（<http://localhost:5173/hymn-picker/>），存檔即時更新 |
 | `pnpm test` | 跑 vitest 單元測試（`src/lib/select.test.ts`） |
 | `pnpm test:watch` | 邊改邊跑測試 |
 | `pnpm typecheck` | 只做型別檢查 |
-| `pnpm build` | 型別檢查 + 打包到 `dist/` |
-| `pnpm preview` | 用本機伺服器預覽 `dist/` |
+| `pnpm build` | 型別檢查 + 打包到 `dist/`（不進 git） |
+| `pnpm preview` | 用本機伺服器預覽 `dist/`，網址同樣是 `/hymn-picker/` |
 
-模擬部署後的子路徑：
-
-```bash
-VITE_BASE=/hymn-picker/ pnpm build && pnpm preview
-```
+本機的網址跟正式站一樣都在 `/hymn-picker/` 子路徑底下，因為 `vite.config.ts` 的 `base`
+已經寫死成 `/hymn-picker/`。開 <http://localhost:5173/> 會看到 Vite 提示你改去子路徑，這是正常的。
 
 ---
 
-## 部署到 GitHub Pages
+## 部署
 
-1. 把這個資料夾推成一個獨立的 repo（例如 `hymn-picker`）。
-2. repo 的 **Settings → Pages → Source** 選 **GitHub Actions**。
-3. push 到 `main`，`.github/workflows/deploy.yml` 會自動
-   `pnpm install → pnpm test → pnpm build → 上傳 dist → 部署`。
-4. 網址是 `https://<你的帳號>.github.io/<repo>/`。
+不用手動 build。push 到 `main` 之後，repo 根目錄的 `.github/workflows/deploy.yml` 會：
+
+1. 在 `hymn-picker/` 裡 `pnpm install → pnpm test → pnpm build`
+2. 把 repo 的靜態檔（首頁、`articles/`、`crossref/` …）和 `hymn-picker/dist/` 組成完整網站
+3. 部署到 GitHub Pages，這個 app 落在 <https://soaring0616.github.io/hymn-picker/>
+
+所以**改 `public/data/*.json` 直接 commit + push 就會上線**，不需要在本機有 Node。
+測試沒過（`pnpm test` 紅字）整個網站都不會部署，這是刻意的。
 
 兩個「不這樣做就會壞」的地方：
 
-- **`base`**：`vite.config.ts` 讀環境變數 `VITE_BASE`，預設 `/`。
-  workflow 會自動帶入 `/<repo 名稱>/`，資源路徑才不會 404。
-- **HashRouter**：網址長成 `.../#/hymn/h-623`。`#` 後面的部分不會送到伺服器，
+- **`base`**：`vite.config.ts` 預設 `/hymn-picker/`（可用環境變數 `VITE_BASE` 蓋掉）。
+  這個值決定 JS/CSS 與 `data/*.json` 的路徑，寫錯就會整頁 404。
+- **HashRouter**：網址長成 `.../hymn-picker/#/hymn/h-623`。`#` 後面的部分不會送到伺服器，
   所以重新整理、直接貼網址都不會出現 GitHub Pages 的 404 頁。
   換成 `BrowserRouter` 就會壞掉。
-
-> 注意：`.github/workflows/` 只有在 **repo 根目錄**才會被 GitHub Actions 讀到。
-> 如果你把 `hymn-picker/` 留在別的 repo 的子資料夾裡，這個 workflow 不會執行，
-> 需要把它搬到那個 repo 的根目錄並補上 `working-directory: hymn-picker`。
 
 ---
 
@@ -226,10 +227,11 @@ hymn-picker/
 │  ├─ pages/
 │  │  ├─ Home.tsx           # 選聚會 → 看推薦
 │  │  └─ HymnDetail.tsx     # 單首詳細頁 + 標記唱過
-│  ├─ App.tsx               # HashRouter 與路由表
+│  ├─ App.tsx               # HashRouter 與路由表、頁首（含「回首頁」連結）
 │  └─ main.tsx              # 進入點
-├─ .github/workflows/deploy.yml
-└─ vite.config.ts           # base 讀 VITE_BASE
+└─ vite.config.ts           # base 預設 /hymn-picker/，可用 VITE_BASE 蓋掉
+
+（部署用的 workflow 在 repo 根目錄 ../.github/workflows/deploy.yml，不在這個資料夾裡）
 ```
 
 技術棧：Vite 4 + React 18 + TypeScript + react-router-dom 6（HashRouter）+ vitest。
