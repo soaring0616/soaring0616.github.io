@@ -99,9 +99,16 @@ export function scoreHymn(
     reasons.push(`主題相符：${opts.theme}`);
   }
 
-  // --- familiarity：大家會不會唱，目前只看書別 ---
-  const familiarity = BOOK_FAMILIARITY[hymn.book];
+  // --- familiarity：大家會不會唱。資料有填就用資料的，沒填就依書別 ---
+  const bookDefault = BOOK_FAMILIARITY[hymn.book];
+  const familiarity =
+    hymn.familiarity === undefined
+      ? bookDefault
+      : Math.min(1, Math.max(0, hymn.familiarity));
   reasons.push(`${BOOK_LABEL[hymn.book]}第 ${hymn.no} 首`);
+  if (hymn.familiarity !== undefined) {
+    reasons.push(familiarity < bookDefault ? '會眾較不熟，往後排' : '會眾熟悉');
+  }
 
   // --- chorus：有副歌比較好帶 ---
   const chorus = hymn.hasChorus ? 1 : 0;
@@ -155,21 +162,41 @@ export function selectHymns(
  * 有 sections 的聚會（例如擘餅：記念主 → 敬拜父）用這個。
  * 每一段套用自己的 include，但沿用聚會層級的 exclude 與 weights。
  * 沒有 sections 時回傳單一段落，方便 UI 統一處理。
+ *
+ * 同一首詩只會出現在一個段落：歸到「命中該段 include 類別最多」的段落，
+ * 平手時放前面的段落。不然像「讚美主＋記念主」的詩會在記念主、敬拜父兩段都列一次。
  */
 export function selectBySections(
   hymns: Hymn[],
   meetingType: MeetingType,
   opts: SelectOptions = {},
 ): SectionResult[] {
-  if (!meetingType.sections || meetingType.sections.length === 0) {
+  const sections = meetingType.sections;
+  if (!sections || sections.length === 0) {
     return [
       { label: meetingType.label, candidates: selectHymns(hymns, meetingType, opts) },
     ];
   }
-  return meetingType.sections.map((section) => ({
+
+  // 每首詩的「歸屬段落」索引；一個都沒命中的詩不會有歸屬（後面 selectHymns 也會濾掉）
+  const home = new Map<string, number>();
+  hymns.forEach((h) => {
+    let best = -1;
+    let bestHits = 0;
+    sections.forEach((s, i) => {
+      const hits = matchedCategories(h, s.include).length;
+      if (hits > bestHits) {
+        best = i;
+        bestHits = hits;
+      }
+    });
+    if (best >= 0) home.set(h.id, best);
+  });
+
+  return sections.map((section, i) => ({
     label: section.label,
     candidates: selectHymns(
-      hymns,
+      hymns.filter((h) => home.get(h.id) === i),
       { ...meetingType, include: section.include, sections: undefined },
       opts,
     ),

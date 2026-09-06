@@ -34,6 +34,11 @@ export interface Hymn {
   time?: string;
   meter?: string;
   hasChorus: boolean;
+  /**
+   * 會眾熟悉度 0–1。不填就依書別的預設（大本 0.6／補充本 0.45／新歌 0.3）。
+   * 不常唱的詩填低一點（例如 0.2）就會往後排；大家都會的填高一點。
+   */
+  familiarity?: number;
   /** hymnal.net 英文號 */
   enNo?: number;
   urls: { hymnal?: string; luke54?: string[] };

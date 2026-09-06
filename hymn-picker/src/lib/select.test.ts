@@ -84,6 +84,16 @@ describe('selectHymns', () => {
     expect(ids.indexOf('h-2')).toBeLessThan(ids.indexOf('s-4'));
   });
 
+  it('familiarity 欄位會蓋過書別預設：不常唱的往後排並標註', () => {
+    const common = hymn({ id: 'h-10', no: 10, categories: ['記念主'] });
+    const rare = hymn({ id: 'h-11', no: 11, categories: ['記念主'], familiarity: 0.1 });
+    const ids = selectHymns([rare, common], TABLE).map((c) => c.hymn.id);
+    expect(ids).toEqual(['h-10', 'h-11']);
+    const rareScored = scoreHymn(rare, TABLE);
+    expect(rareScored.reasons).toContain('會眾較不熟，往後排');
+    expect(scoreHymn(common, TABLE).reasons).not.toContain('會眾較不熟，往後排');
+  });
+
   it('theme 關鍵字命中標題時加分並標註', () => {
     const withTheme = scoreHymn(HYMNS[4], OPEN, { theme: '天上的家' });
     const without = scoreHymn(HYMNS[4], OPEN);
@@ -109,6 +119,25 @@ describe('selectBySections', () => {
       's-4',
     ]);
     expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-2']);
+  });
+
+  it('同一首詩只歸到一個段落：命中類別最多的那段，平手放前面', () => {
+    const table2: MeetingType = {
+      ...TABLE,
+      sections: [
+        { label: '記念主', include: ['記念主', '主的救贖'] },
+        { label: '敬拜父', include: ['敬拜父', '讚美主'] },
+      ],
+    };
+    const both = [
+      // 兩段各命中 1 個 → 平手 → 前面的「記念主」
+      hymn({ id: 'h-20', no: 20, categories: ['記念主', '敬拜父'] }),
+      // 記念主段命中 1、敬拜父段命中 2 → 「敬拜父」
+      hymn({ id: 'h-21', no: 21, categories: ['主的救贖', '敬拜父', '讚美主'] }),
+    ];
+    const sections = selectBySections(both, table2);
+    expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['h-20']);
+    expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-21']);
   });
 
   it('沒有 sections 時回傳單一段落，label 用聚會名稱', () => {

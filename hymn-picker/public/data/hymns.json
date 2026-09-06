@@ -55,6 +55,7 @@
     "time": "4/4",
     "meter": "7.6.7.6.D",
     "hasChorus": false,
+    "familiarity": 0.1,
     "enNo": 95,
     "urls": {
       "hymnal": "https://www.hymnal.net/en/hymn/ch/82",
