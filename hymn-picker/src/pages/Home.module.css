@@ -1,0 +1,49 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.intro {
+  margin: 0;
+  color: #6b6255;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.status {
+  padding: 22px;
+  border: 1px dashed #dcd7cc;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #6b6255;
+}
+
+.error {
+  border-color: #e0cdca;
+  background: #f9f0ef;
+  color: #8a4f47;
+}
+
+.footnote {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #8a7f6d;
+}
+
+.reset {
+  font: inherit;
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  margin-left: 8px;
+  border: 1px solid #cfc7b6;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}

@@ -1,0 +1,56 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  border-bottom: 2px solid #e3ddd0;
+  padding-bottom: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.count {
+  font-size: 0.8rem;
+  color: #8a7f6d;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+.empty {
+  margin: 0;
+  padding: 18px;
+  border: 1px dashed #dcd7cc;
+  border-radius: 10px;
+  color: #6b6255;
+  font-size: 0.9rem;
+  background: #fffdf8;
+}
+
+.more {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border: 1px solid #cfc7b6;
+  border-radius: 7px;
+  background: #fff;
+  color: #4a4335;
+  cursor: pointer;
+}
+
+.more:hover {
+  background: #f5f1e7;
+}

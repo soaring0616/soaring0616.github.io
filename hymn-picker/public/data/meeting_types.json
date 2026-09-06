@@ -1,0 +1,102 @@
+[
+  {
+    "id": "table",
+    "label": "主日擘餅聚會",
+    "include": ["記念主", "主的救贖", "基督的所是", "敬拜父", "讚美主"],
+    "exclude": ["祈求", "渴慕", "福音", "傳福音", "兒童"],
+    "weights": { "familiarity": 0.3, "chorus": 0.15, "themeMatch": 0.55 },
+    "sections": [
+      { "label": "記念主", "include": ["記念主", "主的救贖", "基督的所是"] },
+      { "label": "敬拜父", "include": ["敬拜父", "讚美主"] }
+    ],
+    "suggestedCount": 4
+  },
+  {
+    "id": "prophesy",
+    "label": "申言聚會",
+    "include": ["召會生活", "教會", "經歷神", "基督的所是", "聖靈"],
+    "exclude": ["兒童", "福音"],
+    "weights": { "familiarity": 0.3, "chorus": 0.1, "themeMatch": 0.6 },
+    "suggestedCount": 3
+  },
+  {
+    "id": "prayer",
+    "label": "禱告聚會",
+    "include": ["禱告", "祈求", "渴慕", "爭戰", "聖靈"],
+    "exclude": ["兒童"],
+    "weights": { "familiarity": 0.35, "chorus": 0.1, "themeMatch": 0.55 },
+    "suggestedCount": 3
+  },
+  {
+    "id": "smallgroup",
+    "label": "小排聚會",
+    "include": ["召會生活", "經歷神", "感恩", "安慰"],
+    "exclude": [],
+    "weights": { "familiarity": 0.4, "chorus": 0.2, "themeMatch": 0.4 },
+    "suggestedCount": 3
+  },
+  {
+    "id": "gospel",
+    "label": "福音聚會",
+    "include": ["福音", "傳福音", "得救的確據", "主的救贖"],
+    "exclude": ["記念主", "敬拜父"],
+    "weights": { "familiarity": 0.45, "chorus": 0.25, "themeMatch": 0.3 },
+    "suggestedCount": 3
+  },
+  {
+    "id": "newbeliever",
+    "label": "初信聚會",
+    "include": ["得救的確據", "經歷神", "禱告", "聖經", "感恩"],
+    "exclude": ["爭戰"],
+    "weights": { "familiarity": 0.45, "chorus": 0.2, "themeMatch": 0.35 },
+    "suggestedCount": 3
+  },
+  {
+    "id": "youngpeople",
+    "label": "青少年聚會",
+    "include": ["青年", "獻上自己", "召會生活", "爭戰", "渴慕"],
+    "exclude": ["兒童"],
+    "weights": { "familiarity": 0.3, "chorus": 0.3, "themeMatch": 0.4 },
+    "suggestedCount": 4
+  },
+  {
+    "id": "children",
+    "label": "兒童聚會",
+    "include": ["兒童", "讚美主", "感恩"],
+    "exclude": ["爭戰", "渴慕"],
+    "weights": { "familiarity": 0.3, "chorus": 0.4, "themeMatch": 0.3 },
+    "suggestedCount": 4
+  },
+  {
+    "id": "outing",
+    "label": "出遊 / 相調",
+    "include": [],
+    "exclude": ["爭戰"],
+    "weights": { "familiarity": 0.7, "chorus": 0.2, "themeMatch": 0.1 },
+    "suggestedCount": 5
+  },
+  {
+    "id": "training",
+    "label": "訓練 / 特會",
+    "include": ["渴慕", "獻上自己", "爭戰", "召會生活", "經歷神"],
+    "exclude": ["兒童"],
+    "weights": { "familiarity": 0.25, "chorus": 0.1, "themeMatch": 0.65 },
+    "suggestedCount": 4
+  },
+  {
+    "id": "special",
+    "label": "特別聚會",
+    "include": [],
+    "exclude": ["兒童"],
+    "weights": { "familiarity": 0.35, "chorus": 0.15, "themeMatch": 0.5 },
+    "suggestedCount": 4
+  },
+  {
+    "id": "custom",
+    "label": "自訂",
+    "include": [],
+    "exclude": [],
+    "weights": { "familiarity": 0.33, "chorus": 0.33, "themeMatch": 0.34 },
+    "suggestedCount": 4
+  }
+]

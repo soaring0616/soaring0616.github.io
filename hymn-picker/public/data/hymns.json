@@ -1,0 +1,253 @@
+[
+  {
+    "id": "h-623",
+    "book": "hymnal",
+    "no": 623,
+    "title": "主，我們就是為此聚集",
+    "firstLine": "主，我們就是為此聚集，同來記念你的愛",
+    "categories": ["記念主", "主的救贖", "基督的所是"],
+    "key": "降E大調",
+    "time": "4/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 213,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/623",
+      "luke54": ["https://www.luke54.org/hymn/ch/623"]
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "餅和杯把我們帶回十字架前，也帶到主的身位面前。",
+        "source": "hymnal.net 詩歌背景",
+        "url": "https://www.hymnal.net/en/hymn/ch/623"
+      },
+      {
+        "type": "scripture",
+        "text": "你們每逢喫這餅，喝這杯，是宣告主的死，直等到祂來。",
+        "source": "林前 11:26",
+        "url": "https://cwwl.twgbr.org/verse/1co/11/26"
+      },
+      {
+        "type": "tip",
+        "text": "擘餅第一首用這首起頭很順，副歌可以重複一次再過渡到下一首。",
+        "source": "帶詩歌筆記",
+        "url": "https://www.luke54.org/hymn/ch/623"
+      }
+    ]
+  },
+  {
+    "id": "h-82",
+    "book": "hymnal",
+    "no": 82,
+    "title": "父啊，我們讚美你的名",
+    "firstLine": "父啊，我們讚美你的名，你是眾光之源",
+    "categories": ["敬拜父", "讚美主", "感恩"],
+    "key": "F大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 26,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/82",
+      "luke54": ["https://www.luke54.org/hymn/ch/82"]
+    },
+    "notes": [
+      {
+        "type": "story",
+        "text": "這首詩歌原是清晨敬拜用的，字句短、句句都是對父的稱謝。",
+        "source": "hymnal.net 詩歌背景",
+        "url": "https://www.hymnal.net/en/hymn/ch/82"
+      },
+      {
+        "type": "scripture",
+        "text": "各樣美善的賞賜，和各樣完備的恩賜，都是從上頭來的。",
+        "source": "雅 1:17",
+        "url": "https://cwwl.twgbr.org/verse/jas/1/17"
+      }
+    ]
+  },
+  {
+    "id": "h-147",
+    "book": "hymnal",
+    "no": 147,
+    "title": "哦，主耶穌，你是誰",
+    "firstLine": "哦，主耶穌，你是誰？你是神，也是人",
+    "categories": ["基督的所是", "記念主", "經歷神"],
+    "key": "G大調",
+    "time": "4/4",
+    "meter": "7.6.7.6 副",
+    "hasChorus": true,
+    "enNo": 178,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/147",
+      "luke54": ["https://www.luke54.org/hymn/ch/147"]
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "一節一節把基督的身位擺出來，唱到副歌時很自然就轉成敬拜。",
+        "source": "hymnal.net 詩歌背景",
+        "url": "https://www.hymnal.net/en/hymn/ch/147"
+      },
+      {
+        "type": "tip",
+        "text": "節數多，聚會中選 1、2、4 節就夠，不必唱完。",
+        "source": "帶詩歌筆記",
+        "url": "https://www.luke54.org/hymn/ch/147"
+      }
+    ]
+  },
+  {
+    "id": "h-786",
+    "book": "hymnal",
+    "no": 786,
+    "title": "主，我願全歸你",
+    "firstLine": "主，我願全歸你，不再為自己活",
+    "categories": ["獻上自己", "渴慕", "召會生活", "青年"],
+    "key": "降B大調",
+    "time": "4/4",
+    "meter": "8.8.8.8",
+    "hasChorus": false,
+    "enNo": 437,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/786",
+      "luke54": ["https://www.luke54.org/hymn/ch/786"]
+    },
+    "notes": [
+      {
+        "type": "story",
+        "text": "常用在訓練與青少年特會的奉獻時刻，唱完通常直接進禱告。",
+        "source": "帶詩歌筆記",
+        "url": "https://www.luke54.org/hymn/ch/786"
+      },
+      {
+        "type": "scripture",
+        "text": "將身體獻上，當作聖別並討神喜悅的活祭。",
+        "source": "羅 12:1",
+        "url": "https://cwwl.twgbr.org/verse/rom/12/1"
+      }
+    ]
+  },
+  {
+    "id": "s-12",
+    "book": "supplement",
+    "no": 12,
+    "title": "有一位神",
+    "firstLine": "有一位神，深哉，祂的豐富",
+    "categories": ["敬拜父", "讚美主", "基督的所是"],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "不規則 副",
+    "hasChorus": true,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/12",
+      "luke54": ["https://www.luke54.org/hymn/ts/12"]
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "從神的所是唱到神的分賜，是很好的敬拜父段落起頭。",
+        "source": "hymnal.net 詩歌背景",
+        "url": "https://www.hymnal.net/en/hymn/ts/12"
+      },
+      {
+        "type": "scripture",
+        "text": "深哉，神的豐富、智慧和知識！",
+        "source": "羅 11:33",
+        "url": "https://cwwl.twgbr.org/verse/rom/11/33"
+      }
+    ]
+  },
+  {
+    "id": "s-201",
+    "book": "supplement",
+    "no": 201,
+    "title": "來罷，浪子，來罷",
+    "firstLine": "來罷，浪子，來罷，父家的門為你開",
+    "categories": ["福音", "傳福音", "得救的確據"],
+    "key": "C大調",
+    "time": "4/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/201",
+      "luke54": ["https://www.luke54.org/hymn/ts/201"]
+    },
+    "notes": [
+      {
+        "type": "story",
+        "text": "旋律好記，福音聚會第一次來的朋友多半聽兩次就能跟。",
+        "source": "帶詩歌筆記",
+        "url": "https://www.luke54.org/hymn/ts/201"
+      },
+      {
+        "type": "scripture",
+        "text": "相離還遠，他父親看見，就動了慈心，跑去抱著他的頸項。",
+        "source": "路 15:20",
+        "url": "https://cwwl.twgbr.org/verse/luk/15/20"
+      }
+    ]
+  },
+  {
+    "id": "n-1158",
+    "book": "new",
+    "no": 1158,
+    "title": "在祂裡面",
+    "firstLine": "在祂裡面我尋得安息",
+    "categories": ["經歷神", "安慰", "召會生活"],
+    "key": "A大調",
+    "time": "6/8",
+    "meter": "不規則",
+    "hasChorus": false,
+    "enNo": 1158,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/nt/1158",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "節奏舒緩，適合小排或禱告聚會中間的轉折。",
+        "source": "hymnal.net 詩歌背景",
+        "url": "https://www.hymnal.net/en/hymn/nt/1158"
+      },
+      {
+        "type": "tip",
+        "text": "新歌會眾不一定會唱，建議先放一次錄音再帶。",
+        "source": "帶詩歌筆記"
+      }
+    ]
+  },
+  {
+    "id": "n-1290",
+    "book": "new",
+    "no": 1290,
+    "title": "小小的我，大大的主",
+    "firstLine": "小小的我，有一位大大的主",
+    "categories": ["兒童", "讚美主", "感恩"],
+    "key": "C大調",
+    "time": "2/4",
+    "meter": "不規則 副",
+    "hasChorus": true,
+    "enNo": 1290,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/nt/1290",
+      "luke54": ["https://www.luke54.org/hymn/nt/1290"]
+    },
+    "notes": [
+      {
+        "type": "tip",
+        "text": "可以配動作，兒童排最後一首用來收尾很合適。",
+        "source": "帶詩歌筆記",
+        "url": "https://www.luke54.org/hymn/nt/1290"
+      },
+      {
+        "type": "scripture",
+        "text": "你從嬰孩和喫奶的口中，得著了完全的讚美。",
+        "source": "太 21:16",
+        "url": "https://cwwl.twgbr.org/verse/mat/21/16"
+      }
+    ]
+  }
+]

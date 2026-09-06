@@ -1,0 +1,62 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# GITHUB_TOKEN 需要這些權限才能部署 Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時只跑一個部署；新的 push 進來就取消排隊中的舊的
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # pnpm 8 對應 pnpm-lock.yaml 的 lockfileVersion 6.0；
+      # 升級 pnpm 到 9 以上要一併重跑 pnpm install 更新 lockfile，否則 --frozen-lockfile 會失敗。
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 8.15.9
+
+      # 本機是 Node 16（CentOS 7 的 glibc 2.17 跑不動 Node 18+），
+      # CI 用 Node 20 建置沒問題，vite 4 兩邊都支援。
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm test
+
+      # base 必須是 /<repo>/，資源路徑才不會 404。
+      # 若之後改成部署在網域根目錄（<user>.github.io），把這行改成 VITE_BASE=/
+      - run: pnpm build
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

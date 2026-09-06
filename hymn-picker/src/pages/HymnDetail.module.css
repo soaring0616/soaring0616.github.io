@@ -1,0 +1,86 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.back {
+  font-size: 0.85rem;
+  color: #38618c;
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 18px;
+  border: 1px solid #dcd7cc;
+  border-radius: 10px;
+  background: #fffdf8;
+}
+
+.button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 7px 14px;
+  border: 1px solid #cfc7b6;
+  border-radius: 7px;
+  background: #fff;
+  color: #4a4335;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #f5f1e7;
+}
+
+.sung {
+  font-size: 0.85rem;
+  color: #6b6255;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 18px;
+  border: 1px solid #dcd7cc;
+  border-radius: 10px;
+  background: #fffdf8;
+}
+
+.linksTitle {
+  margin: 0;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: #8a7f6d;
+  text-transform: uppercase;
+}
+
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.88rem;
+}
+
+.link {
+  color: #38618c;
+}
+
+.status {
+  padding: 22px;
+  border: 1px dashed #dcd7cc;
+  border-radius: 10px;
+  background: #fffdf8;
+  color: #6b6255;
+}
