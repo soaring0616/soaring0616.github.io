@@ -156,7 +156,7 @@ props 型別怎麼定、**為什麼這個元件完全沒有 state**、**為什�
 | 欄位 | 必填 | 說明 |
 | --- | :-: | --- |
 | `id` | ✅ | 全域唯一。`h-` 大本／`s-` 補充本／`n-` hymnal.net 新歌，後面接號碼，例如 `h-623`。**這是 React 的 `key`，一旦發布就不要再改**。 |
-| `book` | ✅ | `hymnal`＝大本｜`supplement`＝補充本｜`new`＝新歌 |
+| `book` | ✅ | `hymnal`＝大本（hymnal.net `ch/`，1–780 首）｜`supplement`＝補充本（`ts/`）｜`new`＝hymnal.net 新歌 New Songs（`ns/`；注意 `nt/` 是 New Tunes 新調，不是新歌） |
 | `no` | ✅ | 該本裡的號碼（數字，不是字串） |
 | `title` | ✅ | 中文標題 |
 | `firstLine` |  | 第一句歌詞，卡片上顯示在標題底下幫忙辨認 |
@@ -211,7 +211,7 @@ props 型別怎麼定、**為什麼這個元件完全沒有 state**、**為什�
 ```
 hymn-picker/
 ├─ public/data/
-│  ├─ hymns.json            # 詩歌主資料（8 首範例）
+│  ├─ hymns.json            # 詩歌主資料（目前 6 首，已對照 hymnal.net 校正）
 │  └─ meeting_types.json    # 12 種聚會的選詩規則
 ├─ src/
 │  ├─ types.ts              # 所有型別定義（資料的合約）
@@ -237,8 +237,16 @@ hymn-picker/
 技術棧：Vite 4 + React 18 + TypeScript + react-router-dom 6（HashRouter）+ vitest。
 樣式用 CSS Modules（`*.module.css`），沒有 UI 框架、沒有 Tailwind。
 
-## 範例資料的免責聲明
+## 資料來源與校正狀態
 
-`hymns.json` 裡的 8 首是**示範用假資料**：號碼、標題、調號、類別都只是合理的佔位值，
-`notes` 的網址用了 hymnal.net / luke54.org / cwwl.twgbr.org 的真實網域但路徑是編的。
-正式使用前請以 <https://www.hymnal.net> 為準逐首校正。
+`hymns.json` 目前的 6 首，標題、第一句、調號、拍號、韻律、有無副歌、英文號與 `notes` 裡的
+摘句、作者資料，都是 2026-09-06 直接從 <https://www.hymnal.net> 對應頁面抄下來的。
+**`categories` 是依歌詞內容與 hymnal.net 的分類初步對到本專案的類別詞彙**，帶詩歌的人請再校對。
+`urls.luke54` 目前都是空陣列，沒有查證過的連結就不放。
+
+新增詩歌時的兩個提醒：
+
+- hymnal.net 對**不存在的號碼不會回 404**，而是隨機回一首字序打亂的詩歌。
+  抓資料時要確認頁面上的編號標籤（例如 `C623`、`Cs201`、`NS1158`）跟你要的號碼一致，且歌詞是通順的。
+  大本在 hymnal.net 只到 780 首，超過的號碼一律是這種誘餌頁。
+- 早期的假資料曾把大本 786、新歌 1290 列進來，這兩個號碼在 hymnal.net 上都不存在，已移除。
