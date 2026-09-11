@@ -1025,5 +1025,685 @@
         "url": "https://www.hymnal.net/en/hymn/ns/1158"
       }
     ]
+  },
+  {
+    "id": "h-724",
+    "book": "hymnal",
+    "no": 724,
+    "title": "照我本相",
+    "firstLine": "照我本相，無善足稱，惟你流血，替我受懲",
+    "categories": [
+      "福音",
+      "主的救贖"
+    ],
+    "key": "降E大調",
+    "time": "6/4",
+    "meter": "8.8.8.8",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "enNo": 1048,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/724",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "照我本相，無善足稱，惟你流血，替我受懲，並且召我就你得生；救主耶穌，我來！我來！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/724"
+      },
+      {
+        "type": "scripture",
+        "text": "凡父所賜給我的人，必到我這裡來；到我這裡來的，我總不把他丟棄。",
+        "source": "約 6:37"
+      },
+      {
+        "type": "story",
+        "text": "詞 Charlotte Elliott (1789–1871)；曲 William Batchelder Bradbury (1816–1868)；hymnal.net 分類「福音／就主」，英文版 E1048。福音聚會呼召時最常用的一首；每節末句都是「救主耶穌，我來！我來！」。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/724"
+      }
+    ]
+  },
+  {
+    "id": "h-731",
+    "book": "hymnal",
+    "no": 731,
+    "title": "永久磐石為我開",
+    "firstLine": "永久磐石為我開，讓我藏身在你懷",
+    "categories": [
+      "福音",
+      "主的救贖"
+    ],
+    "key": "降B大調",
+    "time": "3/4",
+    "meter": "7.7.7.7.7.7",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "enNo": 1058,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/731",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "永久磐石為我開，讓我藏身在你懷；願你所流血與水，解決我的雙重罪：贖我免去它永刑，救我脫離它權能。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/731"
+      },
+      {
+        "type": "scripture",
+        "text": "那磐石就是基督。",
+        "source": "林前 10:4"
+      },
+      {
+        "type": "story",
+        "text": "詞 Augustus Montague Toplady (1740–1778)；曲 Thomas Hastings (1784–1872)；hymnal.net 分類「福音／呼求」，英文版 E1058。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/731"
+      }
+    ]
+  },
+  {
+    "id": "h-733",
+    "book": "hymnal",
+    "no": 733,
+    "title": "進入我心",
+    "firstLine": "來進入我心，主耶穌，我今願悔改相信",
+    "categories": [
+      "福音",
+      "兒童"
+    ],
+    "key": "F大調",
+    "time": "6/4",
+    "meter": "9.7.9.7 副",
+    "hasChorus": true,
+    "familiarity": 0.6,
+    "enNo": 1061,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/733",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "進入我心！進入我心！來進入我心，主耶穌！求你現今進來施恩，來進入我心，主耶穌！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/733"
+      },
+      {
+        "type": "scripture",
+        "text": "看哪，我站在門外叩門，若有聽見我聲音就開門的，我要進到他那裡去。",
+        "source": "啟 3:20"
+      },
+      {
+        "type": "story",
+        "text": "詞 Harry Dudley Clarke；曲 Harry Dudley Clarke (1888–1957)；hymnal.net 分類「福音／呼求」，英文版 E1061。副歌短、旋律簡單，兒童與初次來的朋友都能很快跟上。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/733"
+      }
+    ]
+  },
+  {
+    "id": "h-664",
+    "book": "hymnal",
+    "no": 664,
+    "title": "速興起傳福音",
+    "firstLine": "速興起傳福音，速搶救靈魂",
+    "categories": [
+      "傳福音",
+      "福音"
+    ],
+    "key": "A大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "familiarity": 0.5,
+    "enNo": 1358,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/664",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "速興起傳福音！速搶救靈魂！你為何仍忍心，看人沉淪？",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/664"
+      },
+      {
+        "type": "scripture",
+        "text": "要收的莊稼多，作工的人少；所以你們當求莊稼的主，催趕工人收祂的莊稼。",
+        "source": "太 9:37-38"
+      },
+      {
+        "type": "story",
+        "text": "詞 Fanny Jane Crosby (1820–1915)；曲 William Howard Doane (1832–1915)；hymnal.net 分類「傳揚福音／搶救靈魂」，英文版 E1358。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/664"
+      }
+    ]
+  },
+  {
+    "id": "h-571",
+    "book": "hymnal",
+    "no": 571,
+    "title": "何等朋友我主耶穌",
+    "firstLine": "何等朋友，我主耶穌，擔我罪孽負我憂",
+    "categories": [
+      "禱告",
+      "安慰",
+      "福音"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "8.7.8.7.D",
+    "hasChorus": false,
+    "familiarity": 0.8,
+    "enNo": 789,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/571",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "何等朋友，我主耶穌！擔我罪孽負我憂；何等權利，能將難處到主面前去祈求。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/571"
+      },
+      {
+        "type": "scripture",
+        "text": "應當一無罣慮，只要凡事藉著禱告、祈求，帶著感謝，將你們所要的告訴神。",
+        "source": "腓 4:6"
+      },
+      {
+        "type": "story",
+        "text": "詞 Joseph Scriven；曲 Charles Crozat Converse (1834–1918)；hymnal.net 分類「禱告／告訴主」，英文版 E789。華語教會最耳熟能詳的詩歌之一，福音朋友多半也聽過旋律。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/571"
+      }
+    ]
+  },
+  {
+    "id": "h-722",
+    "book": "hymnal",
+    "no": 722,
+    "title": "飄渺人生何短暫",
+    "firstLine": "飄渺人生何短暫，好似浮雲現即散",
+    "categories": [
+      "福音"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "7.7.7.3 副",
+    "hasChorus": true,
+    "familiarity": 0.4,
+    "enNo": 1043,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/722",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "飄渺人生何短暫，好似浮雲現即散，又似幻夢醒就完：要及時！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/722"
+      },
+      {
+        "type": "scripture",
+        "text": "你們原是一片雲霧，出現少時就不見了。",
+        "source": "雅 4:14"
+      },
+      {
+        "type": "story",
+        "text": "詞 Charles Harrison Mason (1866–1961)；曲 William James Kirkpatrick (1838–1921)；hymnal.net 分類「福音／勸導」，英文版 E1043。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/722"
+      }
+    ]
+  },
+  {
+    "id": "h-203",
+    "book": "hymnal",
+    "no": 203,
+    "title": "生命活水的江河",
+    "firstLine": "生命活水的江河，流自天上的寶座",
+    "categories": [
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "F大調",
+    "time": "6/4",
+    "meter": "7.7.8.7 副",
+    "hasChorus": true,
+    "familiarity": 0.55,
+    "enNo": 251,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/203",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "生命活水的江河，人人可以白喝；願這活水通過我，流到眾人，解乾渴。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/203"
+      },
+      {
+        "type": "scripture",
+        "text": "天使又指示我在城內街道當中一道生命水的河，明亮如水晶，從神和羔羊的寶座流出來。",
+        "source": "啟 22:1"
+      },
+      {
+        "type": "story",
+        "text": "詞 G. R. H. Wood；曲 B. Line; Chorus by D. Wood；hymnal.net 分類「聖靈的豐滿／活水」，英文版 E251。副歌「人人可以白喝」把約翰福音七章與啟示錄二十二章的活水連在一起。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/203"
+      }
+    ]
+  },
+  {
+    "id": "h-202",
+    "book": "hymnal",
+    "no": 202,
+    "title": "吩咐磐石發出活水",
+    "firstLine": "在曠野加低斯，以色列百姓",
+    "categories": [
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "降D大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "familiarity": 0.4,
+    "enNo": 248,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/202",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "吩咐磐石發出活水來！聖靈早已賜，早與你同在；一切的豐富，等著你接受；你若肯信服，必享祂富有。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/202"
+      },
+      {
+        "type": "scripture",
+        "text": "你們要在他們眼前吩咐磐石發出水來。",
+        "source": "民 20:8"
+      },
+      {
+        "type": "story",
+        "text": "詞 Albert Benjamin Simpson (1843–1919)；曲 George Coles Stebbins (1846–1945)；hymnal.net 分類「聖靈的豐滿／活水」，英文版 E248。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/202"
+      }
+    ]
+  },
+  {
+    "id": "h-212",
+    "book": "hymnal",
+    "no": 212,
+    "title": "聖靈的大風",
+    "firstLine": "聖靈的大風，從天來吹動",
+    "categories": [
+      "聖靈",
+      "祈求",
+      "經歷神"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "familiarity": 0.4,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/212",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "吹到！吹到！聖靈大風吹到！覆罩！覆罩！靈恩大雲覆罩！焚燒！焚燒！聖別烈火焚燒！顯耀！顯耀！神精金顯耀！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/212"
+      },
+      {
+        "type": "scripture",
+        "text": "忽然從天上有響聲下來，好像一陣暴風吹過，充滿了他們所坐的屋子。",
+        "source": "徒 2:2"
+      },
+      {
+        "type": "story",
+        "text": "曲 William Fiske Sherwin (1826–1888)；hymnal.net 分類「聖靈的豐滿／風」。副歌四組「吹到／覆罩／焚燒／顯耀」是全會眾一起呼喊的高潮。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/212"
+      }
+    ]
+  },
+  {
+    "id": "h-621",
+    "book": "hymnal",
+    "no": 621,
+    "title": "福哉以愛聯擊",
+    "firstLine": "福哉以愛聯繫，聖徒心心相契",
+    "categories": [
+      "召會生活",
+      "教會",
+      "安慰"
+    ],
+    "key": "F大調",
+    "time": "3/4",
+    "meter": "6.6.8.6",
+    "hasChorus": false,
+    "familiarity": 0.55,
+    "enNo": 860,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/621",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "福哉以愛聯繫，聖徒心心相契；彼此交通一情一意，真如在天無異。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/621"
+      },
+      {
+        "type": "scripture",
+        "text": "在這一切之外，要穿上愛，愛是全德的聯索。",
+        "source": "西 3:14"
+      },
+      {
+        "type": "story",
+        "text": "詞 John Fawcett (1740–1817)；曲 Hans Georg Nageli (1773–1836)；hymnal.net 分類「召會／交通」，英文版 E860。搬家、送行或相調結束時常唱的一首。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/621"
+      }
+    ]
+  },
+  {
+    "id": "s-830",
+    "book": "supplement",
+    "no": 830,
+    "title": "呼喊主名必得救",
+    "firstLine": "呼喊主的名，呼喊主的名",
+    "categories": [
+      "福音",
+      "得救的確據",
+      "兒童"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "familiarity": 0.8,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/830",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "呼喊主的名，呼喊主的名，呼喊主的名必得救！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/830"
+      },
+      {
+        "type": "scripture",
+        "text": "因為凡呼求主名的，就必得救。",
+        "source": "羅 10:13"
+      },
+      {
+        "type": "story",
+        "text": "曲 William James Kirkpatrick (1838–1921)；hymnal.net 分類「事奉與福音」。整首只有「呼喊主的名必得救」一句反覆，最適合帶新朋友一起開口。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/830"
+      }
+    ]
+  },
+  {
+    "id": "s-842",
+    "book": "supplement",
+    "no": 842,
+    "title": "耶穌─愛的名字",
+    "firstLine": "在那迷失年代，我曾尋訪愛的天地",
+    "categories": [
+      "福音",
+      "青年",
+      "經歷神"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/842",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "在那迷失年代，我曾尋訪愛的天地，明知多人愛我，但我仍是寂寞不樂；直到我有耶穌─神賜給人愛的名字，響亮在我心靈，我的年代因祂常青。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/842"
+      },
+      {
+        "type": "scripture",
+        "text": "神愛我們的心，我們也知道也信。神就是愛。",
+        "source": "約壹 4:16"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「事奉與福音」。青年福音聚會常用的見證式詩歌，第一節寫尋找愛的迷失，第二節寫得著主之後的滿足。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/842"
+      }
+    ]
+  },
+  {
+    "id": "s-876",
+    "book": "supplement",
+    "no": 876,
+    "title": "神就是愛",
+    "firstLine": "神就是愛，祂差獨生愛子前來",
+    "categories": [
+      "福音",
+      "主的救贖",
+      "感恩"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "hasChorus": true,
+    "familiarity": 0.6,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/876",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "神就是愛，祂差獨生愛子前來；當世人敗壞，正墮落無奈，竟來與人同在。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/876"
+      },
+      {
+        "type": "scripture",
+        "text": "神差祂獨生子到世間來，使我們藉著祂得生，神的愛在此就顯明了。",
+        "source": "約壹 4:9"
+      },
+      {
+        "type": "story",
+        "text": "詞曲 Howard Higashi（1937–1998），中文為譯詞；hymnal.net 分類「事奉與福音」。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/876"
+      }
+    ]
+  },
+  {
+    "id": "s-818",
+    "book": "supplement",
+    "no": 818,
+    "title": "人生意義",
+    "firstLine": "人生意義是何在，答案今已找出來",
+    "categories": [
+      "福音",
+      "青年",
+      "得救的確據"
+    ],
+    "key": "C大調",
+    "time": "2/4",
+    "meter": "7.7.7.7.D",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "enNo": 1326,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/818",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "人生意義是何在？答案今已找出來！喊主耶穌嘗嘗看！祂是實際真無限！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/818"
+      },
+      {
+        "type": "scripture",
+        "text": "你們要嘗嘗主恩的滋味，便知道祂是美善。",
+        "source": "詩 34:8"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「事奉與福音」，英文版 E1326。單節、快板；「喊主耶穌嘗嘗看」是整首的重點，唱完可以直接帶新朋友呼求主名。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/818"
+      }
+    ]
+  },
+  {
+    "id": "s-713",
+    "book": "supplement",
+    "no": 713,
+    "title": "阿！可愛的召會生活",
+    "firstLine": "阿！可愛的召會生活，我們在這裡，天天有喫喝",
+    "categories": [
+      "召會生活",
+      "教會",
+      "青年"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "familiarity": 0.65,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/713",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "快快進入方舟，同過召會生活，天天喫喝享受，日子已經不多！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/713"
+      },
+      {
+        "type": "scripture",
+        "text": "耶和華對挪亞說，你和你的全家都要進入方舟。",
+        "source": "創 7:1"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「教會的生活」。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/713"
+      }
+    ]
+  },
+  {
+    "id": "s-720",
+    "book": "supplement",
+    "no": 720,
+    "title": "我們同聚集是好得無比",
+    "firstLine": "基督是活神，說：阿利路亞",
+    "categories": [
+      "召會生活",
+      "讚美主",
+      "青年"
+    ],
+    "key": "G大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "familiarity": 0.65,
+    "enNo": 1196,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/720",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我們同聚集是好得無比；因為在靈裡一同作肢體，成為主身體彰顯祂自己；基督是我們的實際。",
+        "source": "hymnal.net 歌詞（第二節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/720"
+      },
+      {
+        "type": "scripture",
+        "text": "看哪，弟兄和睦同居，是何等的善，何等的美！",
+        "source": "詩 133:1"
+      },
+      {
+        "type": "story",
+        "text": "詞譯自英文家聚會詩歌；曲 Woody Guthrie；hymnal.net 分類「教會的生活」，英文版 E1196。第二節「我們同聚集是好得無比」就是詩篇一三三篇；旋律借自美國民謠，輕快好唱。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/720"
+      }
+    ]
+  },
+  {
+    "id": "s-714",
+    "book": "supplement",
+    "no": 714,
+    "title": "我愛召會生活",
+    "firstLine": "有些宗教人士會說：『耶穌不可喫』",
+    "categories": [
+      "召會生活",
+      "經歷神"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": true,
+    "familiarity": 0.5,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/714",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我愛召會生活，喫主，喝主，並呼吸主；我愛召會生活，接受神的話。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/714"
+      },
+      {
+        "type": "scripture",
+        "text": "喫我的人，也要因我活著。",
+        "source": "約 6:57"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「教會的生活」。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/714"
+      }
+    ]
   }
 ]
