@@ -1,4 +1,4 @@
-import type { MeetingType } from '../types';
+import type { MeetingType, TagGroup } from '../types';
 import styles from './MeetingSelector.module.css';
 
 /**
@@ -21,8 +21,11 @@ interface MeetingSelectorProps {
   theme: string;
   /** 使用者改關鍵字時呼叫 */
   onThemeChange: (theme: string) => void;
-  /** 所有可勾選的主題關鍵字（由 Home 從詩歌資料算出），附上首數 */
-  allTags: { tag: string; count: number }[];
+  /**
+   * 分好組的主題關鍵字，首數是「在目前這種聚會裡」的首數（由 Home 算好傳下來）。
+   * 0 首的 chip 畫成灰的、不能點，但已勾選的不在此限（讓使用者能取消）。
+   */
+  tagGroups: TagGroup[];
   /** 目前勾選的主題關鍵字 */
   selectedTags: string[];
   /** 使用者勾選／取消時呼叫（整組回傳，不是單一個） */
@@ -35,7 +38,7 @@ export default function MeetingSelector({
   onSelect,
   theme,
   onThemeChange,
-  allTags,
+  tagGroups,
   selectedTags,
   onTagsChange,
 }: MeetingSelectorProps) {
@@ -78,10 +81,10 @@ export default function MeetingSelector({
         />
       </label>
 
-      {allTags.length > 0 && (
+      {tagGroups.length > 0 && (
         <div className={styles.tagField}>
           <span className={styles.label}>
-            主題關鍵字（勾選一個以上就只列帶這些主題的詩歌）
+            主題關鍵字（數字是{selected?.label ?? '這種聚會'}裡帶此主題的首數；勾一個以上就只列這些）
             {selectedTags.length > 0 && (
               <button
                 type="button"
@@ -92,24 +95,35 @@ export default function MeetingSelector({
               </button>
             )}
           </span>
-          <ul className={styles.tagList}>
-            {allTags.map(({ tag, count }) => {
-              const on = selectedTags.includes(tag);
-              return (
-                <li key={tag}>
-                  <button
-                    type="button"
-                    className={on ? `${styles.tagChip} ${styles.tagOn}` : styles.tagChip}
-                    aria-pressed={on}
-                    onClick={() => toggleTag(tag)}
-                  >
-                    {tag}
-                    <span className={styles.tagCount}>{count}</span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          {tagGroups.map(({ group, tags }) => (
+            <div key={group} className={styles.tagGroup}>
+              <span className={styles.tagGroupName}>{group}</span>
+              <ul className={styles.tagList}>
+                {tags.map(({ tag, count }) => {
+                  const on = selectedTags.includes(tag);
+                  const off = count === 0 && !on;
+                  const cls = [styles.tagChip, on && styles.tagOn, off && styles.tagOff]
+                    .filter(Boolean)
+                    .join(' ');
+                  return (
+                    <li key={tag}>
+                      <button
+                        type="button"
+                        className={cls}
+                        aria-pressed={on}
+                        disabled={off}
+                        title={off ? `${selected?.label ?? '這種聚會'}裡沒有帶這個主題的詩歌` : undefined}
+                        onClick={() => toggleTag(tag)}
+                      >
+                        {tag}
+                        <span className={styles.tagCount}>{count}</span>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
         </div>
       )}
 

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Hymn, MeetingType } from '../types';
 import { loadAll } from '../lib/data';
 import { selectBySections } from '../lib/select';
+import { countTags, groupTags } from '../lib/themeTags';
 import MeetingSelector from '../components/MeetingSelector';
 import HymnList from '../components/HymnList';
 import styles from './Home.module.css';
@@ -29,6 +30,7 @@ export default function Home() {
   // ── 外部資料 ───────────────────────────────────────────────
   const [hymns, setHymns] = useState<Hymn[]>([]);
   const [meetingTypes, setMeetingTypes] = useState<MeetingType[]>([]);
+  const [tagGroupDefs, setTagGroupDefs] = useState<Record<string, string[]>>({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,10 +42,11 @@ export default function Home() {
   useEffect(() => {
     let cancelled = false;
     loadAll()
-      .then(({ hymns, meetingTypes }) => {
+      .then(({ hymns, meetingTypes, tagGroups }) => {
         if (cancelled) return;
         setHymns(hymns);
         setMeetingTypes(meetingTypes);
+        setTagGroupDefs(tagGroups);
         // 萬一預設的 'table' 不在資料裡，就退回第一個
         if (!meetingTypes.some((m) => m.id === 'table') && meetingTypes[0]) {
           setMeetingId(meetingTypes[0].id);
@@ -65,20 +68,49 @@ export default function Home() {
     [meetingTypes, meetingId],
   );
 
-  // 所有詩歌帶的主題關鍵字，附上首數，給 MeetingSelector 畫成可勾選的 chip（也是衍生資料）
-  const allTags = useMemo(() => {
-    const count = new Map<string, number>();
-    hymns.forEach((h) => (h.tags ?? []).forEach((t) => count.set(t, (count.get(t) ?? 0) + 1)));
-    return [...count.entries()]
-      .map(([tag, n]) => ({ tag, count: n }))
-      .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag, 'zh-Hant'));
+  // 全資料的 tag 清單（不含首數），讓在目前聚會裡是 0 首的 tag 也能以灰色出現
+  const allTagNames = useMemo(() => {
+    const set = new Set<string>();
+    hymns.forEach((h) => (h.tags ?? []).forEach((t) => set.add(t)));
+    return [...set];
   }, [hymns]);
+
+  // 通過「目前聚會」過濾（不含勾選的 tags）的候選 —— chip 上的首數就是數這一批，
+  // 所以切換聚會類型，數字會跟著變，0 首的 tag 會變灰
+  const baseCandidates = useMemo(() => {
+    if (!meetingType) return [];
+    return selectBySections(hymns, meetingType, { theme }).flatMap((s) =>
+      s.candidates.map((c) => c.hymn),
+    );
+  }, [hymns, meetingType, theme]);
+
+  const tagGroups = useMemo(
+    () => groupTags(countTags(baseCandidates, allTagNames), tagGroupDefs),
+    [baseCandidates, allTagNames, tagGroupDefs],
+  );
 
   // 衍生資料：由 hymns / meetingType / theme / tags 算出來
   const sections = useMemo(() => {
     if (!meetingType) return [];
     return selectBySections(hymns, meetingType, { theme, tags });
   }, [hymns, meetingType, theme, tags]);
+
+  // 勾了 tags 卻一首都沒有時，算一下這些主題在別種聚會各有幾首，讓使用者一鍵切過去
+  const totalShown = sections.reduce((n, s) => n + s.candidates.length, 0);
+  const elsewhere = useMemo(() => {
+    if (tags.length === 0 || totalShown > 0) return [];
+    return meetingTypes
+      .filter((m) => m.id !== meetingId)
+      .map((m) => ({
+        meeting: m,
+        count: selectBySections(hymns, m, { theme, tags }).reduce(
+          (n, s) => n + s.candidates.length,
+          0,
+        ),
+      }))
+      .filter((x) => x.count > 0)
+      .sort((a, b) => b.count - a.count);
+  }, [hymns, meetingTypes, meetingId, theme, tags, totalShown]);
 
   if (loading) return <p className={styles.status}>載入詩歌資料中…</p>;
   if (error)
@@ -103,10 +135,36 @@ export default function Home() {
         onSelect={setMeetingId}
         theme={theme}
         onThemeChange={setTheme}
-        allTags={allTags}
+        tagGroups={tagGroups}
         selectedTags={tags}
         onTagsChange={setTags}
       />
+
+      {tags.length > 0 && totalShown === 0 && (
+        <div className={styles.status}>
+          {meetingType?.label}裡沒有帶「{tags.join('、')}」的詩歌。
+          {elsewhere.length > 0 ? (
+            <>
+              這些主題在別種聚會有：
+              <ul className={styles.elsewhere}>
+                {elsewhere.map(({ meeting, count }) => (
+                  <li key={meeting.id}>
+                    <button
+                      type="button"
+                      className={styles.switchBtn}
+                      onClick={() => setMeetingId(meeting.id)}
+                    >
+                      {meeting.label}（{count} 首）
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            '其他聚會也沒有，試試少勾一個。'
+          )}
+        </div>
+      )}
 
       <div className={styles.sections}>
         {sections.map((s) => (

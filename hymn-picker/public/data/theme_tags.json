@@ -4,8 +4,15 @@
     "載入時會把 tags 加到每首詩的 hymn.tags（同一首被多集點名就取聯集），出處放進 hymn.tagSources。",
     "首頁的「主題關鍵字」搜尋會比對 tags，所以打「憂慮」「出遊」「晨興」這種生活情境也找得到詩歌。",
     "hymns 用詩歌 id（h- 大本／s- 補充本／c- 兒童詩歌）；還沒寫進 hymns.json 的詩歌也可以先列，等加進去就自動生效。",
-    "來源：水深・火熱《合聲響應》播放清單 https://www.youtube.com/playlist?list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG ，tags 是依每集標題與系列名整理的。"
+    "來源：水深・火熱《合聲響應》播放清單 https://www.youtube.com/playlist?list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG ，tags 是依每集標題與系列名整理的。",
+    "groups 決定首頁 chip 分成哪幾列顯示；沒列進任何組的 tag 會放到「其他」。同一個 tag 只放一組。"
   ],
+  "groups": {
+    "心情處境": ["憂慮", "憂鬱", "心煩", "心情不好", "難關", "苦難", "環境", "重擔", "安慰", "得加力", "忙碌", "冬日", "年終", "恢復主愛", "起初的愛", "迫切尋求", "感動流淚", "破碎", "尋回", "等候主", "為主受苦", "十字架", "窄路"],
+    "場合": ["出遊", "相調", "戶外", "認識朋友", "晨興", "早起", "清晨", "主日", "擘餅", "畢業", "婚姻", "職場", "在職", "開展", "傳福音", "福音", "得救見證", "訓練", "學員", "冬季訓練", "標語詩歌", "壯年班", "大專", "校園", "青年人", "兒童", "親子", "新年", "同伴", "召會生活", "身體", "一起追求"],
+    "屬靈主題": ["主愛", "神的愛", "神就是愛", "愛主", "上好之愛", "向主傾倒愛情", "與主談戀愛", "嫁給基督", "愛的交通", "情深", "談心", "與主交通", "禱告", "活在主面前", "呼求主名", "吸入神", "住在主裡面", "施恩座", "奉獻", "更新奉獻", "呼召", "神向我說話", "與神同夢", "神的夢", "神的經綸", "主的恢復", "建造", "得勝", "剛強", "挑旺", "向前直跑", "向主簡單", "主是太陽", "主是我愛我歌", "今日遠勝昨日", "天天更寶貝", "享受主", "享受基督", "喫喝主", "生命樹", "在生命中作王", "列王紀", "與基督同死", "信主的那一天", "信的故事", "信託", "保守我心", "見證", "與主的故事", "牧養", "牧人", "聖別", "常新", "更新"],
+    "帶詩提醒": ["容易唱錯", "教唱", "不常唱", "名曲改編", "世界名曲", "百聽不膩", "清新", "外語", "日文", "法文", "俄語", "多國語言"]
+  },
   "sources": [
     { "id": "EP1", "label": "合聲響應 EP1 晨興系列", "url": "https://www.youtube.com/watch?v=kcF1c4d-0Yk&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["晨興", "早起", "清晨"], "hymns": ["s-425", "h-417", "s-119"] },
     { "id": "EP2", "label": "合聲響應 EP2 奉獻系列", "url": "https://www.youtube.com/watch?v=9klBusu1274&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["奉獻", "更新奉獻"], "hymns": ["h-342"] },
@@ -29,7 +36,7 @@
     { "id": "EP26", "label": "合聲響應 EP26 環境系列", "url": "https://www.youtube.com/watch?v=fTzD7rZBEh4&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["苦難", "環境", "難關", "得加力"], "hymns": ["h-332"] },
     { "id": "EP27", "label": "合聲響應 EP27 十架系列", "url": "https://www.youtube.com/watch?v=V6WuzPlMRiM&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["十字架", "苦難", "破碎", "窄路"], "hymns": ["s-461", "h-462", "h-471"] },
     { "id": "EP28", "label": "合聲響應 EP28 與主情深系列", "url": "https://www.youtube.com/watch?v=GKmIHfmtaPw&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["禱告", "與主交通", "難關", "情深"], "hymns": ["s-878", "s-877", "h-409"] },
-    { "id": "EP29", "label": "合聲響應 EP29 德國主日系列", "url": "https://www.youtube.com/watch?v=hBHaOaoTgb0&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["主日", "擘餅", "德國", "多國語言"], "hymns": ["h-75", "s-621"] },
+    { "id": "EP29", "label": "合聲響應 EP29 德國主日系列", "url": "https://www.youtube.com/watch?v=hBHaOaoTgb0&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["主日", "擘餅", "多國語言"], "hymns": ["h-75", "s-621"] },
     { "id": "EP31", "label": "合聲響應 EP31 恢復主愛系列", "url": "https://www.youtube.com/watch?v=O2GTHx5epfs&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["恢復主愛", "年終", "起初的愛"], "hymns": ["s-316", "s-325", "s-848"] },
     { "id": "EP33", "label": "合聲響應 EP33 壯年班畢業詩歌系列", "url": "https://www.youtube.com/watch?v=y2GDK9wpf_I&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["壯年班", "畢業", "等候主", "為主受苦"], "hymns": ["h-303", "s-874"] },
     { "id": "EP34", "label": "合聲響應 EP34 冬季訓練標語系列", "url": "https://www.youtube.com/watch?v=XD3orl8vpHE&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["標語詩歌", "冬季訓練", "神的經綸"], "hymns": ["s-542", "s-873"] },
@@ -39,7 +46,7 @@
     { "id": "EP41", "label": "合聲響應 EP41 沐浴主愛系列", "url": "https://www.youtube.com/watch?v=2OCdYOZXthA&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["主愛", "憂慮", "安慰", "重擔"], "hymns": ["h-286", "h-232", "s-328"] },
     { "id": "EP42", "label": "合聲響應 EP42 與神談心系列", "url": "https://www.youtube.com/watch?v=VORv9j7Yleg&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["禱告", "與主交通", "談心", "活在主面前"], "hymns": ["s-429", "h-568", "h-290"] },
     { "id": "EP43", "label": "合聲響應 EP43 歌手採訪系列", "url": "https://www.youtube.com/watch?v=ixLDD9R18YE&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["尋回", "神的愛", "福音", "見證"], "hymns": ["h-700", "h-725", "h-737"] },
-    { "id": "EP44", "label": "合聲響應 EP44 德國召會生活系列", "url": "https://www.youtube.com/watch?v=uxipJtvs1GA&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["召會生活", "德國", "得勝"], "hymns": ["h-1", "h-109"] },
+    { "id": "EP44", "label": "合聲響應 EP44 德國召會生活系列", "url": "https://www.youtube.com/watch?v=uxipJtvs1GA&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["召會生活", "得勝"], "hymns": ["h-1", "h-109"] },
     { "id": "EP45", "label": "合聲響應 EP45 同伴系列", "url": "https://www.youtube.com/watch?v=kJUhxcNurpQ&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["同伴", "身體", "一起追求"], "hymns": ["s-762"] },
     { "id": "EP48", "label": "合聲響應 EP48 與神同夢系列", "url": "https://www.youtube.com/watch?v=D6FOSBA5ZNA&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["與神同夢", "奉獻", "神的夢"], "hymns": ["h-453"] },
     { "id": "EP49", "label": "合聲響應 EP49 中日韓詩歌接力", "url": "https://www.youtube.com/watch?v=YvWEmJ9iV3A&list=PLwGielMc9l54Wq-2Xk87tu0TPjttq5xpG", "tags": ["信託", "保守我心", "外語"], "hymns": ["s-455", "s-339"] },

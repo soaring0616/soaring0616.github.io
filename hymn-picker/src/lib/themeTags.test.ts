@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { applyThemeTags } from './themeTags';
+import { applyThemeTags, countTags, groupTags } from './themeTags';
 import { scoreHymn } from './select';
 import type { Hymn, MeetingType, ThemeTagFile } from '../types';
 
@@ -44,6 +44,30 @@ describe('applyThemeTags', () => {
 
   it('出處裡有、hymns 裡沒有的 id 會被略過，不會報錯', () => {
     expect(() => applyThemeTags([hymn('h-1')], FILE)).not.toThrow();
+  });
+
+  it('countTags：數這批詩裡每個 tag 幾首，沒命中的 tag 以 0 保留', () => {
+    const tagged = applyThemeTags([hymn('h-286'), hymn('h-232')], FILE);
+    const counts = countTags([tagged[0]], ['主愛', '憂慮', '難關', '出遊']);
+    expect(counts).toEqual([
+      { tag: '主愛', count: 1 },
+      { tag: '憂慮', count: 1 },
+      { tag: '難關', count: 1 },
+      { tag: '出遊', count: 0 },
+    ]);
+  });
+
+  it('groupTags：照 groups 分列，沒歸組的放「其他」在最後，組內依首數排', () => {
+    const counts = [
+      { tag: '憂慮', count: 1 },
+      { tag: '出遊', count: 3 },
+      { tag: '主愛', count: 2 },
+      { tag: '容易唱錯', count: 1 },
+    ];
+    const groups = groupTags(counts, { 心情處境: ['憂慮', '主愛'], 場合: ['出遊', '不存在的'] });
+    expect(groups.map((g) => g.group)).toEqual(['心情處境', '場合', '其他']);
+    expect(groups[0].tags.map((t) => t.tag)).toEqual(['主愛', '憂慮']);
+    expect(groups[2].tags.map((t) => t.tag)).toEqual(['容易唱錯']);
   });
 
   it('主題關鍵字搜尋會比對 tags', () => {

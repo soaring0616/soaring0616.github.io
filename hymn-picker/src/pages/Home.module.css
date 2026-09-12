@@ -25,6 +25,30 @@
   color: #6b6255;
 }
 
+.elsewhere {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.switchBtn {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #cfd8cd;
+  background: #f2f7f2;
+  color: #43604a;
+  cursor: pointer;
+}
+
+.switchBtn:hover {
+  border-color: #7ba07f;
+}
+
 .error {
   border-color: #e0cdca;
   background: #f9f0ef;

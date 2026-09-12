@@ -74,6 +74,30 @@
   outline-offset: 1px;
 }
 
+/* 一組一列：組名在左、chip 在右，窄螢幕自動換行 */
+.tagGroup {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tagGroupName {
+  flex: 0 0 4.5em;
+  padding-top: 4px;
+  font-size: 0.75rem;
+  color: #8a7f6d;
+}
+
+.tagOff {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tagOff:hover {
+  border-color: #e0d3b8;
+}
+
 .tagOn {
   background: #7a5c1e;
   border-color: #7a5c1e;

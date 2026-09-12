@@ -34,19 +34,31 @@ export function loadHymns(): Promise<Hymn[]> {
     fetchJson<Hymn[]>('data/hymns.json'),
     fetchJson<HymnIndexEntry[]>('data/hymn_index.json'),
     fetchJson<CategoryMap>('data/category_map.json'),
-    fetchJson<ThemeTagFile>('data/theme_tags.json'),
+    loadThemeTags(),
   ]).then(([hymns, index, map, tags]) =>
     applyThemeTags(enrichHymns(hymns, index, map), tags),
   );
+}
+
+export function loadThemeTags(): Promise<ThemeTagFile> {
+  return fetchJson<ThemeTagFile>('data/theme_tags.json');
 }
 
 export function loadMeetingTypes(): Promise<MeetingType[]> {
   return fetchJson<MeetingType[]>('data/meeting_types.json');
 }
 
-/** 一次載入兩份資料，Home 頁的 useEffect 用這個最方便 */
-export function loadAll(): Promise<{ hymns: Hymn[]; meetingTypes: MeetingType[] }> {
-  return Promise.all([loadHymns(), loadMeetingTypes()]).then(
-    ([hymns, meetingTypes]) => ({ hymns, meetingTypes }),
+/** 一次載入首頁要的全部資料（theme_tags.json 會被 fetch 兩次，瀏覽器快取會接住） */
+export function loadAll(): Promise<{
+  hymns: Hymn[];
+  meetingTypes: MeetingType[];
+  tagGroups: Record<string, string[]>;
+}> {
+  return Promise.all([loadHymns(), loadMeetingTypes(), loadThemeTags()]).then(
+    ([hymns, meetingTypes, tagFile]) => ({
+      hymns,
+      meetingTypes,
+      tagGroups: tagFile.groups ?? {},
+    }),
   );
 }

@@ -81,6 +81,20 @@ export interface ThemeTagSource {
 
 export interface ThemeTagFile {
   sources: ThemeTagSource[];
+  /** chip 分組顯示：組名 → tags。沒歸組的 tag 放「其他」 */
+  groups?: Record<string, string[]>;
+}
+
+/** 首頁 chip 清單用：一個 tag 在目前聚會裡有幾首 */
+export interface TagCount {
+  tag: string;
+  count: number;
+}
+
+/** 分好組的 chip 清單 */
+export interface TagGroup {
+  group: string;
+  tags: TagCount[];
 }
 
 /** public/data/hymn_index.json 的一筆：詩歌本目錄裡的一首詩 */
