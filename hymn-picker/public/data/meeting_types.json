@@ -48,6 +48,10 @@
     "include": ["福音", "傳福音", "得救的確據", "主的救贖"],
     "exclude": ["記念主", "敬拜父"],
     "weights": { "familiarity": 0.45, "chorus": 0.25, "themeMatch": 0.3 },
+    "sections": [
+      { "label": "傳揚福音", "include": ["福音", "得救的確據", "主的救贖"] },
+      { "label": "去傳福音", "include": ["傳福音"] }
+    ],
     "suggestedCount": 3
   },
   {
@@ -85,12 +89,15 @@
   {
     "id": "training",
     "label": "訓練 / 特會",
-    "include": ["渴慕", "獻上自己", "爭戰", "召會生活", "經歷神"],
+    "include": ["渴慕", "獻上自己", "爭戰", "召會生活", "教會", "經歷神"],
     "exclude": ["兒童"],
     "weights": { "familiarity": 0.25, "chorus": 0.1, "themeMatch": 0.65 },
     "sections": [
       { "label": "願意受成全", "include": ["受成全"] },
       { "label": "加強", "include": ["加強"] },
+      { "label": "羨慕主", "include": ["渴慕"] },
+      { "label": "奉獻", "include": ["獻上自己"] },
+      { "label": "事奉與召會生活", "include": ["召會生活", "教會"] },
       { "label": "一般", "include": [] }
     ],
     "suggestedCount": 4

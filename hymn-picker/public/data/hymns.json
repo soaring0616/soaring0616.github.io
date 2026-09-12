@@ -5643,7 +5643,9 @@
     "no": 860,
     "title": "去使萬民作主的門徒",
     "firstLine": "去！使萬民作主的門徒，教導神聖的真理，將國度福音傳遍全地，催促主日子來臨",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "E大調",
     "time": "4/4",
     "hasChorus": true,
@@ -5672,7 +5674,9 @@
     "no": 862,
     "title": "有祂無我",
     "firstLine": "我們有分神聖工作，是因祂恩永遠彀用",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "D大調",
     "time": "4/4",
     "hasChorus": false,
@@ -5730,7 +5734,9 @@
     "no": 869,
     "title": "前進！剛強開拓",
     "firstLine": "誰肯受託，宣揚神福音，誰願答應，受差遣前行",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "C大調",
     "time": "4/4",
     "hasChorus": true,
@@ -5789,7 +5795,9 @@
     "no": 873,
     "title": "同祂步武，邁向榮耀",
     "firstLine": "看哪！我王坐車前往，剛強無不得勝",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "D大調",
     "time": "4/4",
     "meter": "不規則",
@@ -5848,7 +5856,9 @@
     "no": 875,
     "title": "西布倫，揚帆起行",
     "firstLine": "西布倫，出外可以歡喜，隨聖靈大風揚帆起行",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "降A大調",
     "time": "4/4",
     "hasChorus": false,
@@ -9086,7 +9096,9 @@
     "no": 808,
     "title": "到各城市去開展",
     "firstLine": "從臺北市地方召會，到南部高雄海岸",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "D大調",
     "time": "2/4",
     "meter": "不規則",
@@ -9356,7 +9368,9 @@
     "no": 867,
     "title": "寫神今日的歷史",
     "firstLine": "奮力之神，內裏運行，我願聽招呼，追隨祂步武",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "D大調",
     "time": "4/4",
     "meter": "不規則",
@@ -9386,7 +9400,9 @@
     "no": 871,
     "title": "在今天，更新奉獻",
     "firstLine": "國度福音徧傳地極，使萬民識神心意",
-    "categories": [],
+    "categories": [
+      "傳福音"
+    ],
     "key": "C大調",
     "time": "4/4",
     "meter": "不規則",
