@@ -66,6 +66,31 @@ export interface Hymn {
   tags?: string[];
   /** tags 的出處（例如合聲響應某一集），載入時填上，卡片上顯示成連結 */
   tagSources?: { label: string; url?: string }[];
+  /** 主日豫選紀錄算出來的：唱過幾次、各段幾次、最近一次（載入時由 sunday_picks.json 填上） */
+  usage?: { count: number; slots: Record<string, number>; last: string };
+}
+
+/** public/data/sunday_picks.json：主日擘餅每週四段各選一首的紀錄 */
+export interface SundayPick {
+  /** 段落：調靈／讚美主／記念主／敬拜父 */
+  slot: string;
+  /** 詩歌 id，例如 h-178 */
+  hymn: string;
+  /** 那週的晨興聖言詩歌 */
+  morningRevival?: boolean;
+  /** 原始紀錄的備註，例如「調同177」 */
+  note?: string;
+}
+
+export interface SundayWeek {
+  /** ISO 日期，例如 2025-02-16 */
+  date: string;
+  picks: SundayPick[];
+}
+
+export interface SundayPicksFile {
+  slots: string[];
+  weeks: SundayWeek[];
 }
 
 /** public/data/theme_tags.json：一個出處點名了哪些詩、談什麼主題 */

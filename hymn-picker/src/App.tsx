@@ -1,6 +1,7 @@
 import { HashRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import HymnDetail from './pages/HymnDetail';
+import SundayPicks from './pages/SundayPicks';
 import styles from './App.module.css';
 
 /**
@@ -23,6 +24,9 @@ export default function App() {
             </Link>
           </h1>
           <span className={styles.tagline}>依聚會類型排出候選，附推薦理由</span>
+          <Link className={styles.navLink} to="/sunday">
+            主日豫選紀錄
+          </Link>
           {/* 回到 soaring0616.github.io 首頁。這是站內另一頁，不走 React Router，用一般 <a> */}
           <a className={styles.homeLink} href="/">
             ← 回首頁
@@ -33,6 +37,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hymn/:id" element={<HymnDetail />} />
+            <Route path="/sunday" element={<SundayPicks />} />
             {/* 打錯網址就回首頁 */}
             <Route path="*" element={<Home />} />
           </Routes>

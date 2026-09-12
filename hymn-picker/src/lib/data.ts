@@ -1,6 +1,14 @@
-import type { CategoryMap, Hymn, HymnIndexEntry, MeetingType, ThemeTagFile } from '../types';
+import type {
+  CategoryMap,
+  Hymn,
+  HymnIndexEntry,
+  MeetingType,
+  SundayPicksFile,
+  ThemeTagFile,
+} from '../types';
 import { enrichHymns } from './hymnIndex';
 import { applyThemeTags } from './themeTags';
+import { applySundayPicks } from './sundayPicks';
 
 /**
  * 靜態 JSON 的載入函式。沒有後端，全部靠 fetch public/ 底下的檔案。
@@ -25,9 +33,11 @@ async function fetchJson<T>(path: string): Promise<T> {
 }
 
 /**
- * 載入詩歌，並用詩歌本目錄（hymn_index.json + category_map.json）補上類別與目錄位置，
- * 再用 theme_tags.json 掛上主題關鍵字。
- * 兩個頁面（Home、HymnDetail）都走這裡，所以看到的類別一致。
+ * 載入詩歌，並依序：
+ *   1. 用詩歌本目錄（hymn_index.json + category_map.json）補類別與目錄位置
+ *   2. 用 theme_tags.json 掛主題關鍵字
+ *   3. 用 sunday_picks.json 掛主日唱過的紀錄（段落插到 categories 最前面、熟悉度加分）
+ * 所有頁面都走這裡，所以看到的類別一致。
  */
 export function loadHymns(): Promise<Hymn[]> {
   return Promise.all([
@@ -35,13 +45,18 @@ export function loadHymns(): Promise<Hymn[]> {
     fetchJson<HymnIndexEntry[]>('data/hymn_index.json'),
     fetchJson<CategoryMap>('data/category_map.json'),
     loadThemeTags(),
-  ]).then(([hymns, index, map, tags]) =>
-    applyThemeTags(enrichHymns(hymns, index, map), tags),
+    loadSundayPicks(),
+  ]).then(([hymns, index, map, tags, picks]) =>
+    applySundayPicks(applyThemeTags(enrichHymns(hymns, index, map), tags), picks),
   );
 }
 
 export function loadThemeTags(): Promise<ThemeTagFile> {
   return fetchJson<ThemeTagFile>('data/theme_tags.json');
+}
+
+export function loadSundayPicks(): Promise<SundayPicksFile> {
+  return fetchJson<SundayPicksFile>('data/sunday_picks.json');
 }
 
 export function loadMeetingTypes(): Promise<MeetingType[]> {

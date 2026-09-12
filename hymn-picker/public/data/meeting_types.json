@@ -2,12 +2,14 @@
   {
     "id": "table",
     "label": "主日擘餅聚會",
-    "include": ["記念主", "主的救贖", "基督的所是", "敬拜父", "讚美主"],
+    "include": ["調靈", "讚美主", "記念主", "主的救贖", "基督的所是", "敬拜父"],
     "exclude": ["祈求", "渴慕", "福音", "傳福音", "兒童", "受成全", "加強"],
     "weights": { "familiarity": 0.3, "chorus": 0.15, "themeMatch": 0.55 },
     "sections": [
+      { "label": "調靈", "include": ["調靈"] },
+      { "label": "讚美主", "include": ["讚美主"] },
       { "label": "記念主", "include": ["記念主", "主的救贖", "基督的所是"] },
-      { "label": "敬拜父", "include": ["敬拜父", "讚美主"] }
+      { "label": "敬拜父", "include": ["敬拜父"] }
     ],
     "suggestedCount": 4
   },

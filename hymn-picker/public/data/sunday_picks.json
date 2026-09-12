@@ -1,0 +1,340 @@
+{
+  "_說明": [
+      "主日擘餅聚會的詩歌豫選紀錄：每週四段「調靈 → 讚美主 → 記念主 → 敬拜父」各一首（有些週沒有調靈）。",
+      "載入時程式會把每首詩「在哪一段唱過、唱過幾次」掛到 hymn.usage，並把段落名加進 categories 最前面，所以主日推薦會照你們實際的用法分段；唱過越多次熟悉度越高。",
+      "morningRevival: true 表示那週的晨興聖言詩歌；note 是原始紀錄裡的備註（例如「調同177」「第一、三、四、十、十一節」）。",
+      "新的一週：在 weeks 尾巴加一筆，hymn 用詩歌 id（h- 大本／s- 補充本）。還沒收進 hymns.json 的詩會被略過，不會壞。",
+      "日期是依原始紀錄的月/日推回去的（2025-02-16 起），若有誤請直接改。"
+  ],
+  "slots": ["調靈", "讚美主", "記念主", "敬拜父"],
+  "weeks": [
+    { "date": "2025-02-16", "picks": [
+      {"slot": "調靈", "hymn": "h-254"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-179"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2025-03-02", "picks": [
+      {"slot": "調靈", "hymn": "h-200", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-376"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-8"}
+    ] },
+    { "date": "2025-03-09", "picks": [
+      {"slot": "調靈", "hymn": "h-399"},
+      {"slot": "讚美主", "hymn": "h-378", "morningRevival": true},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2025-03-23", "picks": [
+      {"slot": "調靈", "hymn": "s-508"},
+      {"slot": "讚美主", "hymn": "h-154"},
+      {"slot": "記念主", "hymn": "h-185"},
+      {"slot": "敬拜父", "hymn": "h-35"}
+    ] },
+    { "date": "2025-04-06", "picks": [
+      {"slot": "調靈", "hymn": "s-836"},
+      {"slot": "讚美主", "hymn": "h-134"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-6"}
+    ] },
+    { "date": "2025-04-13", "picks": [
+      {"slot": "調靈", "hymn": "h-658", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-376"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-43"}
+    ] },
+    { "date": "2025-04-27", "picks": [
+      {"slot": "調靈", "hymn": "s-856", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-378"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-25"}
+    ] },
+    { "date": "2025-05-04", "picks": [
+      {"slot": "調靈", "hymn": "h-140"},
+      {"slot": "讚美主", "hymn": "h-167"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-11"}
+    ] },
+    { "date": "2025-05-11", "picks": [
+      {"slot": "調靈", "hymn": "h-304", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-154"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-7"}
+    ] },
+    { "date": "2025-05-18", "picks": [
+      {"slot": "調靈", "hymn": "s-611"},
+      {"slot": "讚美主", "hymn": "h-371"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-48"}
+    ] },
+    { "date": "2025-05-25", "picks": [
+      {"slot": "調靈", "hymn": "h-224", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-157"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-35"}
+    ] },
+    { "date": "2025-06-01", "picks": [
+      {"slot": "調靈", "hymn": "h-653", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-25"}
+    ] },
+    { "date": "2025-06-15", "picks": [
+      {"slot": "調靈", "hymn": "s-616"},
+      {"slot": "讚美主", "hymn": "h-154"},
+      {"slot": "記念主", "hymn": "h-185"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2025-06-22", "picks": [
+      {"slot": "調靈", "hymn": "h-196", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-157"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2025-06-29", "picks": [
+      {"slot": "調靈", "hymn": "s-328"},
+      {"slot": "讚美主", "hymn": "h-95"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-48"}
+    ] },
+    { "date": "2025-07-06", "picks": [
+      {"slot": "調靈", "hymn": "s-410"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-51"}
+    ] },
+    { "date": "2025-07-20", "picks": [
+      {"slot": "調靈", "hymn": "s-920"},
+      {"slot": "讚美主", "hymn": "h-95"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-37"}
+    ] },
+    { "date": "2025-07-27", "picks": [
+      {"slot": "調靈", "hymn": "h-637", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-154"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-48"}
+    ] },
+    { "date": "2025-08-03", "picks": [
+      {"slot": "調靈", "hymn": "s-432", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-378"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-51"}
+    ] },
+    { "date": "2025-08-10", "picks": [
+      {"slot": "調靈", "hymn": "h-479", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-157"},
+      {"slot": "記念主", "hymn": "h-187"},
+      {"slot": "敬拜父", "hymn": "h-34"}
+    ] },
+    { "date": "2025-08-17", "picks": [
+      {"slot": "調靈", "hymn": "s-240"},
+      {"slot": "讚美主", "hymn": "h-163"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2025-08-24", "picks": [
+      {"slot": "調靈", "hymn": "h-592", "note": "調同177"},
+      {"slot": "讚美主", "hymn": "h-403"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-48"}
+    ] },
+    { "date": "2025-09-07", "picks": [
+      {"slot": "調靈", "hymn": "s-118"},
+      {"slot": "讚美主", "hymn": "h-163"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2025-09-14", "picks": [
+      {"slot": "調靈", "hymn": "s-27"},
+      {"slot": "讚美主", "hymn": "h-375"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-32"}
+    ] },
+    { "date": "2025-09-21", "picks": [
+      {"slot": "調靈", "hymn": "s-424", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "s-134"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-25"}
+    ] },
+    { "date": "2025-09-28", "picks": [
+      {"slot": "調靈", "hymn": "s-201"},
+      {"slot": "讚美主", "hymn": "h-402"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2025-10-19", "picks": [
+      {"slot": "調靈", "hymn": "s-141"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2025-11-02", "picks": [
+      {"slot": "調靈", "hymn": "h-748", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-171"},
+      {"slot": "記念主", "hymn": "h-187"},
+      {"slot": "敬拜父", "hymn": "h-32"}
+    ] },
+    { "date": "2025-11-09", "picks": [
+      {"slot": "調靈", "hymn": "h-568"},
+      {"slot": "讚美主", "hymn": "h-403"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-8"}
+    ] },
+    { "date": "2025-11-16", "picks": [
+      {"slot": "調靈", "hymn": "s-836"},
+      {"slot": "讚美主", "hymn": "h-134"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-22"}
+    ] },
+    { "date": "2025-11-23", "picks": [
+      {"slot": "調靈", "hymn": "s-301"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-50"}
+    ] },
+    { "date": "2025-11-30", "picks": [
+      {"slot": "調靈", "hymn": "s-752"},
+      {"slot": "讚美主", "hymn": "h-134"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-25"}
+    ] },
+    { "date": "2025-12-14", "picks": [
+      {"slot": "調靈", "hymn": "h-748"},
+      {"slot": "讚美主", "hymn": "h-380"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-18"}
+    ] },
+    { "date": "2025-12-21", "picks": [
+      {"slot": "調靈", "hymn": "h-640"},
+      {"slot": "讚美主", "hymn": "h-426"},
+      {"slot": "記念主", "hymn": "h-187"},
+      {"slot": "敬拜父", "hymn": "h-30"}
+    ] },
+    { "date": "2026-01-04", "picks": [
+      {"slot": "調靈", "hymn": "h-248"},
+      {"slot": "讚美主", "hymn": "h-140"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-22"}
+    ] },
+    { "date": "2026-01-11", "picks": [
+      {"slot": "調靈", "hymn": "h-371"},
+      {"slot": "讚美主", "hymn": "h-163"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2026-01-18", "picks": [
+      {"slot": "調靈", "hymn": "h-406"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-51"}
+    ] },
+    { "date": "2026-02-01", "picks": [
+      {"slot": "調靈", "hymn": "h-472"},
+      {"slot": "讚美主", "hymn": "h-158"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-7"}
+    ] },
+    { "date": "2026-02-08", "picks": [
+      {"slot": "調靈", "hymn": "s-102"},
+      {"slot": "讚美主", "hymn": "s-134"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-51"}
+    ] },
+    { "date": "2026-02-22", "picks": [
+      {"slot": "調靈", "hymn": "s-136"},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-48"}
+    ] },
+    { "date": "2026-03-01", "picks": [
+      {"slot": "調靈", "hymn": "s-508"},
+      {"slot": "讚美主", "hymn": "h-127"},
+      {"slot": "記念主", "hymn": "h-187"},
+      {"slot": "敬拜父", "hymn": "h-14"}
+    ] },
+    { "date": "2026-03-08", "picks": [
+      {"slot": "調靈", "hymn": "s-539", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-371"},
+      {"slot": "記念主", "hymn": "h-174"},
+      {"slot": "敬拜父", "hymn": "h-36"}
+    ] },
+    { "date": "2026-03-15", "picks": [
+      {"slot": "調靈", "hymn": "h-642"},
+      {"slot": "讚美主", "hymn": "h-109"},
+      {"slot": "記念主", "hymn": "h-175"},
+      {"slot": "敬拜父", "hymn": "h-40"}
+    ] },
+    { "date": "2026-03-22", "picks": [
+      {"slot": "調靈", "hymn": "s-920", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-380"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-50"}
+    ] },
+    { "date": "2026-03-29", "picks": [
+      {"slot": "調靈", "hymn": "s-909", "morningRevival": true, "note": "第一、三、四、十、十一節"},
+      {"slot": "讚美主", "hymn": "h-125"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-18"}
+    ] },
+    { "date": "2026-04-12", "picks": [
+      {"slot": "調靈", "hymn": "h-756", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-156"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-43"}
+    ] },
+    { "date": "2026-04-19", "picks": [
+      {"slot": "調靈", "hymn": "h-546", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-136"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-8"}
+    ] },
+    { "date": "2026-05-03", "picks": [
+      {"slot": "調靈", "hymn": "h-384", "morningRevival": true},
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-176"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2026-05-17", "picks": [
+      {"slot": "讚美主", "hymn": "h-416", "morningRevival": true},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-447"}
+    ] },
+    { "date": "2026-05-24", "picks": [
+      {"slot": "讚美主", "hymn": "h-106"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-12"}
+    ] },
+    { "date": "2026-05-31", "picks": [
+      {"slot": "讚美主", "hymn": "h-109"},
+      {"slot": "記念主", "hymn": "h-181"},
+      {"slot": "敬拜父", "hymn": "h-1"}
+    ] },
+    { "date": "2026-06-14", "picks": [
+      {"slot": "讚美主", "hymn": "h-382"},
+      {"slot": "記念主", "hymn": "h-185"},
+      {"slot": "敬拜父", "hymn": "h-51"}
+    ] },
+    { "date": "2026-06-21", "picks": [
+      {"slot": "讚美主", "hymn": "h-376"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-9"}
+    ] },
+    { "date": "2026-07-19", "picks": [
+      {"slot": "讚美主", "hymn": "h-751", "morningRevival": true},
+      {"slot": "記念主", "hymn": "h-187"},
+      {"slot": "敬拜父", "hymn": "h-25"}
+    ] },
+    { "date": "2026-08-16", "picks": [
+      {"slot": "讚美主", "hymn": "h-381"},
+      {"slot": "記念主", "hymn": "h-178"},
+      {"slot": "敬拜父", "hymn": "h-6"}
+    ] },
+    { "date": "2026-09-13", "picks": [
+      {"slot": "讚美主", "hymn": "h-94"},
+      {"slot": "記念主", "hymn": "h-177"},
+      {"slot": "敬拜父", "hymn": "h-22"}
+    ] }
+  ]
+}

@@ -180,7 +180,7 @@ describe('selectBySections', () => {
     expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-41']);
   });
 
-  it('同一首詩只歸到一個段落：命中類別最多的那段，平手放前面', () => {
+  it('同一首詩只歸到一個段落：命中類別最多的那段；平手看 categories 的順序', () => {
     const table2: MeetingType = {
       ...TABLE,
       sections: [
@@ -189,14 +189,38 @@ describe('selectBySections', () => {
       ],
     };
     const both = [
-      // 兩段各命中 1 個 → 平手 → 前面的「記念主」
+      // 兩段各命中 1 個 → 平手 → 看 categories 誰在前：記念主
       hymn({ id: 'h-20', no: 20, categories: ['記念主', '敬拜父'] }),
       // 記念主段命中 1、敬拜父段命中 2 → 「敬拜父」
       hymn({ id: 'h-21', no: 21, categories: ['主的救贖', '敬拜父', '讚美主'] }),
+      // 平手，但 categories 裡敬拜父在前 → 「敬拜父」（即使記念主段排在前面）
+      hymn({ id: 'h-22', no: 22, categories: ['敬拜父', '記念主'] }),
+      // 第一個類別是讚美主 → 直接歸敬拜父段，即使記念主段命中比較多（記念主＋主的救贖）
+      hymn({ id: 'h-23', no: 23, categories: ['讚美主', '記念主', '主的救贖'] }),
     ];
     const sections = selectBySections(both, table2);
     expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['h-20']);
-    expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-21']);
+    expect(sections[1].candidates.map((c) => c.hymn.id).sort()).toEqual(['h-21', 'h-22', 'h-23']);
+  });
+
+  it('主日在這種聚會唱過的詩，不受 exclude 限制', () => {
+    const sung = hymn({
+      id: 's-836',
+      no: 836,
+      book: 'supplement',
+      categories: ['調靈', '福音'],
+      usage: { count: 2, slots: { 調靈: 2 }, last: '2025-11-16' },
+    });
+    const notSung = hymn({ id: 's-837', no: 837, book: 'supplement', categories: ['福音'] });
+    const table3: MeetingType = {
+      ...TABLE,
+      include: ['調靈', '記念主', '主的救贖', '敬拜父'],
+      exclude: ['福音'],
+      sections: [{ label: '調靈', include: ['調靈'] }, ...(TABLE.sections ?? [])],
+    };
+    const sections = selectBySections([sung, notSung], table3);
+    expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['s-836']);
+    expect(sections.flatMap((s) => s.candidates.map((c) => c.hymn.id))).not.toContain('s-837');
   });
 
   it('沒有 sections 時回傳單一段落，label 用聚會名稱', () => {

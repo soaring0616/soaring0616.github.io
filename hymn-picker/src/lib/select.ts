@@ -47,6 +47,16 @@ function blockedCategories(hymn: Hymn, exclude: string[]): string[] {
   return hymn.categories.filter((c) => exclude.includes(c));
 }
 
+/**
+ * 主日實際唱過的詩，不受該聚會的 exclude 限制。
+ * 例如調靈段常點福音、渴慕類的詩（補充本 836、410…），擘餅的 exclude 本來會把它們擋掉；
+ * 但它既然在主日的某一段唱過（usage.slots 的段落名在這個聚會的 include 裡），就以實際用法為準。
+ */
+function sungInThisMeeting(hymn: Hymn, include: string[]): boolean {
+  if (!hymn.usage) return false;
+  return Object.keys(hymn.usage.slots).some((slot) => include.includes(slot));
+}
+
 /** 這首詩帶了哪些被勾選的主題關鍵字 */
 function matchedTags(hymn: Hymn, selected: string[]): string[] {
   if (selected.length === 0) return [];
@@ -120,7 +130,9 @@ export function scoreHymn(
       ? bookDefault
       : Math.min(1, Math.max(0, hymn.familiarity));
   reasons.push(`${BOOK_LABEL[hymn.book]}第 ${hymn.no} 首`);
-  if (hymn.familiarity !== undefined) {
+  if (hymn.usage) {
+    reasons.push(`主日唱過 ${hymn.usage.count} 次`);
+  } else if (hymn.familiarity !== undefined) {
     reasons.push(familiarity < bookDefault ? '會眾較不熟，往後排' : '會眾熟悉');
   }
 
@@ -142,7 +154,7 @@ function round(n: number): number {
  * 依聚會類型過濾並排序詩歌。
  *
  * 過濾規則：
- *   1. 命中任一 exclude 類別 → 排除
+ *   1. 命中任一 exclude 類別 → 排除（主日在這種聚會唱過的詩例外，見 sungInThisMeeting）
  *   2. include 非空時，至少要命中一個 include 類別 → 否則排除
  *   3. 有勾選主題關鍵字（opts.tags）時，至少要帶一個 → 否則排除
  * 排序規則：分數高的在前；同分時依 書別(大本→補充本→新歌) → 號碼 排，讓結果穩定可重現。
@@ -161,7 +173,7 @@ export function selectHymns(
   const tags = opts.tags ?? [];
 
   const candidates = hymns
-    .filter((h) => blockedCategories(h, exclude).length === 0)
+    .filter((h) => blockedCategories(h, exclude).length === 0 || sungInThisMeeting(h, include))
     .filter((h) => include.length === 0 || matchedCategories(h, include).length > 0)
     .filter((h) => tags.length === 0 || matchedTags(h, tags).length > 0)
     .map((h) => scoreHymn(h, meetingType, opts));
@@ -181,8 +193,10 @@ export function selectHymns(
  * 每一段套用自己的 include，但沿用聚會層級的 exclude 與 weights。
  * 沒有 sections 時回傳單一段落，方便 UI 統一處理。
  *
- * 同一首詩只會出現在一個段落：歸到「命中該段 include 類別最多」的段落，
- * 平手時放前面的段落。不然像「讚美主＋記念主」的詩會在記念主、敬拜父兩段都列一次。
+ * 同一首詩只會出現在一個段落：categories 的第一個類別命中哪一段就歸哪一段（主日唱過的段落、
+ * 手填的主要類別都排在最前面）；第一個沒命中任何段時，歸「命中 include 類別最多」的段落，
+ * 平手看命中的類別誰在 categories 裡排得前面（再平手才放前面的段落）。
+ * 不然像「讚美主＋記念主」的詩會在記念主、敬拜父兩段都列一次。
  * include 為空的段落當「一般」段：收下沒命中任何主題段落的詩，再用聚會層級的 include 過濾
  * （小排：先列「願意受成全」「加強」兩個主題段，其餘仍只留召會生活／經歷神／感恩／安慰）。
  */
@@ -207,11 +221,21 @@ export function selectBySections(
   hymns.forEach((h) => {
     let best = -1;
     let bestHits = 0;
+    let bestRank = Infinity;
     sections.forEach((s, i) => {
       const hits = matchedCategories(h, s.include).length;
-      if (hits > bestHits) {
+      if (hits === 0) return;
+      // categories 是有順序的（主日唱過的段落、手填的在前，目錄補的在後），第一個最能代表這首詩。
+      // 規則：第一個類別命中的段落直接贏；否則比命中數；再平手看命中類別誰排得前面。
+      const rank = h.categories.findIndex((c) => s.include.includes(c));
+      const firstWins = rank === 0 && bestRank !== 0;
+      const sameTier = (rank === 0) === (bestRank === 0);
+      const better =
+        firstWins || (sameTier && (hits > bestHits || (hits === bestHits && rank < bestRank)));
+      if (better) {
         best = i;
         bestHits = hits;
+        bestRank = rank;
       }
     });
     if (best < 0) best = catchAll;
