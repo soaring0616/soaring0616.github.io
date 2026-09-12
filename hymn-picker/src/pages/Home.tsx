@@ -76,7 +76,7 @@ export default function Home() {
   }, [hymns]);
 
   // 通過「目前聚會」過濾（不含勾選的 tags）的候選 —— chip 上的首數就是數這一批，
-  // 所以切換聚會類型，數字會跟著變，0 首的 tag 會變灰
+  // 所以切換聚會類型，數字會跟著變，0 首的 tag 就不會出現
   const baseCandidates = useMemo(() => {
     if (!meetingType) return [];
     return selectBySections(hymns, meetingType, { theme }).flatMap((s) =>
