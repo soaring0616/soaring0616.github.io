@@ -18,11 +18,11 @@ export interface Note {
   url?: string;
 }
 
-/** 詩歌本別：大本詩歌 / 補充本 / hymnal.net 新歌 */
-export type HymnBook = 'hymnal' | 'supplement' | 'new';
+/** 詩歌本別：大本詩歌 / 補充本 / hymnal.net 新歌 / 兒童詩歌 */
+export type HymnBook = 'hymnal' | 'supplement' | 'new' | 'children';
 
 export interface Hymn {
-  /** 'h-623' 大本 / 's-12' 補充本 / 'n-1158' hymnal.net 新歌 */
+  /** 'h-623' 大本 / 's-12' 補充本 / 'n-1158' hymnal.net 新歌 / 'c-114' 兒童詩歌 */
   id: string;
   book: HymnBook;
   no: number;
@@ -41,7 +41,12 @@ export interface Hymn {
   familiarity?: number;
   /** hymnal.net 英文號 */
   enNo?: number;
-  urls: { hymnal?: string; luke54?: string[] };
+  urls: {
+    hymnal?: string;
+    luke54?: string[];
+    /** 蒙特利公園市召會的詩歌頁（兒童詩歌用這個，hymnal.net 沒有中文兒童詩歌） */
+    cimp?: string;
+  };
   notes: Note[];
   /**
    * 設 true 就不用詩歌本目錄補類別（例如 288 只想留「安慰」）。
@@ -61,9 +66,9 @@ export interface HymnIndexEntry {
   no: number;
   /** 目錄大類，例如「讚美主」「追求與長大」 */
   section: string;
-  /** 大本的細目，例如「祂的受苦」；補充本沒有 */
+  /** 大本的細目，例如「祂的受苦」；補充本、兒童詩歌沒有 */
   sub?: string | null;
-  /** 補充本目錄有標題，大本目錄只有號碼 */
+  /** 補充本、兒童詩歌目錄有標題，大本目錄只有號碼 */
   title?: string;
 }
 

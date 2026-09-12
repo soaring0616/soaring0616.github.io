@@ -67,7 +67,7 @@
   {
     "id": "children",
     "label": "兒童聚會",
-    "include": ["兒童", "讚美主", "感恩"],
+    "include": ["兒童"],
     "exclude": ["爭戰", "渴慕"],
     "weights": { "familiarity": 0.3, "chorus": 0.4, "themeMatch": 0.3 },
     "suggestedCount": 4

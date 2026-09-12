@@ -2738,5 +2738,720 @@
         "url": "https://www.hymnal.net/en/hymn/ch/241"
       }
     ]
+  },
+  {
+    "id": "c-8",
+    "book": "children",
+    "no": 8,
+    "title": "真神創造天地",
+    "firstLine": "真神創造天地，太陽月亮星星",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降E大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn8.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "真神創造天地，太陽月亮星星，海洋陸地，綺麗世界，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn8.html"
+      },
+      {
+        "type": "scripture",
+        "text": "起初神創造諸天與地。",
+        "source": "創 1:1"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 8 首，目錄分類「神的創造」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn8.html"
+      }
+    ]
+  },
+  {
+    "id": "c-102",
+    "book": "children",
+    "no": 102,
+    "title": "主說讓孩子們來",
+    "firstLine": "主說，『讓孩子們來。』我心是多麼愉快",
+    "categories": [
+      "兒童",
+      "福音"
+    ],
+    "key": "G大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn102.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主說，『讓孩子們來。』我心是多麼愉快；雖然我是這麼小，主耶穌祂也要！",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn102.html"
+      },
+      {
+        "type": "scripture",
+        "text": "耶穌說，讓小孩子到我這裡來，不要禁止他們，因為諸天之國正是這等人的。",
+        "source": "太 19:14"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 102 首，目錄分類「主的愛」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn102.html"
+      }
+    ]
+  },
+  {
+    "id": "c-114",
+    "book": "children",
+    "no": 114,
+    "title": "耶穌愛我我知道",
+    "firstLine": "耶穌愛我，我知道，因有聖經告訴我",
+    "categories": [
+      "兒童",
+      "福音"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "hasChorus": true,
+    "familiarity": 0.9,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn114.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "是！耶穌愛我，是！耶穌愛我！是！耶穌愛我，有聖經告訴我。",
+        "source": "兒童詩歌歌詞（副歌）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn114.html"
+      },
+      {
+        "type": "scripture",
+        "text": "我們愛，因為神先愛我們。",
+        "source": "約壹 4:19"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 114 首，目錄分類「主的愛」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn114.html"
+      }
+    ]
+  },
+  {
+    "id": "c-122",
+    "book": "children",
+    "no": 122,
+    "title": "神愛神愛世人",
+    "firstLine": "神愛，神愛世人",
+    "categories": [
+      "兒童",
+      "福音"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.8,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn122.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "神愛，神愛世人，神愛，神愛世人，賜下祂兒子為我們來受死，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn122.html"
+      },
+      {
+        "type": "scripture",
+        "text": "神愛世人，甚至將祂的獨生子賜給他們，叫一切信入祂的，不至滅亡，反得永遠的生命。",
+        "source": "約 3:16"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 122 首，目錄分類「主的愛」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn122.html"
+      }
+    ]
+  },
+  {
+    "id": "c-211",
+    "book": "children",
+    "no": 211,
+    "title": "充滿我",
+    "firstLine": "充滿我！充滿我，願主聖靈充滿我",
+    "categories": [
+      "兒童"
+    ],
+    "key": "G大調",
+    "time": "6/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn211.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "充滿我！充滿我！願主聖靈充滿我；將我倒空，將我剝奪，願主聖靈充滿我。",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn211.html"
+      },
+      {
+        "type": "scripture",
+        "text": "乃要在靈裡被充滿。",
+        "source": "弗 5:18"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 211 首，目錄分類「聖靈的同在」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn211.html"
+      }
+    ]
+  },
+  {
+    "id": "c-308",
+    "book": "children",
+    "no": 308,
+    "title": "我是耶穌的小羊",
+    "firstLine": "我是耶穌的小羊，終日快樂喜洋洋",
+    "categories": [
+      "兒童"
+    ],
+    "key": "C大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.8,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn308.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我是耶穌的小羊，終日快樂喜洋洋，因祂看顧又餧養我這小羊。",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn308.html"
+      },
+      {
+        "type": "scripture",
+        "text": "我是好牧人，我認識那屬我的，那屬我的也認識我。",
+        "source": "約 10:14"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 308 首，目錄分類「主的看顧」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn308.html"
+      }
+    ]
+  },
+  {
+    "id": "c-418",
+    "book": "children",
+    "no": 418,
+    "title": "榮耀榮耀阿利路亞",
+    "firstLine": "榮耀！榮耀！阿利路亞",
+    "categories": [
+      "兒童",
+      "福音"
+    ],
+    "key": "降E大調",
+    "time": "2/4",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn418.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "榮耀！榮耀！阿利路亞！榮耀！榮耀！阿利路亞！有主寶血我罪洗清，榮耀歸主聖名。",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn418.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 418 首，目錄分類「讚美與喜樂」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn418.html"
+      }
+    ]
+  },
+  {
+    "id": "c-430",
+    "book": "children",
+    "no": 430,
+    "title": "阿利路阿利路",
+    "firstLine": "阿利路，阿利路，阿利路，阿利路亞",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn430.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "阿利路，阿利路，阿利路，阿利路亞，讚美我主！阿利路，阿利路，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn430.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 430 首，目錄分類「讚美與喜樂」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn430.html"
+      }
+    ]
+  },
+  {
+    "id": "c-433",
+    "book": "children",
+    "no": 433,
+    "title": "樂樂樂樂我是多麼快樂",
+    "firstLine": "樂！樂！樂！樂！我是多麼快樂",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn433.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "樂！樂！樂！樂！我是多麼快樂！我是多麼快樂！耶穌喜愛我！",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn433.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 433 首，目錄分類「讚美與喜樂」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn433.html"
+      }
+    ]
+  },
+  {
+    "id": "c-502",
+    "book": "children",
+    "no": 502,
+    "title": "哦主阿們阿利路亞",
+    "firstLine": "哦主，阿們，阿利路亞，我心敞開來親近你",
+    "categories": [
+      "兒童"
+    ],
+    "key": "D大調",
+    "time": "3/8",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn502.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦主，阿們，阿利路亞，我心敞開來親近你，哦，主耶穌，聽此求呼，我所需要是你自己；",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn502.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 502 首，目錄分類「禱告與讀經」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn502.html"
+      }
+    ]
+  },
+  {
+    "id": "c-516",
+    "book": "children",
+    "no": 516,
+    "title": "主的話語比金更寶",
+    "firstLine": "主的話語比金更寶，比蜜更甘甜",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降B大調",
+    "time": "6/8",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn516.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主的話語比金更寶，比蜜更甘甜，我們禱讀享受主話，何等的甘甜；",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn516.html"
+      },
+      {
+        "type": "scripture",
+        "text": "比金子可羨慕，且比極多的精金可羨慕；比蜜甘甜，且比蜂房下滴的蜜甘甜。",
+        "source": "詩 19:10"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 516 首，目錄分類「禱告與讀經」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn516.html"
+      }
+    ]
+  },
+  {
+    "id": "c-601",
+    "book": "children",
+    "no": 601,
+    "title": "耶穌我們愛你",
+    "firstLine": "耶穌，我們愛你，你是多柔細",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn601.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "耶穌，我們愛你，你是多柔細，無論思想和行為，都照父旨意。",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn601.html"
+      },
+      {
+        "type": "scripture",
+        "text": "有了我的誡命又遵守的，這人就是愛我的。",
+        "source": "約 14:21"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 601 首，目錄分類「愛主」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn601.html"
+      }
+    ]
+  },
+  {
+    "id": "c-710",
+    "book": "children",
+    "no": 710,
+    "title": "天天跟耶穌",
+    "firstLine": "天天跟耶穌，立志永不改",
+    "categories": [
+      "兒童"
+    ],
+    "key": "F大調",
+    "time": "6/8",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn710.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "天天跟耶穌，立志永不改，祂引領我路，誰能加傷害，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn710.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 710 首，目錄分類「親近依靠主」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn710.html"
+      }
+    ]
+  },
+  {
+    "id": "c-901",
+    "book": "children",
+    "no": 901,
+    "title": "召會是個快樂家",
+    "firstLine": "召會是個快樂家，快樂家！快樂家",
+    "categories": [
+      "兒童"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn901.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "召會是個快樂家，快樂家！快樂家！召會是個快樂家，阿利路亞！",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn901.html"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 901 首，目錄分類「召會與聚會」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn901.html"
+      }
+    ]
+  },
+  {
+    "id": "c-908",
+    "book": "children",
+    "no": 908,
+    "title": "弟兄和睦同居",
+    "firstLine": "弟兄和睦同居，何等美善",
+    "categories": [
+      "兒童"
+    ],
+    "key": "降E大調",
+    "time": "2/2",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn908.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "弟兄和睦同居，何等美善；像油從亞倫頭，流到衣衫；",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn908.html"
+      },
+      {
+        "type": "scripture",
+        "text": "看哪，弟兄和睦同居，是何等的善，何等的美！",
+        "source": "詩 133:1"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 908 首，目錄分類「召會與聚會」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn908.html"
+      }
+    ]
+  },
+  {
+    "id": "c-1012",
+    "book": "children",
+    "no": 1012,
+    "title": "神愛世人",
+    "firstLine": "神愛世人，甚至將祂的獨生愛子",
+    "categories": [
+      "兒童",
+      "福音"
+    ],
+    "key": "C大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.8,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1012.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "神愛世人，甚至將祂的獨生愛子賜給他們，叫一切信祂的，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1012.html"
+      },
+      {
+        "type": "scripture",
+        "text": "神愛世人，甚至將祂的獨生子賜給他們，叫一切信入祂的，不至滅亡，反得永遠的生命。",
+        "source": "約 3:16"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 1012 首，目錄分類「傳揚福音」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1012.html"
+      }
+    ]
+  },
+  {
+    "id": "c-1101",
+    "book": "children",
+    "no": 1101,
+    "title": "我是世上光",
+    "firstLine": "我是世上光，純淨又明亮",
+    "categories": [
+      "兒童"
+    ],
+    "key": "G大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1101.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我是世上光，純淨又明亮，像一枝小蠟燭，在夜裡發光，",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1101.html"
+      },
+      {
+        "type": "scripture",
+        "text": "你們是世上的光。",
+        "source": "太 5:14"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 1101 首，目錄分類「發光並爭戰」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1101.html"
+      }
+    ]
+  },
+  {
+    "id": "c-1202",
+    "book": "children",
+    "no": 1202,
+    "title": "挪亞造方舟",
+    "firstLine": "挪亞造方舟，別人笑哈哈",
+    "categories": [
+      "兒童"
+    ],
+    "key": "C大調",
+    "time": "3/4",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1202.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "挪亞造方舟，別人笑哈哈，洪水那會來？沒人來幫忙；",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1202.html"
+      },
+      {
+        "type": "scripture",
+        "text": "這首是經文故事篇，歌詞取材自創世記第六章。",
+        "source": "創 6"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 1202 首，目錄分類「經文故事篇」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1202.html"
+      }
+    ]
+  },
+  {
+    "id": "c-1218",
+    "book": "children",
+    "no": 1218,
+    "title": "聰明人蓋房子",
+    "firstLine": "聰明人蓋房子在磐石上",
+    "categories": [
+      "兒童"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1218.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "聰明人蓋房子在磐石上，聰明人蓋房子在磐石上，聰明人蓋房子在磐石上，天上降下大雨來；",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1218.html"
+      },
+      {
+        "type": "scripture",
+        "text": "這首是經文故事篇，歌詞取材自馬太福音七章二十四至二十七節。",
+        "source": "太 7:24-27"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 1218 首，目錄分類「經文故事篇」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1218.html"
+      }
+    ]
+  },
+  {
+    "id": "c-1230",
+    "book": "children",
+    "no": 1230,
+    "title": "但以理是禱告人",
+    "firstLine": "但以理是禱告人，每日三次禱告",
+    "categories": [
+      "兒童"
+    ],
+    "key": "F大調",
+    "time": "6/8",
+    "hasChorus": false,
+    "familiarity": 0.6,
+    "urls": {
+      "cimp": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1230.html",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "但以理是禱告人，每日三次禱告，直到被敵人捉去，放進獅子坑裡。",
+        "source": "兒童詩歌歌詞（第一節）",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1230.html"
+      },
+      {
+        "type": "scripture",
+        "text": "這首是經文故事篇，歌詞取材自但以理書第六章。",
+        "source": "但 6"
+      },
+      {
+        "type": "story",
+        "text": "兒童詩歌第 1230 首，目錄分類「經文故事篇」；歌詞、調號、拍號抄自蒙特利公園市召會的詩歌頁。",
+        "source": "蒙特利公園市召會 兒童詩歌",
+        "url": "https://churchinmontereypark.org/Docs/Hymn/childBookHymn1230.html"
+      }
+    ]
   }
 ]

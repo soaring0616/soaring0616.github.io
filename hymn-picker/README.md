@@ -20,18 +20,19 @@ build 出來的 `dist/` 不進 git，由 repo 根目錄的 GitHub Actions 建置
 
 | 欄位 | 必填 | 說明 |
 | --- | :-: | --- |
-| `id` | ✅ | 全域唯一。`h-` 大本／`s-` 補充本／`n-` hymnal.net 新歌，後面接號碼，例如 `h-623`。**這是 React 的 `key`，一旦發布就不要再改**。 |
-| `book` | ✅ | `hymnal`＝大本（hymnal.net `ch/`，1–780 首）｜`supplement`＝補充本（`ts/`）｜`new`＝hymnal.net 新歌 New Songs（`ns/`；注意 `nt/` 是 New Tunes 新調，不是新歌） |
+| `id` | ✅ | 全域唯一。`h-` 大本／`s-` 補充本／`n-` hymnal.net 新歌／`c-` 兒童詩歌，後面接號碼，例如 `h-623`。**這是 React 的 `key`，一旦發布就不要再改**。 |
+| `book` | ✅ | `hymnal`＝大本（hymnal.net `ch/`，1–780 首）｜`supplement`＝補充本（`ts/`）｜`new`＝hymnal.net 新歌 New Songs（`ns/`；注意 `nt/` 是 New Tunes 新調，不是新歌）｜`children`＝兒童詩歌（hymnal.net 沒有中文版，資料來自蒙特利公園市召會的頁面） |
 | `no` | ✅ | 該本裡的號碼（數字，不是字串） |
 | `title` | ✅ | 中文標題 |
 | `firstLine` |  | 第一句歌詞，卡片上顯示在標題底下幫忙辨認 |
 | `categories` | ✅ | 中文類別陣列，例如 `["記念主", "主的救贖"]`。**選詩全靠這個欄位**，見下面的類別詞彙表。 |
 | `key` / `time` / `meter` |  | 調號／拍號／韻律，例如 `"降E大調"`、`"4/4"`、`"8.7.8.7 副"` |
 | `hasChorus` | ✅ | 有沒有副歌（`true` 會在評分時加分，兒童／福音聚會權重最高） |
-| `familiarity` |  | 會眾熟悉度 0–1。不填就依書別預設（大本 0.6／補充本 0.45／新歌 0.3）。不常唱的填低一點（例如 `0.2`）就會往後排，並在理由裡標「會眾較不熟」 |
+| `familiarity` |  | 會眾熟悉度 0–1。不填就依書別預設（大本 0.6／補充本 0.45／新歌 0.3／兒童詩歌 0.5）。不常唱的填低一點（例如 `0.2`）就會往後排，並在理由裡標「會眾較不熟」 |
 | `enNo` |  | hymnal.net 的英文號 |
 | `urls.hymnal` |  | hymnal.net 網址 |
 | `urls.luke54` |  | luke54.org 網址陣列（沒有就放 `[]`） |
+| `urls.cimp` |  | 蒙特利公園市召會的詩歌頁網址，兒童詩歌用這個（有歌詞、調號、拍號） |
 | `notes` | ✅ | 註解陣列，見下 |
 | `ignoreIndex` |  | 設 `true` 就不用詩歌本目錄自動補類別（例如 288 只想留「安慰」）。預設會補，見下面「詩歌本目錄與自動補類別」 |
 
@@ -51,14 +52,15 @@ TypeScript **不會**檢查 JSON 內容（它是執行期 fetch 進來的），�
 
 `hymns.json` 的 `categories` 是手填的；另外有兩個檔案讓程式在載入時**自動往上加**類別：
 
-- `public/data/hymn_index.json`：大本 780 首、補充本 437 首在詩歌本目錄裡的位置（大類／細目），
+- `public/data/hymn_index.json`：大本 780 首、補充本 437 首、兒童詩歌 330 首在詩歌本目錄裡的位置（大類／細目），
   由 `scripts/build_hymn_index.py` 從
   [蒙特利公園市召會的目錄頁](https://churchinmontereypark.org/Docs/Hymn/firstBookHymnIndex.html)
-  （[補充本](https://churchinmontereypark.org/Docs/Hymn/secondBookHymnIndex.html)）產生，不要手改。
+  （[補充本](https://churchinmontereypark.org/Docs/Hymn/secondBookHymnIndex.html)、[兒童詩歌](https://churchinmontereypark.org/Docs/Hymn/childBookHymnIndex.html)）產生，不要手改。
   補充本目錄頁不齊全，但補充本的號碼本身就分段（1xx 靈與生命、2xx 享受基督、4xx 追求與長大…），
   缺的號碼程式會用百位數推回大類。
 - `public/data/category_map.json`：目錄大類（或「大類／細目」）→ 本專案類別。
   例如 `"讚美主／祂的受苦": ["記念主", "主的救贖"]`、`"鼓勵": ["加強", "安慰"]`、`"追求與長大": ["受成全", "渴慕"]`。
+  兒童詩歌的大類跟大本會撞名（都有「傳揚福音」），所以鍵一律寫成 `"兒童詩歌／主的愛"`，而且每一條都帶 `兒童`。
   這張表是判斷題，**改它就改了整本詩歌的歸類**，請帶詩歌的人一起看。
 
 合併規則（`src/lib/hymnIndex.ts`）：先查「大類／細目」再查「大類」，命中的取聯集；
@@ -91,8 +93,8 @@ TypeScript **不會**檢查 JSON 內容（它是執行期 fetch 進來的），�
 ```
 hymn-picker/
 ├─ public/data/
-│  ├─ hymns.json            # 詩歌主資料（目前 70 首，已對照 hymnal.net 校正）
-│  ├─ hymn_index.json       # 詩歌本目錄（大本 780 首 + 補充本 437 首的大類／細目），腳本產生
+│  ├─ hymns.json            # 詩歌主資料（目前 90 首）
+│  ├─ hymn_index.json       # 詩歌本目錄（大本 780 + 補充本 437 + 兒童詩歌 330 首的大類／細目），腳本產生
 │  ├─ category_map.json     # 目錄大類 → 本專案類別的對照表（手工維護）
 │  └─ meeting_types.json    # 12 種聚會的選詩規則
 ├─ scripts/
@@ -124,8 +126,9 @@ hymn-picker/
 
 ## 資料來源與校正狀態
 
-`hymns.json` 目前的 70 首，標題、第一句、調號、拍號、韻律、有無副歌、英文號與 `notes` 裡的
-摘句、作者資料，都是直接從 <https://www.hymnal.net> 對應頁面抄下來的（前 27 首 2026-09-06，之後的 43 首 2026-09-12）。
+`hymns.json` 目前的 90 首：大本、補充本、新歌共 70 首，標題、第一句、調號、拍號、韻律、有無副歌、英文號與 `notes` 裡的
+摘句、作者資料，都是直接從 <https://www.hymnal.net> 對應頁面抄下來的（前 27 首 2026-09-06，之後的 43 首 2026-09-12）；
+兒童詩歌 20 首（`c-`）抄自蒙特利公園市召會的兒童詩歌頁，兒童聚會的 `include` 現在只有 `兒童`，所以兒童聚會只會列兒童詩歌和特別標了 `兒童` 的大本詩歌。
 **`categories` 是依歌詞內容與 hymnal.net 的分類初步對到本專案的類別詞彙**，帶詩歌的人請再校對。
 `urls.luke54` 目前都是空陣列，沒有查證過的連結就不放。
 

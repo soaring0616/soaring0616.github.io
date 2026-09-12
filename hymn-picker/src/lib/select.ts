@@ -19,12 +19,14 @@ const BOOK_FAMILIARITY: Record<Hymn['book'], number> = {
   hymnal: 0.6,
   supplement: 0.45,
   new: 0.3,
+  children: 0.5,
 };
 
 const BOOK_LABEL: Record<Hymn['book'], string> = {
   hymnal: '大本',
   supplement: '補充本',
   new: '新歌',
+  children: '兒童詩歌',
 };
 
 export function bookLabel(book: Hymn['book']): string {
@@ -148,7 +150,7 @@ export function selectHymns(
     .filter((h) => include.length === 0 || matchedCategories(h, include).length > 0)
     .map((h) => scoreHymn(h, meetingType, opts));
 
-  const bookOrder: Hymn['book'][] = ['hymnal', 'supplement', 'new'];
+  const bookOrder: Hymn['book'][] = ['hymnal', 'supplement', 'new', 'children'];
   return candidates.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     const byBook =

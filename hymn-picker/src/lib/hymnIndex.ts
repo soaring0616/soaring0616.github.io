@@ -9,6 +9,8 @@ import type { CategoryMap, Hymn, HymnIndexEntry } from '../types';
  *      補充本目錄不完整，但它的號碼本身就分段（1xx 靈與生命、2xx 享受基督…），
  *      找不到時用百位數推回大類。
  *   2. 查 category_map：先「大類／細目」再「大類」，命中的取聯集。
+ *      兒童詩歌的大類名稱會跟大本撞（都有「傳揚福音」），所以它的鍵一律寫成
+ *      「兒童詩歌／大類」，而且不再退回查「大類」。
  *   3. 手填的 categories 排前面、目錄補的排後面；重複的不再加。
  *   4. hymn.ignoreIndex 為 true 就只填 index，不動 categories。
  */
@@ -30,6 +32,9 @@ const SUPPLEMENT_SECTION_BY_HUNDREDS: Record<number, string> = {
 
 /** 目錄大類與細目之間的分隔號，category_map.json 的鍵也用它 */
 export const INDEX_SEPARATOR = '／';
+
+/** 兒童詩歌在 category_map.json 裡的鍵前綴 */
+export const CHILDREN_KEY_PREFIX = `兒童詩歌${INDEX_SEPARATOR}`;
 
 export function indexKey(book: Hymn['book'], no: number): string {
   return `${book}:${no}`;
@@ -68,6 +73,10 @@ export function categoriesFromIndex(entry: HymnIndexEntry, map: CategoryMap): st
       if (!out.includes(c)) out.push(c);
     });
   };
+  if (entry.book === 'children') {
+    add(CHILDREN_KEY_PREFIX + entry.section);
+    return out;
+  }
   if (entry.sub) add(indexLabel(entry));
   add(entry.section);
   return out;

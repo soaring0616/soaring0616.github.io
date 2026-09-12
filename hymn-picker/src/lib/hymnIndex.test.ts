@@ -18,6 +18,7 @@ const INDEX: HymnIndexEntry[] = [
   { book: 'hymnal', no: 193, section: '讚美主', sub: '一般' },
   { book: 'hymnal', no: 288, section: '羨慕', sub: '安息' },
   { book: 'supplement', no: 433, section: '追求與長大', title: '踏上更高之地' },
+  { book: 'children', no: 1012, section: '傳揚福音', title: '神愛世人' },
 ];
 
 const MAP: CategoryMap = {
@@ -27,6 +28,8 @@ const MAP: CategoryMap = {
   羨慕: ['渴慕', '受成全'],
   追求與長大: ['受成全', '渴慕'],
   召會的生活: ['召會生活'],
+  傳揚福音: ['傳福音'],
+  '兒童詩歌／傳揚福音': ['兒童', '福音'],
 };
 
 describe('categoriesFromIndex', () => {
@@ -35,6 +38,10 @@ describe('categoriesFromIndex', () => {
   });
   it('細目沒對照時只用大類', () => {
     expect(categoriesFromIndex(INDEX[1], MAP)).toEqual(['讚美主']);
+  });
+  it('兒童詩歌只查「兒童詩歌／大類」，不會撞到大本同名的大類', () => {
+    expect(categoriesFromIndex(INDEX[4], MAP)).toEqual(['兒童', '福音']);
+    expect(categoriesFromIndex({ book: 'children', no: 1, section: '沒對照的大類' }, MAP)).toEqual([]);
   });
   it('都沒對照就是空陣列', () => {
     expect(categoriesFromIndex({ book: 'hymnal', no: 1, section: '不存在' }, MAP)).toEqual([]);

@@ -59,7 +59,7 @@ export default function HymnDetail() {
       {/* linkToDetail={false}：已經在詳細頁了，標題不用再連到自己 */}
       <HymnCard hymn={hymn} linkToDetail={false} />
 
-      {(hymn.urls.hymnal || luke54.length > 0) && (
+      {(hymn.urls.hymnal || hymn.urls.cimp || luke54.length > 0) && (
         <div className={styles.links}>
           <h2 className={styles.linksTitle}>外部連結</h2>
           <ul className={styles.linkList}>
@@ -72,6 +72,18 @@ export default function HymnDetail() {
                   rel="noreferrer"
                 >
                   hymnal.net 歌譜與錄音 →
+                </a>
+              </li>
+            )}
+            {hymn.urls.cimp && (
+              <li>
+                <a
+                  className={styles.link}
+                  href={hymn.urls.cimp}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  蒙特利公園市召會 歌詞與歌譜 →
                 </a>
               </li>
             )}
