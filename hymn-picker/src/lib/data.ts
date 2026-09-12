@@ -36,7 +36,7 @@ async function fetchJson<T>(path: string): Promise<T> {
  * 載入詩歌，並依序：
  *   1. 用詩歌本目錄（hymn_index.json + category_map.json）補類別與目錄位置
  *   2. 用 theme_tags.json 掛主題關鍵字
- *   3. 用 sunday_picks.json 掛主日唱過的紀錄（段落插到 categories 最前面、熟悉度加分）
+ *   3. 用 sunday_picks.json 掛主日唱過的紀錄（段落插到 categories 最前面；不動熟悉度）
  * 所有頁面都走這裡，所以看到的類別一致。
  */
 export function loadHymns(): Promise<Hymn[]> {
