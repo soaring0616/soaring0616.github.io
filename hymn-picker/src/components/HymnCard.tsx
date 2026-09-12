@@ -93,7 +93,36 @@ export default function HymnCard({
         </ul>
       )}
 
+      {hymn.tags && hymn.tags.length > 0 && (
+        <ul className={styles.chips}>
+          {hymn.tags.map((t) => (
+            <li key={t} className={styles.tag}>
+              {t}
+            </li>
+          ))}
+        </ul>
+      )}
+
       {meta.length > 0 && <p className={styles.meta}>{meta.join('　')}</p>}
+
+      {hymn.tagSources && hymn.tagSources.length > 0 && (
+        <p className={styles.meta}>
+          主題出處：
+          {hymn.tagSources.map((s, i) => (
+            // 同一首詩的出處順序固定、不會重排，用 index 當 key 沒問題
+            <span key={`${hymn.id}-src-${i}`}>
+              {i > 0 && '、'}
+              {s.url ? (
+                <a className={styles.noteLink} href={s.url} target="_blank" rel="noreferrer">
+                  {s.label} →
+                </a>
+              ) : (
+                s.label
+              )}
+            </span>
+          ))}
+        </p>
+      )}
 
       {hymn.notes.length > 0 && (
         <section className={styles.section}>

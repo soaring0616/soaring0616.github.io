@@ -68,6 +68,21 @@
   background: #f2f7f2;
 }
 
+/* 主題關鍵字：跟類別 chip 同形狀、換個顏色，一眼分得出「選詩類別」與「生活情境」 */
+.tag {
+  font-size: 0.78rem;
+  padding: 2px 9px;
+  border-radius: 999px;
+  border: 1px solid #e0d3b8;
+  color: #7a5c1e;
+  background: #fbf3e2;
+}
+
+.tag::before {
+  content: '# ';
+  opacity: 0.6;
+}
+
 .meta {
   display: flex;
   flex-wrap: wrap;

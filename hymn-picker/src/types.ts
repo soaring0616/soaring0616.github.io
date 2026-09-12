@@ -58,6 +58,29 @@ export interface Hymn {
    * 大本有細目（讚美主／祂的受苦），補充本只有大類。
    */
   index?: HymnIndexEntry;
+  /**
+   * 主題關鍵字：生活情境、系列主題，例如「憂慮」「出遊」「晨興」。
+   * 大多由 theme_tags.json 在載入時掛上，hymns.json 也可以手填；
+   * 首頁的「主題關鍵字」搜尋會比對這裡。
+   */
+  tags?: string[];
+  /** tags 的出處（例如合聲響應某一集），載入時填上，卡片上顯示成連結 */
+  tagSources?: { label: string; url?: string }[];
+}
+
+/** public/data/theme_tags.json：一個出處點名了哪些詩、談什麼主題 */
+export interface ThemeTagSource {
+  id: string;
+  /** 顯示用，例如「合聲響應 EP41 沐浴主愛系列」 */
+  label: string;
+  url?: string;
+  tags: string[];
+  /** 詩歌 id（h-286、s-328、c-114…），可以先列還沒加進 hymns.json 的 */
+  hymns: string[];
+}
+
+export interface ThemeTagFile {
+  sources: ThemeTagSource[];
 }
 
 /** public/data/hymn_index.json 的一筆：詩歌本目錄裡的一首詩 */

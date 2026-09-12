@@ -55,7 +55,7 @@ export default function MeetingSelector({
           className={styles.control}
           type="search"
           value={theme}
-          placeholder="例如：十字架、復活、召會"
+          placeholder="例如：十字架、憂慮、出遊、晨興"
           onChange={(e) => onThemeChange(e.target.value)}
         />
       </label>

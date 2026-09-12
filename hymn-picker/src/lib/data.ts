@@ -1,5 +1,6 @@
-import type { CategoryMap, Hymn, HymnIndexEntry, MeetingType } from '../types';
+import type { CategoryMap, Hymn, HymnIndexEntry, MeetingType, ThemeTagFile } from '../types';
 import { enrichHymns } from './hymnIndex';
+import { applyThemeTags } from './themeTags';
 
 /**
  * 靜態 JSON 的載入函式。沒有後端，全部靠 fetch public/ 底下的檔案。
@@ -24,7 +25,8 @@ async function fetchJson<T>(path: string): Promise<T> {
 }
 
 /**
- * 載入詩歌，並用詩歌本目錄（hymn_index.json + category_map.json）補上類別與目錄位置。
+ * 載入詩歌，並用詩歌本目錄（hymn_index.json + category_map.json）補上類別與目錄位置，
+ * 再用 theme_tags.json 掛上主題關鍵字。
  * 兩個頁面（Home、HymnDetail）都走這裡，所以看到的類別一致。
  */
 export function loadHymns(): Promise<Hymn[]> {
@@ -32,7 +34,10 @@ export function loadHymns(): Promise<Hymn[]> {
     fetchJson<Hymn[]>('data/hymns.json'),
     fetchJson<HymnIndexEntry[]>('data/hymn_index.json'),
     fetchJson<CategoryMap>('data/category_map.json'),
-  ]).then(([hymns, index, map]) => enrichHymns(hymns, index, map));
+    fetchJson<ThemeTagFile>('data/theme_tags.json'),
+  ]).then(([hymns, index, map, tags]) =>
+    applyThemeTags(enrichHymns(hymns, index, map), tags),
+  );
 }
 
 export function loadMeetingTypes(): Promise<MeetingType[]> {

@@ -47,11 +47,11 @@ function blockedCategories(hymn: Hymn, exclude: string[]): string[] {
   return hymn.categories.filter((c) => exclude.includes(c));
 }
 
-/** theme 關鍵字有沒有出現在標題 / 首句 / 類別裡 */
+/** theme 關鍵字有沒有出現在標題 / 首句 / 類別 / 主題關鍵字（tags）裡 */
 function matchesTheme(hymn: Hymn, theme: string): boolean {
   const q = normalize(theme);
   if (!q) return false;
-  const haystack = [hymn.title, hymn.firstLine ?? '', ...hymn.categories]
+  const haystack = [hymn.title, hymn.firstLine ?? '', ...hymn.categories, ...(hymn.tags ?? [])]
     .map(normalize)
     .join(' | ');
   return haystack.includes(q);
