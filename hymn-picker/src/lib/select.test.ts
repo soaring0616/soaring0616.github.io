@@ -121,6 +121,50 @@ describe('selectBySections', () => {
     expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-2']);
   });
 
+  it('include 為空的段落是「一般」段：收下沒命中主題段的詩，並沿用聚會層級的 include', () => {
+    const smallgroup: MeetingType = {
+      id: 'smallgroup',
+      label: '小排',
+      include: ['經歷神', '安慰'],
+      exclude: [],
+      weights: { familiarity: 0.4, chorus: 0.2, themeMatch: 0.4 },
+      sections: [
+        { label: '願意受成全', include: ['受成全'] },
+        { label: '一般', include: [] },
+      ],
+      suggestedCount: 3,
+    };
+    const list = [
+      // 命中主題段 → 歸主題段，即使它也命中聚會層級 include 兩個類別
+      hymn({ id: 'h-30', no: 30, categories: ['受成全', '經歷神', '安慰'] }),
+      // 沒命中主題段、但符合聚會 include → 一般段
+      hymn({ id: 'h-31', no: 31, categories: ['安慰'] }),
+      // 兩者都不符 → 不出現
+      hymn({ id: 'h-32', no: 32, categories: ['福音'] }),
+    ];
+    const sections = selectBySections(list, smallgroup);
+    expect(sections.map((s) => s.label)).toEqual(['願意受成全', '一般']);
+    expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['h-30']);
+    expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-31']);
+  });
+
+  it('聚會層級 include 也為空時，一般段收下其餘全部', () => {
+    const special: MeetingType = {
+      ...OPEN,
+      sections: [
+        { label: '加強', include: ['加強'] },
+        { label: '一般', include: [] },
+      ],
+    };
+    const list = [
+      hymn({ id: 'h-40', no: 40, categories: ['加強'] }),
+      hymn({ id: 'h-41', no: 41, categories: ['福音'] }),
+    ];
+    const sections = selectBySections(list, special);
+    expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['h-40']);
+    expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-41']);
+  });
+
   it('同一首詩只歸到一個段落：命中類別最多的那段，平手放前面', () => {
     const table2: MeetingType = {
       ...TABLE,

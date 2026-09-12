@@ -165,6 +165,8 @@ export function selectHymns(
  *
  * 同一首詩只會出現在一個段落：歸到「命中該段 include 類別最多」的段落，
  * 平手時放前面的段落。不然像「讚美主＋記念主」的詩會在記念主、敬拜父兩段都列一次。
+ * include 為空的段落當「一般」段：收下沒命中任何主題段落的詩，再用聚會層級的 include 過濾
+ * （小排：先列「願意受成全」「加強」兩個主題段，其餘仍只留召會生活／經歷神／感恩／安慰）。
  */
 export function selectBySections(
   hymns: Hymn[],
@@ -178,7 +180,11 @@ export function selectBySections(
     ];
   }
 
-  // 每首詩的「歸屬段落」索引；一個都沒命中的詩不會有歸屬（後面 selectHymns 也會濾掉）
+  // 每首詩的「歸屬段落」索引。
+  // include 為空的段落是「一般」段：收容沒命中任何主題段落的詩，
+  // 過濾時沿用聚會層級的 include（小排就仍只留召會生活／經歷神…，特別聚會則不限）。
+  // 一個都沒命中、又沒有一般段的詩不會有歸屬（後面 selectHymns 也會濾掉）。
+  const catchAll = sections.findIndex((s) => s.include.length === 0);
   const home = new Map<string, number>();
   hymns.forEach((h) => {
     let best = -1;
@@ -190,6 +196,7 @@ export function selectBySections(
         bestHits = hits;
       }
     });
+    if (best < 0) best = catchAll;
     if (best >= 0) home.set(h.id, best);
   });
 
@@ -197,7 +204,11 @@ export function selectBySections(
     label: section.label,
     candidates: selectHymns(
       hymns.filter((h) => home.get(h.id) === i),
-      { ...meetingType, include: section.include, sections: undefined },
+      {
+        ...meetingType,
+        include: i === catchAll ? meetingType.include : section.include,
+        sections: undefined,
+      },
       opts,
     ),
   }));

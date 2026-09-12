@@ -405,6 +405,7 @@
     "title": "耶穌你的全勝的愛",
     "firstLine": "耶穌，你的全勝的愛，已經澆灌我心",
     "categories": [
+      "受成全",
       "聖靈",
       "經歷神",
       "渴慕"
@@ -517,9 +518,7 @@
     "title": "與我同住夕陽西沉",
     "firstLine": "與我同住，夕陽西沉迅速；黑暗漸深，求主與我同住",
     "categories": [
-      "渴慕",
-      "安慰",
-      "禱告"
+      "安慰"
     ],
     "key": "E大調",
     "time": "4/4",
@@ -542,6 +541,11 @@
         "text": "詞 Henry F. Lyte（1793–1847），曲 W. H. Monk；hymnal.net 分類「羨慕／與主交通」，英文版 E370。",
         "source": "hymnal.net 詩歌資料",
         "url": "https://www.hymnal.net/en/hymn/ch/288"
+      },
+      {
+        "type": "tip",
+        "text": "夕陽西沉、求主同住的氣氛比較沉，適合小排；擘餅、禱告、訓練這類聚會不點。",
+        "source": "帶詩歌的弟兄姊妹回饋"
       }
     ]
   },
@@ -1273,6 +1277,7 @@
     "title": "生命活水的江河",
     "firstLine": "生命活水的江河，流自天上的寶座",
     "categories": [
+      "受成全",
       "聖靈",
       "經歷神"
     ],
@@ -1353,6 +1358,7 @@
     "title": "聖靈的大風",
     "firstLine": "聖靈的大風，從天來吹動",
     "categories": [
+      "加強",
       "聖靈",
       "祈求",
       "經歷神"
@@ -1635,7 +1641,6 @@
     "firstLine": "基督是活神，說：阿利路亞",
     "categories": [
       "召會生活",
-      "讚美主",
       "青年"
     ],
     "key": "G大調",
@@ -1703,6 +1708,1033 @@
         "text": "hymnal.net 分類「教會的生活」。",
         "source": "hymnal.net 詩歌資料",
         "url": "https://www.hymnal.net/en/hymn/ts/714"
+      }
+    ]
+  },
+  {
+    "id": "h-1",
+    "book": "hymnal",
+    "no": 1,
+    "title": "但願榮耀歸於聖父",
+    "firstLine": "但願榮耀歸於聖父，並聖子基督",
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "8.5.8.3",
+    "hasChorus": false,
+    "enNo": 1,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/1",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "但願榮耀歸於聖父，並聖子基督，且願榮耀歸於聖靈到永古。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/1"
+      },
+      {
+        "type": "scripture",
+        "text": "因為萬有都是本於祂、藉著祂、並歸於祂；願榮耀歸與祂，直到永遠。",
+        "source": "羅 11:36"
+      },
+      {
+        "type": "story",
+        "text": "詞 J. F. Garland；曲 Ira David Sankey (1840–1908)；hymnal.net 分類「頌讚三一神／祂的計畫」，英文版 E1。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/1"
+      }
+    ]
+  },
+  {
+    "id": "h-2",
+    "book": "hymnal",
+    "no": 2,
+    "title": "榮耀榮耀榮耀",
+    "firstLine": "榮耀、榮耀、榮耀，讚美、崇敬、愛戴",
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "12.13.12.10",
+    "hasChorus": false,
+    "enNo": 2,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/2",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "榮耀、榮耀、榮耀、讚美、崇敬、愛戴！聽哪，頌讚聲浪，從永世一直澎湃！聖父、聖子、聖靈－神，已啟示出來，人人都當向祂俯伏敬拜！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/2"
+      },
+      {
+        "type": "scripture",
+        "text": "我們的主，我們的神，你是配得榮耀、尊貴、能力的，因為你創造了萬有。",
+        "source": "啟 4:11"
+      },
+      {
+        "type": "story",
+        "text": "詞 Stanley McCallum (1904–1987)；曲 E. Carren；hymnal.net 分類「頌讚三一神／祂的啟示」，英文版 E2。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/2"
+      }
+    ]
+  },
+  {
+    "id": "h-3",
+    "book": "hymnal",
+    "no": 3,
+    "title": "榮耀榮耀歸於聖父",
+    "firstLine": "榮耀、榮耀歸於聖父，榮耀、榮耀歸聖子",
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
+    "key": "降E大調",
+    "time": "4/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 7,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/3",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "高聲讚美！高聲讚美！高聲讚美三一神！榮耀歸祂！榮耀歸祂！榮耀、榮耀，神來施救恩。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/3"
+      },
+      {
+        "type": "scripture",
+        "text": "願在召會中，並在基督耶穌裡，榮耀歸與祂，直到世世代代，永永遠遠。",
+        "source": "弗 3:21"
+      },
+      {
+        "type": "story",
+        "text": "詞 Margaret Jenkins Harris (1865–1919)；曲 Margaret Jenkins Harris (1865–1919)；hymnal.net 分類「頌讚三一神／對祂的讚美」，英文版 E7。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/3"
+      }
+    ]
+  },
+  {
+    "id": "h-4",
+    "book": "hymnal",
+    "no": 4,
+    "title": "聖哉聖哉聖哉",
+    "firstLine": "聖哉、聖哉、聖哉，全能的主神",
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
+    "key": "降E大調",
+    "time": "4/4",
+    "meter": "12.13.12.10",
+    "hasChorus": false,
+    "familiarity": 0.75,
+    "enNo": 6,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/4",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "聖哉、聖哉、聖哉，全能的主神！我們向你揚聲，頌讚直到永遠；聖哉、聖哉、聖哉，全能而又慈憐！一神別三位，三位是一身！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/4"
+      },
+      {
+        "type": "scripture",
+        "text": "聖哉，聖哉，聖哉，主神是昔在、今在、以後永在的全能者。",
+        "source": "啟 4:8"
+      },
+      {
+        "type": "story",
+        "text": "詞 Reginald Heber (1783–1826)；曲 John Bacchus Dykes (1823–1876)；hymnal.net 分類「頌讚三一神／對祂的讚美」，英文版 E6。中英文教會通用的三一頌，會眾多半不用看譜就能唱。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/4"
+      }
+    ]
+  },
+  {
+    "id": "h-5",
+    "book": "hymnal",
+    "no": 5,
+    "title": "讚美父乃祝福之源",
+    "firstLine": "讚美父乃祝福之源，讚美子將救贖成全",
+    "categories": [
+      "敬拜父",
+      "讚美主",
+      "感恩"
+    ],
+    "key": "G大調",
+    "time": "4/4",
+    "meter": "8.8.8.8",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "enNo": 8,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/5",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "讚美父乃祝福之源，讚美子將救贖成全，讚美靈來實施、運行，讚美聖父、聖子、聖靈！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/5"
+      },
+      {
+        "type": "scripture",
+        "text": "各樣美善的賜與和各樣全備的恩賜，都是從上頭來的，從眾光之父那裡降下來的。",
+        "source": "雅 1:17"
+      },
+      {
+        "type": "story",
+        "text": "詞 Thomas Ken (1637–1711)；曲出自日內瓦詩篇（1551）；hymnal.net 分類「頌讚三一神／對祂的讚美」，英文版 E8。只有兩節、四句一節，聚會開頭或結尾都很好用。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/5"
+      }
+    ]
+  },
+  {
+    "id": "h-6",
+    "book": "hymnal",
+    "no": 6,
+    "title": "神，你是愛，你也是光",
+    "firstLine": "神，你是愛，你也是光，且在子裡作生命",
+    "categories": [
+      "敬拜父"
+    ],
+    "key": "F大調",
+    "time": "3/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 13,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/6",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "你是愛！你是光！且在子裡作生命；愛已顯明，光已照亮，我們因此而得生。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/6"
+      },
+      {
+        "type": "scripture",
+        "text": "神就是光，在祂裡面毫無黑暗……神就是愛。",
+        "source": "約壹 1:5、4:8"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 Silas Jones Vail (1818–1884)；hymnal.net 分類「敬拜父／是愛與光」，英文版 E13。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/6"
+      }
+    ]
+  },
+  {
+    "id": "h-7",
+    "book": "hymnal",
+    "no": 7,
+    "title": "哦神你是永遠父",
+    "firstLine": "哦神，你是永遠父，也是自有永有主",
+    "categories": [
+      "敬拜父"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "7.7.7.7",
+    "hasChorus": false,
+    "enNo": 10,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/7",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦神，你是永遠父，也是自有永有主！你比古者還要古，你比初者還要初！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/7"
+      },
+      {
+        "type": "scripture",
+        "text": "諸山未曾生出，地與世界你未曾造成，從亙古到永遠，你是神。",
+        "source": "詩 90:2"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 佚名；hymnal.net 分類「敬拜父／是永存者」，英文版 E10。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/7"
+      }
+    ]
+  },
+  {
+    "id": "h-8",
+    "book": "hymnal",
+    "no": 8,
+    "title": "父阿，你是萬靈之靈",
+    "firstLine": "父阿，你是萬靈之靈，神聖遠超萬眾",
+    "categories": [
+      "敬拜父"
+    ],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 11,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/8",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "父阿，你是萬靈之靈，神聖遠超萬眾；我們敬拜以靈、在靈，同靈向你稱頌。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/8"
+      },
+      {
+        "type": "scripture",
+        "text": "神是靈；敬拜祂的，必須在靈和真實裡敬拜。",
+        "source": "約 4:24"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 Henry Stephen Cutler (1825–1902)；hymnal.net 分類「敬拜父／是靈」，英文版 E11。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/8"
+      }
+    ]
+  },
+  {
+    "id": "h-9",
+    "book": "hymnal",
+    "no": 9,
+    "title": "哦神你是生命源頭",
+    "firstLine": "哦神，你是生命源頭，神聖、甘美、豐滿",
+    "categories": [
+      "敬拜父",
+      "經歷神"
+    ],
+    "key": "D大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "enNo": 12,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/9",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦神，你是生命源頭，神聖、甘美、豐滿！你如活水向外湧流，一直流到永遠！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/9"
+      },
+      {
+        "type": "scripture",
+        "text": "因為在你那裡有生命的源頭，在你的光中，我們必得見光。",
+        "source": "詩 36:9"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 C. Hutcheson；hymnal.net 分類「敬拜父／是生命的源頭」，英文版 E12。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/9"
+      }
+    ]
+  },
+  {
+    "id": "h-10",
+    "book": "hymnal",
+    "no": 10,
+    "title": "哦神你是何超越",
+    "firstLine": "哦神，你是何超越，你是何等聖別",
+    "categories": [
+      "敬拜父"
+    ],
+    "key": "D大調",
+    "time": "4/4",
+    "meter": "7.6.7.6.D",
+    "hasChorus": false,
+    "enNo": 15,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/10",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦神，你是何超越，你是何等聖別！無何能與你並列，你的一切超絕！你是宇宙的至聖，你是聖中之聖！你的永能和神性，遠超萬有、眾生！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/10"
+      },
+      {
+        "type": "scripture",
+        "text": "耶和華阿，眾神之中誰能像你？誰能像你至聖至榮，可頌可畏，施行奇事？",
+        "source": "出 15:11"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 Lowell Mason (1792–1872)；hymnal.net 分類「敬拜父／祂的超越」，英文版 E15。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/10"
+      }
+    ]
+  },
+  {
+    "id": "h-11",
+    "book": "hymnal",
+    "no": 11,
+    "title": "哦父你是常新的神",
+    "firstLine": "父神，你如青翠松樹，永遠常新不衰",
+    "categories": [
+      "敬拜父"
+    ],
+    "key": "C大調",
+    "time": "6/8",
+    "meter": "8.6.8.6.D",
+    "hasChorus": true,
+    "enNo": 16,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/11",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦父，你是常新的神，永遠不知陳舊！千萬億載仍是鮮新！儘管年日悠久。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/11"
+      },
+      {
+        "type": "scripture",
+        "text": "每早晨這都是新的；你的信實，極其廣大。",
+        "source": "哀 3:23"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 George Frederick Root (1820–1895)；hymnal.net 分類「敬拜父／祂的新鮮」，英文版 E16。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/11"
+      }
+    ]
+  },
+  {
+    "id": "h-12",
+    "book": "hymnal",
+    "no": 12,
+    "title": "當我觀賞父你廣大",
+    "firstLine": "當我觀賞，父，你廣大的創造",
+    "categories": [
+      "敬拜父",
+      "讚美主"
+    ],
+    "key": "降B大調",
+    "time": "4/4",
+    "meter": "11.10.11.10 副",
+    "hasChorus": true,
+    "familiarity": 0.7,
+    "enNo": 17,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/12",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我心、我靈立即興起讚美：你何希奇！你何偉大！讚美之聲永世還要宏偉；你何希奇！你何偉大！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/12"
+      },
+      {
+        "type": "scripture",
+        "text": "我觀看你指頭所造的天，並你所陳設的月亮星宿，便說，人算什麼，你竟顧念他？",
+        "source": "詩 8:3-4"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 Swedish folk melody；hymnal.net 分類「敬拜父／祂的偉大」，英文版 E17。曲調就是「你真偉大」（How Great Thou Art）的瑞典民謠，副歌全會眾都能大聲唱。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/12"
+      }
+    ]
+  },
+  {
+    "id": "h-31",
+    "book": "hymnal",
+    "no": 31,
+    "title": "父阿久在創世之前",
+    "firstLine": "父阿，久在創世之前，你選我們，愛無限",
+    "categories": [
+      "敬拜父",
+      "感恩"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "8.7.8.7.8.7",
+    "hasChorus": false,
+    "enNo": 33,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/31",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "父阿，久在創世之前，你選我們，愛無限！這愛甘美、激勵、深厚，吸引我們親耶穌。還要保守，還要保守，我們今後永穩固。我們今後永穩固。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/31"
+      },
+      {
+        "type": "scripture",
+        "text": "就如神從創立世界以前，在基督裡揀選了我們，使我們在愛裡，在祂面前，成為聖別、沒有瑕疵。",
+        "source": "弗 1:4"
+      },
+      {
+        "type": "story",
+        "text": "曲 Philip Paul Bliss (1838–1876)；hymnal.net 分類「敬拜父／祂的揀選」，英文版 E33。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/31"
+      }
+    ]
+  },
+  {
+    "id": "h-127",
+    "book": "hymnal",
+    "no": 127,
+    "title": "耶穌我主榮耀主",
+    "firstLine": "耶穌我主榮耀王，你愛何等寬廣",
+    "categories": [
+      "記念主",
+      "主的救贖",
+      "讚美主"
+    ],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/127",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "耶穌我主榮耀王，你愛何等寬廣！甘離寶座，親來世界尋迷羊，誕生馬槽謙卑樣，又向埃及逃亡，回加利利，居拿撒勒，歷風霜；三十三載役於人，藐視、厭棄難當；廣傳福音，報告禧年，走四方；殷勤服事忍飢腸，困乏休息無床；美哉、善哉、主愛奇哉，深且長！",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/127"
+      },
+      {
+        "type": "scripture",
+        "text": "反倒倒空自己，取了奴僕的形狀……自己卑微，順從至死，且死在十字架上。",
+        "source": "腓 2:7-8"
+      },
+      {
+        "type": "story",
+        "text": "詞 李淵如（Ruth Yuan-ru Lee，1894–1969）；曲 English melody；hymnal.net 分類「讚美主／祂的愛」。四節依序唱主的降生、受死、復活、再來，第一節到第二節正好走完擘餅記念主的路線；每節結尾都是「美哉、善哉、主愛奇哉，深且長」。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/127"
+      }
+    ]
+  },
+  {
+    "id": "h-135",
+    "book": "hymnal",
+    "no": 135,
+    "title": "哦願我有千萬舌頭",
+    "firstLine": "哦，願我有千萬舌頭，前來讚美救主",
+    "categories": [
+      "記念主",
+      "讚美主",
+      "主的救贖"
+    ],
+    "key": "F大調",
+    "time": "3/4",
+    "meter": "8.6.8.6",
+    "hasChorus": false,
+    "familiarity": 0.7,
+    "enNo": 163,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/135",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "哦，願我有千萬舌頭，前來讚美救主，說祂恩典何等深厚，榮耀何等豐富。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/135"
+      },
+      {
+        "type": "scripture",
+        "text": "我的口要說出讚美耶和華的話；惟願凡有血氣的，都永永遠遠稱頌祂的聖名。",
+        "source": "詩 145:21"
+      },
+      {
+        "type": "story",
+        "text": "詞 Charles Wesley (1707–1788)；曲 Arranged from William Gardiner (1769–1853)；hymnal.net 分類「讚美主／祂的恩典」，英文版 E163。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/135"
+      }
+    ]
+  },
+  {
+    "id": "h-204",
+    "book": "hymnal",
+    "no": 204,
+    "title": "生命活水在流通",
+    "firstLine": "生命活水水晶河，流自天上的寶座",
+    "categories": [
+      "受成全",
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "F大調",
+    "time": "6/4",
+    "meter": "7.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 984,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/204",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "生命活水在流通，處處都要流得通，帶著權柄施交通，處處都要流得通。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/204"
+      },
+      {
+        "type": "scripture",
+        "text": "這河水所到之處，凡滋生的動物都必生活，並且因這水流到那裡，就都得治好。",
+        "source": "結 47:9"
+      },
+      {
+        "type": "story",
+        "text": "詞 李常受 (1905–1997)；曲 B. Line; Chorus by D. Wood；hymnal.net 分類「聖靈的豐滿／活水」，英文版 E984。與 203「生命活水的江河」同一個曲調，副歌換成「處處都要流得通」，訓練、特會裡常兩首連著唱。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/204"
+      }
+    ]
+  },
+  {
+    "id": "h-210",
+    "book": "hymnal",
+    "no": 210,
+    "title": "我是呼出我的愁苦",
+    "firstLine": "主，求你向我吹聖靈，教我如何吸入你",
+    "categories": [
+      "受成全",
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "降B大調",
+    "time": "3/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 255,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/210",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我是呼出我的愁苦，呼出我罪污；我是吸入，一直吸入，你所有豐富。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/210"
+      },
+      {
+        "type": "scripture",
+        "text": "說了這話，就向他們吹入一口氣，說，你們受聖靈。",
+        "source": "約 20:22"
+      },
+      {
+        "type": "story",
+        "text": "詞 Albert Benjamin Simpson (1843–1919)；曲 Albert Benjamin Simpson (1843–1919)；hymnal.net 分類「聖靈的豐滿／氣」，英文版 E255。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/210"
+      }
+    ]
+  },
+  {
+    "id": "s-410",
+    "book": "supplement",
+    "no": 410,
+    "title": "主，我寶貝這生命的流",
+    "firstLine": "從我靈裡深處，有生命水湧流",
+    "categories": [
+      "受成全",
+      "經歷神",
+      "渴慕"
+    ],
+    "key": "降B大調",
+    "time": "3/4",
+    "meter": "12.8.12.8 副",
+    "hasChorus": true,
+    "enNo": 1191,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/410",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主，我寶貝這生命的流，我的魂生命不再保留；哦主，加深這生命的流，願你來時我生命成熟。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/410"
+      },
+      {
+        "type": "scripture",
+        "text": "信入我的人，就如經上所說，從他腹中要流出活水的江河來。",
+        "source": "約 7:38"
+      },
+      {
+        "type": "story",
+        "text": "詞譯自 R. K.；曲 George Bennard (1873–1958)；hymnal.net 分類「追求與長進」，英文版 E1191。副歌「我的魂生命不再保留……願你來時我生命成熟」是奉獻受成全的禱告，適合訓練、特會末了唱。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/410"
+      }
+    ]
+  },
+  {
+    "id": "s-433",
+    "book": "supplement",
+    "no": 433,
+    "title": "踏上更高之地",
+    "firstLine": "我今上行，毫不遲疑，每日邁向更高境地",
+    "categories": [
+      "受成全",
+      "渴慕",
+      "獻上自己"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "8.8.8.8.D",
+    "hasChorus": true,
+    "familiarity": 0.55,
+    "enNo": 396,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/433",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主，加我力，將我舉起，使我踏上更高之地；更高境地，憑信站立；主，使我立更高之地。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/433"
+      },
+      {
+        "type": "scripture",
+        "text": "向著標竿竭力追求，要得神在基督耶穌裡，召我向上去得的獎賞。",
+        "source": "腓 3:14"
+      },
+      {
+        "type": "story",
+        "text": "詞譯自 Johnson Oatman Jr. (1856–1926)；曲 Charles Hutchinson Gabriel (1856–1932)；hymnal.net 分類「追求與長進」，英文版 E396。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/433"
+      }
+    ]
+  },
+  {
+    "id": "h-217",
+    "book": "hymnal",
+    "no": 217,
+    "title": "何等榮耀何等福氣",
+    "firstLine": "何等榮耀，何等福氣，真理聖靈在我心",
+    "categories": [
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "F大調",
+    "time": "6/4",
+    "meter": "8.7.8.7 副",
+    "hasChorus": true,
+    "enNo": 1360,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/217",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "充滿我！充滿我！願主聖靈充滿我；將我倒空，將我剝奪，願主聖靈充滿我。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/217"
+      },
+      {
+        "type": "scripture",
+        "text": "不要醉酒，醉酒使人放蕩，乃要在靈裡被充滿。",
+        "source": "弗 5:18"
+      },
+      {
+        "type": "story",
+        "text": "曲 John Robson Sweney (1837–1899)；hymnal.net 分類「聖靈的豐滿／充滿」，英文版 E1360。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/217"
+      }
+    ]
+  },
+  {
+    "id": "h-218",
+    "book": "hymnal",
+    "no": 218,
+    "title": "我願作主活水運河",
+    "firstLine": "我已得蒙寶血洗淨，充滿天上的喜樂",
+    "categories": [
+      "聖靈",
+      "經歷神"
+    ],
+    "key": "G大調",
+    "time": "3/4",
+    "meter": "8.7.8.7.D",
+    "hasChorus": true,
+    "enNo": 268,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/218",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我願作主活水運河，充滿生命的聖靈，灌輸生命，解人乾渴，湧流活水無止境。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/218"
+      },
+      {
+        "type": "scripture",
+        "text": "你必像澆灌的園子，又像水流不絕的泉源。",
+        "source": "賽 58:11"
+      },
+      {
+        "type": "story",
+        "text": "詞 Mary E. Maxwell；曲 Ada Rose Gibbs (1865–1905)；hymnal.net 分類「聖靈的豐滿／充滿」，英文版 E268。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/218"
+      }
+    ]
+  },
+  {
+    "id": "h-227",
+    "book": "hymnal",
+    "no": 227,
+    "title": "後是膏油先是血",
+    "firstLine": "後是膏油先是血，要得滋潤先得潔",
+    "categories": [
+      "聖靈",
+      "經歷神",
+      "福音"
+    ],
+    "key": "C大調",
+    "time": "6/8",
+    "hasChorus": true,
+    "enNo": 279,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/227",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "後是膏油先是血，要得滋潤先得潔；若非經過各各他，必不能到五旬節。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/227"
+      },
+      {
+        "type": "scripture",
+        "text": "祭司要取些贖愆祭牲的血……又要把手裡剩下的油，抹在那贖愆祭牲之血的上面。",
+        "source": "利 14:14、17"
+      },
+      {
+        "type": "story",
+        "text": "詞 Watchman Nee (1903–1972)；hymnal.net 分類「聖靈的豐滿／藉十字架」，英文版 E279。第一節「若非經過各各他，必不能到五旬節」是整首的鑰句；福音聚會也可以唱，帶人先看見十字架。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/227"
+      }
+    ]
+  },
+  {
+    "id": "h-230",
+    "book": "hymnal",
+    "no": 230,
+    "title": "我真歡樂因耶穌愛",
+    "firstLine": "我真歡樂，因為天上父神，在祂話中明說祂愛世人",
+    "categories": [
+      "得救的確據",
+      "經歷神",
+      "感恩",
+      "福音"
+    ],
+    "key": "G大調",
+    "time": "6/8",
+    "meter": "10.10.10.10 副",
+    "hasChorus": true,
+    "familiarity": 0.7,
+    "enNo": 291,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/230",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我真歡樂，因耶穌愛我！耶穌愛我，耶穌愛我；我真歡樂，因耶穌愛我！耶穌竟然愛我！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/230"
+      },
+      {
+        "type": "scripture",
+        "text": "我們愛，因為神先愛我們。",
+        "source": "約壹 4:19"
+      },
+      {
+        "type": "story",
+        "text": "詞 Philip Paul Bliss (1838–1876)；曲 Philip Paul Bliss (1838–1876)；hymnal.net 分類「得救的證實與快樂／為主所愛」，英文版 E291。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/230"
+      }
+    ]
+  },
+  {
+    "id": "h-231",
+    "book": "hymnal",
+    "no": 231,
+    "title": "主愛新鮮又甘甜",
+    "firstLine": "主愛新鮮又甘甜，我要引聲頌揚",
+    "categories": [
+      "得救的確據",
+      "經歷神",
+      "感恩"
+    ],
+    "key": "降A大調",
+    "time": "3/4",
+    "meter": "7.6.7.6 副",
+    "hasChorus": true,
+    "enNo": 286,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/231",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "主的愛越久越甜，主的愛越久越甜；甜過美酒甘蜜，我要頌揚不已，主的愛越久越甜。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/231"
+      },
+      {
+        "type": "scripture",
+        "text": "你的愛情比酒更美。",
+        "source": "歌 1:2"
+      },
+      {
+        "type": "story",
+        "text": "詞 Lelia Naylor Morris (1862–1929)；曲 Lelia Naylor Morris (1862–1929)；hymnal.net 分類「得救的證實與快樂／為主所愛」，英文版 E286。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/231"
+      }
+    ]
+  },
+  {
+    "id": "h-232",
+    "book": "hymnal",
+    "no": 232,
+    "title": "永遠的愛已愛我",
+    "firstLine": "永遠的愛已愛我，這愛藉恩我賞識",
+    "categories": [
+      "得救的確據",
+      "經歷神",
+      "安慰"
+    ],
+    "key": "降E大調",
+    "time": "3/2",
+    "meter": "7.7.7.7.D",
+    "hasChorus": false,
+    "enNo": 284,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/232",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "永遠的愛已愛我，這愛藉恩我賞識；聖靈從上來吹著，為要如此來指示。哦，這豐滿的平安！哦，這神聖的歡樂！在這不息愛裡面，我是屬祂，祂屬我。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ch/232"
+      },
+      {
+        "type": "scripture",
+        "text": "我屬我的良人，我的良人也屬我。",
+        "source": "歌 6:3"
+      },
+      {
+        "type": "story",
+        "text": "詞 George Wade Robinson (1838–1877)；曲 James Mountain (1844–1933)；hymnal.net 分類「得救的證實與快樂／為主所愛」，英文版 E284。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/232"
+      }
+    ]
+  },
+  {
+    "id": "h-241",
+    "book": "hymnal",
+    "no": 241,
+    "title": "我生命有何等奇妙",
+    "firstLine": "我生命有何等奇妙的大改變",
+    "categories": [
+      "福音",
+      "得救的確據",
+      "感恩"
+    ],
+    "key": "G大調",
+    "time": "4/4",
+    "meter": "12.8.12.8 副",
+    "hasChorus": true,
+    "familiarity": 0.7,
+    "enNo": 309,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ch/241",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "自基督來住在我心，自基督來住在我心；喜樂潮溢我魂，如海濤之滾滾，自基督來住在我心。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ch/241"
+      },
+      {
+        "type": "scripture",
+        "text": "基督在你們裡面成了榮耀的盼望。",
+        "source": "西 1:27"
+      },
+      {
+        "type": "story",
+        "text": "詞 Rufus Henry McDaniel (1850–1940)；曲 Charles Hutchinson Gabriel (1856–1932)；hymnal.net 分類「得救的證實與快樂／生命改變」，英文版 E309。見證式的福音詩歌，每節都以「自基督來住在我心」收尾，副歌好記，適合福音聚會唱完見證後帶。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ch/241"
       }
     ]
   }
