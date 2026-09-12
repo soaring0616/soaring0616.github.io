@@ -123,8 +123,13 @@ export interface MeetingType {
 }
 
 export interface SelectOptions {
-  /** 使用者輸入的主題關鍵字，會比對標題 / 首句 / 類別 */
+  /** 使用者自由輸入的關鍵字，會比對標題 / 首句 / 類別 / tags（只加分，不過濾） */
   theme?: string;
+  /**
+   * 使用者從「主題關鍵字」清單勾選的 tags。
+   * 有勾選時只留下至少帶一個勾選 tag 的詩歌，命中越多加分越多。
+   */
+  tags?: string[];
 }
 
 /** selectHymns 的輸出：詩歌 + 分數 + 可解釋的理由 */

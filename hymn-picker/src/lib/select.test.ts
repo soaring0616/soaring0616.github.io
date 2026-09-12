@@ -94,6 +94,21 @@ describe('selectHymns', () => {
     expect(scoreHymn(common, TABLE).reasons).not.toContain('會眾較不熟，往後排');
   });
 
+  it('勾選主題關鍵字時只留下帶該 tag 的詩，命中越多分越高並逐一標註', () => {
+    const list = [
+      hymn({ id: 'h-50', no: 50, categories: ['記念主'], tags: ['憂慮', '安慰'] }),
+      hymn({ id: 'h-51', no: 51, categories: ['記念主'], tags: ['憂慮'] }),
+      hymn({ id: 'h-52', no: 52, categories: ['記念主'] }),
+    ];
+    const result = selectHymns(list, OPEN, { tags: ['憂慮', '安慰'] });
+    expect(result.map((c) => c.hymn.id)).toEqual(['h-50', 'h-51']);
+    expect(result[0].reasons).toContain('主題：憂慮');
+    expect(result[0].reasons).toContain('主題：安慰');
+    expect(result[0].score).toBeGreaterThan(result[1].score);
+    // 沒勾選時不過濾
+    expect(selectHymns(list, OPEN).map((c) => c.hymn.id)).toHaveLength(3);
+  });
+
   it('theme 關鍵字命中標題時加分並標註', () => {
     const withTheme = scoreHymn(HYMNS[4], OPEN, { theme: '天上的家' });
     const without = scoreHymn(HYMNS[4], OPEN);

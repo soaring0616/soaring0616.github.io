@@ -47,6 +47,12 @@ function blockedCategories(hymn: Hymn, exclude: string[]): string[] {
   return hymn.categories.filter((c) => exclude.includes(c));
 }
 
+/** 這首詩帶了哪些被勾選的主題關鍵字 */
+function matchedTags(hymn: Hymn, selected: string[]): string[] {
+  if (selected.length === 0) return [];
+  return (hymn.tags ?? []).filter((t) => selected.includes(t));
+}
+
 /** theme 關鍵字有沒有出現在標題 / 首句 / 類別 / 主題關鍵字（tags）裡 */
 function matchesTheme(hymn: Hymn, theme: string): boolean {
   const q = normalize(theme);
@@ -100,6 +106,12 @@ export function scoreHymn(
     themeMatch = Math.min(1, themeMatch + 0.35);
     reasons.push(`主題相符：${opts.theme}`);
   }
+  // 勾選的主題關鍵字：每命中一個加 0.35，上限 1（過濾在 selectHymns 做，這裡只算分）
+  const tagHits = matchedTags(hymn, opts.tags ?? []);
+  if (tagHits.length > 0) {
+    themeMatch = Math.min(1, themeMatch + 0.35 * tagHits.length);
+    tagHits.forEach((t) => reasons.push(`主題：${t}`));
+  }
 
   // --- familiarity：大家會不會唱。資料有填就用資料的，沒填就依書別 ---
   const bookDefault = BOOK_FAMILIARITY[hymn.book];
@@ -132,6 +144,7 @@ function round(n: number): number {
  * 過濾規則：
  *   1. 命中任一 exclude 類別 → 排除
  *   2. include 非空時，至少要命中一個 include 類別 → 否則排除
+ *   3. 有勾選主題關鍵字（opts.tags）時，至少要帶一個 → 否則排除
  * 排序規則：分數高的在前；同分時依 書別(大本→補充本→新歌) → 號碼 排，讓結果穩定可重現。
  *
  * 回傳「全部」通過過濾的候選（不截斷）。要幾首請自行 slice(meetingType.suggestedCount)，
@@ -145,9 +158,12 @@ export function selectHymns(
   const include = meetingType.include ?? [];
   const exclude = meetingType.exclude ?? [];
 
+  const tags = opts.tags ?? [];
+
   const candidates = hymns
     .filter((h) => blockedCategories(h, exclude).length === 0)
     .filter((h) => include.length === 0 || matchedCategories(h, include).length > 0)
+    .filter((h) => tags.length === 0 || matchedTags(h, tags).length > 0)
     .map((h) => scoreHymn(h, meetingType, opts));
 
   const bookOrder: Hymn['book'][] = ['hymnal', 'supplement', 'new', 'children'];

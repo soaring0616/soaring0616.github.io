@@ -17,10 +17,16 @@ interface MeetingSelectorProps {
   selectedId: string;
   /** 使用者換聚會時呼叫 */
   onSelect: (id: string) => void;
-  /** 目前的主題關鍵字 */
+  /** 目前自由輸入的關鍵字 */
   theme: string;
-  /** 使用者改主題時呼叫 */
+  /** 使用者改關鍵字時呼叫 */
   onThemeChange: (theme: string) => void;
+  /** 所有可勾選的主題關鍵字（由 Home 從詩歌資料算出），附上首數 */
+  allTags: { tag: string; count: number }[];
+  /** 目前勾選的主題關鍵字 */
+  selectedTags: string[];
+  /** 使用者勾選／取消時呼叫（整組回傳，不是單一個） */
+  onTagsChange: (tags: string[]) => void;
 }
 
 export default function MeetingSelector({
@@ -29,8 +35,20 @@ export default function MeetingSelector({
   onSelect,
   theme,
   onThemeChange,
+  allTags,
+  selectedTags,
+  onTagsChange,
 }: MeetingSelectorProps) {
   const selected = meetingTypes.find((m) => m.id === selectedId);
+
+  // 勾選是「切換」：已選就拿掉，沒選就加上。回傳新陣列，不改原本的（React 靠參考變化偵測更新）
+  const toggleTag = (tag: string) => {
+    onTagsChange(
+      selectedTags.includes(tag)
+        ? selectedTags.filter((t) => t !== tag)
+        : [...selectedTags, tag],
+    );
+  };
 
   return (
     <div className={styles.wrap}>
@@ -50,15 +68,50 @@ export default function MeetingSelector({
       </label>
 
       <label className={styles.field}>
-        <span className={styles.label}>主題關鍵字（選填）</span>
+        <span className={styles.label}>自由關鍵字（選填，比對標題／首句／類別）</span>
         <input
           className={styles.control}
           type="search"
           value={theme}
-          placeholder="例如：十字架、憂慮、出遊、晨興"
+          placeholder="例如：十字架、活水、召會"
           onChange={(e) => onThemeChange(e.target.value)}
         />
       </label>
+
+      {allTags.length > 0 && (
+        <div className={styles.tagField}>
+          <span className={styles.label}>
+            主題關鍵字（勾選一個以上就只列帶這些主題的詩歌）
+            {selectedTags.length > 0 && (
+              <button
+                type="button"
+                className={styles.clear}
+                onClick={() => onTagsChange([])}
+              >
+                清除 {selectedTags.length} 個
+              </button>
+            )}
+          </span>
+          <ul className={styles.tagList}>
+            {allTags.map(({ tag, count }) => {
+              const on = selectedTags.includes(tag);
+              return (
+                <li key={tag}>
+                  <button
+                    type="button"
+                    className={on ? `${styles.tagChip} ${styles.tagOn}` : styles.tagChip}
+                    aria-pressed={on}
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                    <span className={styles.tagCount}>{count}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
 
       {selected && (
         <div className={styles.hint}>

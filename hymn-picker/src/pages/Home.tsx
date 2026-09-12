@@ -35,6 +35,7 @@ export default function Home() {
   // ── 使用者的選擇（狀態抬升到這裡，MeetingSelector 只是顯示與回報）──
   const [meetingId, setMeetingId] = useState('table');
   const [theme, setTheme] = useState('');
+  const [tags, setTags] = useState<string[]>([]);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,11 +65,20 @@ export default function Home() {
     [meetingTypes, meetingId],
   );
 
-  // 衍生資料：由 hymns / meetingType / theme 算出來
+  // 所有詩歌帶的主題關鍵字，附上首數，給 MeetingSelector 畫成可勾選的 chip（也是衍生資料）
+  const allTags = useMemo(() => {
+    const count = new Map<string, number>();
+    hymns.forEach((h) => (h.tags ?? []).forEach((t) => count.set(t, (count.get(t) ?? 0) + 1)));
+    return [...count.entries()]
+      .map(([tag, n]) => ({ tag, count: n }))
+      .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag, 'zh-Hant'));
+  }, [hymns]);
+
+  // 衍生資料：由 hymns / meetingType / theme / tags 算出來
   const sections = useMemo(() => {
     if (!meetingType) return [];
-    return selectBySections(hymns, meetingType, { theme });
-  }, [hymns, meetingType, theme]);
+    return selectBySections(hymns, meetingType, { theme, tags });
+  }, [hymns, meetingType, theme, tags]);
 
   if (loading) return <p className={styles.status}>載入詩歌資料中…</p>;
   if (error)
@@ -93,6 +103,9 @@ export default function Home() {
         onSelect={setMeetingId}
         theme={theme}
         onThemeChange={setTheme}
+        allTags={allTags}
+        selectedTags={tags}
+        onTagsChange={setTags}
       />
 
       <div className={styles.sections}>
