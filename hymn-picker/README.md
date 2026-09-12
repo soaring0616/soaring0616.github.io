@@ -33,6 +33,7 @@ build 出來的 `dist/` 不進 git，由 repo 根目錄的 GitHub Actions 建置
 | `urls.hymnal` |  | hymnal.net 網址 |
 | `urls.luke54` |  | luke54.org 網址陣列（沒有就放 `[]`） |
 | `notes` | ✅ | 註解陣列，見下 |
+| `ignoreIndex` |  | 設 `true` 就不用詩歌本目錄自動補類別（例如 288 只想留「安慰」）。預設會補，見下面「詩歌本目錄與自動補類別」 |
 
 `notes` 的每一則：
 
@@ -45,6 +46,24 @@ build 出來的 `dist/` 不進 git，由 repo 根目錄的 GitHub Actions 建置
 
 新增一首詩歌 = 在陣列尾巴加一個物件，commit、push 就會上線。
 TypeScript **不會**檢查 JSON 內容（它是執行期 fetch 進來的），所以欄位打錯要靠自己看畫面。
+
+### 詩歌本目錄與自動補類別
+
+`hymns.json` 的 `categories` 是手填的；另外有兩個檔案讓程式在載入時**自動往上加**類別：
+
+- `public/data/hymn_index.json`：大本 780 首、補充本 437 首在詩歌本目錄裡的位置（大類／細目），
+  由 `scripts/build_hymn_index.py` 從
+  [蒙特利公園市召會的目錄頁](https://churchinmontereypark.org/Docs/Hymn/firstBookHymnIndex.html)
+  （[補充本](https://churchinmontereypark.org/Docs/Hymn/secondBookHymnIndex.html)）產生，不要手改。
+  補充本目錄頁不齊全，但補充本的號碼本身就分段（1xx 靈與生命、2xx 享受基督、4xx 追求與長大…），
+  缺的號碼程式會用百位數推回大類。
+- `public/data/category_map.json`：目錄大類（或「大類／細目」）→ 本專案類別。
+  例如 `"讚美主／祂的受苦": ["記念主", "主的救贖"]`、`"鼓勵": ["加強", "安慰"]`、`"追求與長大": ["受成全", "渴慕"]`。
+  這張表是判斷題，**改它就改了整本詩歌的歸類**，請帶詩歌的人一起看。
+
+合併規則（`src/lib/hymnIndex.ts`）：先查「大類／細目」再查「大類」，命中的取聯集；
+手填的類別排前面、目錄補的排後面；某首詩不想被目錄影響就設 `ignoreIndex: true`。
+卡片上會多一行「目錄 讚美主／祂的受苦」，讓帶詩歌的人知道它在詩歌本裡的位置。
 
 ### `public/data/meeting_types.json`
 
@@ -73,13 +92,19 @@ TypeScript **不會**檢查 JSON 內容（它是執行期 fetch 進來的），�
 hymn-picker/
 ├─ public/data/
 │  ├─ hymns.json            # 詩歌主資料（目前 70 首，已對照 hymnal.net 校正）
+│  ├─ hymn_index.json       # 詩歌本目錄（大本 780 首 + 補充本 437 首的大類／細目），腳本產生
+│  ├─ category_map.json     # 目錄大類 → 本專案類別的對照表（手工維護）
 │  └─ meeting_types.json    # 12 種聚會的選詩規則
+├─ scripts/
+│  └─ build_hymn_index.py   # 從目錄網頁產生 hymn_index.json（只用 Python 標準函式庫）
 ├─ src/
 │  ├─ types.ts              # 所有型別定義（資料的合約）
 │  ├─ lib/
 │  │  ├─ select.ts          # 純函式：過濾 + 評分 + 排序
 │  │  ├─ select.test.ts     # vitest 測試
-│  │  └─ data.ts            # 載入 JSON（用 BASE_URL 組路徑）
+│  │  ├─ hymnIndex.ts       # 純函式：用目錄 + 對照表補類別
+│  │  ├─ hymnIndex.test.ts
+│  │  └─ data.ts            # 載入 JSON（用 BASE_URL 組路徑），載入時順便補類別
 │  ├─ components/
 │  │  ├─ HymnCard.tsx       # 詩歌卡片（含最完整的教學註解）
 │  │  ├─ MeetingSelector.tsx

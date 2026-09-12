@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import type { Hymn, NoteType } from '../types';
 import { bookLabel } from '../lib/select';
+import { indexLabel } from '../lib/hymnIndex';
 import styles from './HymnCard.module.css';
 
 /**
@@ -55,6 +56,7 @@ export default function HymnCard({
   linkToDetail = true,
 }: HymnCardProps) {
   const meta = [
+    hymn.index && `目錄 ${indexLabel(hymn.index)}`,
     hymn.key && `調號 ${hymn.key}`,
     hymn.time && `拍號 ${hymn.time}`,
     hymn.meter && `韻律 ${hymn.meter}`,

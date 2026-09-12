@@ -43,7 +43,35 @@ export interface Hymn {
   enNo?: number;
   urls: { hymnal?: string; luke54?: string[] };
   notes: Note[];
+  /**
+   * 設 true 就不用詩歌本目錄補類別（例如 288 只想留「安慰」）。
+   * 預設 false：載入時會把目錄對出來的類別加進 categories。
+   */
+  ignoreIndex?: boolean;
+  /**
+   * 這首詩在詩歌本目錄裡的位置，載入時由 hymn_index.json 填上（JSON 裡不用寫）。
+   * 大本有細目（讚美主／祂的受苦），補充本只有大類。
+   */
+  index?: HymnIndexEntry;
 }
+
+/** public/data/hymn_index.json 的一筆：詩歌本目錄裡的一首詩 */
+export interface HymnIndexEntry {
+  book: HymnBook;
+  no: number;
+  /** 目錄大類，例如「讚美主」「追求與長大」 */
+  section: string;
+  /** 大本的細目，例如「祂的受苦」；補充本沒有 */
+  sub?: string | null;
+  /** 補充本目錄有標題，大本目錄只有號碼 */
+  title?: string;
+}
+
+/**
+ * public/data/category_map.json：目錄大類（或「大類／細目」）→ 本專案的類別。
+ * 以 _ 開頭的鍵是給人看的說明，程式會略過。
+ */
+export type CategoryMap = Record<string, string[]>;
 
 /** 一種聚會的選詩規則 */
 export interface MeetingType {

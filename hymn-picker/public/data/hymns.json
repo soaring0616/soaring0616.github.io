@@ -524,6 +524,7 @@
     "time": "4/4",
     "meter": "10.10.10.10",
     "hasChorus": false,
+    "ignoreIndex": true,
     "enNo": 370,
     "urls": {
       "hymnal": "https://www.hymnal.net/en/hymn/ch/288",
