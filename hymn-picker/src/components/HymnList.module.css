@@ -23,10 +23,82 @@
   color: #8a7f6d;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 14px;
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #dcd7cc;
+  border-radius: 10px;
+  background: #fffdf8;
+  overflow: hidden;
+}
+
+.row + .row {
+  border-top: 1px solid #ece7db;
+}
+
+/* 整列都是按鈕，點哪裡都能展開；用 button 而不是 div 是為了鍵盤與讀屏 */
+.rowBtn {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 14px;
+  border: 0;
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+}
+
+.rowBtn:hover {
+  background: #f7f3ea;
+}
+
+.rowBtn:focus-visible {
+  outline: 2px solid #7ba07f;
+  outline-offset: -2px;
+}
+
+.caret {
+  width: 1em;
+  color: #8a7f6d;
+  font-size: 0.8rem;
+}
+
+.number {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #6b5f4b;
+  background: #f0eade;
+  border-radius: 999px;
+  padding: 1px 9px;
+  white-space: nowrap;
+}
+
+.rowTitle {
+  font-size: 1rem;
+}
+
+.rowFirst {
+  font-size: 0.8rem;
+  color: #8a7f6d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .rowFirst {
+    display: none;
+  }
+}
+
+.detail {
+  padding: 0 14px 14px;
 }
 
 .empty {

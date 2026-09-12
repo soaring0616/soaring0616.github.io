@@ -161,7 +161,7 @@ hymn-picker/
 │  ├─ components/
 │  │  ├─ HymnCard.tsx       # 詩歌卡片（含最完整的教學註解）
 │  │  ├─ MeetingSelector.tsx
-│  │  └─ HymnList.tsx
+│  │  └─ HymnList.tsx       # 結果清單：先只列號碼＋曲名，點一列才展開卡片
 │  ├─ pages/
 │  │  ├─ Home.tsx           # 選聚會 → 看推薦
 │  │  ├─ HymnDetail.tsx     # 單首詳細頁（註解 + 外部連結）
