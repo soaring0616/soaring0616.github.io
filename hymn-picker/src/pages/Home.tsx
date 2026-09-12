@@ -68,7 +68,7 @@ export default function Home() {
     [meetingTypes, meetingId],
   );
 
-  // 全資料的 tag 清單（不含首數），讓在目前聚會裡是 0 首的 tag 也能以灰色出現
+  // 全資料的 tag 清單（不含首數）；0 首的 tag 由 MeetingSelector 決定不顯示
   const allTagNames = useMemo(() => {
     const set = new Set<string>();
     hymns.forEach((h) => (h.tags ?? []).forEach((t) => set.add(t)));

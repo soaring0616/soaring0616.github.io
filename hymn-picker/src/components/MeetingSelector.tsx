@@ -23,7 +23,7 @@ interface MeetingSelectorProps {
   onThemeChange: (theme: string) => void;
   /**
    * 分好組的主題關鍵字，首數是「在目前這種聚會裡」的首數（由 Home 算好傳下來）。
-   * 0 首的 chip 畫成灰的、不能點，但已勾選的不在此限（讓使用者能取消）。
+   * 0 首的 tag 不顯示，但已勾選的不在此限（讓使用者能取消）。
    */
   tagGroups: TagGroup[];
   /** 目前勾選的主題關鍵字 */
@@ -95,35 +95,36 @@ export default function MeetingSelector({
               </button>
             )}
           </span>
-          {tagGroups.map(({ group, tags }) => (
-            <div key={group} className={styles.tagGroup}>
-              <span className={styles.tagGroupName}>{group}</span>
-              <ul className={styles.tagList}>
-                {tags.map(({ tag, count }) => {
-                  const on = selectedTags.includes(tag);
-                  const off = count === 0 && !on;
-                  const cls = [styles.tagChip, on && styles.tagOn, off && styles.tagOff]
-                    .filter(Boolean)
-                    .join(' ');
-                  return (
-                    <li key={tag}>
-                      <button
-                        type="button"
-                        className={cls}
-                        aria-pressed={on}
-                        disabled={off}
-                        title={off ? `${selected?.label ?? '這種聚會'}裡沒有帶這個主題的詩歌` : undefined}
-                        onClick={() => toggleTag(tag)}
-                      >
-                        {tag}
-                        <span className={styles.tagCount}>{count}</span>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          ))}
+          {tagGroups
+            // 在這種聚會裡 0 首的 tag 直接不顯示（已勾選的例外，讓使用者能取消）；整組空了就整列不畫
+            .map(({ group, tags }) => ({
+              group,
+              tags: tags.filter(({ tag, count }) => count > 0 || selectedTags.includes(tag)),
+            }))
+            .filter(({ tags }) => tags.length > 0)
+            .map(({ group, tags }) => (
+              <div key={group} className={styles.tagGroup}>
+                <span className={styles.tagGroupName}>{group}</span>
+                <ul className={styles.tagList}>
+                  {tags.map(({ tag, count }) => {
+                    const on = selectedTags.includes(tag);
+                    return (
+                      <li key={tag}>
+                        <button
+                          type="button"
+                          className={on ? `${styles.tagChip} ${styles.tagOn}` : styles.tagChip}
+                          aria-pressed={on}
+                          onClick={() => toggleTag(tag)}
+                        >
+                          {tag}
+                          <span className={styles.tagCount}>{count}</span>
+                        </button>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
         </div>
       )}
 
