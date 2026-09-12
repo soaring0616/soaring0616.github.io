@@ -180,7 +180,7 @@ describe('selectBySections', () => {
     expect(sections[1].candidates.map((c) => c.hymn.id)).toEqual(['h-41']);
   });
 
-  it('同一首詩只歸到一個段落：命中類別最多的那段；平手看 categories 的順序', () => {
+  it('同一首詩只歸到一個段落：第一個類別命中的段直接贏；否則比命中數，再看 categories 順序', () => {
     const table2: MeetingType = {
       ...TABLE,
       sections: [
@@ -191,7 +191,7 @@ describe('selectBySections', () => {
     const both = [
       // 兩段各命中 1 個 → 平手 → 看 categories 誰在前：記念主
       hymn({ id: 'h-20', no: 20, categories: ['記念主', '敬拜父'] }),
-      // 記念主段命中 1、敬拜父段命中 2 → 「敬拜父」
+      // 第一個類別「主的救贖」命中記念主段 → 直接歸記念主，即使敬拜父段命中比較多（敬拜父＋讚美主）
       hymn({ id: 'h-21', no: 21, categories: ['主的救贖', '敬拜父', '讚美主'] }),
       // 平手，但 categories 裡敬拜父在前 → 「敬拜父」（即使記念主段排在前面）
       hymn({ id: 'h-22', no: 22, categories: ['敬拜父', '記念主'] }),
@@ -199,8 +199,8 @@ describe('selectBySections', () => {
       hymn({ id: 'h-23', no: 23, categories: ['讚美主', '記念主', '主的救贖'] }),
     ];
     const sections = selectBySections(both, table2);
-    expect(sections[0].candidates.map((c) => c.hymn.id)).toEqual(['h-20']);
-    expect(sections[1].candidates.map((c) => c.hymn.id).sort()).toEqual(['h-21', 'h-22', 'h-23']);
+    expect(sections[0].candidates.map((c) => c.hymn.id).sort()).toEqual(['h-20', 'h-21']);
+    expect(sections[1].candidates.map((c) => c.hymn.id).sort()).toEqual(['h-22', 'h-23']);
   });
 
   it('主日在這種聚會唱過的詩，不受 exclude 限制', () => {
