@@ -66,7 +66,7 @@ export interface Hymn {
   tags?: string[];
   /** tags 的出處（例如合聲響應某一集），載入時填上，卡片上顯示成連結 */
   tagSources?: { label: string; url?: string }[];
-  /** 主日豫選紀錄算出來的：唱過幾次、各段幾次、最近一次（載入時由 sunday_picks.json 填上） */
+  /** 主日豫選紀錄算出來的：唱過幾次、各段幾次、最近一次（載入時由 sunday_picks.json 填上；只用於分段，卡片不顯示） */
   usage?: { count: number; slots: Record<string, number>; last: string };
 }
 

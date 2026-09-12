@@ -3,20 +3,13 @@ import type { Hymn, SundayPicksFile } from '../types';
 /**
  * 把主日豫選紀錄（sunday_picks.json）掛到詩歌上。
  *
- * 純函式：吃 hymns + 檔案，吐新陣列，不動原物件。做三件事：
- *   1. hymn.usage：唱過幾次、各段幾次、最近一次日期。
+ * 純函式：吃 hymns + 檔案，吐新陣列，不動原物件。做兩件事：
+ *   1. hymn.usage：唱過幾次、各段幾次、最近一次日期（給分段與 exclude 例外用，卡片上不顯示）。
  *   2. categories：把唱過的段落名（調靈／讚美主／記念主／敬拜父）依次數多到少插到最前面，
- *      這樣擘餅的分段會照你們實際的用法（見 select.ts 的平手規則：categories 越前面越優先）。
- *   3. familiarity：唱過越多次越熟。沒填的以書別預設起算，每唱一次 +0.05，上限 0.95，只升不降。
+ *      這樣擘餅的分段會照你們實際的用法（見 select.ts：categories 第一個類別決定段落）。
+ * 刻意**不**動 familiarity：每個地方對同一首詩的熟悉度不一樣，這份紀錄只代表一處召會的用法。
  * 紀錄裡有、hymns 裡沒有的 id 會被略過。
  */
-
-const BOOK_DEFAULT: Record<Hymn['book'], number> = {
-  hymnal: 0.6,
-  supplement: 0.45,
-  new: 0.3,
-  children: 0.5,
-};
 
 export function applySundayPicks(hymns: Hymn[], file: SundayPicksFile): Hymn[] {
   const byId = new Map<string, { count: number; slots: Record<string, number>; last: string }>();
@@ -40,17 +33,6 @@ export function applySundayPicks(hymns: Hymn[], file: SundayPicksFile): Hymn[] {
       ...slotsByCount,
       ...h.categories.filter((c) => !slotsByCount.includes(c)),
     ];
-    const base = h.familiarity ?? BOOK_DEFAULT[h.book];
-    const familiarity = Math.max(base, Math.min(0.95, base + 0.05 * usage.count));
-    return { ...h, usage, categories, familiarity };
+    return { ...h, usage, categories };
   });
-}
-
-/** 給人看的：「主日唱過 13 次（記念主 13）」 */
-export function usageLabel(usage: NonNullable<Hymn['usage']>): string {
-  const parts = Object.entries(usage.slots)
-    .sort((a, b) => b[1] - a[1])
-    .map(([slot, n]) => `${slot} ${n}`)
-    .join('、');
-  return `主日唱過 ${usage.count} 次（${parts}）`;
 }

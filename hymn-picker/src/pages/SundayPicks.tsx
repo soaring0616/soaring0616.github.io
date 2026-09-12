@@ -69,8 +69,8 @@ export default function SundayPicks() {
       </Link>
       <h2 className={styles.title}>主日詩歌豫選紀錄</h2>
       <p className={styles.intro}>
-        共 {file.weeks.length} 週，段落依序是 {file.slots.join(' → ')}。這份紀錄也用來算每首詩「主日唱過幾次」，
-        唱過的段落會直接決定它在擘餅推薦裡的分段。
+        共 {file.weeks.length} 週，段落依序是 {file.slots.join(' → ')}。
+        唱過的段落會直接決定那首詩在擘餅推薦裡的分段；次數只在這一頁看，不影響熟悉度。
         要加新的一週，改 <code>public/data/sunday_picks.json</code> 即可。
       </p>
 

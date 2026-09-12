@@ -130,9 +130,7 @@ export function scoreHymn(
       ? bookDefault
       : Math.min(1, Math.max(0, hymn.familiarity));
   reasons.push(`${BOOK_LABEL[hymn.book]}第 ${hymn.no} 首`);
-  if (hymn.usage) {
-    reasons.push(`主日唱過 ${hymn.usage.count} 次`);
-  } else if (hymn.familiarity !== undefined) {
+  if (hymn.familiarity !== undefined) {
     reasons.push(familiarity < bookDefault ? '會眾較不熟，往後排' : '會眾熟悉');
   }
 
