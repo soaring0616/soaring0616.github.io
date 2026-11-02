@@ -52,9 +52,19 @@
 		var skipping = isSkipping();
 
 		$button
-			.text(skipping ? '重播動畫' : '跳過動畫')
+			.text(skipping ? 'replay' : 'skip')
 			.attr('aria-pressed', skipping ? 'true' : 'false')
-			.attr('title', skipping ? '把首頁動畫放回來' : '略過進場與捲動淡入動畫，直接顯示全部內容');
+			.attr('title', skipping ? '把首頁動畫放回來，從頭再看一次' : '跳過動畫，直接到下面的連結');
+	}
+
+	/* 直接跳到底下那一排連結。這是「按 skip 要看到什麼」的目的地。 */
+	function jumpToProjects() {
+		var target = document.getElementById('projects');
+		if (!target)
+			return;
+
+		/* 動畫已經關掉了，所以這裡用瞬間跳，不要平滑捲動 */
+		target.scrollIntoView({ block: 'start' });
 	}
 
 	// 作業系統設定了減少動態效果，就當作已經跳過（但不寫進 localStorage，交給系統設定決定）。
@@ -82,6 +92,7 @@
 		remember(true);
 		revealAll();
 		syncButton();
+		jumpToProjects();
 
 	});
 
