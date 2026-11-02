@@ -6,6 +6,7 @@
 - `/articles/` — 信仰札記（Hexo 預建輸出，勿手動編輯）
 - `/crossref/` — [串珠探索](crossref/README.md)：互動式恢復本經節關聯圖
 - `/hymn-picker/` — [聚會選詩歌](hymn-picker/README.md)：依聚會類型排出候選詩歌（Vite + React，原始碼在 `hymn-picker/`，由 CI 建置）
+- `/version-diff/` — [版本對讀](version-diff/README.md)：恢復本與和合本逐字比對、依卷書列出差異，並連到原文逐字對照
 
 ## 部署
 

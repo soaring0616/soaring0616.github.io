@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>版本對讀｜恢復本與和合本</title>
+	<meta name="description" content="把聖經恢復本與和合本逐字並排比對，標出用字不同的地方，依卷書列出差異，並連到原文逐字對照。" />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+	<header class="site-header">
+		<div class="header-inner">
+			<div class="title-block">
+				<h1>版本對讀</h1>
+				<p class="subtitle">恢復本 × 和合本，逐字比對</p>
+			</div>
+			<a class="home-link" href="../">← 回首頁</a>
+		</div>
+
+		<div class="controls">
+			<select id="sel-book" aria-label="書卷"></select>
+			<select id="sel-chapter" aria-label="章"></select>
+			<button id="btn-go" class="btn primary">對讀這一章</button>
+			<button id="btn-scan" class="btn">掃描整卷</button>
+		</div>
+
+		<div class="options">
+			<label><input type="checkbox" id="chk-only-diff" checked /> 只顯示有差異的節</label>
+			<label><input type="checkbox" id="chk-ignore-punct" checked /> 忽略標點差異</label>
+		</div>
+
+		<div id="progress" class="progress" hidden>
+			<div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+			<span id="progress-text" class="progress-text"></span>
+			<button id="btn-cancel" class="btn small">中止</button>
+		</div>
+	</header>
+
+	<main>
+		<p id="status" class="status" hidden></p>
+		<p id="summary" class="summary"></p>
+		<div id="verses" class="verses"></div>
+
+		<section id="notes-panel" class="notes-panel" hidden>
+			<h2>我的記錄<span class="count">（<span id="notes-count">0</span> 筆）</span></h2>
+			<p class="hint">自己讀到想留下來的差異，寫在 <code>data/diffs.js</code>。每一節下面都有「複製記錄範本」按鈕。</p>
+			<div id="notes-list" class="notes-list"></div>
+		</section>
+
+		<section class="about">
+			<h2>這頁在做什麼</h2>
+			<p>
+				選一卷一章，兩個版本並排顯示，<strong>逐字標出不一樣的地方</strong>──
+				只有和合本有的字標在左欄，只有恢復本有的字標在右欄。
+				預設只列出有差異的節，並忽略兩版標點習慣的不同。
+			</p>
+			<p>
+				「掃描整卷」會把整卷每一章都比過一遍，依章列出所有有差異的節和差異片語，
+				這是要「依卷書列出不一樣的地方」時用的。章數多的卷書（詩篇、以賽亞書…）會跑久一點，
+				抓過的章會在瀏覽器裡快取 30 天，第二次就很快。
+			</p>
+			<p>
+				每一節都附上外部連結，其中<strong>「原文逐字」</strong>是 biblehub 的逐字對照，
+				可以看到希伯來文／希臘文原字與 Strong's 編號；兩版翻得不一樣時，答案通常在那裡。
+				恢復本自己的註解也常直接說明為什麼這樣翻，收在每節的摺疊區裡。
+			</p>
+
+			<h2>經文來源</h2>
+			<ul>
+				<li>恢復本經文與註解：<a href="https://www.recoveryversion.com.tw/" target="_blank" rel="noopener">網上聖經恢復本</a>（台灣福音書房）公開 API，即時取用。</li>
+				<li>和合本經文：<a href="https://bible.fhl.net/" target="_blank" rel="noopener">信望愛站</a>的公開 JSON API。</li>
+				<li>原文逐字與英文各譯本：<a href="https://biblehub.com/" target="_blank" rel="noopener">biblehub</a>。</li>
+				<li>英文恢復本：<a href="https://bibleread.online/bible/" target="_blank" rel="noopener">bibleread.online</a>。</li>
+				<li>另一個和合本線上版：<a href="https://cut.ibibles.net/" target="_blank" rel="noopener">cut.ibibles.net</a>（只能連到整章）。</li>
+			</ul>
+			<p class="fineprint">
+				兩個版本的經文都是打開頁面時向上面的來源即時取得、只快取在你自己的瀏覽器裡，
+				這個網站不存放、也不散布任何經文。恢復本經文版權屬台灣福音書房。
+				比對結果只是把兩邊的字擺在一起看，不是對任何譯本的評斷；
+				要斷定一處經文的意思，請回到原文和職事的教導。
+			</p>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p><a href="../">← 回首頁</a>　·　<a href="../crossref/">串珠探索</a>　·　<a href="../hymn-picker/">聚會選詩歌</a></p>
+	</footer>
+
+	<script src="js/books.js"></script>
+	<script src="js/sources.js"></script>
+	<script src="js/diff.js"></script>
+	<script src="js/api.js"></script>
+	<script src="data/diffs.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>
