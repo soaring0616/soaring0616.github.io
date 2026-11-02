@@ -1,0 +1,96 @@
+/*
+	首頁動畫可跳過（skip）
+	----------------------
+	HTML5 UP "Story" 的動畫分兩種，都靠 class 控制起始狀態：
+	  - 進場動畫：body.is-preload + .onload-* （main.css）
+	  - 捲動淡入：.is-inactive + .onscroll-*  （由 jquery.scrollex 加上）
+	在 <html> 掛上 .anim-skip 之後，下面的規則直接把這些起始狀態蓋掉，
+	所以就算 CSS 比 JS 先到、或 scrollex 又把 class 加回來，內容也一定看得見。
+	skip-animations.js 負責切換 .anim-skip、記住選擇並拆掉 scrollex。
+*/
+
+/* 關掉首頁所有過場動畫 */
+html.anim-skip #wrapper *,
+html.anim-skip #wrapper *:before,
+html.anim-skip #wrapper *:after {
+	-moz-transition: none !important;
+	-webkit-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+	-moz-animation: none !important;
+	-webkit-animation: none !important;
+	-ms-animation: none !important;
+	animation: none !important;
+}
+
+/* 把被動畫藏起來的區塊一次全部顯示 */
+html.anim-skip .banner .content,
+html.anim-skip .banner .image,
+html.anim-skip .banner .image img,
+html.anim-skip .spotlight .content,
+html.anim-skip .spotlight .image,
+html.anim-skip .spotlight .image img,
+html.anim-skip .wrapper > .inner,
+html.anim-skip .gallery article .image img,
+html.anim-skip .items > * > .inner {
+	opacity: 1 !important;
+	-moz-transform: none !important;
+	-webkit-transform: none !important;
+	-ms-transform: none !important;
+	transform: none !important;
+}
+
+/* 「跳過動畫 / 重播動畫」按鈕 */
+#skip-animations {
+	position: fixed;
+	top: 1.25rem;
+	right: 1.25rem;
+	z-index: 10000;
+	height: auto;
+	line-height: 1;
+	max-width: none;
+	padding: 0.7em 1.25em;
+	border-radius: 2em;
+	font-size: 0.7rem;
+	letter-spacing: 0.125em;
+	text-transform: none;
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.45);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	opacity: 0.75;
+}
+
+#skip-animations:hover,
+#skip-animations:focus-visible {
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85);
+	opacity: 1;
+}
+
+/* 已經跳過之後，按鈕退到背景，但仍可按一下把動畫放回來 */
+html.anim-skip #skip-animations {
+	opacity: 0.4;
+}
+
+html.anim-skip #skip-animations:hover,
+html.anim-skip #skip-animations:focus-visible {
+	opacity: 1;
+}
+
+/* 作業系統已設定減少動態效果時，直接無動畫，也不需要這顆按鈕 */
+@media (prefers-reduced-motion: reduce) {
+	#skip-animations {
+		display: none !important;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#skip-animations {
+		top: 0.75rem;
+		right: 0.75rem;
+		font-size: 0.65rem;
+		padding: 0.6em 1em;
+	}
+}

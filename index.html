@@ -7,9 +7,24 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="skip-animations.css" />
 		<noscript><link rel="stylesheet" href="noscript.css" /></noscript>
+
+		<!-- 記住過「跳過動畫」的話，要搶在第一次 paint 前掛好 class，否則會先閃一下動畫 -->
+		<script>
+			(function() {
+				try {
+					if (window.localStorage.getItem('skip-animations') === '1')
+						document.documentElement.className += ' anim-skip';
+				}
+				catch (e) {}
+			})();
+		</script>
 	</head>
 	<body class="is-preload">
+
+		<!-- 跳過動畫 -->
+			<button id="skip-animations" type="button" aria-pressed="false">跳過動畫</button>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
@@ -147,6 +162,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="skip-animations.js"></script>
 
 	</body>
 </html>

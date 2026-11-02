@@ -385,3 +385,7 @@
 	.banner.onscroll-image-fade-in.is-inactive .image img {
 		opacity: 1;
 	}
+/* JS 關閉時沒有動畫可跳，隱藏「跳過動畫」按鈕 */
+#skip-animations {
+	display: none;
+}
