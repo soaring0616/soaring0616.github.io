@@ -133,6 +133,171 @@
 		els.scan.textContent = '掃描' + state.book.name + '整卷';
 	}
 
+	/* ---------- 原文逐字 ---------- */
+
+	/*
+		一個原文字。滑過去（或用鍵盤 focus）就顯示字根、詞性、語法分析和中文解釋 ──
+		這些 qp.php 一次就全給了，不必再發請求。
+		點下去才去查原文字典（sd.php），拿完整的中文與英文詞條。
+	*/
+	function wordChip(w, n, onPick) {
+		var chip = el('button', 'ow');
+		chip.type = 'button';
+		chip.appendChild(el('span', 'ow-word', w.word));
+
+		var tip = el('span', 'ow-tip');
+		if (w.orig && w.orig !== w.word) tip.appendChild(el('span', 'ow-lemma', w.orig));
+		var gram = [w.pro, w.wform].filter(Boolean).join('　');
+		if (gram) tip.appendChild(el('span', 'ow-gram', gram));
+		if (w.exp) tip.appendChild(el('span', 'ow-exp', w.exp));
+		if (w.sn) tip.appendChild(el('span', 'ow-sn', (n ? 'H' : 'G') + w.sn.replace(/^0+/, '')));
+		chip.appendChild(tip);
+
+		/* 滑鼠不在時，螢幕閱讀器與無 hover 的裝置還是要讀得到 */
+		chip.setAttribute('aria-label', [w.word, w.orig, gram, w.exp].filter(Boolean).join('，'));
+		chip.title = '';
+
+		chip.addEventListener('click', function () { onPick(w, chip); });
+		return chip;
+	}
+
+	/* 原文字典的內容：中文、英文各一塊，可切換 */
+	function renderLexicon(box, w, entry, n) {
+		box.textContent = '';
+
+		var head = el('div', 'lex-head');
+		head.appendChild(el('span', 'lex-orig', entry.orig || w.orig || w.word));
+		if (w.sn) head.appendChild(el('span', 'lex-sn', (n ? 'H' : 'G') + w.sn.replace(/^0+/, '')));
+		var gram = [w.pro, w.wform].filter(Boolean).join('　');
+		if (gram) head.appendChild(el('span', 'lex-gram', gram));
+		box.appendChild(head);
+
+		var hasZh = !!entry.zh, hasEn = !!entry.en;
+		var bodyZh = el('pre', 'lex-body', entry.zh);
+		var bodyEn = el('pre', 'lex-body', entry.en);
+		bodyEn.hidden = true;
+
+		if (hasZh && hasEn) {
+			var tabs = el('div', 'lex-tabs');
+			var bZh = el('button', 'lex-tab is-on', '中文');
+			var bEn = el('button', 'lex-tab', 'English');
+			bZh.type = bEn.type = 'button';
+			function pick(zh) {
+				bodyZh.hidden = !zh;
+				bodyEn.hidden = zh;
+				bZh.className = 'lex-tab' + (zh ? ' is-on' : '');
+				bEn.className = 'lex-tab' + (zh ? '' : ' is-on');
+			}
+			bZh.addEventListener('click', function () { pick(true); });
+			bEn.addEventListener('click', function () { pick(false); });
+			tabs.appendChild(bZh);
+			tabs.appendChild(bEn);
+			box.appendChild(tabs);
+		}
+
+		if (hasZh) box.appendChild(bodyZh);
+		if (hasEn) box.appendChild(bodyEn);
+		if (!hasZh && !hasEn) box.appendChild(el('p', 'hint', '這個編號在原文字典裡沒有詞條。'));
+
+		if (entry.same && entry.same.length) {
+			var d = el('details', 'lex-same');
+			d.appendChild(el('summary', null, '同源字（' + entry.same.length + '）'));
+			var ul = el('ul');
+			entry.same.forEach(function (c) {
+				var li = el('li');
+				li.appendChild(el('span', 'lex-orig small', c.word));
+				if (c.cexp) li.appendChild(el('span', 'note-text', c.cexp));
+				if (c.ccnt != null) li.appendChild(el('span', 'lex-gram', '出現 ' + c.ccnt + ' 次'));
+				ul.appendChild(li);
+			});
+			d.appendChild(ul);
+			box.appendChild(d);
+		}
+
+		box.appendChild(el('p', 'fineprint', '原文字彙分析與原文字典：信望愛聖經工具'));
+		box.hidden = false;
+	}
+
+	/* 一節的原文區塊，第一次展開時才去抓 */
+	function originalBlock(book, chapter, v) {
+		var panel = el('div', 'orig-panel');
+		panel.hidden = true;
+		var loaded = false;
+
+		panel.load = function () {
+			if (loaded) return;
+			loaded = true;
+			panel.appendChild(el('p', 'hint', '讀取原文…'));
+
+			VDApi.getParsing(book, chapter, v).then(function (data) {
+				panel.textContent = '';
+
+				if (data.literal) {
+					var lit = el('p', 'orig-literal');
+					lit.appendChild(el('span', 'ver-label', '原文直譯'));
+					lit.appendChild(el('span', null, data.literal));
+					panel.appendChild(lit);
+				}
+
+				var row = el('div', 'orig-words' + (data.n ? ' rtl' : ''));
+				if (data.n) row.dir = 'rtl';
+
+				var box = el('div', 'lex-box');
+				box.hidden = true;
+				var current = null;
+
+				function pick(w, chip) {
+					/* 再點同一個字就收起來 */
+					if (current === chip && !box.hidden) {
+						box.hidden = true;
+						chip.classList.remove('is-on');
+						current = null;
+						return;
+					}
+					row.querySelectorAll('.ow.is-on').forEach(function (c) { c.classList.remove('is-on'); });
+					chip.classList.add('is-on');
+					current = chip;
+
+					box.textContent = '';
+					box.appendChild(el('p', 'hint', '查字典…'));
+					box.hidden = false;
+
+					if (!w.sn) {
+						box.textContent = '';
+						box.appendChild(el('p', 'hint', '這個字沒有 Strong\u2019s 編號。'));
+						return;
+					}
+					VDApi.getStrong(data.n, w.sn).then(function (entry) {
+						if (current !== chip) return; /* 期間換了字就不要蓋掉 */
+						renderLexicon(box, w, entry, data.n);
+					}).catch(function (err) {
+						if (current !== chip) return;
+						box.textContent = '';
+						box.appendChild(el('p', 'hint', '查不到字典詞條（' + err.message + '）。'));
+					});
+				}
+
+				data.words.forEach(function (w) { row.appendChild(wordChip(w, data.n, pick)); });
+				panel.appendChild(row);
+				panel.appendChild(el('p', 'hint', '滑過或用鍵盤移到任一個字看詞性與解釋，點下去查完整的原文字典。'));
+				panel.appendChild(box);
+
+			}).catch(function (err) {
+				panel.textContent = '';
+				var msg = el('p', 'hint', '讀不到原文（' + err.message + '）。');
+				panel.appendChild(msg);
+				var a = el('a', 'src-link', '改在信望愛開啟');
+				a.href = Sources.fhl(book, chapter, v);
+				a.target = '_blank';
+				a.rel = 'noopener';
+				panel.appendChild(a);
+				loaded = false; /* 允許再試一次 */
+			});
+		};
+
+		return panel;
+	}
+
 	/* ---------- 一節的呈現 ---------- */
 
 	/*
@@ -224,7 +389,25 @@
 			wrap.appendChild(d);
 		}
 
+		var orig = originalBlock(book, chapter, v);
+		wrap.appendChild(orig);
+
 		var links = el('nav', 'links');
+
+		/* 原文就在頁面上展開，不用跳出去 */
+		var origBtn = el('button', 'src-link orig-toggle', '原文逐字');
+		origBtn.type = 'button';
+		origBtn.setAttribute('aria-expanded', 'false');
+		origBtn.title = '在這一頁展開這節的原文，每個字可看解釋';
+		origBtn.addEventListener('click', function () {
+			var open = orig.hidden;
+			orig.hidden = !open;
+			origBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+			origBtn.classList.toggle('is-on', open);
+			if (open) orig.load();
+		});
+		links.appendChild(origBtn);
+
 		Sources.linksFor(book, chapter, v).forEach(function (l) {
 			var a = el('a', 'src-link', l.label);
 			a.href = l.href;

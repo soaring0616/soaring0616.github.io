@@ -15,7 +15,7 @@
 (function (root) {
 
 	var RV_BASE = 'https://www.recoveryversion.com.tw/api/';
-	var FHL_BASE = 'https://bible.fhl.net/json/qb.php';
+	var FHL_JSON = 'https://bible.fhl.net/json/';
 	var LS_PREFIX = 'vdx1:';
 	var TTL_MS = 30 * 24 * 60 * 60 * 1000; /* 30 天 */
 	var TIMEOUT_MS = 10000;
@@ -53,6 +53,15 @@
 				localStorage.setItem(LS_PREFIX + key, val);
 			} catch (e3) { /* 放棄持久化，只留記憶體快取 */ }
 		}
+	}
+
+	/* 信望愛的 API 出錯時回的是 HTTP 200 加上 status:"Fail:…"，所以要自己檢查 */
+	function requireSuccess(json) {
+		if (!json || typeof json !== 'object') throw new Error('unexpected response');
+		if (typeof json.status === 'string' && json.status.indexOf('Fail') === 0) {
+			throw new Error(json.status);
+		}
+		return json;
 	}
 
 	function fetchJson(url) {
@@ -124,10 +133,10 @@
 
 	/* 和合本一整章 → { "15": "經文…", … } */
 	function getUnvChapter(book, chapter) {
-		var url = FHL_BASE + '?chineses=' + encodeURIComponent(book.fhl)
+		var url = FHL_JSON + 'qb.php?chineses=' + encodeURIComponent(book.fhl)
 			+ '&chap=' + chapter + '&version=unv&gb=0';
 		return cachedFetch('unv:' + book.code + '.' + chapter, url, function (json) {
-			var rows = json && json.record;
+			var rows = requireSuccess(json).record;
 			if (!Array.isArray(rows)) throw new Error('unexpected response');
 			var map = {};
 			rows.forEach(function (r) {
@@ -137,10 +146,79 @@
 		});
 	}
 
+	/*
+		原文字彙分析（信望愛 qp.php）→ 一節的逐字原文
+		  { n: 0 新約希臘文 / 1 舊約希伯來文,
+		    literal: '原文直譯',
+		    words: [{ wid, word, sn, pro, wform, orig, exp, remark }, …] }
+
+		wid=0 那筆是整節的表頭（word = 整節原文、exp = 原文直譯），
+		wid>=1 才是一個字一筆。每個字自帶中文解釋 exp，
+		所以滑過去顯示解釋不需要再發請求。
+	*/
+	function getParsing(book, chapter, verse) {
+		var url = FHL_JSON + 'qp.php?engs=' + encodeURIComponent(book.engs)
+			+ '&chap=' + chapter + '&sec=' + verse + '&gb=0';
+		return cachedFetch('qp:' + book.code + '.' + chapter + '.' + verse, url, function (json) {
+			var rows = requireSuccess(json).record;
+			if (!Array.isArray(rows) || !rows.length) throw new Error('unexpected response');
+			var out = { n: Number(json.N) || 0, literal: '', words: [] };
+			rows.forEach(function (r) {
+				if (Number(r.wid) === 0) {
+					out.literal = String(r.exp || '');
+					return;
+				}
+				out.words.push({
+					wid: Number(r.wid),
+					word: String(r.word || ''),
+					sn: String(r.sn || ''),
+					pro: String(r.pro || ''),
+					wform: String(r.wform || ''),
+					orig: String(r.orig || ''),
+					exp: String(r.exp || ''),
+					remark: String(r.remark || ''),
+				});
+			});
+			if (!out.words.length) throw new Error('no words');
+			return out;
+		});
+	}
+
+	/*
+		原文字典（信望愛 sd.php）→ 一個 Strong's 編號的完整解釋
+		  { sn, orig, zh: 中文詞條, en: 英文詞條, same: [同源字] }
+		N：0 = 新約希臘文、1 = 舊約希伯來文（和 getParsing 回的 n 一致）。
+
+		只用 sd.php。另外兩支中文字典 sbdag.php / stwcbhdic.php 在信望愛的
+		說明裡註明僅授權該站使用，所以這裡不碰。
+	*/
+	function getStrong(n, sn) {
+		var url = FHL_JSON + 'sd.php?N=' + (n ? 1 : 0) + '&k=' + encodeURIComponent(sn) + '&gb=0';
+		return cachedFetch('sd:' + (n ? 1 : 0) + '.' + sn, url, function (json) {
+			var rows = requireSuccess(json).record;
+			if (!Array.isArray(rows) || !rows.length) throw new Error('not found');
+			var r = rows[0];
+			return {
+				sn: String(r.sn || sn),
+				orig: String(r.orig || ''),
+				zh: String(r.dic_text || ''),
+				en: String(r.edic_text || ''),
+				same: Array.isArray(r.same) ? r.same.map(function (c) {
+					return {
+						word: String(c.word || ''), csn: String(c.csn || ''),
+						ccnt: c.ccnt, cexp: String(c.cexp || ''),
+					};
+				}) : [],
+			};
+		});
+	}
+
 	var api = {
 		getRcvChapter: getRcvChapter,
 		getRcvFootnotes: getRcvFootnotes,
 		getUnvChapter: getUnvChapter,
+		getParsing: getParsing,
+		getStrong: getStrong,
 	};
 	if (typeof module !== 'undefined' && module.exports) module.exports = api;
 	else root.VDApi = api;
