@@ -18,7 +18,6 @@
 		status: $('status'), summary: $('summary'), verses: $('verses'),
 		progress: $('progress'), progressBar: $('progress-bar'),
 		progressText: $('progress-text'), cancel: $('btn-cancel'),
-		notesPanel: $('notes-panel'), notesList: $('notes-list'), notesCount: $('notes-count'),
 	};
 
 	var state = {
@@ -50,52 +49,6 @@
 		Object.keys(unv || {}).forEach(function (k) { set[k] = true; });
 		Object.keys(rcv || {}).forEach(function (k) { set[k] = true; });
 		return Object.keys(set).map(Number).sort(function (a, b) { return a - b; });
-	}
-
-	/* ---------- 記錄（data/diffs.js） ---------- */
-
-	function noteFor(code, chapter, verse) {
-		if (typeof DIFF_NOTES === 'undefined') return null;
-		for (var i = 0; i < DIFF_NOTES.length; i++) {
-			var n = DIFF_NOTES[i];
-			if (n.code === code && n.chapter === chapter && n.verse === verse) return n;
-		}
-		return null;
-	}
-
-	function renderNotesPanel() {
-		if (typeof DIFF_NOTES === 'undefined' || !DIFF_NOTES.length) {
-			els.notesPanel.hidden = true;
-			return;
-		}
-		els.notesCount.textContent = DIFF_NOTES.length;
-		els.notesList.textContent = '';
-
-		var byBook = {};
-		DIFF_NOTES.forEach(function (n) { (byBook[n.code] = byBook[n.code] || []).push(n); });
-
-		Object.keys(byBook).map(Number).sort(function (a, b) { return a - b; }).forEach(function (code) {
-			var book = BOOK_BY_CODE[code];
-			if (!book) return;
-			var group = el('div', 'note-group');
-			group.appendChild(el('h3', null, book.name));
-			var ul = el('ul');
-			byBook[code]
-				.slice()
-				.sort(function (a, b) { return a.chapter - b.chapter || a.verse - b.verse; })
-				.forEach(function (n) {
-					var li = el('li');
-					var a = el('a', 'note-ref', book.abbr + ' ' + n.chapter + ':' + n.verse);
-					a.href = '#' + code + '.' + n.chapter + '.' + n.verse;
-					li.appendChild(a);
-					if (n.tag) li.appendChild(el('span', 'tag', n.tag));
-					if (n.note) li.appendChild(el('span', 'note-text', n.note));
-					ul.appendChild(li);
-				});
-			group.appendChild(ul);
-			els.notesList.appendChild(group);
-		});
-		els.notesPanel.hidden = false;
 	}
 
 	/* ---------- 下拉選單 ---------- */
@@ -358,9 +311,6 @@
 			head.appendChild(el('span', 'badge same', '相同'));
 		}
 
-		var note = noteFor(book.code, chapter, v);
-		if (note) head.appendChild(el('span', 'badge noted', '有記錄'));
-
 		wrap.appendChild(head);
 
 		var segs = both ? VDDiff.diffChars(unvText, rcvText, state.ignorePunct) : null;
@@ -369,14 +319,6 @@
 		cols.appendChild(diffLine('和合本', unvText, segs, 'unv'));
 		cols.appendChild(diffLine('恢復本', rcvText, segs, 'rcv'));
 		wrap.appendChild(cols);
-
-		if (note) {
-			var nb = el('div', 'note-box');
-			if (note.tag) nb.appendChild(el('span', 'tag', note.tag));
-			if (note.note) nb.appendChild(el('p', null, note.note));
-			if (note.original) nb.appendChild(el('p', 'orig', '原文：' + note.original));
-			wrap.appendChild(nb);
-		}
 
 		/* 恢復本註解常常就解釋了為什麼這樣翻，收在摺疊區 */
 		var fns = footnotes && footnotes[v];
@@ -416,32 +358,6 @@
 			a.title = l.title;
 			links.appendChild(a);
 		});
-
-		/* 想把這一節記下來時，一鍵複製要貼進 data/diffs.js 的那幾行 */
-		var copy = el('button', 'src-link copy', '複製記錄範本');
-		copy.type = 'button';
-		copy.title = '複製一段可貼進 data/diffs.js 的範本';
-		copy.addEventListener('click', function () {
-			var ph = (both && VDDiff.differs(unvText, rcvText))
-				? VDDiff.phrases(unvText, rcvText, state.ignorePunct)
-				: { unv: [], rcv: [] };
-			var tpl = '\t{\n'
-				+ '\t\tcode: ' + book.code + ', chapter: ' + chapter + ', verse: ' + v
-				+ ',  /* ' + book.abbr + ' ' + chapter + ':' + v + ' */\n'
-				+ '\t\ttag: \'\',\n'
-				+ '\t\tnote: \'\',\n'
-				+ '\t\toriginal: \'\',\n'
-				+ '\t\t/* 和合本：' + (ph.unv.join('／') || '—') + '\n'
-				+ '\t\t   恢復本：' + (ph.rcv.join('／') || '—') + ' */\n'
-				+ '\t},';
-			var done = function () { copy.textContent = '已複製'; setTimeout(function () { copy.textContent = '複製記錄範本'; }, 1500); };
-			if (navigator.clipboard && navigator.clipboard.writeText) {
-				navigator.clipboard.writeText(tpl).then(done, function () { window.prompt('複製下面這段：', tpl); });
-			} else {
-				window.prompt('複製下面這段：', tpl);
-			}
-		});
-		links.appendChild(copy);
 
 		wrap.appendChild(links);
 		return wrap;
@@ -628,7 +544,6 @@
 					pv.appendChild(el('span', 'ph rcv', ph.rcv.join('／') || '—'));
 					li.appendChild(pv);
 				}
-				if (noteFor(book.code, c, f.verse)) li.appendChild(el('span', 'badge noted', '有記錄'));
 				ul.appendChild(li);
 			});
 			sec.appendChild(ul);
@@ -677,7 +592,6 @@
 	function init() {
 		fillBooks();
 		syncControls();
-		renderNotesPanel();
 
 		els.book.addEventListener('change', function () {
 			state.book = BOOK_BY_CODE[Number(els.book.value)];

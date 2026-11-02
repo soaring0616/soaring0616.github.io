@@ -187,7 +187,6 @@ main {
 .badge.same  { background: #f0f0f0; color: var(--muted); }
 .badge.diff  { background: var(--rcv-bg); color: var(--rcv); }
 .badge.warn  { background: #fff7e6; color: #8a6400; }
-.badge.noted { background: #ecf7ec; color: #2f7a35; }
 
 .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.5rem; }
 
@@ -220,27 +219,7 @@ mark {
 mark.del { color: var(--unv); background: var(--unv-bg); box-shadow: 0 1px 0 var(--unv); }
 mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var(--rcv); }
 
-/* ── 記錄方塊、註解、連結 ── */
-
-.note-box {
-	margin-top: 0.7rem;
-	padding: 0.6rem 0.8rem;
-	background: #fafffa;
-	border-left: 3px solid #8ec79a;
-	font-size: 0.9rem;
-}
-.note-box p { margin-top: 0.3rem; }
-.note-box .orig { color: var(--muted); font-size: 0.85rem; }
-
-.tag {
-	display: inline-block;
-	font-size: 0.72rem;
-	padding: 0.1rem 0.45rem;
-	background: #ecf7ec;
-	color: #2f7a35;
-	border-radius: 2px;
-	margin-right: 0.4rem;
-}
+/* ── 註解、連結 ── */
 
 .footnotes {
 	margin-top: 0.6rem;
@@ -305,35 +284,18 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 .ph.rcv { color: var(--rcv); }
 .arrow { color: var(--muted); font-size: 0.8rem; }
 
-/* ── 我的記錄 ── */
+/* ── 共用小字 ── */
 
-.notes-panel {
-	margin-top: 2.5rem;
-	padding-top: 1.25rem;
-	border-top: 2px solid var(--accent);
-}
-.notes-panel h2, .about h2 {
+.about h2 {
 	font-size: 1.1rem;
 	font-weight: 400;
 	letter-spacing: 0.1em;
 	margin-bottom: 0.5rem;
 }
-.notes-panel .count { font-size: 0.8rem; color: var(--muted); font-weight: 300; letter-spacing: 0; }
 .hint, .fineprint { font-size: 0.82rem; color: var(--muted); }
 code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radius: 2px; }
 
-.note-group { margin-top: 1rem; }
-.note-group h3 { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.3rem; }
-.note-group ul { list-style: none; }
-.note-group li {
-	display: flex;
-	align-items: baseline;
-	gap: 0.5rem;
-	flex-wrap: wrap;
-	padding: 0.3rem 0;
-	font-size: 0.88rem;
-	border-bottom: 1px dotted var(--line);
-}
+/* 掃描清單的差異說明，以及字典的同源字 */
 .note-text { color: #444; }
 
 /* ── 說明 ── */

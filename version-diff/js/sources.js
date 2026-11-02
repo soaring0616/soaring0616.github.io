@@ -10,8 +10,10 @@
 
 	/* 恢復本（台灣福音書房「網上聖經恢復本」）
 	   逐章網址格式為 /verse/{書卷號}/{章}，書卷號就是 books.js 的 code（1–66）。
-	   這站是前端渲染的，任何路徑都回 200 和同一份空殼，連 /verse/999/999 也一樣，
-	   所以無法從伺服器回應驗證；格式由站主提供。 */
+	   新舊約都在瀏覽器裡確認過：/verse/49/4 開以弗所書 4 章、/verse/19/76 開詩篇 76 篇，
+	   所以全書 66 卷同一個公式。
+	   註：這站是前端渲染的，任何路徑都回 200 和同一份空殼（連 /verse/999/999 也一樣），
+	   所以只能用瀏覽器驗證，抓 HTTP 回應是看不出對錯的。 */
 	function recoveryVersion(book, chapter) {
 		if (!book) return 'https://www.recoveryversion.com.tw/';
 		return 'https://www.recoveryversion.com.tw/verse/' + book.code + '/' + (chapter || 1);
