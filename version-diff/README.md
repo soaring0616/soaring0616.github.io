@@ -48,15 +48,22 @@
 | 來源 | 用途 | 網址／端點格式 |
 |------|------|----------------|
 | [網上聖經恢復本](https://www.recoveryversion.com.tw/) | 恢復本經文與註解（公開 API，`crossref/` 也是用這組） | `api/getVerses`、`api/getFootnotes`；逐章頁面 `verse/{書卷號}/{章}` |
-| [信望愛](https://bible.fhl.net/) | 和合本經文、**原文字彙分析**、**原文字典** | `json/qb.php`、`json/qp.php`、`json/sd.php`；並排原文的閱讀頁見下 |
+| [信望愛](https://bible.fhl.net/) | 和合本經文、**原文字彙分析**、**原文字典**，以及和合本＋恢復本＋原文的**版本對照**頁 | `json/qb.php`、`json/qp.php`、`json/sd.php`；版本對照頁見下 |
 | [biblehub](https://biblehub.com/) | 原文逐字對照與英文各譯本 | `interlinear/{slug}/{章}-{節}.htm` |
 | [bibleread.online](https://bibleread.online/bible/) | 英文恢復本 | `bible/{slug}/{章}/#{節}` |
 | [cut.ibibles.net](https://cut.ibibles.net/) | 另一個和合本線上版 | `{NNN}{Book}.htm#{NNN}-{章}`，只到整章 |
 
-「信望愛原文」按鈕開的是和合本並排原文的閱讀頁：
-新約 `VERSION1=unv&VERSION92=gnt6&VERSION14=interubs4`（和合本＋UBS6 希臘文＋希中逐字對照），
-舊約 `VERSION1=unv&VERSION2=bhs`（和合本＋馬索拉原文）。
-`VERSION` 後面的編號實測 2 與 92 都收，伺服器似乎不在意用哪個數字；舊約沒有對應的逐字對照版本代號。
+**「信望愛版本對照」是最有用的一個外部連結** —— 信望愛同時收了和合本**和恢復本**，
+所以一頁就能看到兩個中文版本並排原文（該站頁尾註明恢復本經文由台灣福音書房授權給信望愛網路刊載）：
+
+- 新約 `VERSION1=unv&VERSION8=recover&VERSION25=gnt6&VERSION24=interubs4`
+  （和合本＋恢復本＋UBS6 希臘文＋希中逐字對照）
+- 舊約 `VERSION1=unv&VERSION8=recover&VERSION2=bhs`（和合本＋恢復本＋馬索拉原文）
+
+加上 `&strongflag=0&TABFLAG=1&chineses={中文縮寫}&chap={章}&sub2=版本對照`，
+帶 `&sec={節}` 就只顯示那一節。`VERSION` 後面的編號實測換別的數字也收
+（recover 用 8 或 3、bhs 用 2 或 92 都出得來），伺服器似乎只認 `VERSION` 開頭的參數、不在意編號。
+舊約沒有逐字對照的版本代號。
 
 所有經文、原文與字典內容都在開頁面時即時取得，以 localStorage 快取 30 天，
 **repo 裡不存放任何經文或字典資料**，和 `crossref/` 同一套做法。
@@ -98,5 +105,12 @@
 - **恢復本的 `verse/{書卷號}/{章}` 逐章網址格式由站主提供，無法從伺服器回應驗證**
   —— 該站是前端渲染，任何路徑都回 HTTP 200 和同一份空殼，連 `/verse/999/999` 也一樣，
   所以對與錯的路徑從外面看起來完全相同。
-- 舊約沒有找到可用的逐字對照版本代號，所以「信望愛原文」在舊約只並排馬索拉原文；
+- 舊約沒有找到可用的逐字對照版本代號，所以「信望愛版本對照」在舊約只並排馬索拉原文；
   頁面上的「原文逐字」不受影響，舊約一樣有逐字分析與字典。
+
+## 連結命名
+
+頁面上那顆**「原文逐字」**是在本頁展開的原文（信望愛 `qp.php`），
+外部連到 biblehub 的那個叫**「biblehub 原文逐字」**，兩者不要混。
+每一節的連結順序是：原文逐字（本頁）→ 信望愛版本對照 → biblehub 原文逐字 →
+biblehub 譯本 → 英文恢復本 → 和合本 → 恢復本站。

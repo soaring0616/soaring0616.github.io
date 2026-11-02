@@ -17,23 +17,29 @@
 		return 'https://www.recoveryversion.com.tw/verse/' + book.code + '/' + (chapter || 1);
 	}
 
-	/* 信望愛 — 和合本並排原文（確認可用，伺服器端算好的 HTML）
-	   新約：和合本 + UBS6 希臘文 + 希中逐字對照
-	     VERSION1=unv&VERSION92=gnt6&VERSION14=interubs4
-	   舊約：和合本 + 馬索拉原文（舊約沒有對應的逐字對照版本代號）
-	     VERSION1=unv&VERSION2=bhs
-	   VERSION 後面的編號實測 2 與 92 都收，伺服器似乎不在意用哪個數字。
+	/* 信望愛 — 版本對照（確認可用，伺服器端算好的 HTML）
+	   這是最有用的一個連結：信望愛同時收了和合本「和」恢復本，
+	   所以一頁就能看到兩個中文版本並排原文。
+	   （該站頁尾註明恢復本經文由台灣福音書房授權給信望愛網路刊載。）
+
+	   新約：和合本 + 恢復本 + UBS6 希臘文 + 希中逐字對照
+	     VERSION1=unv&VERSION8=recover&VERSION25=gnt6&VERSION24=interubs4
+	   舊約：和合本 + 恢復本 + 馬索拉原文（舊約沒有逐字對照的版本代號）
+	     VERSION1=unv&VERSION8=recover&VERSION2=bhs
+
+	   VERSION 後面的編號實測換別的數字也收（recover 用 8 或 3、bhs 用 2 或 92
+	   都出得來），伺服器似乎只認 VERSION 開頭的參數，不在意編號。
 	   帶 &sec= 只顯示那一節，不帶就是整章；兩種都確認過。 */
 	function fhl(book, chapter, verse) {
 		var versions = book.ot
-			? 'VERSION1=unv&VERSION2=bhs'
-			: 'VERSION1=unv&VERSION92=gnt6&VERSION14=interubs4';
+			? 'VERSION1=unv&VERSION8=recover&VERSION2=bhs'
+			: 'VERSION1=unv&VERSION8=recover&VERSION25=gnt6&VERSION24=interubs4';
 		var url = 'https://bible.fhl.net/new/read.php?' + versions
 			+ '&strongflag=0&TABFLAG=1'
 			+ '&chineses=' + encodeURIComponent(book.fhl)
 			+ '&chap=' + chapter;
 		if (verse) url += '&sec=' + verse;
-		return url + '&submit1=' + encodeURIComponent('閱讀');
+		return url + '&sub2=' + encodeURIComponent('版本對照');
 	}
 
 	/* cut.ibibles.net — 和合本（只到「章」，站上沒有逐節的 anchor）
@@ -68,10 +74,10 @@
 	/* 一節經文的全部外部連結，依「原文優先」排序 */
 	function linksFor(book, chapter, verse) {
 		return [
-			{ key: 'interlinear', label: '原文逐字', title: 'biblehub 原文逐字對照（含 Strong’s 編號）', href: interlinear(book, chapter, verse) },
-			{ key: 'biblehub',    label: 'biblehub', title: 'biblehub 逐節頁（英文各譯本與原文）',           href: biblehub(book, chapter, verse) },
+			{ key: 'fhl',         label: '信望愛版本對照', title: book.ot ? '信望愛：和合本、恢復本並排舊約馬索拉原文' : '信望愛：和合本、恢復本並排 UBS6 希臘文與希中逐字對照', href: fhl(book, chapter, verse) },
+			{ key: 'interlinear', label: 'biblehub 原文逐字', title: 'biblehub 原文逐字對照（含 Strong’s 編號）', href: interlinear(book, chapter, verse) },
+			{ key: 'biblehub',    label: 'biblehub 譯本', title: 'biblehub 逐節頁（英文各譯本與原文）',           href: biblehub(book, chapter, verse) },
 			{ key: 'bibleread',   label: '英文恢復本', title: 'bibleread.online（英文恢復本）',              href: bibleread(book, chapter, verse) },
-			{ key: 'fhl',         label: '信望愛原文', title: book.ot ? '信望愛：和合本並排舊約馬索拉原文' : '信望愛：和合本並排 UBS6 希臘文與希中逐字對照', href: fhl(book, chapter, verse) },
 			{ key: 'ibibles',     label: '和合本',   title: 'cut.ibibles.net 和合本（只能到整章）',          href: ibibles(book, chapter) },
 			{ key: 'recovery',    label: '恢復本站', title: '網上聖經恢復本的這一章',                        href: recoveryVersion(book, chapter) },
 		];
