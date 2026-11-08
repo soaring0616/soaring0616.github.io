@@ -51,6 +51,8 @@ P.prototype.then = function (onOk, onErr) {
 };
 P.prototype['catch'] = function (onErr) { return this.then(null, onErr); };
 Promise = {
+	resolve: function (v) { return (v instanceof P) ? v : new P(v); },
+	reject: function (e) { return new P(undefined, e, true); },
 	all: function (a) {
 		var out = [];
 		for (var i = 0; i < a.length; i++) {
@@ -76,13 +78,19 @@ function fetch(url) {
 /* ── 假 DOM ──────────────────────────────────────── */
 var els = {};
 function stub(k, v) {
-	return { getAttribute: function (n) { return n === ('data-' + k) ? v : null; }, onclick: null };
+	return {
+		getAttribute: function (n) { return n === ('data-' + k) ? v : null; },
+		onclick: null, className: ''
+	};
 }
 function query(h, sel) {
 	var out = [], m, re;
 	if (sel === '.row') {
 		re = /class="row" data-(no|id)="([^"]*)"/g;
 		while ((m = re.exec(h)) !== null) out.push(stub(m[1], m[2]));
+	} else if (sel === '.tab') {
+		re = /<button class="tab[^"]*" data-key="([^"]*)"/g;
+		while ((m = re.exec(h)) !== null) out.push(stub('key', m[1]));
 	} else if (sel === '[data-go]') {
 		re = /data-go="([^"]*)"/g;
 		while ((m = re.exec(h)) !== null) out.push(stub('go', m[1]));
@@ -132,118 +140,123 @@ register(readFile(BASE + '/index.html'));
 print('載入 app.js');
 eval(readFile(BASE + '/js/app.js'));
 
-print('');
-print('開頁（讀一篇）');
-ok('status 已隱藏', els['status'].hidden === true);
-ok('只讀了輕索引兩個檔', fetched.length >= 2 &&
-	fetched[0] === 'data/index.json' && fetched[1] === 'data/books.json',
-	'第一批：' + fetched.slice(0, 2).join(' + '));
-var card = els['card']._html;
-ok('有篇題 h2', /<h2>[^<]+<\/h2>/.test(card));
-ok('有分類與卷期', /class="meta"/.test(card) && /第.{1,4}卷/.test(card));
-var rest = els['card-rest']._html;
-ok('有「出自」區塊', /class="sources"/.test(rest));
-ok('有連回書房的連結', /twgbr\.org\.tw\/products\?query=\d/.test(rest),
-	(rest.match(/products\?query=([0-9A-Za-z-]+)/) || [])[0] || '');
-ok('有連回文摘原頁', /ministrydigest\.twgbr\.org/.test(rest));
-ok('沒有抓整包舊的 issues.json', fetched.join(' ').indexOf('data/issues.json') < 0);
-ok('分類下拉有五項', (els['sel-section']._html.match(/<option/g) || []).length === 5,
-	els['sel-section']._html.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' '));
-ok('卷期下拉有 80 項', (els['sel-issue']._html.match(/<option/g) || []).length === 80);
-
-print('');
-print('換一篇 ×300');
-var noBook = 0, noTitle = 0, seen = {};
-for (var i = 0; i < 300; i++) {
-	els['btn-next'].onclick(EV);
-	var c = els['card']._html, r = els['card-rest']._html;
-	if (!/<h2>[^<]+<\/h2>/.test(c)) noTitle++;
-	if (!/products\?query=/.test(r)) noBook++;
-	seen[location.hash] = 1;
+function tab(key) {
+	var ts = els['tabs'].querySelectorAll('.tab');
+	for (var i = 0; i < ts.length; i++) {
+		if (ts[i].getAttribute('data-key') === key) return ts[i];
+	}
+	return null;
 }
-ok('每一篇都有篇題', noTitle === 0, noTitle ? noTitle + ' 篇沒有' : '');
-ok('每一篇都有書房連結', noBook === 0, noBook ? noBook + ' 篇沒有' : '');
-ok('抽到不重複的篇夠多', Object.keys(seen).length > 200, Object.keys(seen).length + ' 種');
-ok('hash 有設成 期.錨點', /^#\d{4}\./.test(location.hash), location.hash);
+function cards() {
+	var h = els['cards']._html;
+	return (h.match(/<article class="card">/g) || []).length;
+}
 
 print('');
-print('分類篩選');
-els['sel-section'].value = '福音';
-els['sel-section'].onchange(EV);
-ok('切到福音有出東西', /<h2>/.test(els['card']._html));
-ok('福音篇也有書房連結', /products\?query=/.test(els['card-rest']._html));
-els['sel-section'].value = '唱詩人';
-els['sel-section'].onchange(EV);
-ok('切到唱詩人有出東西', /<h2>/.test(els['card']._html));
-els['sel-section'].value = '';
-els['sel-section'].onchange(EV);
+print('開頁');
+ok('只抓了 manifest', fetched.length >= 1 && fetched[0] === 'data/cards/manifest.json',
+	'第一個請求：' + fetched[0]);
+ok('沒有一開頁就抓完整索引',
+	fetched.join(' ').indexOf('data/index.json') < 0 &&
+	fetched.join(' ').indexOf('data/books.json') < 0);
+var tabKeys = [];
+var tl = els['tabs'].querySelectorAll('.tab');
+for (var i = 0; i < tl.length; i++) tabKeys.push(tl[i].getAttribute('data-key'));
+ok('七個分頁：五類 + 依書 + 依期', tabKeys.length === 7, tabKeys.join(' '));
+ok('分類分頁是 no1~no5',
+	tabKeys.slice(0, 5).join(',') === 'c.no1,c.no2,c.no3,c.no4,c.no5');
+ok('頁面上第五類叫「詩歌」', /詩歌/.test(els['tabs']._html) && !/唱詩人/.test(els['tabs']._html));
+ok('預設開真理', /^#c\.no1$/.test(location.hash), location.hash);
+ok('預設就有九張卡', cards() === 9, cards() + ' 張');
+
+print('');
+print('卡片內容');
+var h = els['cards']._html;
+ok('每張卡都有節錄', (h.match(/class="excerpt"/g) || []).length === 9);
+ok('每張卡都註明書名', (h.match(/class="book"/g) || []).length === 9);
+ok('每張卡都有「試讀」連回文摘',
+	(h.match(/ministrydigest\.twgbr\.org[^"]*webpg[^"]*"[^>]*>試讀/g) || []).length === 9);
+ok('每張卡都有「購買資訊」連回書房',
+	(h.match(/products\?query=[^"]+"[^>]*>購買資訊/g) || []).length === 9);
+// 節錄字數
+var lens = [], re2 = /<p class="excerpt">([^<]*)<\/p>/g, m2;
+while ((m2 = re2.exec(h)) !== null) lens.push(m2[1].length);
+var lo = Math.min.apply(null, lens), hi = Math.max.apply(null, lens);
+ok('節錄落在 120~175 字', lo >= 120 && hi <= 175, lo + '~' + hi + ' 字');
+ok('真理分類沒有詩歌連結', h.indexOf('hymnal.net') < 0);
+
+print('');
+print('再換九段：前六輪只該抓一兩塊');
+function chunksOf(slug) {
+	return fetched.filter(function (u) { return u.indexOf('data/cards/' + slug + '-') === 0; }).length;
+}
+for (var k6 = 0; k6 < 6; k6++) els['btn-more'].onclick(EV);
+ok('前六輪沒有把整個分類拉下來', chunksOf('no1') <= 3, chunksOf('no1') + ' 塊 / 共 8 塊');
+
+print('');
+print('再換九段 ×40');
+var before = els['cards']._html, changed = 0, bad = 0;
+for (var k = 0; k < 40; k++) {
+	els['btn-more'].onclick(EV);
+	if (cards() !== 9) bad++;
+	if (els['cards']._html !== before) changed++;
+	before = els['cards']._html;
+}
+ok('每一輪都是九張', bad === 0, bad ? bad + ' 輪不是' : '');
+ok('每一輪內容都換了', changed === 40, changed + '/40');
+ok('按久了會抓到更多塊（越看越廣）', chunksOf('no1') > 1, chunksOf('no1') + ' 塊');
+
+print('');
+print('五個分類都點一遍');
+for (var si = 1; si <= 5; si++) {
+	var key = 'c.no' + si;
+	tab(key).onclick(EV);
+	ok('  ' + key + ' 有九張卡', cards() === 9, els['cards']._html.match(/class="count-line">([^<]*)</)[1]);
+}
+ok('詩歌分類有 hymnal.net 連結', els['cards']._html.indexOf('hymnal.net') > 0,
+	(els['cards']._html.match(/hymnal\.net\/zh\/[a-z\/]*/) || [])[0] || '');
 
 print('');
 print('依書');
-els['tab-books'].onclick(EV);
+tab('books').onclick(EV);
+ok('依書才去抓完整索引', fetched.join(' ').indexOf('data/index.json') >= 0);
 var bl = els['book-list']._html;
-ok('書單有列出來', (bl.match(/class="row"/g) || []).length === 30,
-	(bl.match(/class="row"/g) || []).length + ' 列（預設前 30 本）');
-ok('有「列出全部」', /btn-all-books/.test(bl));
+ok('書單列出前 30 本', (bl.match(/class="row"/g) || []).length === 30);
 els['btn-all-books'].onclick(EV);
-ok('展開後列出全部 666 本', (els['book-list']._html.match(/class="row"/g) || []).length === 666);
+ok('展開列出全部 666 本', (els['book-list']._html.match(/class="row"/g) || []).length === 666);
 els['btn-all-books'].onclick(EV);
 var rows = els['book-list'].querySelectorAll('.row');
-ok('書單列可點', rows.length === 30 && rows[0].getAttribute('data-no') !== null,
-	'第一本書號 ' + rows[0].getAttribute('data-no'));
 rows[0].onclick(EV);
 var bd = els['book-detail']._html;
-ok('書頁有書名與書號', /<h2>/.test(bd) && /書號/.test(bd));
-ok('書頁有購書連結', /products\?query=/.test(bd));
-ok('書頁有依分類分組', /class="ref-group"/.test(bd),
-	(bd.match(/class="ref-group"/g) || []).length + ' 組');
-ok('書頁列出引用的篇', (bd.match(/class="ref"/g) || []).length > 1,
+ok('書頁有書名、書號、購買資訊', /<h2>/.test(bd) && /書號/.test(bd) && /購買資訊/.test(bd));
+ok('書頁列出引用的篇，連回文摘', /class="ref"/.test(bd) && /ministrydigest/.test(bd),
 	(bd.match(/class="ref"/g) || []).length + ' 篇');
-ok('hash 設成 b.書號', /^#b\./.test(location.hash), location.hash);
-var gos = els['book-detail'].querySelectorAll('[data-go]');
-ok('書頁的篇可以點回「讀一篇」', gos.length > 0);
-gos[0].onclick(EV);
-ok('點了之後確實切到讀一篇', els['view-one'].hidden === false && /<h2>/.test(els['card']._html));
+ok('書頁的分組用「詩歌」而非「唱詩人」', bd.indexOf('唱詩人') < 0);
 
 print('');
 print('依期');
-els['tab-issues'].onclick(EV);
-var il = els['issue-list']._html;
-ok('期數列出 80 期', (il.match(/class="row"/g) || []).length === 80);
-ok('最新一期在最上面', il.indexOf('第十一卷') < il.indexOf('第一卷'));
-var irows = els['issue-list'].querySelectorAll('.row');
-irows[0].onclick(EV);
-var id_ = els['issue-detail']._html;
-ok('某一期有五個分類', (id_.match(/class="gh"/g) || []).length === 5,
-	(id_.match(/class="gh"/g) || []).length + ' 組');
-ok('篇題下面標著出自哪本書', /class="s"/.test(id_));
-ok('有連回文摘該期', /ministrydigest/.test(id_));
-ok('hash 設成 i.期', /^#i\./.test(location.hash), location.hash);
+tab('issues').onclick(EV);
+ok('期數列出 80 期', (els['issue-list']._html.match(/class="row"/g) || []).length === 80);
+els['issue-list'].querySelectorAll('.row')[0].onclick(EV);
+var idt = els['issue-detail']._html;
+ok('某一期有五個分類', (idt.match(/class="gh"/g) || []).length === 5);
+ok('篇題連回文摘該篇', /ministrydigest[^"]*#no/.test(idt));
 
 print('');
 print('網址 hash 直接進');
-// 每一篇
-els['card']._html = '';
-location.hash = '#1101.no3-2';
+location.hash = '#c.no3';
 eval(readFile(BASE + '/js/app.js'));
-ok('#1101.no3-2 開到那一篇', /幫助人認識並順從神內裏的運行/.test(els['card']._html),
-	(els['card']._html.match(/<h2>([^<]*)</) || [])[1] || '');
-ok('　而且出處書號是 2418', /products\?query=2418/.test(els['card-rest']._html));
-// 某一本書
+ok('#c.no3 開到事奉', /事奉/.test(els['cards']._html) && cards() === 9);
 location.hash = '#b.2418';
 eval(readFile(BASE + '/js/app.js'));
-ok('#b.2418 開到那本書', /2418/.test(els['book-detail']._html) &&
-	els['view-books'].hidden === false,
+ok('#b.2418 開到那本書', els['view-books'].hidden === false && /2418/.test(els['book-detail']._html),
 	(els['book-detail']._html.match(/<h2>([^<]*)</) || [])[1] || '');
-// 某一期
 location.hash = '#i.0101';
 eval(readFile(BASE + '/js/app.js'));
-ok('#i.0101 開到那一期', /第一卷/.test(els['issue-detail']._html) &&
-	els['view-issues'].hidden === false);
-// 壞 hash 不要炸
-location.hash = '#b.nonexistent';
+ok('#i.0101 開到那一期', els['view-issues'].hidden === false && /第一卷/.test(els['issue-detail']._html));
+location.hash = '#c.bogus';
 eval(readFile(BASE + '/js/app.js'));
-ok('不存在的 hash 退回讀一篇', els['view-one'].hidden === false && /<h2>/.test(els['card']._html));
+ok('壞 hash 退回真理', els['view-cards'].hidden === false && cards() === 9);
 
 print('');
 print(fails === 0 ? ('全部通過（' + checks + ' 項）') : (fails + ' / ' + checks + ' 項失敗'));

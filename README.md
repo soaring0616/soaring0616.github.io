@@ -7,7 +7,7 @@
 - `/crossref/` — [串珠探索](crossref/README.md)：互動式恢復本經節關聯圖
 - `/hymn-picker/` — [聚會選詩歌](hymn-picker/README.md)：依聚會類型排出候選詩歌（Vite + React，原始碼在 `hymn-picker/`，由 CI 建置）
 - `/version-diff/` — [版本對讀](version-diff/README.md)：恢復本與和合本逐字比對、依卷書列出差異，並連到原文逐字對照
-- `/digest/` — [職事文摘導覽](digest/README.md)：把《職事文摘》八十期的篇題對上背後那一本書，一次讀一篇，連回臺灣福音書房
+- `/digest/` — [基督徒書報介紹](digest/README.md)：依真理／生命／事奉／福音／詩歌五類，一次給九段書報內容，每段都可試讀與查購買資訊
 
 ## 部署
 

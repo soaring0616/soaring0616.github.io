@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>職事文摘導覽｜一次一篇</title>
-	<meta name="description" content="從職事文摘八十期的篇題找到背後那一本書：一次讀一篇，每一篇都連回臺灣福音書房。" />
+	<title>基督徒書報介紹</title>
+	<meta name="description" content="依真理、生命、事奉、福音、詩歌五類，每次給九段書報內容，幫助基督徒在生命與事奉上有更明確的指引。" />
 	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,36 +16,23 @@
 	<header class="site-header">
 		<div class="header-inner">
 			<div class="title-block">
-				<h1>職事文摘導覽</h1>
-				<p class="subtitle">一次一篇，從一個題目找到一本書</p>
+				<h1>基督徒書報介紹</h1>
+				<p class="subtitle">幫助基督徒在生命與事奉上有更明確的指引</p>
 			</div>
 			<a class="home-link" href="../">← 回首頁</a>
 		</div>
 
-		<nav class="tabs" role="tablist">
-			<button id="tab-one" class="tab is-on" role="tab">讀一篇</button>
-			<button id="tab-books" class="tab" role="tab">依書</button>
-			<button id="tab-issues" class="tab" role="tab">依期</button>
-		</nav>
-
-		<div class="controls" id="filter-row">
-			<select id="sel-section" aria-label="分類">
-				<option value="">不限分類</option>
-			</select>
-			<select id="sel-issue" aria-label="卷期">
-				<option value="">不限卷期</option>
-			</select>
-		</div>
+		<nav class="tabs" id="tabs" role="tablist"></nav>
 	</header>
 
 	<main>
-		<p id="status" class="status">正在讀索引…</p>
+		<p id="status" class="status">正在讀…</p>
 
-		<!-- 讀一篇 -->
-		<section id="view-one" class="view" hidden>
-			<article id="card" class="card"></article>
+		<!-- 五個分類的卡片 -->
+		<section id="view-cards" class="view" hidden>
+			<div id="cards" class="cards"></div>
 			<div class="card-actions">
-				<button id="btn-next" class="btn primary">換一篇</button>
+				<button id="btn-more" class="btn primary">再換九段</button>
 			</div>
 		</section>
 
@@ -64,26 +51,28 @@
 		<section class="about">
 			<h2>這頁在做什麼</h2>
 			<p>
-				《職事文摘》每一篇都是從一本書的某一篇裁下來的。
-				這頁把八十期的<strong>篇題</strong>和它<strong>背後那一本書</strong>對起來，
-				一次只給你一篇：一個題目、它的讀經經節、它出自哪一本書的第幾篇，
-				然後一條連結回<a href="https://www.twgbr.org.tw/" target="_blank" rel="noopener">臺灣福音書房</a>。
+				選一個分類，一次給你九段書報裡的內容。
+				覺得哪一段說到你，就從那一段下面的連結去
+				<strong>試讀</strong>整篇，或看那本書的<strong>購買資訊</strong>。
 			</p>
 			<p>
-				「依書」是反過來看的：一本書被哪幾期、哪幾篇引用過。
-				一本書能列出十幾個題目的時候，那本書在講什麼就不必再介紹了。
+				每一段都註明出自哪一本書的第幾篇，取自臺灣福音書房的
+				<a href="https://ministrydigest.twgbr.org/" target="_blank" rel="noopener">《職事文摘》</a>
+				八十期。另外兩個入口：<strong>依書</strong>看一本書被哪幾篇引用過，
+				<strong>依期</strong>照卷期看目錄。
 			</p>
 			<p class="note">
-				這頁<strong>不收錄任何信息內文</strong>，只有書目資料（卷期、分類、篇題、讀經經節、出處書名篇章、書號）。
-				內文請到職事文摘原頁或書房的書上讀；版權屬臺灣福音書房。
+				節錄一頁只取一段，版權屬<a href="https://www.twgbr.org.tw/" target="_blank" rel="noopener">臺灣福音書房</a>；
+				要讀整篇請走「試讀」回原站。
 			</p>
 		</section>
 	</main>
 
 	<footer class="site-footer">
 		<p>
-			資料來源：<a href="https://ministrydigest.twgbr.org/" target="_blank" rel="noopener">職事文摘多媒體資源</a>
-			· 書目與購書連結：<a href="https://www.twgbr.org.tw/" target="_blank" rel="noopener">臺灣福音書房</a>
+			內容來源：<a href="https://ministrydigest.twgbr.org/" target="_blank" rel="noopener">職事文摘多媒體資源</a>
+			· 書目與購買：<a href="https://www.twgbr.org.tw/" target="_blank" rel="noopener">臺灣福音書房</a>
+			· 詩歌：<a href="https://www.hymnal.net/" target="_blank" rel="noopener">hymnal.net</a>
 		</p>
 	</footer>
 

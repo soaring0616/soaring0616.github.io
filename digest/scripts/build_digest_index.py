@@ -29,17 +29,25 @@ import re
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 BASE = 'https://ministrydigest.twgbr.org'
 PREFIX = '8026'
-PRODUCT = 'https://www.twgbr.org.tw/products?query={}'
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data'
 CACHE = ROOT / '.cache'
+PRODUCT = 'https://www.twgbr.org.tw/products?query={}'
+HYMN = 'https://www.hymnal.net/zh/hymn/{}/{}'            # ch 大本／ts 補充本／c 兒童
+HYMN_SEARCH = 'https://www.hymnal.net/zh/search/all/all/{}'
+# hymn-picker 建好的詩歌目錄（來自蒙特利公園市召會的目錄頁）。
+# 大本那 780 筆只有號碼範圍、沒有標題，所以只有補充本與兒童對得上標題。
+HYMN_INDEX = ROOT.parent / 'hymn-picker' / 'public' / 'data' / 'hymn_index.json'
+HYMN_BOOK = {'hymnal': 'ch', 'supplement': 'ts', 'children': 'c'}
+SECTION_SLUG = {'真理': 'no1', '生命': 'no2', '事奉': 'no3', '福音': 'no4', '唱詩人': 'no5'}
 
 # 實測存在的卷期：卷一只有 01、05-08，卷二到卷十各八期，卷十一出到第三期。
 # 新的一期出來只要把它加進來（或直接跑 --only）。
@@ -159,6 +167,56 @@ def parse_issue(code: str, doc: str) -> dict:
             'sections': sections}
 
 
+# ---------------------------------------------------------------- 節錄
+
+# 卡片上那一段介紹文字。原則：**一頁只取一段**，一定附書名篇名與回原站的連結，
+# repo 裡不存全文。段落以 140~165 字、句子完整為目標（約稿時說的 140~160）。
+PARA_RE = re.compile(r'<p[^>]*class="calibre2"[^>]*>(.*?)</p>', re.I | re.S)
+VERSE_HEAD = re.compile(r'^[\u4e00-\u9fff]{1,12}[一二三四五六七八九十百]+章')   # 「馬太福音十八章二十節：」
+LIST_HEAD = re.compile(r'^[（(][一二三四五六七八九十0-9]+[）)]|^第[一二三四五六七八九十]+，')
+CONNECTIVE = ('所以', '因此', '因為', '但是', '但', '然而', '於是', '這樣', '這就',
+              '那麼', '此外', '另外', '又', '並且', '而且', '不過', '其次', '最後')
+EX_LO, EX_HI, EX_MIN = 140, 165, 112
+
+
+def _quoted_ratio(p: str) -> float:
+    """經文引用占比。整段幾乎都是『…』的，當介紹沒有意思。"""
+    return sum(len(m) for m in re.findall(r'『[^』]*』', p)) / max(len(p), 1)
+
+
+def _trim(p: str):
+    """切到 140~165 字且句子完整；切不出來回 None。"""
+    if len(p) <= EX_HI:
+        return p if len(p) >= EX_LO else None
+    cut = max(p.rfind(c, 0, EX_HI + 1) for c in '。！？』」')
+    return p[:cut + 1] if cut + 1 >= EX_MIN else None
+
+
+def pick_excerpt(doc: str):
+    """從一個出處頁挑一段。挑不到就回 None（那一頁就沒有卡片）。"""
+    best, best_score = None, -1e9
+    for raw in PARA_RE.findall(doc):
+        para = clean(raw)
+        if len(para) < EX_LO - 28 or para.startswith('講於') or para.startswith('讀經'):
+            continue
+        if LIST_HEAD.match(para) or VERSE_HEAD.match(para) or _quoted_ratio(para) > 0.45:
+            continue
+        text = _trim(para)
+        if not text:
+            continue
+        score = -abs(len(text) - 150)                 # 越接近 150 字越好
+        if text.startswith(CONNECTIVE):
+            score -= 22                               # 讀起來像從中間截的
+        if '編者註' in text or '另譯' in text:
+            score -= 18
+        score -= 10 * text.count('（')                 # 夾註多的卡
+        if text.endswith('。'):
+            score += 8
+        if score > best_score:
+            best, best_score = text, score
+    return best
+
+
 # ---------------------------------------------------------------- 出處頁
 
 BOOK_RE = re.compile(r"products\?query=([0-9A-Za-z\-]+)")
@@ -178,6 +236,9 @@ def parse_inner(doc: str) -> dict:
     m = BOOK_RE.search(doc)
     if m:
         out['book_no'] = m.group(1)
+    ex = pick_excerpt(doc)
+    if ex:
+        out['excerpt'] = ex
     # 讀經那一行：<div class="O0">讀經：</div> 後面緊跟的那個 <p>
     m = re.search(r'讀經\s*[：:]\s*(?:</div>)?\s*(?:<p[^>]*>(.*?)</p>)', doc, re.I | re.S)
     if m:
@@ -266,6 +327,35 @@ def discover() -> list:
     return found
 
 
+def hymn_links() -> dict:
+    """標題 → hymnal.net 網址。對不上的留給 hymn_url() 走搜尋。"""
+    if not HYMN_INDEX.exists():
+        return {}
+    out = {}
+    for row in json.loads(HYMN_INDEX.read_text('utf8')):
+        title, book, no = row.get('title'), HYMN_BOOK.get(row.get('book')), row.get('no')
+        if title and book and no and title not in out:
+            out[title] = HYMN.format(book, no)
+    return out
+
+
+def hymn_title(article: str) -> str:
+    """「◎詩歌賞析: 基督作中心」→「基督作中心」。"""
+    t = article.lstrip('◎●•　 ').strip()
+    for sep in ('：', ':'):
+        if sep in t:
+            t = t.split(sep, 1)[1].strip()
+    return t
+
+
+def hymn_url(article: str, table: dict) -> str:
+    """有首數就直接連那一首，沒有就連 hymnal.net 的標題搜尋 —— 兩種都是一條連結。"""
+    t = hymn_title(article)
+    if t in table:
+        return table[t]
+    return HYMN_SEARCH.format(urllib.parse.quote(t))
+
+
 # ---------------------------------------------------------------- 主流程
 
 def main() -> int:
@@ -349,6 +439,7 @@ def main() -> int:
                         'label': l['title'], 'book': l.get('book_title', ''),
                         'chapter': l.get('chapter', ''), 'no': l.get('book_no', ''),
                         'audio': bool(l.get('audio')), 'webpg': l['webpg'],
+                        'excerpt': l.get('excerpt', ''),
                     } for l in leaf],
                 })
             detail['sections'].append({'title': sec['title'], 'articles': arts})
@@ -401,6 +492,48 @@ def main() -> int:
         b['refs'] = [{'issue': i, 'anchor': a} for i, a in b['refs']]
     books.sort(key=lambda b: (-len(b['refs']), b['no']))
     dump(DATA / 'books.json', books)
+
+    # 分類卡片：一張卡 = 一個有節錄的出處頁，自己帶書名篇名與回原站的連結，一次只放一段。
+    # **沒有書號的不收**（連不到購買資訊，這頁的用處就斷了）。
+    # 頁面一次只顯示九張，所以每個分類再切成小塊，點一次只抓一塊。
+    # 和 books.json 一樣從 data/issues/ 全部重建，--only 才會對。
+    CHUNK = 120
+    cards_dir = DATA / 'cards'
+    cards_dir.mkdir(exist_ok=True)
+    for stale in cards_dir.glob('*.json'):
+        stale.unlink()
+    table = hymn_links()
+    buckets = {slug: [] for slug in SECTION_SLUG.values()}
+    for f in sorted((DATA / 'issues').glob('*.json')):
+        detail = json.loads(f.read_text('utf8'))
+        for sec in detail['sections']:
+            slug = SECTION_SLUG.get(sec['title'])
+            if not slug:
+                continue
+            for art in sec['articles']:
+                for src in art['sources']:
+                    if not src.get('excerpt') or not src['no']:
+                        continue
+                    card = {
+                        'label': detail['label'], 'article': art['title'],
+                        'book': src['book'], 'chapter': src['chapter'], 'no': src['no'],
+                        'read': detail['url'] + src['webpg'], 'text': src['excerpt'],
+                    }
+                    if sec['title'] == '唱詩人':
+                        card['hymn'] = hymn_url(art['title'], table)
+                    buckets[slug].append(card)
+
+    manifest = {}
+    for slug, rows in sorted(buckets.items()):
+        chunks = [rows[k:k + CHUNK] for k in range(0, len(rows), CHUNK)] or [[]]
+        for n, chunk in enumerate(chunks):
+            dump(cards_dir / '{}-{:02d}.json'.format(slug, n), chunk)
+        manifest[slug] = {'total': len(rows), 'chunks': len(chunks), 'size': CHUNK}
+    dump(cards_dir / 'manifest.json', manifest)
+    print('== 卡片 {} 張（{}）=='.format(
+        sum(len(v) for v in buckets.values()),
+        '、'.join('{} {} 張/{} 塊'.format(k, manifest[k]['total'], manifest[k]['chunks'])
+                  for k in sorted(manifest))), file=sys.stderr)
 
     old = DATA / 'issues.json'
     if old.exists():
