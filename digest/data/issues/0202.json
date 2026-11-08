@@ -1,0 +1,880 @@
+{
+ "id": "0202",
+ "label": "第二卷 第二期",
+ "url": "https://ministrydigest.twgbr.org/8026-0202/",
+ "sections": [
+  {
+   "title": "真理",
+   "articles": [
+    {
+     "title": "十字架的中心地位",
+     "page": 6,
+     "anchor": "no1-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-1audio.html"
+      },
+      {
+       "label": "基督與十字架，第十一篇",
+       "book": "基督與十字架",
+       "chapter": "第十一篇 十字架的地位",
+       "no": "2401",
+       "audio": false,
+       "webpg": "webpg/1-1-1.html"
+      },
+      {
+       "label": "神新約經綸中的奧祕，第一篇",
+       "book": "神新約經綸中的奧祕",
+       "chapter": "第一篇 神的奧祕—基督",
+       "no": "2176",
+       "audio": false,
+       "webpg": "webpg/1-1-2.html"
+      }
+     ]
+    },
+    {
+     "title": "聖經的主題—神的建造",
+     "page": 14,
+     "anchor": "no1-2",
+     "reading": "詩篇九十篇詩題及一節 ：『神人摩西的祈禱。主阿，你世世代代作我們的居所。』",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-2audio.html"
+      },
+      {
+       "label": "聖經的十條路線，第五篇",
+       "book": "聖經的十條路線",
+       "chapter": "第五篇 以建造為路線",
+       "no": "4008",
+       "audio": false,
+       "webpg": "webpg/1-2-1.html"
+      },
+      {
+       "label": "神的建造，第二篇",
+       "book": "神的建造",
+       "chapter": "第二篇 神所建造的家乃是神人調和而互為居所",
+       "no": "2032",
+       "audio": false,
+       "webpg": "webpg/1-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "神聖的水流",
+     "page": 22,
+     "anchor": "no1-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-3audio.html"
+      },
+      {
+       "label": "神聖的水流",
+       "book": "神聖的水流",
+       "chapter": "神聖的水流",
+       "no": "2286",
+       "audio": false,
+       "webpg": "webpg/1-3-1.html"
+      }
+     ]
+    },
+    {
+     "title": "美地—包羅萬有的基督",
+     "page": 31,
+     "anchor": "no1-4",
+     "reading": "四十五章一至六節：『你們拈鬮分地為業，要舉獻上一分給耶和華為舉祭，長二萬五千肘，寬一萬肘；這分以內，四圍都為聖她。其中有作為聖所之地，長五百肘，寬五百肘，四面見方；四圍再有五十肘為郊野之地。要以肘為度量地，長二萬五千肘，寬一萬肘；其中有聖所，是聖中之聖的。這是全地的一分聖地；要歸與供聖所職事的祭司，就是親近事奉耶和華的，作為他們房屋之地，與聖所之聖地。又有一分，長二萬五千肘，寬一萬肘，要歸與在殿中供職的利未人，作為他們的產業，為住處用，也要分定屬城的地業，寬五千肘，長二萬五千肘，挨著那分聖舉祭，要歸以色列全家。』（照原文改正。）",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-4audio.html"
+      },
+      {
+       "label": "以西結的異象，第二十四篇",
+       "book": "以西結的異象",
+       "chapter": "第二十四篇 神聖別的建造（九）",
+       "no": "4005",
+       "audio": false,
+       "webpg": "webpg/1-4-1.html"
+      },
+      {
+       "label": "包羅萬有的基督，第四章",
+       "book": "包羅萬有的基督",
+       "chapter": "第四章 美地測不透的豐富（一）水",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-4-2.html"
+      },
+      {
+       "label": "包羅萬有的基督，第五章",
+       "book": "包羅萬有的基督",
+       "chapter": "第五章 美地測不透的豐富（二）食物",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-4-3.html"
+      },
+      {
+       "label": "包羅萬有的基督，第六章",
+       "book": "包羅萬有的基督",
+       "chapter": "第六章 美地測不透的豐富（三）食物（續）",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-4-4.html"
+      },
+      {
+       "label": "包羅萬有的基督，第七章",
+       "book": "包羅萬有的基督",
+       "chapter": "第七章 美地測不透的豐富（四）礦物",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-4-5.html"
+      },
+      {
+       "label": "包羅萬有的基督，第八章",
+       "book": "包羅萬有的基督",
+       "chapter": "第八章 美地測不透的豐富（五）礦物（續）",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-4-6.html"
+      }
+     ]
+    },
+    {
+     "title": "神的榮耀與神的建造",
+     "page": 40,
+     "anchor": "no1-5",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-5audio.html"
+      },
+      {
+       "label": "神建造的異象，第九章",
+       "book": "神建造的異象",
+       "chapter": "第九章 從出埃及記末了到撒母耳記上的開頭",
+       "no": "2296",
+       "audio": false,
+       "webpg": "webpg/1-5-1.html"
+      },
+      {
+       "label": "以西結書生命讀經，第二十四篇",
+       "book": "以西結書生命讀經",
+       "chapter": "第二十四篇 神的榮耀回到殿中",
+       "no": "4144",
+       "audio": false,
+       "webpg": "webpg/1-5-2.html"
+      },
+      {
+       "label": "以弗所書生命讀經，第三十四篇",
+       "book": "以弗所書生命讀經",
+       "chapter": "第三十四篇 被充滿，成為神一切的豐滿",
+       "no": "4101",
+       "audio": false,
+       "webpg": "webpg/1-5-3.html"
+      },
+      {
+       "label": "以弗所書生命讀經，第三十五篇",
+       "book": "以弗所書生命讀經",
+       "chapter": "第三十五篇 神在召會中並在基督裡得著榮耀",
+       "no": "4101",
+       "audio": false,
+       "webpg": "webpg/1-5-4.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "生命",
+   "articles": [
+    {
+     "title": "傳揚十字架的人",
+     "page": 50,
+     "anchor": "no2-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-1audio.html"
+      },
+      {
+       "label": "十字架的使者",
+       "book": "十字架的使者",
+       "chapter": "十字架的使者",
+       "no": "2080",
+       "audio": false,
+       "webpg": "webpg/2-1-1.html"
+      }
+     ]
+    },
+    {
+     "title": "活在生命的律裏",
+     "page": 59,
+     "anchor": "no2-2",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-2audio.html"
+      },
+      {
+       "label": "活在生命的律裏，第十二篇",
+       "book": "活在生命的律裏",
+       "chapter": "第十二篇 活在生命的律裏",
+       "no": "2368",
+       "audio": false,
+       "webpg": "webpg/2-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "量與流",
+     "page": 69,
+     "anchor": "no2-3",
+     "reading": "約翰福音七章三十七至三十八節，以西結書四十七章一至十節，十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-3audio.html"
+      },
+      {
+       "label": "十二籃第七輯，量與流",
+       "book": "十二籃第七輯",
+       "chapter": "量與流",
+       "no": "2041",
+       "audio": false,
+       "webpg": "webpg/2-3-1.html"
+      }
+     ]
+    },
+    {
+     "title": "在美地上的生活",
+     "page": 77,
+     "anchor": "no2-4",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-4audio.html"
+      },
+      {
+       "label": "包羅萬有的基督，第十五章",
+       "book": "包羅萬有的基督",
+       "chapter": "第十五章 在那地上的生活",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/2-4-1.html"
+      },
+      {
+       "label": "包羅萬有的基督，第十六章",
+       "book": "包羅萬有的基督",
+       "chapter": "第十六章 那地的結果—聖殿和城",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/2-4-2.html"
+      }
+     ]
+    },
+    {
+     "title": "遠避偶像與被神的榮耀浸透",
+     "page": 85,
+     "anchor": "no2-5",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-5audio.html"
+      },
+      {
+       "label": "活在靈中，第五篇",
+       "book": "活在靈中",
+       "chapter": "第五篇 遠避偶像與活在靈中",
+       "no": "2054",
+       "audio": false,
+       "webpg": "webpg/2-5-1.html"
+      },
+      {
+       "label": "召會事奉的中心異象，第四篇",
+       "book": "召會事奉的中心異象",
+       "chapter": "第四篇 看見聖經中的奧祕，在靈裏敬拜事奉",
+       "no": "3158",
+       "audio": false,
+       "webpg": "webpg/2-5-2.html"
+      },
+      {
+       "label": "約翰一書中的七個奧祕，第九章",
+       "book": "約翰一書中的七個奧祕",
+       "chapter": "第九章 七個奧祕的七個結果",
+       "no": "2329",
+       "audio": false,
+       "webpg": "webpg/2-5-3.html"
+      },
+      {
+       "label": "基督徒生命成熟的路，第十篇",
+       "book": "基督徒生命成熟的路",
+       "chapter": "第十篇 基督徒生命成熟的路—心歸向主",
+       "no": "2294",
+       "audio": false,
+       "webpg": "webpg/2-5-4.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "事奉",
+   "articles": [
+    {
+     "title": "馨香甘甜的事奉",
+     "page": 94,
+     "anchor": "no3-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-1audio.html"
+      },
+      {
+       "label": "事奉上的基本認識，第五篇",
+       "book": "事奉上的基本認識",
+       "chapter": "第五篇 如何能有馨香甘甜的事奉",
+       "no": "2049",
+       "audio": false,
+       "webpg": "webpg/3-1-1.html"
+      }
+     ]
+    },
+    {
+     "title": "照著殿的尺度受測量的事奉",
+     "page": 102,
+     "anchor": "no3-2",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-2audio.html"
+      },
+      {
+       "label": "建造召會的異象、豫表與實行，第二篇",
+       "book": "建造召會的異象、豫表與實行",
+       "chapter": "第二篇 建造與祝福",
+       "no": "3160",
+       "audio": false,
+       "webpg": "webpg/3-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "作代表權柄的根據—復活",
+     "page": 111,
+     "anchor": "no3-3",
+     "reading": "民數記十七章。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-3audio.html"
+      },
+      {
+       "label": "倪柝聲文集第三輯第一冊，權柄與順服下編，第四篇",
+       "book": "倪柝聲文集第三輯第一冊 權柄與順服（下編）",
+       "chapter": "第四篇 作代表權柄的根據－復活",
+       "no": "5068",
+       "audio": false,
+       "webpg": "webpg/3-3-1.html"
+      },
+      {
+       "label": "希伯來書生命讀經，第六十二篇",
+       "book": "希伯來書生命讀經",
+       "chapter": "第六十二篇 發芽的杖（二）",
+       "no": "4106",
+       "audio": false,
+       "webpg": "webpg/3-3-2.html"
+      },
+      {
+       "label": "李常受文集一九七七年第三冊，與安那翰長老們的交通，第四章",
+       "book": "李常受文集一九七七年第三冊 與安那翰長老們的交通",
+       "chapter": "第四章 召會中真正的權柄",
+       "no": "5177",
+       "audio": false,
+       "webpg": "webpg/3-3-3.html"
+      }
+     ]
+    },
+    {
+     "title": "栽種、澆灌與餧養",
+     "page": 120,
+     "anchor": "no3-4",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-4audio.html"
+      },
+      {
+       "label": "聖經中關於生命的重要啟示，第十章",
+       "book": "聖經中關於生命的重要啟示",
+       "chapter": "第十章 生命的種子",
+       "no": "2267",
+       "audio": false,
+       "webpg": "webpg/3-4-1.html"
+      },
+      {
+       "label": "哥林多前書生命讀經，第二十四篇",
+       "book": "哥林多前書生命讀經",
+       "chapter": "第二十四篇 需要在生命中長大（一）",
+       "no": "4098",
+       "audio": false,
+       "webpg": "webpg/3-4-2.html"
+      },
+      {
+       "label": "哥林多前書生命讀經，第二十九篇",
+       "book": "哥林多前書生命讀經",
+       "chapter": "第二十九篇 餧養、喝、喫、栽種、澆灌並生長",
+       "no": "4098",
+       "audio": false,
+       "webpg": "webpg/3-4-3.html"
+      },
+      {
+       "label": "在神與人關係裏生機的聯結，第四章",
+       "book": "在神與人關係裏生機的聯結",
+       "chapter": "第四章 在信徒的長大裏",
+       "no": "2200",
+       "audio": false,
+       "webpg": "webpg/3-4-4.html"
+      },
+      {
+       "label": "神命定之路的操練與實行，第二十篇",
+       "book": "神命定之路的操練與實行",
+       "chapter": "第二十篇 學習有彈性的照顧家聚會",
+       "no": "3040",
+       "audio": false,
+       "webpg": "webpg/3-4-5.html"
+      },
+      {
+       "label": "神命定之路的操練與實行，第二十一篇",
+       "book": "神命定之路的操練與實行",
+       "chapter": "第二十一篇 用純淨的話奶養育新人作神成長的兒女",
+       "no": "3040",
+       "audio": false,
+       "webpg": "webpg/3-4-6.html"
+      }
+     ]
+    },
+    {
+     "title": "建造殿與建造城",
+     "page": 129,
+     "anchor": "no3-5",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-5audio.html"
+      },
+      {
+       "label": "召會的治理與話語職事，第九篇",
+       "book": "召會的治理與話語職事",
+       "chapter": "第九篇 建造的意義乃在於建造神在人身上的權柄",
+       "no": "3124",
+       "audio": false,
+       "webpg": "webpg/3-5-1.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "福音",
+   "articles": [
+    {
+     "title": "你往那裏去？",
+     "page": 138,
+     "anchor": "no4-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "福音講臺總集第三集，財主滅亡",
+       "book": "福音講臺總集 第三集 你需要重生",
+       "chapter": "財主滅亡",
+       "no": "1045",
+       "audio": false,
+       "webpg": "webpg/4-1-1.html"
+      }
+     ]
+    },
+    {
+     "title": "強盜得救",
+     "page": 146,
+     "anchor": "no4-2",
+     "reading": "",
+     "sources": [
+      {
+       "label": "福音講臺總集第三集，強盜得救",
+       "book": "福音講臺總集 第三集 你需要重生",
+       "chapter": "強盜得救",
+       "no": "1045",
+       "audio": false,
+       "webpg": "webpg/4-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "信耶穌就可以上天堂麼？",
+     "page": 153,
+     "anchor": "no4-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "基督徒生命成熟的路，第一篇",
+       "book": "基督徒生命成熟的路",
+       "chapter": "第一篇 聖城新耶路撒冷是信徒最終的歸宿",
+       "no": "2294",
+       "audio": false,
+       "webpg": "webpg/4-3-1.html"
+      },
+      {
+       "label": "基督徒生命成熟的路，第三篇",
+       "book": "基督徒生命成熟的路",
+       "chapter": "第三篇 三個樂園為著三個時期",
+       "no": "2294",
+       "audio": false,
+       "webpg": "webpg/4-3-2.html"
+      },
+      {
+       "label": "聖經要道卷六，第五十八題",
+       "book": "聖經要道（卷六）",
+       "chapter": "第五十八題 樂園與火湖",
+       "no": "4010",
+       "audio": false,
+       "webpg": "webpg/4-3-3.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "唱詩人",
+   "articles": [
+    {
+     "title": "今有榮光照耀我魂間—修葳特",
+     "page": 160,
+     "anchor": "no5-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-1audio.html"
+      }
+     ]
+    },
+    {
+     "title": "恩主耶穌你名我是",
+     "page": 165,
+     "anchor": "no5-2-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-1audio.html"
+      },
+      {
+       "label": "新約總論第二冊，第四十六篇",
+       "book": "新約總論第二冊",
+       "chapter": "第四十六篇 基督─祂的身位（二六）",
+       "no": "4063",
+       "audio": false,
+       "webpg": "webpg/5-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "恩主你是公義太陽",
+     "page": 166,
+     "anchor": "no5-2-2",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-2audio.html"
+      },
+      {
+       "label": "瑪拉基書生命讀經，第二篇",
+       "book": "瑪拉基書生命讀經",
+       "chapter": "第二篇 瑪拉基書中所啟示基督的兩次來臨",
+       "no": "4073",
+       "audio": false,
+       "webpg": "webpg/5-2-2-1.html"
+      },
+      {
+       "label": "何西阿書生命讀經，第一篇",
+       "book": "何西阿書生命讀經",
+       "chapter": "第一篇 關於小申言者書的介言",
+       "no": "4073",
+       "audio": false,
+       "webpg": "webpg/5-2-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "祂的臉面祂的天使常看見",
+     "page": 167,
+     "anchor": "no5-2-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-3audio.html"
+      },
+      {
+       "label": "出埃及記生命讀經，第三十篇",
+       "book": "出埃及記生命讀經",
+       "chapter": "第三十篇 以色列人在瑪拉的經歷",
+       "no": "4018",
+       "audio": false,
+       "webpg": "webpg/5-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "至大醫生可親可近",
+     "page": 168,
+     "anchor": "no5-2-4",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-4audio.html"
+      },
+      {
+       "label": "馬可福音生命讀經，第五十九篇",
+       "book": "馬可福音生命讀經",
+       "chapter": "第五十九篇 一種完全照著神新約經綸，並為著神新約經綸的生活（八）",
+       "no": "4093",
+       "audio": false,
+       "webpg": "webpg/5-2-4-1.html"
+      },
+      {
+       "label": "馬可福音生命讀經，第八篇",
+       "book": "馬可福音生命讀經",
+       "chapter": "第八篇 奴僕救主完成福音服事的路（二）",
+       "no": "4093",
+       "audio": false,
+       "webpg": "webpg/5-2-4-2.html"
+      },
+      {
+       "label": "馬可福音生命讀經，第十篇",
+       "book": "馬可福音生命讀經",
+       "chapter": "第十篇 奴僕救主完成福音服事的路（四）",
+       "no": "4093",
+       "audio": false,
+       "webpg": "webpg/5-2-4-3.html"
+      }
+     ]
+    },
+    {
+     "title": "來與我同歡唱",
+     "page": 169,
+     "anchor": "no5-2-5",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-5audio.html"
+      },
+      {
+       "label": "馬可福音生命讀經，第五十九篇",
+       "book": "馬可福音生命讀經",
+       "chapter": "第五十九篇 一種完全照著神新約經綸，並為著神新約經綸的生活（八）",
+       "no": "4093",
+       "audio": false,
+       "webpg": "webpg/5-2-5-1.html"
+      },
+      {
+       "label": "馬可福音生命讀經，第二十三篇",
+       "book": "馬可福音生命讀經",
+       "chapter": "第二十三篇 奴僕救主福音服事的行動（七）",
+       "no": "4093",
+       "audio": false,
+       "webpg": "webpg/5-2-5-2.html"
+      }
+     ]
+    },
+    {
+     "title": "奇妙祕訣我已學會",
+     "page": 170,
+     "anchor": "no5-2-6",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-6audio.html"
+      },
+      {
+       "label": "主恢復中成熟的帶領，第二篇",
+       "book": "主恢復中成熟的帶領（上冊）",
+       "chapter": "第二篇 與港穗同工談話記錄（二）",
+       "no": "3068",
+       "audio": false,
+       "webpg": "webpg/5-2-6.html"
+      }
+     ]
+    },
+    {
+     "title": "全面建造基督身體",
+     "page": 171,
+     "anchor": "webpg_no5-3-1audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "全面建造基督身體",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-1audio.html"
+      }
+     ]
+    },
+    {
+     "title": "同主前行",
+     "page": 172,
+     "anchor": "webpg_no5-3-2audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "同主前行",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-2audio.html"
+      }
+     ]
+    },
+    {
+     "title": "真神是我耶穌",
+     "page": 173,
+     "anchor": "webpg_no5-3-3audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "真神是我耶穌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-3audio.html"
+      }
+     ]
+    },
+    {
+     "title": "不再是我乃是基督",
+     "page": 174,
+     "anchor": "webpg_no5-3-4audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "不再是我乃是基督",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-4audio.html"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

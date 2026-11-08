@@ -1,0 +1,282 @@
+/* 職事文摘導覽 — 自含樣式（沿用 crossref/、version-diff/ 的白底 #47D3E5 配色）
+   這頁刻意沒有任何圖片：讓文字說話，一次只讀一篇。 */
+
+:root {
+	--accent: #47D3E5;
+	--accent-dark: #1ebdd1;
+	--ink: #111;
+	--soft: #444;
+	--muted: #808080;
+	--line: #e4e4e4;
+	--wash: #fafafa;
+	--font: "Source Sans Pro", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+	--serif: "Noto Serif TC", Georgia, "Songti TC", serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+	font-family: var(--font);
+	font-weight: 300;
+	color: var(--ink);
+	background: #fff;
+	line-height: 1.8;
+}
+
+a { color: var(--accent-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Header ── */
+
+.site-header {
+	border-bottom: 2px solid var(--accent);
+	padding: 0.9rem 1.25rem 0.75rem;
+	position: sticky;
+	top: 0;
+	background: rgba(255, 255, 255, 0.96);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+	z-index: 10;
+}
+
+.header-inner {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.title-block { display: flex; align-items: baseline; gap: 0.75rem; flex-wrap: wrap; }
+
+h1 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	letter-spacing: 0.35em;
+	text-indent: 0.35em;
+	white-space: nowrap;
+}
+
+.subtitle { color: var(--muted); font-size: 0.9rem; }
+.home-link { font-size: 0.9rem; white-space: nowrap; }
+
+/* ── 分頁與篩選 ── */
+
+.tabs { display: flex; gap: 0.25rem; margin-top: 0.8rem; flex-wrap: wrap; }
+
+.tab {
+	font-family: inherit;
+	font-size: 0.9rem;
+	font-weight: 300;
+	letter-spacing: 0.08em;
+	padding: 0.35rem 0.9rem;
+	border: 1px solid var(--line);
+	border-bottom: none;
+	border-radius: 3px 3px 0 0;
+	background: var(--wash);
+	color: var(--soft);
+	cursor: pointer;
+}
+
+.tab:hover { color: var(--ink); }
+
+.tab.is-on {
+	background: #fff;
+	color: var(--ink);
+	border-color: var(--accent);
+	box-shadow: inset 0 2px 0 var(--accent);
+}
+
+.controls { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.7rem; }
+
+select, .btn {
+	font-family: inherit;
+	font-size: 0.9rem;
+	font-weight: 300;
+	padding: 0.4rem 0.75rem;
+	border: 1px solid var(--line);
+	border-radius: 3px;
+	background: #fff;
+	color: var(--ink);
+	cursor: pointer;
+}
+
+select:hover, .btn:hover { border-color: var(--accent); }
+
+.btn.primary {
+	border-color: var(--accent);
+	background: var(--accent);
+	color: #fff;
+	letter-spacing: 0.12em;
+	padding: 0.5rem 1.6rem;
+}
+
+.btn.primary:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.btn.small { padding: 0.25rem 0.6rem; font-size: 0.82rem; }
+
+/* ── 版面 ── */
+
+main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 3rem; }
+
+.status { color: var(--muted); font-size: 0.9rem; padding: 1rem 0; }
+
+/* ── 讀一篇：整頁只有這一篇 ── */
+
+.card { padding: 1.5rem 0 0; }
+
+.card .meta {
+	font-size: 0.82rem;
+	color: var(--muted);
+	letter-spacing: 0.1em;
+}
+
+.card .meta .sec { color: var(--accent-dark); }
+
+.card h2 {
+	font-family: var(--serif);
+	font-size: 1.75rem;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: 0.03em;
+	margin: 0.6rem 0 0;
+}
+
+.card .reading {
+	font-family: var(--serif);
+	font-size: 0.95rem;
+	color: var(--soft);
+	margin-top: 1.1rem;
+	padding-left: 0.9rem;
+	border-left: 2px solid var(--accent);
+}
+
+.card .reading .lbl { color: var(--muted); font-family: var(--font); font-size: 0.82rem; }
+
+.sources { margin-top: 1.8rem; border-top: 1px solid var(--line); }
+
+.sources .lbl {
+	font-size: 0.82rem;
+	color: var(--muted);
+	letter-spacing: 0.1em;
+	margin-top: 1.1rem;
+	display: block;
+}
+
+.source { margin-top: 0.9rem; }
+
+.source .book {
+	font-family: var(--serif);
+	font-size: 1.05rem;
+	color: var(--ink);
+}
+
+.source .chapter { color: var(--soft); font-size: 0.95rem; }
+.source .links { font-size: 0.85rem; margin-top: 0.15rem; }
+.source .links a { margin-right: 0.9rem; white-space: nowrap; }
+
+.card .tail { margin-top: 1.6rem; font-size: 0.85rem; }
+.card .tail a { margin-right: 0.9rem; }
+
+.card-actions { margin-top: 2.5rem; text-align: center; }
+
+/* ── 依書 ── */
+
+.book-list .row, .issue-list .row {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	padding: 0.55rem 0;
+	border-bottom: 1px solid var(--line);
+	cursor: pointer;
+}
+
+.book-list .row:hover, .issue-list .row:hover { background: var(--wash); }
+
+.book-list .name, .issue-list .name {
+	font-family: var(--serif);
+	font-size: 1.02rem;
+	flex: 1;
+}
+
+.book-list .count, .issue-list .count {
+	font-size: 0.8rem;
+	color: var(--muted);
+	white-space: nowrap;
+}
+
+.list-head {
+	font-size: 0.85rem;
+	color: var(--muted);
+	padding-bottom: 0.6rem;
+}
+
+.book-detail h2, .issue-detail h2 {
+	font-family: var(--serif);
+	font-size: 1.55rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.book-detail .sub, .issue-detail .sub {
+	font-size: 0.85rem;
+	color: var(--muted);
+	margin-top: 0.3rem;
+}
+
+.book-detail .buy { margin-top: 1rem; font-size: 0.95rem; }
+
+.ref-group { margin-top: 1.8rem; }
+
+.ref-group > .gh {
+	font-size: 0.82rem;
+	color: var(--accent-dark);
+	letter-spacing: 0.1em;
+	border-bottom: 1px solid var(--line);
+	padding-bottom: 0.3rem;
+}
+
+.ref {
+	padding: 0.7rem 0;
+	border-bottom: 1px solid var(--line);
+}
+
+.ref .t { font-family: var(--serif); font-size: 1.02rem; }
+.ref .s { font-size: 0.82rem; color: var(--muted); }
+.ref .s a { margin-left: 0.6rem; }
+
+.back-link { font-size: 0.88rem; margin-bottom: 1.2rem; display: inline-block; }
+
+/* ── 說明 ── */
+
+.about {
+	margin-top: 4rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--line);
+	color: var(--soft);
+	font-size: 0.92rem;
+}
+
+.about h2 {
+	font-size: 1rem;
+	font-weight: 400;
+	letter-spacing: 0.1em;
+	color: var(--ink);
+	margin-bottom: 0.7rem;
+}
+
+.about p { margin-bottom: 0.8rem; }
+.about .note { font-size: 0.85rem; color: var(--muted); }
+
+.site-footer {
+	border-top: 1px solid var(--line);
+	padding: 1.2rem;
+	text-align: center;
+	font-size: 0.82rem;
+	color: var(--muted);
+}
+
+@media (max-width: 480px) {
+	h1 { font-size: 1.25rem; letter-spacing: 0.2em; text-indent: 0.2em; }
+	main { padding: 1.5rem 1rem 2.5rem; }
+	.card h2 { font-size: 1.45rem; }
+}

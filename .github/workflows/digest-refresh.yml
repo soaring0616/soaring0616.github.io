@@ -1,0 +1,60 @@
+# 職事文摘導覽的索引自動補新期
+#
+# 文摘一年出八期，所以「即時抓」沒有意義（而且對方站沒有 CORS，前端也抓不到）。
+# 這個 workflow 每月探一次有沒有新的一期：有就只抓那一期、commit 回 main，
+# 接著 deploy.yml 會自然把網站重新發布一次；沒有新的就什麼都不做。
+#
+# 它只會動 digest/data/ 底下的檔案。要停掉就把這個檔刪了。
+
+name: Refresh digest index
+
+on:
+  schedule:
+    - cron: '17 20 1 * *'     # 每月 1 號 UTC 20:17（台灣時間 2 號清晨 4:17）
+  workflow_dispatch:
+    inputs:
+      only:
+        description: '手動指定期數（例如 1104，留空則自動探新期）'
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: digest-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 抓取器只用標準函式庫，不需要安裝任何東西
+      # 手動輸入不直接內插進 shell，走環境變數，避免字串被當成命令
+      - name: Look for new issues
+        working-directory: digest
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          if [ -n "$ONLY" ]; then
+            python3 scripts/build_digest_index.py --only "$ONLY"
+          else
+            python3 scripts/build_digest_index.py --discover
+          fi
+
+      - name: Commit if the index changed
+        run: |
+          if git diff --quiet -- digest/data; then
+            echo "索引沒有變動，不 commit。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add digest/data
+          git commit -m "digest: 自動補上新一期的索引"
+          git push

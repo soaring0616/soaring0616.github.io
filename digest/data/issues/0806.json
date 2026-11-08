@@ -1,0 +1,904 @@
+{
+ "id": "0806",
+ "label": "第八卷 第六期",
+ "url": "https://ministrydigest.twgbr.org/8026-0806/",
+ "sections": [
+  {
+   "title": "真理",
+   "articles": [
+    {
+     "title": "神在基督的升天裏，在人裏的行動",
+     "page": 6,
+     "anchor": "no1-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-1audio.html"
+      },
+      {
+       "label": "包羅萬有的基督，第三章",
+       "book": "包羅萬有的基督",
+       "chapter": "第三章 美地的高超",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/1-1-1.html"
+      },
+      {
+       "label": "神在人裏的行動，第八章",
+       "book": "神在人裏的行動",
+       "chapter": "第八章 在基督的升天裏（一）",
+       "no": "2199",
+       "audio": false,
+       "webpg": "webpg/1-1-2.html"
+      },
+      {
+       "label": "神在人裏的行動，第九章",
+       "book": "神在人裏的行動",
+       "chapter": "第九章 在基督的升天裏（二）",
+       "no": "2199",
+       "audio": false,
+       "webpg": "webpg/1-1-3.html"
+      }
+     ]
+    },
+    {
+     "title": "在基督裏得豐滿",
+     "page": 15,
+     "anchor": "no1-2",
+     "reading": "歌羅西書二章八至十五節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-2audio.html"
+      },
+      {
+       "label": "歌羅西書生命讀經，第五十三篇",
+       "book": "歌羅西書生命讀經",
+       "chapter": "第五十三篇 在基督裡面得了豐滿、受了割禮、復活、並一同與祂活過來",
+       "no": "4103",
+       "audio": false,
+       "webpg": "webpg/1-2-1.html"
+      },
+      {
+       "label": "李常受文集一九六六年第三冊，在基督裏得豐滿與憑著靈而行，第一章",
+       "book": "在基督裏得豐滿與憑著靈而行",
+       "chapter": "第一章 神的旨意乃是基督作我們的分",
+       "no": "5166III",
+       "audio": false,
+       "webpg": "webpg/1-2-2.html"
+      },
+      {
+       "label": "李常受文集一九六六年第三冊，在基督裏得豐滿與憑著靈而行，第三章",
+       "book": "在基督裏得豐滿與憑著靈而行",
+       "chapter": "第三章 在基督裏得豐滿",
+       "no": "5166III",
+       "audio": false,
+       "webpg": "webpg/1-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "生命的發展和成熟",
+     "page": 24,
+     "anchor": "no1-3",
+     "reading": "彼得後書一章一至八節，三章十八節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-3audio.html"
+      },
+      {
+       "label": "李常受文集一九五五年第二冊，神救恩行政安排中的生活以及神聖生命的供備，第十二章",
+       "book": "李常受文集一九五五年第二冊，神救恩行政安排中的生活以及神聖生命的供備",
+       "chapter": "第十二章 一切關於生命和敬虔的事",
+       "no": "5155II",
+       "audio": false,
+       "webpg": "webpg/1-3-1.html"
+      },
+      {
+       "label": "李常受文集一九五五年第二冊，神救恩行政安排中的生活以及神聖生命的供備，第十四章",
+       "book": "李常受文集一九五五年第二冊，神救恩行政安排中的生活以及神聖生命的供備",
+       "chapter": "第十四章 有分於神的性情與分外殷勤",
+       "no": "5155II",
+       "audio": false,
+       "webpg": "webpg/1-3-2.html"
+      },
+      {
+       "label": "李常受文集一九六八年第二冊，在生命裏長大並服事主，以建造召會作主的見證，第二章",
+       "book": "李常受文集一九六八年第二冊，在生命裏長大並服事主，以建造召會作主的見證",
+       "chapter": "第二章 藉著我們裏面神聖生命和性情的發展而在生命裏長大",
+       "no": "5168II",
+       "audio": false,
+       "webpg": "webpg/1-3-3.html"
+      },
+      {
+       "label": "聖經中關於生命的重要啟示，第十六章",
+       "book": "聖經中關於生命的重要啟示",
+       "chapter": "第十六章 生命的發展",
+       "no": "2267",
+       "audio": false,
+       "webpg": "webpg/1-3-4.html"
+      }
+     ]
+    },
+    {
+     "title": "與主成為一靈，享受基督作一切",
+     "page": 32,
+     "anchor": "no1-4",
+     "reading": "哥林多前書六章十七節，帖撒羅尼迦前書五章二十三節，約翰福音四章二十四節，羅馬書八章十六節，希伯來書四章十二節，提摩太後書四章二十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-4audio.html"
+      },
+      {
+       "label": "李常受文集一九六四年第一冊，操練我們的靈以實行召會生活，第四章",
+       "book": "李常受文集一九六四年第一冊，操練我們的靈以實行身體生活",
+       "chapter": "第四章 操練我們的靈與主成為一靈",
+       "no": "5164I",
+       "audio": false,
+       "webpg": "webpg/1-4-1.html"
+      },
+      {
+       "label": "時代的轉移與活在靈裏，第八篇",
+       "book": "時代的轉移與活在靈裏",
+       "chapter": "第八篇 如何經歷基督是一切",
+       "no": "2381",
+       "audio": false,
+       "webpg": "webpg/1-4-2.html"
+      },
+      {
+       "label": "李常受文集一九七一年第四冊，為著基督身體的建造享受並供應基督，第一章",
+       "book": "李常受文集一九七一年第四冊，為著基督身體的建造享受並供應基督",
+       "chapter": "第一章 基督徒的生活—我們與主成為一靈的生活",
+       "no": "5171IV",
+       "audio": false,
+       "webpg": "webpg/1-4-3.html"
+      }
+     ]
+    },
+    {
+     "title": "神所渴望的敬拜",
+     "page": 40,
+     "anchor": "no1-5",
+     "reading": "申命記十二章五至七節，十一至十二節，十四章二十二至二十三節，二十六章九至十一節，民數記十八章十二至十三節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-5audio.html"
+      },
+      {
+       "label": "為著召會聚會經歷基督作祭物，第五章",
+       "book": "為著召會聚會經歷基督作祭物",
+       "chapter": "第五章 聚會為著與神同享基督（二）",
+       "no": "2353",
+       "audio": false,
+       "webpg": "webpg/1-5-1.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "生命",
+   "articles": [
+    {
+     "title": "活在靈裏經歷升天",
+     "page": 50,
+     "anchor": "no2-1",
+     "reading": "羅馬書六章五節，十三節，八章十一節，使徒行傳二章三十三節，三十六節，以弗所書一章二十至二十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-1audio.html"
+      },
+      {
+       "label": "屬靈的實際，第六篇",
+       "book": "屬靈的實際",
+       "chapter": "第六篇 在聖靈裏經歷屬靈的實際",
+       "no": "2282",
+       "audio": false,
+       "webpg": "webpg/2-1-1.html"
+      },
+      {
+       "label": "屬靈的實際，第十六篇",
+       "book": "屬靈的實際",
+       "chapter": "第十六篇 在復活的靈裏經歷死與升天",
+       "no": "2282",
+       "audio": false,
+       "webpg": "webpg/2-1-2.html"
+      }
+     ]
+    },
+    {
+     "title": "在光中有分於基督",
+     "page": 59,
+     "anchor": "no2-2",
+     "reading": "歌羅西書一章十二至十三節，創世記一章三節，詩篇三十六篇九節，一百一十九篇一百零五節，以賽亞書二章五節，馬太福音四章十六節，約翰福音一章四節，使徒行傳二十六章十八節，約翰一書一章五節，啟示錄二十一章二十三節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-2audio.html"
+      },
+      {
+       "label": "歌羅西書生命讀經，第七篇",
+       "book": "歌羅西書生命讀經",
+       "chapter": "第七篇 在光中有分於基督",
+       "no": "4103",
+       "audio": false,
+       "webpg": "webpg/2-2-1.html"
+      },
+      {
+       "label": "倪柝聲文集第二輯第十七冊，第十三篇",
+       "book": "倪柝聲文集第二輯第三十七冊 一般的信息（卷一）",
+       "chapter": "第十三篇 心與光",
+       "no": "5068S2",
+       "audio": false,
+       "webpg": "webpg/2-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "被基督充滿、浸透並浸潤",
+     "page": 67,
+     "anchor": "no2-3",
+     "reading": "歌羅西書一章十八至二十三節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-3audio.html"
+      },
+      {
+       "label": "完成神永遠定旨的生活，第四章",
+       "book": "完成神永遠定旨的生活",
+       "chapter": "第四章 神將基督作到我們裏面的計畫",
+       "no": "2352",
+       "audio": false,
+       "webpg": "webpg/2-3-1.html"
+      },
+      {
+       "label": "基督的中心與普及，第一章",
+       "book": "基督的中心與普及",
+       "chapter": "第一章 基督是一切又在一切之內",
+       "no": "2209",
+       "audio": false,
+       "webpg": "webpg/2-3-2.html"
+      },
+      {
+       "label": "歌羅西書生命讀經，第九篇",
+       "book": "歌羅西書生命讀經",
+       "chapter": "第九篇 基督－從死人中復活的首生者",
+       "no": "4103",
+       "audio": false,
+       "webpg": "webpg/2-3-3.html"
+      },
+      {
+       "label": "歌羅西書生命讀經，第三十八篇",
+       "book": "歌羅西書生命讀經",
+       "chapter": "第三十八篇 基督活在我裡面",
+       "no": "4103",
+       "audio": false,
+       "webpg": "webpg/2-3-4.html"
+      }
+     ]
+    },
+    {
+     "title": "照著靈而行，過身體生活",
+     "page": 76,
+     "anchor": "no2-4",
+     "reading": "歌羅西書二章六節，申命記八章七至十節，羅馬書八章十一節，提摩太後書四章二十二節，腓立比書一章十九節，哥林多前書六章十七節，羅馬書八章六節，四節，加拉太書五章十六節，二十五節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-4audio.html"
+      },
+      {
+       "label": "歌羅西書生命讀經，第二十篇",
+       "book": "歌羅西書生命讀經",
+       "chapter": "第二十篇 在神的奧祕－基督－裏行事為人",
+       "no": "4103",
+       "audio": false,
+       "webpg": "webpg/2-4-1.html"
+      },
+      {
+       "label": "成全訓練，第三十六章",
+       "book": "成全訓練",
+       "chapter": "第三十六章 照著靈為人",
+       "no": "2123",
+       "audio": false,
+       "webpg": "webpg/2-4-2.html"
+      },
+      {
+       "label": "照著靈而行以活基督的重要，第二章",
+       "book": "照著靈而行以活基督的重要",
+       "chapter": "第二章 活基督與照著靈而行",
+       "no": "2391",
+       "audio": false,
+       "webpg": "webpg/2-4-3.html"
+      },
+      {
+       "label": "照著靈而行以活基督的重要，第七章",
+       "book": "照著靈而行以活基督的重要",
+       "chapter": "第七章 過身體生活（一）",
+       "no": "2391",
+       "audio": false,
+       "webpg": "webpg/2-4-4.html"
+      },
+      {
+       "label": "照著靈而行以活基督的重要，第八章",
+       "book": "照著靈而行以活基督的重要",
+       "chapter": "第八章 過身體生活（二）",
+       "no": "2391",
+       "audio": false,
+       "webpg": "webpg/2-4-5.html"
+      }
+     ]
+    },
+    {
+     "title": "在美地上的生活—享受基督作恩典",
+     "page": 85,
+     "anchor": "no2-5",
+     "reading": "哥林多後書一章四至六節，八至九節，十二節，十九至二十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-5audio.html"
+      },
+      {
+       "label": "一個在靈裏之人的自傳，第一章",
+       "book": "一個在靈裏之人的自傳",
+       "chapter": "第一章 藉著十字架而有的職事",
+       "no": "2221",
+       "audio": false,
+       "webpg": "webpg/2-5-1.html"
+      },
+      {
+       "label": "一個在靈裏之人的自傳，第十章",
+       "book": "一個在靈裏之人的自傳",
+       "chapter": "第十章 基督作恩典",
+       "no": "2221",
+       "audio": false,
+       "webpg": "webpg/2-5-2.html"
+      },
+      {
+       "label": "主恢復中成熟的帶領，第六十一篇",
+       "book": "主恢復中成熟的帶領（下冊）",
+       "chapter": "第六十一篇 神的恩典就是神自己",
+       "no": "3068",
+       "audio": false,
+       "webpg": "webpg/2-5-3.html"
+      },
+      {
+       "label": "神的運行與膏油的塗抹，第一篇",
+       "book": "神的運行與膏油的塗抹",
+       "chapter": "第一篇 裏面的恩典",
+       "no": "2398",
+       "audio": false,
+       "webpg": "webpg/2-5-4.html"
+      },
+      {
+       "label": "李常受文集一九九一至一九九二年第一冊，在安那翰的多次聚會，第八章",
+       "book": "李常受文集一九九一至一九九二年第一冊，在安那翰的多次聚會",
+       "chapter": "第八章 學習如何在靈裏接受恩典的祕訣",
+       "no": "5191",
+       "audio": false,
+       "webpg": "webpg/2-5-5.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "事奉",
+   "articles": [
+    {
+     "title": "召會藉基督的升天與內住而得建造",
+     "page": 94,
+     "anchor": "no3-1",
+     "reading": "以弗所書一章十九至二十三節，四章七至八節，十一至十六節，哥林多後書十三章五節，加拉太書一章十六節上，二章二十節，四章十九節，提摩太後書四章二十二節上，哥林多後書三章十七至十八節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-1audio.html"
+      },
+      {
+       "label": "李常受文集一九七七年第一冊，召會作神聖兒子名分之總和的產生與建造，第三章",
+       "book": "李常受文集一九七七年第一冊，召會作神聖兒子名分之總和的產生與建造",
+       "chapter": "第三章 藉著基督的升天與內住，產生並建造召會",
+       "no": "5177I",
+       "audio": false,
+       "webpg": "webpg/3-1-1.html"
+      }
+     ]
+    },
+    {
+     "title": "在召會中背負責任的路",
+     "page": 103,
+     "anchor": "no3-2",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-2audio.html"
+      },
+      {
+       "label": "創世記生命讀經，第八十三篇",
+       "book": "創世記生命讀經",
+       "chapter": "第八十三篇 被變化（六）",
+       "no": "4013",
+       "audio": false,
+       "webpg": "webpg/3-2-1.html"
+      },
+      {
+       "label": "創世記生命讀經，第八十四篇",
+       "book": "創世記生命讀經",
+       "chapter": "第八十四篇 被變化（七）",
+       "no": "4013",
+       "audio": false,
+       "webpg": "webpg/3-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "為著召會生活之基督徒生活的祕訣",
+     "page": 112,
+     "anchor": "no3-3",
+     "reading": "加拉太書一章十三至十六節，二章二十節，四章十九節，歌羅西書一章十二節，十五節，十八至十九節，二章九節，二節下，十六至十七節，三章十至十一節，四節，一章二十七節，二章六至七節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-3audio.html"
+      },
+      {
+       "label": "神經綸的要素，第四章",
+       "book": "神經綸的要素",
+       "chapter": "第四章 在基督裏行事為人",
+       "no": "2363",
+       "audio": false,
+       "webpg": "webpg/3-3-1.html"
+      }
+     ]
+    },
+    {
+     "title": "申言展覽基督的豐富",
+     "page": 121,
+     "anchor": "no3-4",
+     "reading": "哥林多前書四章十二節，十二章三十一節上，十四章一節，三十九節，三十一節，提摩太後書三章十六至十七節，加拉太書五章十六節，二十五節，帖撒羅尼迦前書五章十七至二十節，箴言四章十八節，耶利米哀歌三章二十二至二十四節，詩篇一百一十九篇一百四十七至一百四十八節，啟示錄二十一章七節，約翰一書一章六節，羅馬書八章四節下，提摩太後書四章二節上。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-4audio.html"
+      },
+      {
+       "label": "脫離宗教儀文隨從靈，第十三篇",
+       "book": "脫離宗教儀文隨從靈",
+       "chapter": "第十三篇 聚會與敬拜",
+       "no": "2384",
+       "audio": false,
+       "webpg": "webpg/3-4-1.html"
+      },
+      {
+       "label": "建造召會的超越恩賜，第二章",
+       "book": "建造召會的超越恩賜",
+       "chapter": "第二章 切慕並學習申言",
+       "no": "3039",
+       "audio": false,
+       "webpg": "webpg/3-4-2.html"
+      }
+     ]
+    },
+    {
+     "title": "享受基督與保守基督身體的『一』",
+     "page": 129,
+     "anchor": "no3-5",
+     "reading": "申命記十二章五至十五節，十七至十八節，二十至二十二節，二十六至二十七節，十四章二十二至二十三節，十五章十九至二十節，十六章十六至十七節，約書亞記五章十至十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-5audio.html"
+      },
+      {
+       "label": "李常受文集一九六三年第四冊，為著實行召會生活被變化，第十一章",
+       "book": "李常受文集一九六三年第四冊，為著實行召會生活被變化",
+       "chapter": "第十一章 迦南出產的十分之一",
+       "no": "5163IV",
+       "audio": false,
+       "webpg": "webpg/3-5-1.html"
+      },
+      {
+       "label": "哥林多前書中為著基督的身體享受基督，第四章",
+       "book": "哥林多前書中為著基督的身體享受基督",
+       "chapter": "第四章 回到一的正確立場上，有交通以享受身體基督",
+       "no": "2359",
+       "audio": false,
+       "webpg": "webpg/3-5-2.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "福音",
+   "articles": [
+    {
+     "title": "生命之光",
+     "page": 138,
+     "anchor": "no4-1",
+     "reading": "約翰福音八章十二節，一章四節。",
+     "sources": [
+      {
+       "label": "福音題綱，第一百一十三題",
+       "book": "福音題綱",
+       "chapter": "一一三 生命之光",
+       "no": "2070",
+       "audio": false,
+       "webpg": "webpg/4-1-1.html"
+      },
+      {
+       "label": "李常受文集一九五九年第一冊，從約翰福音看生命與建造的精意，第十二章",
+       "book": "李常受文集一九五九年第一冊，從約翰福音看生命與建造的精意",
+       "chapter": "第十二章 主是生命的光，對付人的罪",
+       "no": "5159I",
+       "audio": false,
+       "webpg": "webpg/4-1-2.html"
+      },
+      {
+       "label": "李常受文集一九八三年第一冊，給歐文召會的各種信息，第四章",
+       "book": "李常受文集一九八三年第一冊，給歐文召會的各種信息",
+       "chapter": "第四章 賜生命的靈—神聖的精粹",
+       "no": "5183I",
+       "audio": false,
+       "webpg": "webpg/4-1-3.html"
+      }
+     ]
+    },
+    {
+     "title": "真光，真自由",
+     "page": 145,
+     "anchor": "no4-2",
+     "reading": "約翰福音八章。",
+     "sources": [
+      {
+       "label": "李常受文集一九五九年第一冊，從約翰福音看生命與建造的精意，第十二章",
+       "book": "李常受文集一九五九年第一冊，從約翰福音看生命與建造的精意",
+       "chapter": "第十二章 主是生命的光，對付人的罪",
+       "no": "5159I",
+       "audio": false,
+       "webpg": "webpg/4-2-1.html"
+      },
+      {
+       "label": "李常受文集一九八三年第一冊，給歐文召會的各種信息，第四章",
+       "book": "李常受文集一九八三年第一冊，給歐文召會的各種信息",
+       "chapter": "第四章 賜生命的靈—神聖的精粹",
+       "no": "5183I",
+       "audio": false,
+       "webpg": "webpg/4-2-2.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "唱詩人",
+   "articles": [
+    {
+     "title": "萬福泉源，前來領會",
+     "page": 158,
+     "anchor": "no5-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌 - 萬福泉源",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-1-1audio.html"
+      },
+      {
+       "label": "聆聽詩歌 - 前來領會",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-1-2audio.html"
+      }
+     ]
+    },
+    {
+     "title": "浩大能力向著召會",
+     "page": 164,
+     "anchor": "no5-2-1",
+     "reading": "以弗所書一章十七至二十三節，二章十四至十六節，二十二節，三章五節，四章二十三節，五章十八節，六章十八節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-1audio.html"
+      },
+      {
+       "label": "李常受文集一九七一年第一冊，經歷基督以建造召會作基督的身體和新人，第二章",
+       "book": "李常受文集一九七一年第一冊，經歷基督以建造召會作基督的身體和新人",
+       "chapter": "第二章 藉著廢棄規條脫去舊人，並藉著實行召會生活穿上新人",
+       "no": "5171I",
+       "audio": false,
+       "webpg": "webpg/5-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "活在生命光中",
+     "page": 165,
+     "anchor": "no5-2-2",
+     "reading": "約翰福音一章四節，十四節，十六至十八節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-2audio.html"
+      },
+      {
+       "label": "從馬太福音至使徒行傳看基督作生命，第十三章",
+       "book": "從馬太福音至使徒行傳看基督作生命",
+       "chapter": "第十三章 約翰福音—序言（三）光、恩典、實際、豐滿、恩上加恩",
+       "no": "5155II",
+       "audio": false,
+       "webpg": "webpg/5-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "石榴是否放蕊",
+     "page": 166,
+     "anchor": "no5-2-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-3audio.html"
+      },
+      {
+       "label": "從舊約詩歌書看聖民的經歷，第三十八篇",
+       "book": "從舊約詩歌書看聖民的經歷（下冊）",
+       "chapter": "第三十八篇 成熟並得勝而能與主同工",
+       "no": "4308",
+       "audio": false,
+       "webpg": "webpg/5-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "二靈相調，化合為一",
+     "page": 167,
+     "anchor": "no5-2-4",
+     "reading": "哥林多前書六章十七節，哥林多後書三章十七節，提摩太後書一章七節，四章二十二節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-4audio.html"
+      },
+      {
+       "label": "在靈裏與主互住的生活，第五篇",
+       "book": "在靈裏與主互住的生活",
+       "chapter": "第五篇 操練與主成為一靈",
+       "no": "2205",
+       "audio": false,
+       "webpg": "webpg/5-2-4.html"
+      }
+     ]
+    },
+    {
+     "title": "你的同在何其可愛、可寶",
+     "page": 168,
+     "anchor": "no5-2-5",
+     "reading": "約翰福音十四章十九至二十三節，出埃及記三十三章十四節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-5audio.html"
+      },
+      {
+       "label": "基督的安家與召會的建造，第十篇",
+       "book": "基督的安家與召會的建造",
+       "chapter": "第十篇 愛主而經歷主的顯現和同住",
+       "no": "2358",
+       "audio": false,
+       "webpg": "webpg/5-2-5.html"
+      }
+     ]
+    },
+    {
+     "title": "主，你更是迦南美地",
+     "page": 169,
+     "anchor": "no5-2-6",
+     "reading": "創世記一章一至二節，九至十二節，二十六至二十七節，二十九節，七章十七節，八章一節，十三節，二十二節，十二章一節，七節，出埃及記三章八節，六章八節，以西結書二十章四十至四十二節，哥林多前書一章三十節，歌羅西書二章六至七節，十六至十七節，三章十一節，以弗所書二章十二節，加拉太書五章四節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-6audio.html"
+      },
+      {
+       "label": "包羅萬有的基督，第一章",
+       "book": "包羅萬有的基督",
+       "chapter": "第一章 包羅萬有的基督—開頭的話",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/5-2-6-1.html"
+      },
+      {
+       "label": "包羅萬有的基督，第二章",
+       "book": "包羅萬有的基督",
+       "chapter": "第二章 美地的廣闊",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/5-2-6-2.html"
+      }
+     ]
+    },
+    {
+     "title": "基督豐滿職事的三個時期",
+     "page": 170,
+     "anchor": "webpg_no5-3-1audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "基督豐滿職事的三個時期",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-1audio.html"
+      }
+     ]
+    },
+    {
+     "title": "親愛主，你已召我們",
+     "page": 171,
+     "anchor": "webpg_no5-3-2audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "親愛主，你已召我們",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-2audio.html"
+      }
+     ]
+    },
+    {
+     "title": "作耶穌瘋狂愛人",
+     "page": 172,
+     "anchor": "webpg_no5-3-3audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "作耶穌瘋狂愛人",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-3audio.html"
+      }
+     ]
+    },
+    {
+     "title": "進入安息",
+     "page": 173,
+     "anchor": "webpg_no5-3-4audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "進入安息",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-4audio.html"
+      }
+     ]
+    },
+    {
+     "title": "不再是我",
+     "page": 174,
+     "anchor": "webpg_no5-3-5audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "不再是我",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-5audio.html"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

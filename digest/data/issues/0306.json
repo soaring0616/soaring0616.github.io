@@ -1,0 +1,904 @@
+{
+ "id": "0306",
+ "label": "第三卷 第六期",
+ "url": "https://ministrydigest.twgbr.org/8026-0306/",
+ "sections": [
+  {
+   "title": "真理",
+   "articles": [
+    {
+     "title": "三一神三重的祝福",
+     "page": 6,
+     "anchor": "no1-1",
+     "reading": "哥林多後書十三章十一至十四節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-1audio.html"
+      },
+      {
+       "label": "哥林多後書生命讀經，第五十九篇",
+       "book": "哥林多後書生命讀經",
+       "chapter": "第五十九篇 末了的勸勉、問安與祝福（二）",
+       "no": "4099",
+       "audio": false,
+       "webpg": "webpg/1-1-1.html"
+      },
+      {
+       "label": "以弗所書生命讀經，第二篇",
+       "book": "以弗所書生命讀經",
+       "chapter": "第二篇 三方面的美言",
+       "no": "4101",
+       "audio": false,
+       "webpg": "webpg/1-1-2.html"
+      }
+     ]
+    },
+    {
+     "title": "進入至聖所",
+     "page": 16,
+     "anchor": "no1-2",
+     "reading": "出埃及記四十章十七至三十三節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-2audio.html"
+      },
+      {
+       "label": "從出埃及記看神的救贖與神居所的建造，第九篇",
+       "book": "從出埃及記看神的救贖與神居所的建造",
+       "chapter": "第九篇 神居所的建造（三）帳幕的三層",
+       "no": "4263",
+       "audio": false,
+       "webpg": "webpg/1-2-1.html"
+      },
+      {
+       "label": "出埃及記生命讀經，第八十六篇",
+       "book": "出埃及記生命讀經",
+       "chapter": "第八十六篇 見證的櫃（三）",
+       "no": "4018",
+       "audio": false,
+       "webpg": "webpg/1-2-2.html"
+      },
+      {
+       "label": "出埃及記生命讀經，第八十八篇",
+       "book": "出埃及記生命讀經",
+       "chapter": "第八十八篇 見證的櫃（五）",
+       "no": "4018",
+       "audio": false,
+       "webpg": "webpg/1-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "從點燈看新約中的一個職事",
+     "page": 25,
+     "anchor": "no1-3",
+     "reading": "哥林多後書四章一節，三章六至九節，提摩太後書四章五節，以弗所書三章九至十節，四章十二節，使徒行傳二章四十二節，提摩太前書一章三至四節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-3audio.html"
+      },
+      {
+       "label": "新約的職事以及使徒的教訓和交通，第一篇",
+       "book": "新約的職事以及使徒的教訓和交通",
+       "chapter": "第一篇 新約的職事",
+       "no": "3080",
+       "audio": false,
+       "webpg": "webpg/1-3-1.html"
+      },
+      {
+       "label": "真理信息，第四章",
+       "book": "真理信息",
+       "chapter": "第四章 新約經綸中的職事",
+       "no": "2256",
+       "audio": false,
+       "webpg": "webpg/1-3-2.html"
+      }
+     ]
+    },
+    {
+     "title": "聖經中基督是星與杖的豫言和豫表",
+     "page": 34,
+     "anchor": "no1-4",
+     "reading": "彼得後書一章十二至二十一節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-4audio.html"
+      },
+      {
+       "label": "馬太福音生命讀經，第七篇",
+       "book": "馬太福音生命讀經",
+       "chapter": "第七篇 王的家世與身分（七）",
+       "no": "4092",
+       "audio": false,
+       "webpg": "webpg/1-4-1.html"
+      },
+      {
+       "label": "彼得後書生命讀經，第八篇",
+       "book": "彼得後書生命讀經",
+       "chapter": "第八篇 神聖的供備（八）",
+       "no": "4108",
+       "audio": false,
+       "webpg": "webpg/1-4-2.html"
+      },
+      {
+       "label": "詩篇生命讀經，第二十篇",
+       "book": "詩篇生命讀經",
+       "chapter": "第二十篇 詩人在神家和神城中，藉著受苦、被高舉、並作王的基督，對神有加強的享受（二）讚美基督作王（一）",
+       "no": "4127",
+       "audio": false,
+       "webpg": "webpg/1-4-3.html"
+      },
+      {
+       "label": "創世記生命讀經，第一百篇",
+       "book": "創世記生命讀經",
+       "chapter": "第一百篇 關於猶大、西布倫、和以薩迦所豫言之祝福的屬靈意義（一）",
+       "no": "4013",
+       "audio": false,
+       "webpg": "webpg/1-4-4.html"
+      },
+      {
+       "label": "啟示錄生命讀經，第五篇",
+       "book": "啟示錄生命讀經",
+       "chapter": "第五篇 基督的再來",
+       "no": "4110",
+       "audio": false,
+       "webpg": "webpg/1-4-5.html"
+      }
+     ]
+    },
+    {
+     "title": "征服撒但的混亂並在神聖經綸中得勝",
+     "page": 42,
+     "anchor": "no1-5",
+     "reading": "創世記一章一至二節，二十六至二十八節，二章七至九節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no1-5audio.html"
+      },
+      {
+       "label": "在舊造裏撒但的混亂以及為著新造的神聖經綸，第一篇",
+       "book": "在舊造裏撒但的混亂以及為著新造的神聖經綸",
+       "chapter": "第一篇 神聖的經綸與撒但的混亂（一）",
+       "no": "2193",
+       "audio": false,
+       "webpg": "webpg/1-5-1.html"
+      },
+      {
+       "label": "在舊造裏撒但的混亂以及為著新造的神聖經綸，第三篇",
+       "book": "在舊造裏撒但的混亂以及為著新造的神聖經綸",
+       "chapter": "第三篇 得勝者",
+       "no": "2193",
+       "audio": false,
+       "webpg": "webpg/1-5-2.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "生命",
+   "articles": [
+    {
+     "title": "從祝福與安樂轉向神的經綸與分賜",
+     "page": 52,
+     "anchor": "no2-1",
+     "reading": "創世記三15，希伯來書二14，創世記十二3下，加拉太書三8，以賽亞書十二3，馬可福音十六15，提摩太前書二4，民數記六24！27，出埃及記二十12，申命記二八3～6，哥林多後書十三14，以弗所書六2～3，哥林多前書二一22，約翰福音二2，以弗所書一9～11，三9～11，啟示錄四11，創世記一26～27，約翰福音一14，18，以弗所書二21～22，三17～19，提摩太前書三15～16，啟示錄二一1～",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-1audio.html"
+      },
+      {
+       "label": "神的經綸與分賜，第一篇",
+       "book": "神的經綸與分賜",
+       "chapter": "第一篇 神的經綸",
+       "no": "2181",
+       "audio": false,
+       "webpg": "webpg/2-1-1.html"
+      },
+      {
+       "label": "神的經綸與分賜，第二篇",
+       "book": "神的經綸與分賜",
+       "chapter": "第二篇 神的經綸",
+       "no": "2181",
+       "audio": false,
+       "webpg": "webpg/2-1-2.html"
+      },
+      {
+       "label": "神的經綸與分賜，第四篇",
+       "book": "神的經綸與分賜",
+       "chapter": "第四篇 神的分賜對信徒在生活上的供應",
+       "no": "2181",
+       "audio": false,
+       "webpg": "webpg/2-1-3.html"
+      }
+     ]
+    },
+    {
+     "title": "蒙神光照與脫離著迷",
+     "page": 61,
+     "anchor": "no2-2",
+     "reading": "以賽亞書五十章十至十一節：『你們中間誰是敬畏耶和華聽從祂僕人之話的？這人行在暗中，沒有亮光，當倚靠耶和華的名，仗賴自己的神。凡你們點火用火把圍繞自己的：可以行在你們的火焰裏，並你們所點的火把中。這是我手所定的：你們必躺在悲慘之中。』",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-2audio.html"
+      },
+      {
+       "label": "倪柝聲文集第二輯第十六冊，聖靈與實際，附篇",
+       "book": "倪柝聲文集第二輯第十六冊，中心的信息",
+       "chapter": "附篇 著迷與神的光",
+       "no": "5068S2",
+       "audio": false,
+       "webpg": "webpg/2-2-1.html"
+      },
+      {
+       "label": "倪柝聲文集第二輯第二十五冊，第一五六篇",
+       "book": "倪柝聲文集第二輯第二十五冊，特會、信息、及談話記錄（卷五）",
+       "chapter": "第一五六篇 屬靈的分別善惡",
+       "no": "5068S2",
+       "audio": false,
+       "webpg": "webpg/2-2-2.html"
+      },
+      {
+       "label": "真理課程二級卷三，第三十二課",
+       "book": "真理課程 二級 卷三",
+       "chapter": "第三十二課 在三一神的恩典裏經歷並享受基督為子（三）",
+       "no": "2157II",
+       "audio": false,
+       "webpg": "webpg/2-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "若有人犯罪",
+     "page": 70,
+     "anchor": "no2-3",
+     "reading": "約翰福音五章十四節：『後來耶穌在殿裏遇見他，對他說，你已經痊愈了；不要再犯罪，恐怕你邁遇的更加利害。』",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-3audio.html"
+      },
+      {
+       "label": "初信造就中冊，第二十一篇",
+       "book": "初信造就（中冊）",
+       "chapter": "第二十一篇 若有人犯罪",
+       "no": "2026",
+       "audio": false,
+       "webpg": "webpg/2-3-1.html"
+      }
+     ]
+    },
+    {
+     "title": "相信神的話，專一跟從神",
+     "page": 79,
+     "anchor": "no2-4",
+     "reading": "帖撒羅尼迦前書五章二十三節，民數記十三章二十五至三十三節，十四章四至十節，約書亞記十四章六至十二節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-4audio.html"
+      },
+      {
+       "label": "真理課程三級卷二，第二十九課",
+       "book": "真理課程 三級 卷二",
+       "chapter": "第二十九課 蒙揀選以色列族的歷史—飄流、倒斃、過約但河、進迦南、被擄、歸回",
+       "no": "2157III",
+       "audio": false,
+       "webpg": "webpg/2-4-1.html"
+      },
+      {
+       "label": "十二籃第一輯，神保守的能力",
+       "book": "十二籃第一輯",
+       "chapter": "神保守的能力",
+       "no": "2041",
+       "audio": false,
+       "webpg": "webpg/2-4-2.html"
+      },
+      {
+       "label": "希伯來書生命讀經，第二十五篇",
+       "book": "希伯來書生命讀經",
+       "chapter": "第二十五篇 不信的惡心，將活神離棄了；神活的話；以及人的各部分",
+       "no": "4106",
+       "audio": false,
+       "webpg": "webpg/2-4-3.html"
+      },
+      {
+       "label": "腓立比書生命讀經，第五十篇",
+       "book": "腓立比書生命讀經",
+       "chapter": "第五十篇 你們信心的祭物",
+       "no": "4102",
+       "audio": false,
+       "webpg": "webpg/2-4-4.html"
+      }
+     ]
+    },
+    {
+     "title": "在神的家中享受神",
+     "page": 87,
+     "anchor": "no2-5",
+     "reading": "詩篇六十八篇十八至三十五節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no2-5audio.html"
+      },
+      {
+       "label": "詩篇生命讀經，第二十八篇",
+       "book": "詩篇生命讀經",
+       "chapter": "第二十八篇 基督是神在地上行動的中心（二）",
+       "no": "4127",
+       "audio": false,
+       "webpg": "webpg/2-5-1.html"
+      },
+      {
+       "label": "詩篇中所啟示並豫表的基督與召會，第十章",
+       "book": "詩篇中所啟示並豫表的基督與召會",
+       "chapter": "第十章 基督在升天裏的成就為著建造神的殿（詩篇六十八篇）",
+       "no": "4089",
+       "audio": false,
+       "webpg": "webpg/2-5-2.html"
+      },
+      {
+       "label": "真理課程二級卷三，第二十九課",
+       "book": "真理課程 二級 卷三",
+       "chapter": "第二十九課 在三一神的愛裏經歷並享受神為父（五）",
+       "no": "2157II",
+       "audio": false,
+       "webpg": "webpg/2-5-3.html"
+      },
+      {
+       "label": "神對基督與召會的心意，第九章",
+       "book": "神對基督與召會的心意",
+       "chapter": "第九章 穿上召會生活而有真實的基督徒行事為人",
+       "no": "2344",
+       "audio": false,
+       "webpg": "webpg/2-5-4.html"
+      },
+      {
+       "label": "李常受文集一九七年第一冊，在生命裏長大的路，第五章",
+       "book": "李常受文集一九七○年第一冊，在生命裏長大的路",
+       "chapter": "第五章 在生命裏長大是在召會裏，同著召會，並為著召會",
+       "no": "5170I",
+       "audio": false,
+       "webpg": "webpg/2-5-5.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "事奉",
+   "articles": [
+    {
+     "title": "過祭司的生活而事奉神",
+     "page": 96,
+     "anchor": "no3-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-1audio.html"
+      },
+      {
+       "label": "祭司的體系，第一部分，第一篇",
+       "book": "祭司的體系",
+       "chapter": "第一部分 在神的經營中三個主要的職事 第一篇 祭司體系的意義與說明",
+       "no": "3003",
+       "audio": false,
+       "webpg": "webpg/3-1-1.html"
+      },
+      {
+       "label": "祭司的體系，第一部分，第二篇",
+       "book": "祭司的體系",
+       "chapter": "第二篇 神的旨意藉祭司得成全",
+       "no": "3003",
+       "audio": false,
+       "webpg": "webpg/3-1-2.html"
+      },
+      {
+       "label": "祭司的體系，第一部分，第六篇",
+       "book": "祭司的體系",
+       "chapter": "第六篇 祭司職任的恢復",
+       "no": "3003",
+       "audio": false,
+       "webpg": "webpg/3-1-3.html"
+      }
+     ]
+    },
+    {
+     "title": "在召會中作燒香、點燈、歌唱的祭司",
+     "page": 105,
+     "anchor": "no3-2",
+     "reading": "出埃及記二十七章二十至二十一節，三十章六至八節，歷代志上六章三十一至三十三節，二十五章一節，七至八節，路加福音一章八至十節，啟示錄五章八節，八章三至五節，以弗所書六章十八節，五章十八至十九節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-2audio.html"
+      },
+      {
+       "label": "祭司職分與神的建造，第十篇",
+       "book": "祭司職分與神的建造",
+       "chapter": "第十篇 祭司的燒香、點燈與歌唱",
+       "no": "3148",
+       "audio": false,
+       "webpg": "webpg/3-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "從可拉黨的背叛學功課",
+     "page": 114,
+     "anchor": "no3-3",
+     "reading": "馬太福音二十章二十至二十八節，二十三章八至十二節，二十一章四至九節，十五至十六節，二十三至二十七節，二十八至三十二節，三十三至四十五節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-3audio.html"
+      },
+      {
+       "label": "民數記概論，第二十一篇",
+       "book": "民數記概論",
+       "chapter": "第二十一篇 民數記的豫表（九）背叛",
+       "no": "4289",
+       "audio": false,
+       "webpg": "webpg/3-3-1.html"
+      },
+      {
+       "label": "民數記概論，第六篇",
+       "book": "民數記概論",
+       "chapter": "第六篇 行程的要義（三）背叛",
+       "no": "4289",
+       "audio": false,
+       "webpg": "webpg/3-3-2.html"
+      },
+      {
+       "label": "國度，第二十九章",
+       "book": "國度（下冊）",
+       "chapter": "第二十九章 對地位的野心與國度的生活相反",
+       "no": "2213",
+       "audio": false,
+       "webpg": "webpg/3-3-3.html"
+      },
+      {
+       "label": "召會實際的彰顯，第十三章",
+       "book": "召會實際的彰顯",
+       "chapter": "第十三章 召會生活實際的功課",
+       "no": "3089",
+       "audio": false,
+       "webpg": "webpg/3-3-4.html"
+      },
+      {
+       "label": "神命定之路的操練與實行，第三十一篇",
+       "book": "神命定之路的操練與實行",
+       "chapter": "第三十一篇 結語",
+       "no": "3040",
+       "audio": false,
+       "webpg": "webpg/3-3-5.html"
+      }
+     ]
+    },
+    {
+     "title": "尋求神的國和神的義",
+     "page": 122,
+     "anchor": "no3-4",
+     "reading": "馬太福音六章三十一至三十三節，羅馬書十二章一至二節，十一節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-4audio.html"
+      },
+      {
+       "label": "跟上時代重建聖殿，第三篇",
+       "book": "跟上時代重建聖殿",
+       "chapter": "第三篇 為著專項工作的禱告與交通",
+       "no": "3092",
+       "audio": false,
+       "webpg": "webpg/3-4-1.html"
+      },
+      {
+       "label": "跟上時代重建聖殿，第四篇",
+       "book": "跟上時代重建聖殿",
+       "chapter": "第四篇 尋求神的國和神的義",
+       "no": "3092",
+       "audio": false,
+       "webpg": "webpg/3-4-2.html"
+      }
+     ]
+    },
+    {
+     "title": "受成全過祭司生活以建造基督的身體",
+     "page": 131,
+     "anchor": "no3-5",
+     "reading": "以弗所書四章十一至十二節，提摩太後書二章二節，提摩太前書三章二節，五章十七節，彼得前書五章一至三節。",
+     "sources": [
+      {
+       "label": "信息朗讀",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no3-5audio.html"
+      },
+      {
+       "label": "主今日恢復的進展，第五章",
+       "book": "主今日恢復的進展",
+       "chapter": "第五章 藉著恩賜成全聖徒",
+       "no": "3119",
+       "audio": false,
+       "webpg": "webpg/3-5-1.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "福音",
+   "articles": [
+    {
+     "title": "迷",
+     "page": 140,
+     "anchor": "no4-1",
+     "reading": "提摩太前書六章一至十節。",
+     "sources": [
+      {
+       "label": "提摩太前書生命讀經，第十一篇",
+       "book": "提摩太前書生命讀經",
+       "chapter": "第十一篇 對奴僕和貪財者",
+       "no": "4105",
+       "audio": false,
+       "webpg": "webpg/4-1-1.html"
+      },
+      {
+       "label": "約翰福音生命讀經，第二十二篇",
+       "book": "約翰福音生命讀經",
+       "chapter": "第二十二篇 宗教中瞎眼人的需要－生命的視力與生命的牧養（二）",
+       "no": "4095",
+       "audio": false,
+       "webpg": "webpg/4-1-2.html"
+      },
+      {
+       "label": "彼得前書生命讀經，第二十一篇",
+       "book": "彼得前書生命讀經",
+       "chapter": "第二十一篇 基督徒的生活及其苦難（三）",
+       "no": "4108",
+       "audio": false,
+       "webpg": "webpg/4-1-3.html"
+      }
+     ]
+    },
+    {
+     "title": "真",
+     "page": 146,
+     "anchor": "no4-2",
+     "reading": "傳道書一章一至十一節。",
+     "sources": [
+      {
+       "label": "傳道書生命讀經，第一篇",
+       "book": "傳道書生命讀經",
+       "chapter": "第一篇 虛空的虛空（一）",
+       "no": "4131",
+       "audio": false,
+       "webpg": "webpg/4-2-1.html"
+      },
+      {
+       "label": "約翰福音生命讀經，第三篇",
+       "book": "約翰福音生命讀經",
+       "chapter": "第三篇 生命與建造的引言（二）",
+       "no": "4095",
+       "audio": false,
+       "webpg": "webpg/4-2-2.html"
+      },
+      {
+       "label": "宇宙的奧祕與人生的意義，第二篇",
+       "book": "宇宙的奧祕與人生的意義",
+       "chapter": "第二篇 人生的意義",
+       "no": "2309",
+       "audio": false,
+       "webpg": "webpg/4-2-3.html"
+      },
+      {
+       "label": "以弗所書生命讀經，第四十六篇",
+       "book": "以弗所書生命讀經",
+       "chapter": "第四十六篇 照著那在耶穌身上是實際者，學了基督",
+       "no": "4101",
+       "audio": false,
+       "webpg": "webpg/4-2-4.html"
+      }
+     ]
+    },
+    {
+     "title": "虛幻世界的得獎人",
+     "page": 153,
+     "anchor": "no4-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "照我本相，虛幻世界的得獎人",
+       "book": "照我本相",
+       "chapter": "虛幻世界的得獎人",
+       "no": "1060",
+       "audio": false,
+       "webpg": "webpg/4-3-1.html"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "唱詩人",
+   "articles": [
+    {
+     "title": "我當如何愛我的主",
+     "page": 160,
+     "anchor": "no5-1",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-1audio.html"
+      }
+     ]
+    },
+    {
+     "title": "勿對我談屬地享樂",
+     "page": 166,
+     "anchor": "no5-2-1",
+     "reading": "民數記六章十三至二十一節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-1audio.html"
+      },
+      {
+       "label": "民數記生命讀經，第十篇",
+       "book": "民數記生命讀經",
+       "chapter": "第十篇 成軍（九）",
+       "no": "4185",
+       "audio": false,
+       "webpg": "webpg/5-2-1.html"
+      }
+     ]
+    },
+    {
+     "title": "活著為耶穌",
+     "page": 167,
+     "anchor": "no5-2-2",
+     "reading": "民數記六章一至五節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-2audio.html"
+      },
+      {
+       "label": "民數記生命讀經，第八篇",
+       "book": "民數記生命讀經",
+       "chapter": "第八篇 成軍（七）",
+       "no": "4185",
+       "audio": false,
+       "webpg": "webpg/5-2-2.html"
+      }
+     ]
+    },
+    {
+     "title": "誰是在主這邊",
+     "page": 168,
+     "anchor": "no5-2-3",
+     "reading": "",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-3audio.html"
+      },
+      {
+       "label": "聖經恢復本，民數記三十六章十三節註一",
+       "book": "聖經恢復本",
+       "chapter": "民數記三十六章十三節：這是耶和華在摩押平原與耶利哥相對的1約但河邊，藉著摩西所吩咐以色列人的命令和典章。",
+       "no": "0117",
+       "audio": false,
+       "webpg": "webpg/5-2-3.html"
+      }
+     ]
+    },
+    {
+     "title": "神所賜恩典最高的定義",
+     "page": 169,
+     "anchor": "no5-2-4",
+     "reading": "民數記六章二十二至二十七節，哥林多後書十三章十四節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-4audio.html"
+      },
+      {
+       "label": "民數記生命讀經，第十一篇",
+       "book": "民數記生命讀經",
+       "chapter": "第十一篇 成軍（十）",
+       "no": "4185",
+       "audio": false,
+       "webpg": "webpg/5-2-4.html"
+      }
+     ]
+    },
+    {
+     "title": "基督是美地",
+     "page": 170,
+     "anchor": "no5-2-5",
+     "reading": "約書亞記一章一至六節，四章一至三節，八至九節，五章二節，七至九節，十至十二節，十三至十五節，六章一至十一節，十五至十六節，二十節，歌羅西書二章十二節，三章一至五節，以弗所書六章十二至十三節，哥林多後書十章三至五節。",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-5audio.html"
+      },
+      {
+       "label": "包羅萬有的基督，第十四章",
+       "book": "包羅萬有的基督",
+       "chapter": "第十四章 進入美地",
+       "no": "2039",
+       "audio": false,
+       "webpg": "webpg/5-2-5.html"
+      }
+     ]
+    },
+    {
+     "title": "來得這地",
+     "page": 171,
+     "anchor": "no5-2-6",
+     "reading": "帖撒羅尼迦前書五章二十三節：『願賜平安的神親自使你們全然成聖；又願你們的靈、與魂、與身子，得蒙保守，在我主耶穌基督降臨的時候，完全無可指摘。』",
+     "sources": [
+      {
+       "label": "聆聽詩歌",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-2-6audio.html"
+      },
+      {
+       "label": "倪柝聲文集第二輯第十七冊，第三篇",
+       "book": "倪柝聲文集第二輯第十七冊，一般的信息（卷一）",
+       "chapter": "第三篇 神保守的能力",
+       "no": "5068S2",
+       "audio": false,
+       "webpg": "webpg/5-2-6.html"
+      }
+     ]
+    },
+    {
+     "title": "安息於你",
+     "page": 172,
+     "anchor": "webpg_no5-3-1audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "安息於你",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-1audio.html"
+      }
+     ]
+    },
+    {
+     "title": "這麼大的救恩",
+     "page": 173,
+     "anchor": "webpg_no5-3-2audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "這麼大的救恩",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-2audio.html"
+      }
+     ]
+    },
+    {
+     "title": "因愛成病，我願你來",
+     "page": 174,
+     "anchor": "webpg_no5-3-3audio.html",
+     "reading": "",
+     "sources": [
+      {
+       "label": "因愛成病，我願你來",
+       "book": "",
+       "chapter": "",
+       "no": "",
+       "audio": true,
+       "webpg": "webpg/no5-3-3audio.html"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

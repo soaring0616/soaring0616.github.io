@@ -1,1 +1,4 @@
 .ipynb_checkpoints/
+
+# digest/ 抓取器的網頁快取（只為重跑時不再去煩對方的站）
+digest/.cache/
