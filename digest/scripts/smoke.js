@@ -173,6 +173,13 @@ print('');
 print('卡片內容');
 var h = els['cards']._html;
 ok('每張卡都有節錄', (h.match(/class="excerpt"/g) || []).length === 9);
+// 格線必須只有一層：#cards 是容器，.cards 是它裡面那一個。
+// 兩層都掛 .cards 的話，內層會變成外層的一個格線項目，九張就疊成一直排。
+var pageSrc = readFile(BASE + '/index.html');
+ok('畫出來只有一個 .cards 格線', (h.match(/<div class="cards">/g) || []).length === 1,
+	(h.match(/<div class="cards">/g) || []).length + ' 個');
+ok('#cards 容器本身沒有掛 .cards', /<div id="cards"><\/div>/.test(pageSrc),
+	(pageSrc.match(/<div id="cards"[^>]*>/) || [])[0] || '');
 ok('每張卡都註明書名', (h.match(/class="book"/g) || []).length === 9);
 ok('每張卡都有「試讀」連回文摘',
 	(h.match(/ministrydigest\.twgbr\.org[^"]*webpg[^"]*"[^>]*>試讀/g) || []).length === 9);

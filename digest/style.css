@@ -126,8 +126,15 @@ main { max-width: 68rem; }
 
 .cards {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+	grid-template-columns: repeat(3, 1fr);   /* 隨機九段 = 3×3 */
 	gap: 1.6rem;
+}
+
+/* 注意：#cards 是容器，格線是它裡面的 .cards。
+   兩個都掛 .cards 的話內層會被塞進外層的一欄裡，九張就疊成一直排。 */
+
+@media (max-width: 900px) {
+	.cards { grid-template-columns: repeat(2, 1fr); }
 }
 
 .card {
@@ -272,7 +279,7 @@ main { max-width: 68rem; }
 @media (max-width: 480px) {
 	h1 { font-size: 1.25rem; letter-spacing: 0.2em; text-indent: 0.2em; }
 	main { padding: 1.5rem 1rem 2.5rem; }
-	.cards { grid-template-columns: 1fr; gap: 1.2rem; }
+	.cards { grid-template-columns: 1fr; gap: 1.2rem; }   /* 手機單欄 */
 	.card { padding: 1.1rem 1.1rem 1rem; }
 	.card .excerpt { font-size: 0.98rem; line-height: 1.95; }
 }
