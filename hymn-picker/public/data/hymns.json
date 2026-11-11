@@ -11980,5 +11980,222 @@
         "url": "https://www.hymnal.net/en/hymn/ts/920"
       }
     ]
+  },
+  {
+    "id": "s-620",
+    "book": "supplement",
+    "no": 620,
+    "title": "父使我們成為一",
+    "firstLine": "讚美父神是生命源頭，我們在你寶貴名裏",
+    "categories": [],
+    "key": "C大調",
+    "time": "4/4",
+    "meter": "9.8.8.9",
+    "hasChorus": false,
+    "enNo": 1081,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/620",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "在生命裏，在生命裏，在父生命裏我們是一。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/620"
+      },
+      {
+        "type": "story",
+        "text": "曲 William Gould Tomer (1833–1896)；hymnal.net 分類「建造與合一」，英文版 E1081。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/620"
+      }
+    ]
+  },
+  {
+    "id": "s-622",
+    "book": "supplement",
+    "no": 622,
+    "title": "與祂同席",
+    "firstLine": "看哪！桌上擺設筵席，一餅一杯，神聖表記",
+    "categories": [],
+    "key": "降A大調",
+    "time": "4/4",
+    "meter": "8.7.8.7.D",
+    "hasChorus": false,
+    "enNo": 1105,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/622",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "看哪！桌上擺設筵席，一餅一杯，神聖表記；親愛救主熱切邀集，我們歡喜來坐席。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/622"
+      },
+      {
+        "type": "story",
+        "text": "曲 Wolfgang Amadeus Mozart (1756–1791)；hymnal.net 分類「建造與合一」，英文版 E1105。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/622"
+      }
+    ]
+  },
+  {
+    "id": "s-623",
+    "book": "supplement",
+    "no": 623,
+    "title": "主，你筵席榮耀無比",
+    "firstLine": "哦主，你筵席榮耀無比！我們蒙召同你坐席",
+    "categories": [],
+    "key": "C大調",
+    "time": "4/4",
+    "meter": "9.8.8.9 副",
+    "hasChorus": true,
+    "enNo": 1112,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/623",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "阿利路亞！阿利路亞！阿利路亞，為這筵席。阿利路亞！阿利路亞！哦主，你筵席榮耀無比！",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/623"
+      },
+      {
+        "type": "story",
+        "text": "曲 William Gould Tomer (1833–1896)；hymnal.net 分類「建造與合一」，英文版 E1112。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/623"
+      }
+    ]
+  },
+  {
+    "id": "s-625",
+    "book": "supplement",
+    "no": 625,
+    "title": "照神計畫成為新人",
+    "firstLine": "我們是神救贖子民，照祂計畫成一個新人",
+    "categories": [],
+    "key": "F大調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": false,
+    "enNo": 1230,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/625",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "我們是神救贖子民，照祂計畫成一個新人；雖來自各民族方言，祂裏蒙召，合一何甘甜。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/625"
+      },
+      {
+        "type": "story",
+        "text": "hymnal.net 分類「建造與合一」，英文版 E1230。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/625"
+      }
+    ]
+  },
+  {
+    "id": "s-626",
+    "book": "supplement",
+    "no": 626,
+    "title": "我們在靈裏是一",
+    "firstLine": "我們在靈裏是一，憑神生命是一",
+    "categories": [],
+    "key": "F小調",
+    "time": "4/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "enNo": 1243,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/626",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "弟兄們，我們是一，讚美主，讚美主！姊妹們，我們是一，讚美主，讚美主！主已成就大事，使身體合一得恢復。",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/626"
+      },
+      {
+        "type": "story",
+        "text": "曲 P. S. (1938–2009)；hymnal.net 分類「建造與合一」，英文版 E1243。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/626"
+      }
+    ]
+  },
+  {
+    "id": "s-627",
+    "book": "supplement",
+    "no": 627,
+    "title": "何等美善，弟兄和睦是一",
+    "firstLine": "看哪何等美善！弟兄和睦同居",
+    "categories": [],
+    "key": "G大調",
+    "time": "4/4",
+    "meter": "6.6.6.6.8.8.8",
+    "hasChorus": false,
+    "enNo": 1244,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/627",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "看哪何等美善！弟兄和睦同居；以和平相結聯，所有距離全去。",
+        "source": "hymnal.net 歌詞（第一節）",
+        "url": "https://www.hymnal.net/en/hymn/ts/627"
+      },
+      {
+        "type": "story",
+        "text": "詞改編自 Charles Wesley (1707–1788)，曲 Lewis Edson (1748–1820)；hymnal.net 分類「建造與合一」，英文版 E1244。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/627"
+      }
+    ]
+  },
+  {
+    "id": "s-628",
+    "book": "supplement",
+    "no": 628,
+    "title": "看哪，弟兄和睦同居",
+    "firstLine": "看哪，弟兄和睦同居，是何等的善，是何等的美",
+    "categories": [],
+    "key": "降E大調",
+    "time": "3/4",
+    "meter": "不規則",
+    "hasChorus": true,
+    "enNo": 1339,
+    "urls": {
+      "hymnal": "https://www.hymnal.net/en/hymn/ts/628",
+      "luke54": []
+    },
+    "notes": [
+      {
+        "type": "excerpt",
+        "text": "這好比那上好的油，上好的油，澆在亞倫的頭上，流到鬍鬚，又流到，流到他的衣襟；",
+        "source": "hymnal.net 歌詞（副歌）",
+        "url": "https://www.hymnal.net/en/hymn/ts/628"
+      },
+      {
+        "type": "story",
+        "text": "經文詩歌（詩 133）；hymnal.net 分類「建造與合一」，英文版 E1339。",
+        "source": "hymnal.net 詩歌資料",
+        "url": "https://www.hymnal.net/en/hymn/ts/628"
+      }
+    ]
   }
 ]
