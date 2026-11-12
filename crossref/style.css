@@ -3,10 +3,19 @@
 :root {
 	--accent: #47D3E5;
 	--accent-dark: #1ebdd1;
+	--link: #0b7380;        /* 文字用的青色：白底對比 5.6:1（#47D3E5 只有 1.8:1，年長聖徒看不清） */
+	--link-dark: #085a64;
 	--ink: #111;
-	--muted: #777;
+	--muted: #5f5f5f;
 	--line: #e4e4e4;
 	--font: "Source Sans Pro", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+/* 字級：用百分比，長輩若把瀏覽器預設字調大會跟著放大。
+   一般 17px；平板（觸控、寬 ≥ 600px）拿得比手機遠，給 18px。 */
+html { font-size: 106.25%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (min-width: 600px) and (pointer: coarse) {
+	html { font-size: 112.5%; }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -17,15 +26,15 @@ html, body {
 
 body {
 	font-family: var(--font);
-	font-weight: 300;
+	font-weight: 400;
 	color: var(--ink);
 	background: #fff;
 	display: flex;
 	flex-direction: column;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: var(--accent-dark); text-decoration: underline; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-dark); text-decoration: underline; }
 
 /* ── Header ── */
 
@@ -47,7 +56,7 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
 
 h1 {
 	font-size: 1.5rem;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.35em;
 	text-indent: 0.35em;
 	white-space: nowrap;
@@ -87,7 +96,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 	border: 1px solid var(--accent);
 	border-radius: 4px;
 	background: #fff;
-	color: var(--accent);
+	color: var(--link);
 	cursor: pointer;
 	letter-spacing: 0.15em;
 	text-indent: 0.15em;
@@ -95,8 +104,8 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 }
 
 .btn:hover { background: rgba(71, 211, 229, 0.1); }
-.btn.primary { background: var(--accent); color: #fff; }
-.btn.primary:hover { background: var(--accent-dark); }
+.btn.primary { background: var(--link); border-color: var(--link); color: #fff; }
+.btn.primary:hover { background: var(--link-dark); }
 .btn.small { padding: 0.2rem 0.6rem; font-size: 0.85rem; }
 .btn:disabled { opacity: 0.5; cursor: default; }
 
@@ -107,12 +116,12 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 .focus-box summary {
 	cursor: pointer;
 	font-size: 0.9rem;
-	color: var(--accent);
+	color: var(--link);
 	letter-spacing: 0.1em;
 	user-select: none;
 }
 
-.focus-box summary:hover { color: var(--accent-dark); }
+.focus-box summary:hover { color: var(--link); }
 
 .focus-body { margin-top: 0.5rem; }
 
@@ -139,7 +148,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 	border: 1px solid var(--accent);
 	border-radius: 999px;
 	background: rgba(71, 211, 229, 0.08);
-	color: var(--accent-dark);
+	color: var(--link);
 	line-height: 1.4;
 }
 
@@ -147,7 +156,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 	border: none;
 	background: none;
 	padding: 0 0.15rem;
-	font-size: 0.8rem;
+	font-size: 0.85rem;
 	color: var(--muted);
 	cursor: pointer;
 	line-height: 1;
@@ -199,7 +208,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 
 .passage-verse-num {
 	font-weight: 600;
-	color: var(--accent-dark);
+	color: var(--link);
 	letter-spacing: 0.05em;
 }
 
@@ -264,7 +273,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 .panel-intro h2 { font-weight: 400; font-size: 1.1rem; margin-bottom: 0.6rem; letter-spacing: 0.1em; }
 .panel-intro ol { padding-left: 1.4rem; color: #333; }
 .panel-intro li { margin-bottom: 0.35rem; }
-.fine-print { margin-top: 1rem; font-size: 0.8rem; color: var(--muted); }
+.fine-print { margin-top: 1rem; font-size: 0.85rem; color: var(--muted); }
 
 .verse-ref {
 	font-size: 1.15rem;
@@ -296,7 +305,7 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 .foot-row { margin-bottom: 0.5rem; }
 
 .foot-letter {
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	vertical-align: super;
 	color: var(--muted);
 	margin-right: 0.25rem;
@@ -311,13 +320,13 @@ select:focus, button:focus { outline: 2px solid var(--accent); outline-offset: 1
 	border: 1px solid var(--accent);
 	border-radius: 999px;
 	background: #fff;
-	color: var(--accent);
+	color: var(--link);
 	cursor: pointer;
 	line-height: 1.4;
 	transition: background 0.15s, color 0.15s;
 }
 
-.ref-chip:hover { background: var(--accent); color: #fff; }
+.ref-chip:hover { background: var(--link); color: #fff; }
 .ref-chip.cf { border-style: dashed; }
 
 .unparsed-text { color: var(--muted); font-size: 0.88rem; margin-right: 0.4rem; }
@@ -326,14 +335,14 @@ details.notes { margin-top: 0.4rem; }
 details.notes summary {
 	cursor: pointer;
 	font-size: 0.9rem;
-	color: var(--accent);
+	color: var(--link);
 	letter-spacing: 0.1em;
 	user-select: none;
 }
-details.notes summary:hover { color: var(--accent-dark); }
+details.notes summary:hover { color: var(--link); }
 
 .note-item { margin: 0.5rem 0; font-size: 0.9rem; color: #333; }
-.note-num { color: var(--accent-dark); font-weight: 600; margin-right: 0.3rem; }
+.note-num { color: var(--link); font-weight: 600; margin-right: 0.3rem; }
 
 .panel-actions { margin-top: 1.25rem; }
 .panel-actions .btn { width: 100%; text-align: center; }

@@ -1,31 +1,52 @@
 /* 版本對讀 — 自含樣式（沿用 crossref/ 的配色：白底、#47D3E5 強調） */
 
+/* 台灣式標點：京華老宋體的標點是大陸式（，。靠左下，《》還會變成 «»）。
+   這裡只拿 Noto Serif TC 的全形標點（3.5K，切好放在 assets/fonts），排在 --serif 最前面，
+   字用京華老宋，標點置中。 */
+@font-face {
+	font-family: "TC Punct";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../assets/fonts/noto-serif-tc-punct.woff2") format("woff2");
+	unicode-range: U+B7, U+2026-2027, U+3000-3002, U+3008-3011, U+3014-3015, U+FF01, U+FF08-FF09, U+FF0C, U+FF1A-FF1B, U+FF1F;
+}
+
 :root {
 	--accent: #47D3E5;
 	--accent-dark: #1ebdd1;
+	--link: #0b7380;        /* 文字用的青色：白底對比 5.6:1（#47D3E5 只有 1.8:1，年長聖徒看不清） */
+	--link-dark: #085a64;
 	--ink: #111;
-	--muted: #777;
+	--muted: #5f5f5f;
 	--line: #e4e4e4;
 	--unv: #b3541e;        /* 只有和合本有的字 */
 	--unv-bg: #fdf0e7;
 	--rcv: #1a6f8b;        /* 只有恢復本有的字 */
 	--rcv-bg: #e8f4f8;
 	--font: "Source Sans Pro", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
-	--serif: "Noto Serif TC", "Georgia", "Songti TC", serif;
+	--serif: "TC Punct", "KingHwa_OldSong", "Noto Serif TC", "Songti TC", serif;   /* 京華老宋體：最接近早期恢復本、和合本的印刷字 */
+}
+
+/* 字級：用百分比，長輩若把瀏覽器預設字調大會跟著放大。
+   一般 17px；平板（觸控、寬 ≥ 600px）拿得比手機遠，給 18px。 */
+html { font-size: 106.25%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+@media (min-width: 600px) and (pointer: coarse) {
+	html { font-size: 112.5%; }
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
 	font-family: var(--font);
-	font-weight: 300;
+	font-weight: 400;
 	color: var(--ink);
 	background: #fff;
 	line-height: 1.7;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { color: var(--accent-dark); text-decoration: underline; }
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-dark); text-decoration: underline; }
 
 /* ── Header ── */
 
@@ -52,7 +73,7 @@ a:hover { color: var(--accent-dark); text-decoration: underline; }
 
 h1 {
 	font-size: 1.5rem;
-	font-weight: 300;
+	font-weight: 400;
 	letter-spacing: 0.35em;
 	text-indent: 0.35em;
 	white-space: nowrap;
@@ -73,7 +94,7 @@ h1 {
 select, .btn {
 	font-family: inherit;
 	font-size: 0.9rem;
-	font-weight: 300;
+	font-weight: 400;
 	padding: 0.4rem 0.75rem;
 	border: 1px solid var(--line);
 	border-radius: 3px;
@@ -83,16 +104,16 @@ select, .btn {
 }
 
 select:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.btn:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-dark); }
+.btn:hover:not(:disabled) { border-color: var(--accent); color: var(--link); }
 
 .btn.primary {
-	background: var(--accent);
-	border-color: var(--accent);
+	background: var(--link);
+	border-color: var(--link);
 	color: #fff;
 }
-.btn.primary:hover:not(:disabled) { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; }
+.btn.primary:hover:not(:disabled) { background: var(--link-dark); border-color: var(--link-dark); color: #fff; }
 .btn:disabled { opacity: 0.45; cursor: default; }
-.btn.small { font-size: 0.8rem; padding: 0.25rem 0.6rem; }
+.btn.small { font-size: 0.85rem; padding: 0.25rem 0.6rem; }
 
 .options {
 	display: flex;
@@ -179,7 +200,7 @@ main {
 }
 
 .badge {
-	font-size: 0.72rem;
+	font-size: 0.85rem;
 	padding: 0.1rem 0.45rem;
 	border-radius: 2px;
 	letter-spacing: 0.05em;
@@ -195,7 +216,7 @@ main {
 .ver-label {
 	flex: none;
 	width: 3.4rem;
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	color: var(--muted);
 	letter-spacing: 0.1em;
 	text-align: right;
@@ -226,7 +247,7 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 	font-size: 0.88rem;
 	color: #444;
 }
-.footnotes summary { cursor: pointer; color: var(--muted); font-size: 0.82rem; }
+.footnotes summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .footnotes p { margin-top: 0.4rem; padding-left: 0.8rem; border-left: 2px solid var(--line); }
 
 .links {
@@ -236,18 +257,18 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 	margin-top: 0.7rem;
 }
 .src-link {
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 	padding: 0.2rem 0.55rem;
 	border: 1px solid var(--line);
 	border-radius: 2px;
 	color: var(--muted);
 	background: #fff;
 	font-family: inherit;
-	font-weight: 300;
+	font-weight: 400;
 	cursor: pointer;
 }
-.src-link:hover { border-color: var(--accent); color: var(--accent-dark); text-decoration: none; }
-.links .src-link:first-child { border-color: var(--accent); color: var(--accent-dark); }
+.src-link:hover { border-color: var(--accent); color: var(--link); text-decoration: none; }
+.links .src-link:first-child { border-color: var(--accent); color: var(--link); }
 
 /* ── 掃描結果 ── */
 
@@ -261,7 +282,7 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 	padding-bottom: 0.3rem;
 	border-bottom: 1px solid var(--line);
 }
-.chapter-count { font-size: 0.78rem; color: var(--muted); font-weight: 300; }
+.chapter-count { font-size: 0.85rem; color: var(--muted); font-weight: 400; }
 
 .scan-list { list-style: none; }
 .scan-list li {
@@ -282,7 +303,7 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 .phrases { font-family: var(--serif); display: flex; gap: 0.5rem; align-items: baseline; flex-wrap: wrap; }
 .ph.unv { color: var(--unv); }
 .ph.rcv { color: var(--rcv); }
-.arrow { color: var(--muted); font-size: 0.8rem; }
+.arrow { color: var(--muted); font-size: 0.85rem; }
 
 /* ── 共用小字 ── */
 
@@ -292,7 +313,7 @@ mark.ins { color: var(--rcv); background: var(--rcv-bg); box-shadow: 0 1px 0 var
 	letter-spacing: 0.1em;
 	margin-bottom: 0.5rem;
 }
-.hint, .fineprint { font-size: 0.82rem; color: var(--muted); }
+.hint, .fineprint { font-size: 0.85rem; color: var(--muted); }
 code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radius: 2px; }
 
 /* 掃描清單的差異說明，以及字典的同源字 */
@@ -346,8 +367,8 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 /* ── 原文逐字 ── */
 
 .orig-toggle.is-on {
-	border-color: var(--accent);
-	background: var(--accent);
+	border-color: var(--link);
+	background: var(--link);
 	color: #fff;
 }
 
@@ -426,7 +447,7 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 	color: #fff;
 	border-radius: 3px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-	font-size: 0.82rem;
+	font-size: 0.85rem;
 	line-height: 1.6;
 	text-align: left;
 	direction: ltr;        /* 希伯來文時小卡內容仍是左起 */
@@ -442,7 +463,7 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 }
 .ow-tip .ow-gram { color: #9fd9e3; }
 .ow-tip .ow-exp { color: #fff; }
-.ow-tip .ow-sn { color: #8d969c; font-size: 0.75rem; }
+.ow-tip .ow-sn { color: #8d969c; font-size: 0.85rem; }
 
 /* ── 原文字典 ── */
 
@@ -468,14 +489,14 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 	font-size: 1.3rem;
 }
 .lex-orig.small { font-size: 1.05rem; }
-.lex-sn { font-size: 0.75rem; color: var(--muted); }
-.lex-gram { font-size: 0.78rem; color: var(--rcv); }
+.lex-sn { font-size: 0.85rem; color: var(--muted); }
+.lex-gram { font-size: 0.85rem; color: var(--rcv); }
 
 .lex-tabs { display: flex; gap: 0.3rem; margin-top: 0.5rem; }
 .lex-tab {
 	font-family: inherit;
-	font-size: 0.75rem;
-	font-weight: 300;
+	font-size: 0.85rem;
+	font-weight: 400;
 	padding: 0.15rem 0.6rem;
 	border: 1px solid var(--line);
 	border-radius: 2px;
@@ -483,7 +504,7 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 	color: var(--muted);
 	cursor: pointer;
 }
-.lex-tab.is-on { border-color: var(--accent); background: var(--accent); color: #fff; }
+.lex-tab.is-on { border-color: var(--link); background: var(--link); color: #fff; }
 
 .lex-body {
 	margin-top: 0.5rem;
@@ -498,7 +519,7 @@ code { font-size: 0.9em; background: #f4f4f4; padding: 0.05em 0.3em; border-radi
 }
 
 .lex-same { margin-top: 0.6rem; font-size: 0.85rem; }
-.lex-same summary { cursor: pointer; color: var(--muted); font-size: 0.8rem; }
+.lex-same summary { cursor: pointer; color: var(--muted); font-size: 0.85rem; }
 .lex-same ul { list-style: none; margin-top: 0.3rem; }
 .lex-same li {
 	display: flex;
